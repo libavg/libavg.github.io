@@ -1,0 +1,530 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Vector Nodes &mdash; libavg 1.8.dev documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.8.dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="libavg 1.8.dev documentation" href="index.html" />
+    <link rel="next" title="Input Handling" href="events.html" />
+    <link rel="prev" title="Area Nodes" href="areanodes.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="events.html" title="Input Handling"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="areanodes.html" title="Area Nodes"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">libavg 1.8.dev documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="areanodes.html"
+                        title="previous chapter">Area Nodes</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="events.html"
+                        title="next chapter">Input Handling</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/vectornodes.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-libavg.avg">
+<span id="vector-nodes"></span><h1>Vector Nodes<a class="headerlink" href="#module-libavg.avg" title="Permalink to this headline">¶</a></h1>
+<p class="graphviz">
+<img src="_images/inheritance-efec9a3a11e2358c6fffca3ab6155a64ab9ca3de.png" alt="Inheritance diagram of CircleNode, CurveNode, FilledVectorNode, LineNode, MeshNode, Node, PolygonNode, PolyLineNode, RectNode, VectorNode, libavg.geom.Arc, libavg.geom.PieSlice, libavg.geom.RoundedRect" usemap="#inheritanced33fea83b5" class="inheritance"/>
+<map id="inheritanced33fea83b5" name="inheritanced33fea83b5">
+<area shape="rect" id="node1" href="#libavg.geom.Arc" target="_top" title="Arc" alt="" coords="5,445,77,471"/>
+<area shape="rect" id="node2" href="#libavg.avg.PolyLineNode" target="_top" title="PolyLineNode" alt="" coords="9,372,117,397"/>
+<area shape="rect" id="node3" href="#libavg.avg.CircleNode" target="_top" title="CircleNode" alt="" coords="101,445,192,471"/>
+<area shape="rect" id="node4" href="#libavg.avg.FilledVectorNode" target="_top" title="FilledVectorNode" alt="" coords="184,372,312,397"/>
+<area shape="rect" id="node14" href="#libavg.avg.PolygonNode" target="_top" title="PolygonNode" alt="" coords="216,445,323,471"/>
+<area shape="rect" id="node15" href="#libavg.avg.RectNode" target="_top" title="RectNode" alt="" coords="347,445,429,471"/>
+<area shape="rect" id="node5" href="#libavg.avg.CurveNode" target="_top" title="CurveNode" alt="" coords="336,372,429,397"/>
+<area shape="rect" id="node6" href="#libavg.avg.VectorNode" target="_top" title="VectorNode" alt="" coords="334,299,431,324"/>
+<area shape="rect" id="node9" href="#libavg.avg.LineNode" target="_top" title="LineNode" alt="" coords="453,372,536,397"/>
+<area shape="rect" id="node10" href="#libavg.avg.MeshNode" target="_top" title="MeshNode" alt="" coords="560,372,651,397"/>
+<area shape="rect" id="node12" href="basenodes.html#libavg.avg.Publisher" target="_top" title="Publisher" alt="" coords="343,152,423,177"/>
+<area shape="rect" id="node11" href="basenodes.html#libavg.avg.Node" target="_top" title="Node" alt="" coords="347,225,419,251"/>
+<area shape="rect" id="node13" href="#libavg.geom.PieSlice" target="_top" title="PieSlice" alt="" coords="177,519,249,544"/>
+<area shape="rect" id="node16" href="#libavg.geom.RoundedRect" target="_top" title="RoundedRect" alt="" coords="273,519,377,544"/>
+</map>
+</p>
+<dl class="class">
+<dt id="libavg.avg.CircleNode">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">CircleNode</code><span class="sig-paren">(</span><span class="optional">[</span><em>r=1</em>, <em>texcoord1=0</em>, <em>texcoord2=1</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.CircleNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.FilledVectorNode" title="libavg.avg.FilledVectorNode"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.FilledVectorNode</span></code></a></p>
+<p>A circle. The reference point for a circle is its center.</p>
+<dl class="attribute">
+<dt id="libavg.avg.CircleNode.r">
+<code class="descname">r</code><a class="headerlink" href="#libavg.avg.CircleNode.r" title="Permalink to this definition">¶</a></dt>
+<dd><p>The radius of the circle in pixels.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CircleNode.texcoord1">
+<code class="descname">texcoord1</code><a class="headerlink" href="#libavg.avg.CircleNode.texcoord1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CircleNode.texcoord2">
+<code class="descname">texcoord2</code><a class="headerlink" href="#libavg.avg.CircleNode.texcoord2" title="Permalink to this definition">¶</a></dt>
+<dd><p>floats used as u texture coordinates for the circle border. The coordinates
+wrap around the circle once.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.CurveNode">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">CurveNode</code><span class="sig-paren">(</span><span class="optional">[</span><em>pos1</em>, <em>pos2</em>, <em>pos3</em>, <em>pos4</em>, <em>texcoord1</em>, <em>texcoord2</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.CurveNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.VectorNode" title="libavg.avg.VectorNode"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.VectorNode</span></code></a></p>
+<p>A cubic bezier curve (<a class="reference external" href="http://en.wikipedia.org/wiki/Bezier_curve">http://en.wikipedia.org/wiki/Bezier_curve</a>).
+<a class="reference internal" href="#libavg.avg.CurveNode.pos1" title="libavg.avg.CurveNode.pos1"><code class="xref py py-attr docutils literal"><span class="pre">pos1</span></code></a> and <a class="reference internal" href="#libavg.avg.CurveNode.pos4" title="libavg.avg.CurveNode.pos4"><code class="xref py py-attr docutils literal"><span class="pre">pos4</span></code></a> are the two endpoints of the curve.
+<a class="reference internal" href="#libavg.avg.CurveNode.pos2" title="libavg.avg.CurveNode.pos2"><code class="xref py py-attr docutils literal"><span class="pre">pos2</span></code></a> and <a class="reference internal" href="#libavg.avg.CurveNode.pos3" title="libavg.avg.CurveNode.pos3"><code class="xref py py-attr docutils literal"><span class="pre">pos3</span></code></a> are control points.</p>
+<dl class="method">
+<dt id="libavg.avg.CurveNode.getPtOnCurve">
+<code class="descname">getPtOnCurve</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span> &rarr; pos<a class="headerlink" href="#libavg.avg.CurveNode.getPtOnCurve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a point on the curve. Which point is determined by the value of t.
+If <code class="samp docutils literal"><span class="pre">t=0</span></code>, returns <a class="reference internal" href="#libavg.avg.CurveNode.pos1" title="libavg.avg.CurveNode.pos1"><code class="xref py py-attr docutils literal"><span class="pre">pos1</span></code></a>. <code class="samp docutils literal"><span class="pre">t=1</span></code> returns <a class="reference internal" href="#libavg.avg.CurveNode.pos4" title="libavg.avg.CurveNode.pos4"><code class="xref py py-attr docutils literal"><span class="pre">pos4</span></code></a>,
+and values in between return the points in between.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CurveNode.length">
+<code class="descname">length</code><a class="headerlink" href="#libavg.avg.CurveNode.length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an approximation of the length of the curve (ro).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CurveNode.pos1">
+<code class="descname">pos1</code><a class="headerlink" href="#libavg.avg.CurveNode.pos1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CurveNode.pos2">
+<code class="descname">pos2</code><a class="headerlink" href="#libavg.avg.CurveNode.pos2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CurveNode.pos3">
+<code class="descname">pos3</code><a class="headerlink" href="#libavg.avg.CurveNode.pos3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CurveNode.pos4">
+<code class="descname">pos4</code><a class="headerlink" href="#libavg.avg.CurveNode.pos4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CurveNode.texcoord1">
+<code class="descname">texcoord1</code><a class="headerlink" href="#libavg.avg.CurveNode.texcoord1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CurveNode.texcoord2">
+<code class="descname">texcoord2</code><a class="headerlink" href="#libavg.avg.CurveNode.texcoord2" title="Permalink to this definition">¶</a></dt>
+<dd><p>floats that signify the u axis texture coordinates.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.FilledVectorNode">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">FilledVectorNode</code><span class="sig-paren">(</span><span class="optional">[</span><em>filltexhref</em>, <em>fillopacity=0</em>, <em>fillcolor=&quot;FFFFFF&quot;</em>, <em>filltexcoord1=Point2D(0</em>, <em>0)</em>, <em>filltexcoord2=Point2D(1</em>, <em>1)</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.FilledVectorNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.VectorNode" title="libavg.avg.VectorNode"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.VectorNode</span></code></a></p>
+<p>Base class for vector nodes which have a filled area and a border. The area can
+be filled either with a solid color (<a class="reference internal" href="#libavg.avg.FilledVectorNode.fillcolor" title="libavg.avg.FilledVectorNode.fillcolor"><code class="xref py py-attr docutils literal"><span class="pre">fillcolor</span></code></a>) or with a texture
+loaded from a file (<a class="reference internal" href="#libavg.avg.FilledVectorNode.filltexhref" title="libavg.avg.FilledVectorNode.filltexhref"><code class="xref py py-attr docutils literal"><span class="pre">filltexhref</span></code></a>), or taken from a bitmap object
+(<a class="reference internal" href="#libavg.avg.FilledVectorNode.setFillBitmap" title="libavg.avg.FilledVectorNode.setFillBitmap"><code class="xref py py-meth docutils literal"><span class="pre">setFillBitmap()</span></code></a>).</p>
+<dl class="attribute">
+<dt id="libavg.avg.FilledVectorNode.fillcolor">
+<code class="descname">fillcolor</code><a class="headerlink" href="#libavg.avg.FilledVectorNode.fillcolor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.FilledVectorNode.fillopacity">
+<code class="descname">fillopacity</code><a class="headerlink" href="#libavg.avg.FilledVectorNode.fillopacity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.FilledVectorNode.filltexcoord1">
+<code class="descname">filltexcoord1</code><a class="headerlink" href="#libavg.avg.FilledVectorNode.filltexcoord1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.FilledVectorNode.filltexcoord2">
+<code class="descname">filltexcoord2</code><a class="headerlink" href="#libavg.avg.FilledVectorNode.filltexcoord2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.FilledVectorNode.filltexhref">
+<code class="descname">filltexhref</code><a class="headerlink" href="#libavg.avg.FilledVectorNode.filltexhref" title="Permalink to this definition">¶</a></dt>
+<dd><p>An image file to use as a texture for the area of the node.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.FilledVectorNode.setFillBitmap">
+<code class="descname">setFillBitmap</code><span class="sig-paren">(</span><em>bitmap</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.FilledVectorNode.setFillBitmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a bitmap to use as a fill texture. Sets <a class="reference internal" href="#libavg.avg.FilledVectorNode.filltexhref" title="libavg.avg.FilledVectorNode.filltexhref"><code class="xref py py-attr docutils literal"><span class="pre">filltexhref</span></code></a> to an empty
+string.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.LineNode">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">LineNode</code><span class="sig-paren">(</span><span class="optional">[</span><em>pos1</em>, <em>pos2</em>, <em>texcoord1</em>, <em>texcoord2</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.LineNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.VectorNode" title="libavg.avg.VectorNode"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.VectorNode</span></code></a></p>
+<p>A line. <a class="reference internal" href="#libavg.avg.LineNode.pos1" title="libavg.avg.LineNode.pos1"><code class="xref py py-attr docutils literal"><span class="pre">pos1</span></code></a> and <a class="reference internal" href="#libavg.avg.LineNode.pos2" title="libavg.avg.LineNode.pos2"><code class="xref py py-attr docutils literal"><span class="pre">pos2</span></code></a> are the two endpoints of the line.</p>
+<dl class="attribute">
+<dt id="libavg.avg.LineNode.pos1">
+<code class="descname">pos1</code><a class="headerlink" href="#libavg.avg.LineNode.pos1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.LineNode.pos2">
+<code class="descname">pos2</code><a class="headerlink" href="#libavg.avg.LineNode.pos2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.LineNode.texcoord1">
+<code class="descname">texcoord1</code><a class="headerlink" href="#libavg.avg.LineNode.texcoord1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.LineNode.texcoord2">
+<code class="descname">texcoord2</code><a class="headerlink" href="#libavg.avg.LineNode.texcoord2" title="Permalink to this definition">¶</a></dt>
+<dd><p>floats that signify the u axis texture coordinates.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.MeshNode">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">MeshNode</code><span class="sig-paren">(</span><span class="optional">[</span><em>vertexcoords</em>, <em>texcoords</em>, <em>triangles</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.MeshNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.VectorNode" title="libavg.avg.VectorNode"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.VectorNode</span></code></a></p>
+<p>This is a generalized mesh of textured triangles. See
+<a class="reference external" href="https://www.libavg.de/wiki/ProgrammersGuide/MeshNode">https://www.libavg.de/wiki/ProgrammersGuide/MeshNode</a> for an example.</p>
+<dl class="attribute">
+<dt id="libavg.avg.MeshNode.texcoords">
+<code class="descname">texcoords</code><a class="headerlink" href="#libavg.avg.MeshNode.texcoords" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.MeshNode.triangles">
+<code class="descname">triangles</code><a class="headerlink" href="#libavg.avg.MeshNode.triangles" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.MeshNode.vertexcoords">
+<code class="descname">vertexcoords</code><a class="headerlink" href="#libavg.avg.MeshNode.vertexcoords" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.PolygonNode">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">PolygonNode</code><span class="sig-paren">(</span><span class="optional">[</span><em>linejoin=&quot;bevel&quot;</em>, <em>pos</em>, <em>texcoords</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.PolygonNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.FilledVectorNode" title="libavg.avg.FilledVectorNode"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.FilledVectorNode</span></code></a></p>
+<p>A closed figure bounded by a number of line segments, optionally filled. Filled
+polygons may not be self-intersecting.</p>
+<dl class="attribute">
+<dt id="libavg.avg.PolygonNode.linejoin">
+<code class="descname">linejoin</code><a class="headerlink" href="#libavg.avg.PolygonNode.linejoin" title="Permalink to this definition">¶</a></dt>
+<dd><p>The method by which line segments are joined together. Valid values are
+<code class="xref py py-const docutils literal"><span class="pre">bevel</span></code> and <code class="xref py py-const docutils literal"><span class="pre">miter</span></code>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.PolygonNode.pos">
+<code class="descname">pos</code><a class="headerlink" href="#libavg.avg.PolygonNode.pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>A sequence (<code class="xref py py-class docutils literal"><span class="pre">list</span></code> or <code class="xref py py-class docutils literal"><span class="pre">tuple</span></code>) of pixel positions.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.PolygonNode.texcoords">
+<code class="descname">texcoords</code><a class="headerlink" href="#libavg.avg.PolygonNode.texcoords" title="Permalink to this definition">¶</a></dt>
+<dd><p>A sequence of float texture coordinates along the u axis of the texture,
+used for the polygon border. It can contain either one coordinate per entry
+in pos (plus an additional one to close the polygon) or two coordinates that
+are interpolated to wrap around the <a class="reference internal" href="#libavg.avg.PolygonNode" title="libavg.avg.PolygonNode"><code class="xref py py-class docutils literal"><span class="pre">PolygonNode</span></code></a> once.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.PolyLineNode">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">PolyLineNode</code><span class="sig-paren">(</span><span class="optional">[</span><em>linejoin=&quot;bevel&quot;</em>, <em>pos</em>, <em>texcoords</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.PolyLineNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.VectorNode" title="libavg.avg.VectorNode"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.VectorNode</span></code></a></p>
+<p>A figure similar to a <a class="reference internal" href="#libavg.avg.PolygonNode" title="libavg.avg.PolygonNode"><code class="xref py py-class docutils literal"><span class="pre">PolygonNode</span></code></a>, but not closed and never filled.</p>
+<dl class="attribute">
+<dt id="libavg.avg.PolyLineNode.linejoin">
+<code class="descname">linejoin</code><a class="headerlink" href="#libavg.avg.PolyLineNode.linejoin" title="Permalink to this definition">¶</a></dt>
+<dd><p>The method by which line segments are joined together. Valid values are
+<code class="xref py py-const docutils literal"><span class="pre">bevel</span></code> and <code class="xref py py-const docutils literal"><span class="pre">miter</span></code>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.PolyLineNode.pos">
+<code class="descname">pos</code><a class="headerlink" href="#libavg.avg.PolyLineNode.pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>A sequence (<code class="xref py py-class docutils literal"><span class="pre">list</span></code> or <code class="xref py py-class docutils literal"><span class="pre">tuple</span></code>) of pixel positions.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.PolyLineNode.texcoords">
+<code class="descname">texcoords</code><a class="headerlink" href="#libavg.avg.PolyLineNode.texcoords" title="Permalink to this definition">¶</a></dt>
+<dd><p>A sequence of float texture coordinates along the u axis of the texture.
+It can contain either one coordinate per entry in pos or two coordinates,
+one for either end of the <code class="xref py py-class docutils literal"><span class="pre">PolyLine</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.RectNode">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">RectNode</code><span class="sig-paren">(</span><span class="optional">[</span><em>pos</em>, <em>size</em>, <em>angle</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.RectNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.FilledVectorNode" title="libavg.avg.FilledVectorNode"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.FilledVectorNode</span></code></a></p>
+<p>A rectangle that can be filled.</p>
+<dl class="attribute">
+<dt id="libavg.avg.RectNode.angle">
+<code class="descname">angle</code><a class="headerlink" href="#libavg.avg.RectNode.angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>The angle that the rectangle is rotated to in radians. 0 is
+unchanged, 3.14 is upside-down. The rectangle is rotated around its
+center.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.RectNode.pos">
+<code class="descname">pos</code><a class="headerlink" href="#libavg.avg.RectNode.pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>The position of the top left corner of the rectangle.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.RectNode.size">
+<code class="descname">size</code><a class="headerlink" href="#libavg.avg.RectNode.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.RectNode.texcoords">
+<code class="descname">texcoords</code><a class="headerlink" href="#libavg.avg.RectNode.texcoords" title="Permalink to this definition">¶</a></dt>
+<dd><p>A sequence of <code class="xref py py-const docutils literal"><span class="pre">5</span></code> texture coordinates for the border of the
+rectangle, which wrap around the node.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.VectorNode">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">VectorNode</code><span class="sig-paren">(</span><span class="optional">[</span><em>color=&quot;FFFFFF&quot;</em>, <em>strokewidth=1</em>, <em>texhref</em>, <em>blendmode=&quot;blend&quot;</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.VectorNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="basenodes.html#libavg.avg.Node" title="libavg.avg.Node"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.Node</span></code></a></p>
+<p>Base class for all nodes that draw geometrical primitives. All vector nodes
+support configurable stroke width. Strokes can be filled either with a solid
+color (<a class="reference internal" href="#libavg.avg.VectorNode.color" title="libavg.avg.VectorNode.color"><code class="xref py py-attr docutils literal"><span class="pre">color</span></code></a>) or with a texture loaded from a file
+(<a class="reference internal" href="#libavg.avg.VectorNode.texhref" title="libavg.avg.VectorNode.texhref"><code class="xref py py-attr docutils literal"><span class="pre">texhref</span></code></a>) or taken from a bitmap object (<a class="reference internal" href="#libavg.avg.VectorNode.setBitmap" title="libavg.avg.VectorNode.setBitmap"><code class="xref py py-meth docutils literal"><span class="pre">setBitmap()</span></code></a>).</p>
+<p>When using textured <code class="xref py py-class docutils literal"><span class="pre">VectorNodes</span></code>, texture coordinates can be set.
+Generally, texture bitmaps are mapped to coordinates
+<code class="xref py py-const docutils literal"><span class="pre">(u,v)</span> <span class="pre">=</span> <span class="pre">(0,0)-(1,1)</span></code>, and the texture is repeated for coordinates
+outside this range. The <code class="xref py py-const docutils literal"><span class="pre">u</span></code> texture coordinate increases along the
+stroke, while the <code class="xref py py-const docutils literal"><span class="pre">v</span></code> coordinate increases perpendicular to it.</p>
+<dl class="attribute">
+<dt id="libavg.avg.VectorNode.blendmode">
+<code class="descname">blendmode</code><a class="headerlink" href="#libavg.avg.VectorNode.blendmode" title="Permalink to this definition">¶</a></dt>
+<dd><p>The method of compositing the node with the nodes under
+it. Valid values are <code class="xref py py-const docutils literal"><span class="pre">blend</span></code>, <code class="xref py py-const docutils literal"><span class="pre">add</span></code>, <code class="xref py py-const docutils literal"><span class="pre">min</span></code>
+and <code class="xref py py-const docutils literal"><span class="pre">max</span></code>. For <code class="xref py py-const docutils literal"><span class="pre">min</span></code> and <code class="xref py py-const docutils literal"><span class="pre">max</span></code>
+blend modes, opacity is ignored.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.VectorNode.color">
+<code class="descname">color</code><a class="headerlink" href="#libavg.avg.VectorNode.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="misc.html#libavg.avg.Color" title="libavg.avg.Color"><code class="xref py py-class docutils literal"><span class="pre">Color</span></code></a> of the strokes.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.VectorNode.strokewidth">
+<code class="descname">strokewidth</code><a class="headerlink" href="#libavg.avg.VectorNode.strokewidth" title="Permalink to this definition">¶</a></dt>
+<dd><p>The width of the strokes in the vector. For lines, this is the line
+width. For rectangles, it is the width of the outline, etc.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.VectorNode.texhref">
+<code class="descname">texhref</code><a class="headerlink" href="#libavg.avg.VectorNode.texhref" title="Permalink to this definition">¶</a></dt>
+<dd><p>An image file to use as a texture for the node.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VectorNode.setBitmap">
+<code class="descname">setBitmap</code><span class="sig-paren">(</span><em>bitmap</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.VectorNode.setBitmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a bitmap to use as a texture. Sets <a class="reference internal" href="#libavg.avg.VectorNode.texhref" title="libavg.avg.VectorNode.texhref"><code class="xref py py-attr docutils literal"><span class="pre">texhref</span></code></a> to an empty
+string.</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-libavg.geom"></span><dl class="class">
+<dt id="libavg.geom.Arc">
+<em class="property">class </em><code class="descclassname">libavg.geom.</code><code class="descname">Arc</code><span class="sig-paren">(</span><em>radius</em>, <em>startangle</em>, <em>endangle</em><span class="optional">[</span>, <em>pos=(0</em>, <em>0)</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.geom.Arc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.PolyLineNode" title="libavg.avg.PolyLineNode"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.PolyLineNode</span></code></a></p>
+<p>An unfilled arc (incomplete circle) from <a class="reference internal" href="#libavg.geom.Arc.startangle" title="libavg.geom.Arc.startangle"><code class="xref py py-attr docutils literal"><span class="pre">startangle</span></code></a> to
+<a class="reference internal" href="#libavg.geom.Arc.endangle" title="libavg.geom.Arc.endangle"><code class="xref py py-attr docutils literal"><span class="pre">endangle</span></code></a>. <a class="reference internal" href="#libavg.geom.Arc.pos" title="libavg.geom.Arc.pos"><code class="xref py py-attr docutils literal"><span class="pre">pos</span></code></a> is the center of the circle.</p>
+<dl class="attribute">
+<dt id="libavg.geom.Arc.endangle">
+<code class="descname">endangle</code><a class="headerlink" href="#libavg.geom.Arc.endangle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.geom.Arc.pos">
+<code class="descname">pos</code><a class="headerlink" href="#libavg.geom.Arc.pos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.geom.Arc.radius">
+<code class="descname">radius</code><a class="headerlink" href="#libavg.geom.Arc.radius" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.geom.Arc.startangle">
+<code class="descname">startangle</code><a class="headerlink" href="#libavg.geom.Arc.startangle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.geom.PieSlice">
+<em class="property">class </em><code class="descclassname">libavg.geom.</code><code class="descname">PieSlice</code><span class="sig-paren">(</span><em>radius</em>, <em>startangle</em>, <em>endangle</em><span class="optional">[</span>, <em>pos=(0</em>, <em>0)</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.geom.PieSlice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.PolygonNode" title="libavg.avg.PolygonNode"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.PolygonNode</span></code></a></p>
+<p>An arc (incomplete circle) from <a class="reference internal" href="#libavg.geom.PieSlice.startangle" title="libavg.geom.PieSlice.startangle"><code class="xref py py-attr docutils literal"><span class="pre">startangle</span></code></a> to
+<a class="reference internal" href="#libavg.geom.PieSlice.endangle" title="libavg.geom.PieSlice.endangle"><code class="xref py py-attr docutils literal"><span class="pre">endangle</span></code></a> connected to the center of the circle. <a class="reference internal" href="#libavg.geom.PieSlice.pos" title="libavg.geom.PieSlice.pos"><code class="xref py py-attr docutils literal"><span class="pre">pos</span></code></a> is the
+center of the circle. A <a class="reference internal" href="#libavg.geom.PieSlice" title="libavg.geom.PieSlice"><code class="xref py py-class docutils literal"><span class="pre">PieSlice</span></code></a> can be filled.</p>
+<dl class="attribute">
+<dt id="libavg.geom.PieSlice.endangle">
+<code class="descname">endangle</code><a class="headerlink" href="#libavg.geom.PieSlice.endangle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.geom.PieSlice.pos">
+<code class="descname">pos</code><a class="headerlink" href="#libavg.geom.PieSlice.pos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.geom.PieSlice.radius">
+<code class="descname">radius</code><a class="headerlink" href="#libavg.geom.PieSlice.radius" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.geom.PieSlice.startangle">
+<code class="descname">startangle</code><a class="headerlink" href="#libavg.geom.PieSlice.startangle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.geom.RoundedRect">
+<em class="property">class </em><code class="descclassname">libavg.geom.</code><code class="descname">RoundedRect</code><span class="sig-paren">(</span><em>size</em>, <em>radius</em>, <em>pos</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.geom.RoundedRect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.PolygonNode" title="libavg.avg.PolygonNode"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.PolygonNode</span></code></a></p>
+<p>A rectangle with rounded corners. <a class="reference internal" href="#libavg.geom.RoundedRect.radius" title="libavg.geom.RoundedRect.radius"><code class="xref py py-attr docutils literal"><span class="pre">radius</span></code></a> is the corner radius.</p>
+<dl class="attribute">
+<dt id="libavg.geom.RoundedRect.pos">
+<code class="descname">pos</code><a class="headerlink" href="#libavg.geom.RoundedRect.pos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.geom.RoundedRect.radius">
+<code class="descname">radius</code><a class="headerlink" href="#libavg.geom.RoundedRect.radius" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.geom.RoundedRect.size">
+<code class="descname">size</code><a class="headerlink" href="#libavg.geom.RoundedRect.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="events.html" title="Input Handling"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="areanodes.html" title="Area Nodes"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">libavg 1.8.dev documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, Ulrich von Zadow.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.6.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>libavg.AVGMTAppStarter'</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="libavg-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="../index.php">libavg</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="libavg-module.html">Package&nbsp;libavg</a> ::
+        Module&nbsp;AVGMTAppStarter'
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="libavg.AVGMTAppStarter%27-module.html">Module libavg.AVGMTAppStarter'</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment"># libavg - Media Playback Engine.</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Copyright (C) 2003-2008 Ulrich von Zadow</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># This library is free software; you can redistribute it and/or</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># modify it under the terms of the GNU Lesser General Public</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># License as published by the Free Software Foundation; either</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># version 2 of the License, or (at your option) any later version.</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># This library is distributed in the hope that it will be useful,</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># but WITHOUT ANY WARRANTY; without even the implied warranty of</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Lesser General Public License for more details.</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># You should have received a copy of the GNU Lesser General Public</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># License along with this library; if not, write to the Free Software</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Current versions can be found at www.libavg.de</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Original author of this file is Martin Heistermann &lt;mh at sponc dot de&gt;</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">math</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package libavg=libavg-module.html"><a title="libavg" class="py-name" href="#" onclick="return doclink('link-0', 'libavg', 'link-0');">libavg</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Module libavg.avg=libavg.avg-module.html"><a title="libavg.avg" class="py-name" href="#" onclick="return doclink('link-1', 'avg', 'link-1');">avg</a></tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-2" class="py-name" targets="Class libavg.AVGAppStarter'.AVGAppStarter=libavg.AVGAppStarter%27.AVGAppStarter-class.html"><a title="libavg.AVGAppStarter'.AVGAppStarter" class="py-name" href="#" onclick="return doclink('link-2', 'AVGAppStarter', 'link-2');">AVGAppStarter</a></tt> <tt class="py-keyword">import</tt> <tt id="link-3" class="py-name"><a title="libavg.AVGAppStarter'.AVGAppStarter" class="py-name" href="#" onclick="return doclink('link-3', 'AVGAppStarter', 'link-2');">AVGAppStarter</a></tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">    <tt class="py-keyword">from</tt> <tt class="py-name">alib</tt><tt class="py-op">.</tt><tt class="py-name">calibrator</tt><tt class="py-op">.</tt><tt class="py-name">CamCalibrator</tt> <tt class="py-keyword">import</tt> <tt class="py-name">Calibrator</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-keyword">except</tt> <tt class="py-name">ImportError</tt><tt class="py-op">:</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">    <tt class="py-keyword">from</tt> <tt class="py-op">.</tt><tt class="py-name">camcalibrator</tt> <tt class="py-keyword">import</tt> <tt class="py-name">CamCalibrator</tt> <tt class="py-keyword">as</tt> <tt class="py-name">Calibrator</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">     </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">    <tt class="py-keyword">from</tt> <tt class="py-name">alib</tt><tt class="py-op">.</tt><tt class="py-name">clicktest</tt> <tt class="py-keyword">import</tt> <tt class="py-name">ClickTest</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-keyword">except</tt> <tt class="py-name">ImportError</tt><tt class="py-op">:</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">    <tt class="py-name">ClickTest</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt id="link-4" class="py-name" targets="Variable libavg.AVGAppStarter'.g_player=libavg.AVGAppStarter%27-module.html#g_player,Variable libavg.AVGAppStarterHelp.g_player=libavg.AVGAppStarterHelp-module.html#g_player,Variable libavg.AVGAppUtil.g_player=libavg.AVGAppUtil-module.html#g_player,Variable libavg.AVGMTAppStarter'.g_player=libavg.AVGMTAppStarter%27-module.html#g_player,Variable libavg.grabbable.g_player=libavg.grabbable-module.html#g_player,Variable libavg.trackerhelper.g_player=libavg.trackerhelper-module.html#g_player"><a title="libavg.AVGAppStarter'.g_player
+libavg.AVGAppStarterHelp.g_player
+libavg.AVGAppUtil.g_player
+libavg.AVGMTAppStarter'.g_player
+libavg.grabbable.g_player
+libavg.trackerhelper.g_player" class="py-name" href="#" onclick="return doclink('link-4', 'g_player', 'link-4');">g_player</a></tt> <tt class="py-op">=</tt> <tt id="link-5" class="py-name"><a title="libavg.avg" class="py-name" href="#" onclick="return doclink('link-5', 'avg', 'link-1');">avg</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Class libavg.avg.Player=libavg.avg.Player-class.html,Variable libavg.mtemu.Player=libavg.mtemu-module.html#Player"><a title="libavg.avg.Player
+libavg.mtemu.Player" class="py-name" href="#" onclick="return doclink('link-6', 'Player', 'link-6');">Player</a></tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Method libavg.avg.ConradRelais.get()=libavg.avg.ConradRelais-class.html#get,Static Method libavg.avg.Logger.get()=libavg.avg.Logger-class.html#get,Static Method libavg.avg.Player.get()=libavg.avg.Player-class.html#get"><a title="libavg.avg.ConradRelais.get
+libavg.avg.Logger.get
+libavg.avg.Player.get" class="py-name" href="#" onclick="return doclink('link-7', 'get', 'link-7');">get</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"> </tt>
+<a name="AVGMTAppStarter"></a><div id="AVGMTAppStarter-def"><a name="L40"></a><tt class="py-lineno"> 40</tt> <a class="py-toggle" href="#" id="AVGMTAppStarter-toggle" onclick="return toggle('AVGMTAppStarter');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="libavg.AVGMTAppStarter'.AVGMTAppStarter-class.html">AVGMTAppStarter</a> <tt class="py-op">(</tt><tt class="py-base-class">AVGAppStarter</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="AVGMTAppStarter-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="AVGMTAppStarter-expanded"><a name="AVGMTAppStarter.__init__"></a><div id="AVGMTAppStarter.__init__-def"><a name="L41"></a><tt class="py-lineno"> 41</tt> <a class="py-toggle" href="#" id="AVGMTAppStarter.__init__-toggle" onclick="return toggle('AVGMTAppStarter.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.AVGMTAppStarter'.AVGMTAppStarter-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kwargs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="AVGMTAppStarter.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="AVGMTAppStarter.__init__-expanded"><a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt id="link-8" class="py-name" targets="Class libavg.AVGMTAppStarter'.AVGMTAppStarter=libavg.AVGMTAppStarter%27.AVGMTAppStarter-class.html"><a title="libavg.AVGMTAppStarter'.AVGMTAppStarter" class="py-name" href="#" onclick="return doclink('link-8', 'AVGMTAppStarter', 'link-8');">AVGMTAppStarter</a></tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Variable libavg.AVGMTAppStarter'.AVGMTAppStarter.instance=libavg.AVGMTAppStarter%27.AVGMTAppStarter-class.html#instance"><a title="libavg.AVGMTAppStarter'.AVGMTAppStarter.instance" class="py-name" href="#" onclick="return doclink('link-9', 'instance', 'link-9');">instance</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-10" class="py-name"><a title="libavg.AVGMTAppStarter'.AVGMTAppStarter" class="py-name" href="#" onclick="return doclink('link-10', 'AVGMTAppStarter', 'link-8');">AVGMTAppStarter</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Method libavg.AVGApp'.AVGApp.__init__()=libavg.AVGApp%27.AVGApp-class.html#__init__,Method libavg.AVGAppStarter'.AVGAppStarter.__init__()=libavg.AVGAppStarter%27.AVGAppStarter-class.html#__init__,Method libavg.AVGAppStarter'.Graph.__init__()=libavg.AVGAppStarter%27.Graph-class.html#__init__,Method libavg.AVGAppStarterHelp.MThelp.__init__()=libavg.AVGAppStarterHelp.MThelp-class.html#__init__,Method libavg.AVGMTAppStarter'.AVGMTAppStarter.__init__()=libavg.AVGMTAppStarter%27.AVGMTAppStarter-class.html#__init__,Method libavg.anim.AnimTransition.__init__()=libavg.anim.AnimTransition-class.html#__init__,Method libavg.anim.ContinuousAnim.__init__()=libavg.anim.ContinuousAnim-class.html#__init__,Method libavg.anim.EaseInOutAnim.__init__()=libavg.anim.EaseInOutAnim-class.html#__init__,Method libavg.anim.LinearAnim.__init__()=libavg.anim.LinearAnim-class.html#__init__,Method libavg.anim.ParallelAnim.__init__()=libavg.anim.ParallelAnim-class.html#__init__,Method libavg.anim.SimpleAnim.__init__()=libavg.anim.SimpleAnim-class.html#__init__,Method libavg.anim.SplineAnim.__init__()=libavg.anim.SplineAnim-class.html#__init__,Method libavg.anim.StateAnim.__init__()=libavg.anim.StateAnim-class.html#__init__,Method libavg.anim.WaitAnim.__init__()=libavg.anim.WaitAnim-class.html#__init__,Method libavg.avg.Anim.__init__()=libavg.avg.Anim-class.html#__init__,Method libavg.avg.AnimState.__init__()=libavg.avg.AnimState-class.html#__init__,Method libavg.avg.Bitmap.__init__()=libavg.avg.Bitmap-class.html#__init__,Method libavg.avg.ConradRelais.__init__()=libavg.avg.ConradRelais-class.html#__init__,Method libavg.avg.ConstPoint2D.__init__()=libavg.avg.ConstPoint2D-class.html#__init__,Method libavg.avg.ContinuousAnim.__init__()=libavg.avg.ContinuousAnim-class.html#__init__,Method libavg.avg.EaseInOutAnim.__init__()=libavg.avg.EaseInOutAnim-class.html#__init__,Method libavg.avg.Event.__init__()=libavg.avg.Event-class.html#__init__,Method libavg.avg.LinearAnim.__init__()=libavg.avg.LinearAnim-class.html#__init__,Method libavg.avg.Logger.__init__()=libavg.avg.Logger-class.html#__init__,Method libavg.avg.Node.__init__()=libavg.avg.Node-class.html#__init__,Method libavg.avg.ParPort.__init__()=libavg.avg.ParPort-class.html#__init__,Method libavg.avg.ParallelAnim.__init__()=libavg.avg.ParallelAnim-class.html#__init__,Method libavg.avg.Player.__init__()=libavg.avg.Player-class.html#__init__,Method libavg.avg.Point2D.__init__()=libavg.avg.Point2D-class.html#__init__,Method libavg.avg.StateAnim.__init__()=libavg.avg.StateAnim-class.html#__init__,Method libavg.avg.TestHelper.__init__()=libavg.avg.TestHelper-class.html#__init__,Method libavg.avg.Tracker.__init__()=libavg.avg.Tracker-class.html#__init__,Method libavg.avg.TrackerCalibrator.__init__()=libavg.avg.TrackerCalibrator-class.html#__init__,Method libavg.avg.WaitAnim.__init__()=libavg.avg.WaitAnim-class.html#__init__,Method libavg.button.Button.__init__()=libavg.button.Button-class.html#__init__,Method libavg.button.Checkbox.__init__()=libavg.button.Checkbox-class.html#__init__,Method libavg.button.Radio.__init__()=libavg.button.Radio-class.html#__init__,Method libavg.clusteredEventList.Centroid.__init__()=libavg.clusteredEventList.Centroid-class.html#__init__,Method libavg.clusteredEventList.ClusteredEventList.__init__()=libavg.clusteredEventList.ClusteredEventList-class.html#__init__,Method libavg.draggable.Draggable.__init__()=libavg.draggable.Draggable-class.html#__init__,Method libavg.eventList.Cursor.__init__()=libavg.eventList.Cursor-class.html#__init__,Method libavg.eventList.EventCursor.__init__()=libavg.eventList.EventCursor-class.html#__init__,Method libavg.eventList.EventList.__init__()=libavg.eventList.EventList-class.html#__init__,Method libavg.grabbable.Grabbable.__init__()=libavg.grabbable.Grabbable-class.html#__init__,Method libavg.mathutil.MovingAverage.__init__()=libavg.mathutil.MovingAverage-class.html#__init__,Method libavg.mtemu.MTemu.__init__()=libavg.mtemu.MTemu-class.html#__init__,Method libavg.textarea.FocusContext.__init__()=libavg.textarea.FocusContext-class.html#__init__,Method libavg.textarea.TextArea.__init__()=libavg.textarea.TextArea-class.html#__init__,Method libavg.trackerhelper.TrackerImageFlipper.__init__()=libavg.trackerhelper.TrackerImageFlipper-class.html#__init__"><a title="libavg.AVGApp'.AVGApp.__init__
+libavg.AVGAppStarter'.AVGAppStarter.__init__
+libavg.AVGAppStarter'.Graph.__init__
+libavg.AVGAppStarterHelp.MThelp.__init__
+libavg.AVGMTAppStarter'.AVGMTAppStarter.__init__
+libavg.anim.AnimTransition.__init__
+libavg.anim.ContinuousAnim.__init__
+libavg.anim.EaseInOutAnim.__init__
+libavg.anim.LinearAnim.__init__
+libavg.anim.ParallelAnim.__init__
+libavg.anim.SimpleAnim.__init__
+libavg.anim.SplineAnim.__init__
+libavg.anim.StateAnim.__init__
+libavg.anim.WaitAnim.__init__
+libavg.avg.Anim.__init__
+libavg.avg.AnimState.__init__
+libavg.avg.Bitmap.__init__
+libavg.avg.ConradRelais.__init__
+libavg.avg.ConstPoint2D.__init__
+libavg.avg.ContinuousAnim.__init__
+libavg.avg.EaseInOutAnim.__init__
+libavg.avg.Event.__init__
+libavg.avg.LinearAnim.__init__
+libavg.avg.Logger.__init__
+libavg.avg.Node.__init__
+libavg.avg.ParPort.__init__
+libavg.avg.ParallelAnim.__init__
+libavg.avg.Player.__init__
+libavg.avg.Point2D.__init__
+libavg.avg.StateAnim.__init__
+libavg.avg.TestHelper.__init__
+libavg.avg.Tracker.__init__
+libavg.avg.TrackerCalibrator.__init__
+libavg.avg.WaitAnim.__init__
+libavg.button.Button.__init__
+libavg.button.Checkbox.__init__
+libavg.button.Radio.__init__
+libavg.clusteredEventList.Centroid.__init__
+libavg.clusteredEventList.ClusteredEventList.__init__
+libavg.draggable.Draggable.__init__
+libavg.eventList.Cursor.__init__
+libavg.eventList.EventCursor.__init__
+libavg.eventList.EventList.__init__
+libavg.grabbable.Grabbable.__init__
+libavg.mathutil.MovingAverage.__init__
+libavg.mtemu.MTemu.__init__
+libavg.textarea.FocusContext.__init__
+libavg.textarea.TextArea.__init__
+libavg.trackerhelper.TrackerImageFlipper.__init__" class="py-name" href="#" onclick="return doclink('link-11', '__init__', 'link-11');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-name">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">kwargs</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"> </tt>
+<a name="AVGMTAppStarter.toggleTrackerImage"></a><div id="AVGMTAppStarter.toggleTrackerImage-def"><a name="L45"></a><tt class="py-lineno"> 45</tt> <a class="py-toggle" href="#" id="AVGMTAppStarter.toggleTrackerImage-toggle" onclick="return toggle('AVGMTAppStarter.toggleTrackerImage');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.AVGMTAppStarter'.AVGMTAppStarter-class.html#toggleTrackerImage">toggleTrackerImage</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="AVGMTAppStarter.toggleTrackerImage-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="AVGMTAppStarter.toggleTrackerImage-expanded"><a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__showTrackerImage</tt><tt class="py-op">:</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Method libavg.AVGMTAppStarter'.AVGMTAppStarter.hideTrackerImage()=libavg.AVGMTAppStarter%27.AVGMTAppStarter-class.html#hideTrackerImage"><a title="libavg.AVGMTAppStarter'.AVGMTAppStarter.hideTrackerImage" class="py-name" href="#" onclick="return doclink('link-12', 'hideTrackerImage', 'link-12');">hideTrackerImage</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Method libavg.AVGMTAppStarter'.AVGMTAppStarter.showTrackerImage()=libavg.AVGMTAppStarter%27.AVGMTAppStarter-class.html#showTrackerImage"><a title="libavg.AVGMTAppStarter'.AVGMTAppStarter.showTrackerImage" class="py-name" href="#" onclick="return doclink('link-13', 'showTrackerImage', 'link-13');">showTrackerImage</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"> </tt>
+<a name="AVGMTAppStarter.showTrackerImage"></a><div id="AVGMTAppStarter.showTrackerImage-def"><a name="L51"></a><tt class="py-lineno"> 51</tt> <a class="py-toggle" href="#" id="AVGMTAppStarter.showTrackerImage-toggle" onclick="return toggle('AVGMTAppStarter.showTrackerImage');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.AVGMTAppStarter'.AVGMTAppStarter-class.html#showTrackerImage">showTrackerImage</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="AVGMTAppStarter.showTrackerImage-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="AVGMTAppStarter.showTrackerImage-expanded"><a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__showTrackerImage</tt><tt class="py-op">:</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__showTrackerImage</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__updateTrackerImageInterval</tt> <tt class="py-op">=</tt> \ </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">                <tt id="link-14" class="py-name"><a title="libavg.AVGAppStarter'.g_player
+libavg.AVGAppStarterHelp.g_player
+libavg.AVGAppUtil.g_player
+libavg.AVGMTAppStarter'.g_player
+libavg.grabbable.g_player
+libavg.trackerhelper.g_player" class="py-name" href="#" onclick="return doclink('link-14', 'g_player', 'link-4');">g_player</a></tt><tt class="py-op">.</tt><tt id="link-15" class="py-name" targets="Method libavg.avg.Player.setOnFrameHandler()=libavg.avg.Player-class.html#setOnFrameHandler"><a title="libavg.avg.Player.setOnFrameHandler" class="py-name" href="#" onclick="return doclink('link-15', 'setOnFrameHandler', 'link-15');">setOnFrameHandler</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__updateTrackerImage</tt><tt class="py-op">)</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__trackerImageNode</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name" targets="Variable libavg.avg.Node.opacity=libavg.avg.Node-class.html#opacity"><a title="libavg.avg.Node.opacity" class="py-name" href="#" onclick="return doclink('link-16', 'opacity', 'link-16');">opacity</a></tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tracker</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name" targets="Method libavg.avg.Tracker.setDebugImages()=libavg.avg.Tracker-class.html#setDebugImages"><a title="libavg.avg.Tracker.setDebugImages" class="py-name" href="#" onclick="return doclink('link-17', 'setDebugImages', 'link-17');">setDebugImages</a></tt><tt class="py-op">(</tt><tt class="py-name">False</tt><tt class="py-op">,</tt> <tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"> </tt>
+<a name="AVGMTAppStarter.hideTrackerImage"></a><div id="AVGMTAppStarter.hideTrackerImage-def"><a name="L60"></a><tt class="py-lineno"> 60</tt> <a class="py-toggle" href="#" id="AVGMTAppStarter.hideTrackerImage-toggle" onclick="return toggle('AVGMTAppStarter.hideTrackerImage');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.AVGMTAppStarter'.AVGMTAppStarter-class.html#hideTrackerImage">hideTrackerImage</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="AVGMTAppStarter.hideTrackerImage-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="AVGMTAppStarter.hideTrackerImage-expanded"><a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__showTrackerImage</tt><tt class="py-op">:</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__showTrackerImage</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__updateTrackerImageInterval</tt><tt class="py-op">:</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">            <tt id="link-18" class="py-name"><a title="libavg.AVGAppStarter'.g_player
+libavg.AVGAppStarterHelp.g_player
+libavg.AVGAppUtil.g_player
+libavg.AVGMTAppStarter'.g_player
+libavg.grabbable.g_player
+libavg.trackerhelper.g_player" class="py-name" href="#" onclick="return doclink('link-18', 'g_player', 'link-4');">g_player</a></tt><tt class="py-op">.</tt><tt id="link-19" class="py-name" targets="Method libavg.avg.Player.clearInterval()=libavg.avg.Player-class.html#clearInterval"><a title="libavg.avg.Player.clearInterval" class="py-name" href="#" onclick="return doclink('link-19', 'clearInterval', 'link-19');">clearInterval</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__updateTrackerImageInterval</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__updateTrackerImageInterval</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__trackerImageNode</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name"><a title="libavg.avg.Node.opacity" class="py-name" href="#" onclick="return doclink('link-20', 'opacity', 'link-16');">opacity</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tracker</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name"><a title="libavg.avg.Tracker.setDebugImages" class="py-name" href="#" onclick="return doclink('link-21', 'setDebugImages', 'link-17');">setDebugImages</a></tt><tt class="py-op">(</tt><tt class="py-name">False</tt><tt class="py-op">,</tt> <tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"> </tt>
+<a name="AVGMTAppStarter.__updateTrackerImage"></a><div id="AVGMTAppStarter.__updateTrackerImage-def"><a name="L70"></a><tt class="py-lineno"> 70</tt> <a class="py-toggle" href="#" id="AVGMTAppStarter.__updateTrackerImage-toggle" onclick="return toggle('AVGMTAppStarter.__updateTrackerImage');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.AVGMTAppStarter'.AVGMTAppStarter-class.html#__updateTrackerImage">__updateTrackerImage</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="AVGMTAppStarter.__updateTrackerImage-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="AVGMTAppStarter.__updateTrackerImage-expanded"><a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">        <tt class="py-keyword">def</tt> <tt class="py-def-name">transformPos</tt><tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-param">x</tt><tt class="py-op">,</tt><tt class="py-param">y</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">trackerFlipX</tt><tt class="py-op">:</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">                <tt id="link-22" class="py-name" targets="Variable libavg.avg.AreaNode.x=libavg.avg.AreaNode-class.html#x,Variable libavg.avg.CircleNode.x=libavg.avg.CircleNode-class.html#x,Variable libavg.avg.ConstPoint2D.x=libavg.avg.ConstPoint2D-class.html#x,Variable libavg.avg.MouseEvent.x=libavg.avg.MouseEvent-class.html#x,Variable libavg.avg.Point2D.x=libavg.avg.Point2D-class.html#x,Variable libavg.avg.RectNode.x=libavg.avg.RectNode-class.html#x,Variable libavg.avg.TouchEvent.x=libavg.avg.TouchEvent-class.html#x,Variable libavg.eventList.Cursor.x=libavg.eventList.Cursor-class.html#x"><a title="libavg.avg.AreaNode.x
+libavg.avg.CircleNode.x
+libavg.avg.ConstPoint2D.x
+libavg.avg.MouseEvent.x
+libavg.avg.Point2D.x
+libavg.avg.RectNode.x
+libavg.avg.TouchEvent.x
+libavg.eventList.Cursor.x" class="py-name" href="#" onclick="return doclink('link-22', 'x', 'link-22');">x</a></tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> <tt class="py-op">-</tt> <tt id="link-23" class="py-name"><a title="libavg.avg.AreaNode.x
+libavg.avg.CircleNode.x
+libavg.avg.ConstPoint2D.x
+libavg.avg.MouseEvent.x
+libavg.avg.Point2D.x
+libavg.avg.RectNode.x
+libavg.avg.TouchEvent.x
+libavg.eventList.Cursor.x" class="py-name" href="#" onclick="return doclink('link-23', 'x', 'link-22');">x</a></tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">trackerFlipY</tt><tt class="py-op">:</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">                <tt id="link-24" class="py-name" targets="Variable libavg.avg.AreaNode.y=libavg.avg.AreaNode-class.html#y,Variable libavg.avg.CircleNode.y=libavg.avg.CircleNode-class.html#y,Variable libavg.avg.ConstPoint2D.y=libavg.avg.ConstPoint2D-class.html#y,Variable libavg.avg.MouseEvent.y=libavg.avg.MouseEvent-class.html#y,Variable libavg.avg.Point2D.y=libavg.avg.Point2D-class.html#y,Variable libavg.avg.RectNode.y=libavg.avg.RectNode-class.html#y,Variable libavg.avg.TouchEvent.y=libavg.avg.TouchEvent-class.html#y,Variable libavg.eventList.Cursor.y=libavg.eventList.Cursor-class.html#y"><a title="libavg.avg.AreaNode.y
+libavg.avg.CircleNode.y
+libavg.avg.ConstPoint2D.y
+libavg.avg.MouseEvent.y
+libavg.avg.Point2D.y
+libavg.avg.RectNode.y
+libavg.avg.TouchEvent.y
+libavg.eventList.Cursor.y" class="py-name" href="#" onclick="return doclink('link-24', 'y', 'link-24');">y</a></tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> <tt class="py-op">-</tt> <tt id="link-25" class="py-name"><a title="libavg.avg.AreaNode.y
+libavg.avg.CircleNode.y
+libavg.avg.ConstPoint2D.y
+libavg.avg.MouseEvent.y
+libavg.avg.Point2D.y
+libavg.avg.RectNode.y
+libavg.avg.TouchEvent.y
+libavg.eventList.Cursor.y" class="py-name" href="#" onclick="return doclink('link-25', 'y', 'link-24');">y</a></tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-op">(</tt><tt id="link-26" class="py-name"><a title="libavg.avg.AreaNode.x
+libavg.avg.CircleNode.x
+libavg.avg.ConstPoint2D.x
+libavg.avg.MouseEvent.x
+libavg.avg.Point2D.x
+libavg.avg.RectNode.x
+libavg.avg.TouchEvent.x
+libavg.eventList.Cursor.x" class="py-name" href="#" onclick="return doclink('link-26', 'x', 'link-22');">x</a></tt><tt class="py-op">,</tt> <tt id="link-27" class="py-name"><a title="libavg.avg.AreaNode.y
+libavg.avg.CircleNode.y
+libavg.avg.ConstPoint2D.y
+libavg.avg.MouseEvent.y
+libavg.avg.Point2D.y
+libavg.avg.RectNode.y
+libavg.avg.TouchEvent.y
+libavg.eventList.Cursor.y" class="py-name" href="#" onclick="return doclink('link-27', 'y', 'link-24');">y</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">        <tt class="py-name">fingerBitmap</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tracker</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Method libavg.avg.Tracker.getImage()=libavg.avg.Tracker-class.html#getImage"><a title="libavg.avg.Tracker.getImage" class="py-name" href="#" onclick="return doclink('link-28', 'getImage', 'link-28');">getImage</a></tt><tt class="py-op">(</tt><tt id="link-29" class="py-name"><a title="libavg.avg" class="py-name" href="#" onclick="return doclink('link-29', 'avg', 'link-1');">avg</a></tt><tt class="py-op">.</tt><tt id="link-30" class="py-name" targets="Variable libavg.IMG_FINGERS=libavg-module.html#IMG_FINGERS,Variable libavg.TrackerImageID.IMG_FINGERS=libavg.TrackerImageID-class.html#IMG_FINGERS,Variable libavg.avg.IMG_FINGERS=libavg.avg-module.html#IMG_FINGERS"><a title="libavg.IMG_FINGERS
+libavg.TrackerImageID.IMG_FINGERS
+libavg.avg.IMG_FINGERS" class="py-name" href="#" onclick="return doclink('link-30', 'IMG_FINGERS', 'link-30');">IMG_FINGERS</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">        <tt id="link-31" class="py-name" targets="Variable libavg.avg.MouseEvent.node=libavg.avg.MouseEvent-class.html#node,Variable libavg.avg.TouchEvent.node=libavg.avg.TouchEvent-class.html#node"><a title="libavg.avg.MouseEvent.node
+libavg.avg.TouchEvent.node" class="py-name" href="#" onclick="return doclink('link-31', 'node', 'link-31');">node</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__trackerImageNode</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">        <tt id="link-32" class="py-name"><a title="libavg.avg.MouseEvent.node
+libavg.avg.TouchEvent.node" class="py-name" href="#" onclick="return doclink('link-32', 'node', 'link-31');">node</a></tt><tt class="py-op">.</tt><tt id="link-33" class="py-name" targets="Method libavg.avg.Image.setBitmap()=libavg.avg.Image-class.html#setBitmap,Method libavg.avg.VectorNode.setBitmap()=libavg.avg.VectorNode-class.html#setBitmap"><a title="libavg.avg.Image.setBitmap
+libavg.avg.VectorNode.setBitmap" class="py-name" href="#" onclick="return doclink('link-33', 'setBitmap', 'link-33');">setBitmap</a></tt><tt class="py-op">(</tt><tt class="py-name">fingerBitmap</tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">        <tt id="link-34" class="py-name"><a title="libavg.avg.MouseEvent.node
+libavg.avg.TouchEvent.node" class="py-name" href="#" onclick="return doclink('link-34', 'node', 'link-31');">node</a></tt><tt class="py-op">.</tt><tt id="link-35" class="py-name" targets="Variable libavg.avg.AreaNode.size=libavg.avg.AreaNode-class.html#size,Variable libavg.avg.RectNode.size=libavg.avg.RectNode-class.html#size"><a title="libavg.avg.AreaNode.size
+libavg.avg.RectNode.size" class="py-name" href="#" onclick="return doclink('link-35', 'size', 'link-35');">size</a></tt> <tt class="py-op">=</tt> <tt id="link-36" class="py-name"><a title="libavg.AVGAppStarter'.g_player
+libavg.AVGAppStarterHelp.g_player
+libavg.AVGAppUtil.g_player
+libavg.AVGMTAppStarter'.g_player
+libavg.grabbable.g_player
+libavg.trackerhelper.g_player" class="py-name" href="#" onclick="return doclink('link-36', 'g_player', 'link-4');">g_player</a></tt><tt class="py-op">.</tt><tt id="link-37" class="py-name" targets="Method libavg.avg.Player.getRootNode()=libavg.avg.Player-class.html#getRootNode"><a title="libavg.avg.Player.getRootNode" class="py-name" href="#" onclick="return doclink('link-37', 'getRootNode', 'link-37');">getRootNode</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-38" class="py-name"><a title="libavg.avg.AreaNode.size
+libavg.avg.RectNode.size" class="py-name" href="#" onclick="return doclink('link-38', 'size', 'link-35');">size</a></tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">        <tt class="py-name">grid</tt> <tt class="py-op">=</tt> <tt id="link-39" class="py-name"><a title="libavg.avg.MouseEvent.node
+libavg.avg.TouchEvent.node" class="py-name" href="#" onclick="return doclink('link-39', 'node', 'link-31');">node</a></tt><tt class="py-op">.</tt><tt id="link-40" class="py-name" targets="Method libavg.avg.RasterNode.getOrigVertexCoords()=libavg.avg.RasterNode-class.html#getOrigVertexCoords"><a title="libavg.avg.RasterNode.getOrigVertexCoords" class="py-name" href="#" onclick="return doclink('link-40', 'getOrigVertexCoords', 'link-40');">getOrigVertexCoords</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">        <tt class="py-name">grid</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt> <tt class="py-op">[</tt> <tt id="link-41" class="py-name" targets="Method libavg.trackerhelper.TrackerImageFlipper.transformPos()=libavg.trackerhelper.TrackerImageFlipper-class.html#transformPos"><a title="libavg.trackerhelper.TrackerImageFlipper.transformPos" class="py-name" href="#" onclick="return doclink('link-41', 'transformPos', 'link-41');">transformPos</a></tt><tt class="py-op">(</tt><tt id="link-42" class="py-name" targets="Variable libavg.avg.AreaNode.pos=libavg.avg.AreaNode-class.html#pos,Variable libavg.avg.CircleNode.pos=libavg.avg.CircleNode-class.html#pos,Variable libavg.avg.MouseEvent.pos=libavg.avg.MouseEvent-class.html#pos,Variable libavg.avg.PolyLineNode.pos=libavg.avg.PolyLineNode-class.html#pos,Variable libavg.avg.PolygonNode.pos=libavg.avg.PolygonNode-class.html#pos,Variable libavg.avg.RectNode.pos=libavg.avg.RectNode-class.html#pos,Variable libavg.avg.TouchEvent.pos=libavg.avg.TouchEvent-class.html#pos"><a title="libavg.avg.AreaNode.pos
+libavg.avg.CircleNode.pos
+libavg.avg.MouseEvent.pos
+libavg.avg.PolyLineNode.pos
+libavg.avg.PolygonNode.pos
+libavg.avg.RectNode.pos
+libavg.avg.TouchEvent.pos" class="py-name" href="#" onclick="return doclink('link-42', 'pos', 'link-42');">pos</a></tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt id="link-43" class="py-name"><a title="libavg.avg.AreaNode.pos
+libavg.avg.CircleNode.pos
+libavg.avg.MouseEvent.pos
+libavg.avg.PolyLineNode.pos
+libavg.avg.PolygonNode.pos
+libavg.avg.RectNode.pos
+libavg.avg.TouchEvent.pos" class="py-name" href="#" onclick="return doclink('link-43', 'pos', 'link-42');">pos</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">line</tt> <tt class="py-op">]</tt> <tt class="py-keyword">for</tt> <tt class="py-name">line</tt> <tt class="py-keyword">in</tt> <tt class="py-name">grid</tt><tt class="py-op">]</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">        <tt id="link-44" class="py-name"><a title="libavg.avg.MouseEvent.node
+libavg.avg.TouchEvent.node" class="py-name" href="#" onclick="return doclink('link-44', 'node', 'link-31');">node</a></tt><tt class="py-op">.</tt><tt id="link-45" class="py-name" targets="Method libavg.avg.RasterNode.setWarpedVertexCoords()=libavg.avg.RasterNode-class.html#setWarpedVertexCoords"><a title="libavg.avg.RasterNode.setWarpedVertexCoords" class="py-name" href="#" onclick="return doclink('link-45', 'setWarpedVertexCoords', 'link-45');">setWarpedVertexCoords</a></tt><tt class="py-op">(</tt><tt class="py-name">grid</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"> </tt>
+<a name="AVGMTAppStarter._onBeforePlay"></a><div id="AVGMTAppStarter._onBeforePlay-def"><a name="L87"></a><tt class="py-lineno"> 87</tt> <a class="py-toggle" href="#" id="AVGMTAppStarter._onBeforePlay-toggle" onclick="return toggle('AVGMTAppStarter._onBeforePlay');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.AVGMTAppStarter'.AVGMTAppStarter-class.html#_onBeforePlay">_onBeforePlay</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="AVGMTAppStarter._onBeforePlay-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="AVGMTAppStarter._onBeforePlay-expanded"><a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt class="py-comment"># we must add the tracker first, calibrator depends on it</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tracker</tt> <tt class="py-op">=</tt> <tt id="link-46" class="py-name"><a title="libavg.AVGAppStarter'.g_player
+libavg.AVGAppStarterHelp.g_player
+libavg.AVGAppUtil.g_player
+libavg.AVGMTAppStarter'.g_player
+libavg.grabbable.g_player
+libavg.trackerhelper.g_player" class="py-name" href="#" onclick="return doclink('link-46', 'g_player', 'link-4');">g_player</a></tt><tt class="py-op">.</tt><tt id="link-47" class="py-name" targets="Method libavg.avg.Player.addTracker()=libavg.avg.Player-class.html#addTracker"><a title="libavg.avg.Player.addTracker" class="py-name" href="#" onclick="return doclink('link-47', 'addTracker', 'link-47');">addTracker</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">Calibrator</tt><tt class="py-op">:</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__calibratorNode</tt> <tt class="py-op">=</tt> <tt id="link-48" class="py-name"><a title="libavg.AVGAppStarter'.g_player
+libavg.AVGAppStarterHelp.g_player
+libavg.AVGAppUtil.g_player
+libavg.AVGMTAppStarter'.g_player
+libavg.grabbable.g_player
+libavg.trackerhelper.g_player" class="py-name" href="#" onclick="return doclink('link-48', 'g_player', 'link-4');">g_player</a></tt><tt class="py-op">.</tt><tt id="link-49" class="py-name" targets="Method libavg.avg.Player.createNode()=libavg.avg.Player-class.html#createNode"><a title="libavg.avg.Player.createNode" class="py-name" href="#" onclick="return doclink('link-49', 'createNode', 'link-49');">createNode</a></tt><tt class="py-op">(</tt><tt class="py-string">'div'</tt><tt class="py-op">,</tt><tt class="py-op">{</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">                <tt class="py-string">'opacity'</tt><tt class="py-op">:</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">                <tt class="py-string">'active'</tt><tt class="py-op">:</tt> <tt class="py-name">False</tt><tt class="py-op">,</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">                <tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">            <tt class="py-name">rootNode</tt> <tt class="py-op">=</tt> <tt id="link-50" class="py-name"><a title="libavg.AVGAppStarter'.g_player
+libavg.AVGAppStarterHelp.g_player
+libavg.AVGAppUtil.g_player
+libavg.AVGMTAppStarter'.g_player
+libavg.grabbable.g_player
+libavg.trackerhelper.g_player" class="py-name" href="#" onclick="return doclink('link-50', 'g_player', 'link-4');">g_player</a></tt><tt class="py-op">.</tt><tt id="link-51" class="py-name"><a title="libavg.avg.Player.getRootNode" class="py-name" href="#" onclick="return doclink('link-51', 'getRootNode', 'link-37');">getRootNode</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">            <tt class="py-name">rootNode</tt><tt class="py-op">.</tt><tt id="link-52" class="py-name" targets="Method libavg.avg.DivNode.appendChild()=libavg.avg.DivNode-class.html#appendChild"><a title="libavg.avg.DivNode.appendChild" class="py-name" href="#" onclick="return doclink('link-52', 'appendChild', 'link-52');">appendChild</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__calibratorNode</tt><tt class="py-op">)</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__calibratorNode</tt><tt class="py-op">.</tt><tt id="link-53" class="py-name"><a title="libavg.avg.AreaNode.size
+libavg.avg.RectNode.size" class="py-name" href="#" onclick="return doclink('link-53', 'size', 'link-35');">size</a></tt> <tt class="py-op">=</tt> <tt class="py-name">rootNode</tt><tt class="py-op">.</tt><tt id="link-54" class="py-name"><a title="libavg.avg.AreaNode.size
+libavg.avg.RectNode.size" class="py-name" href="#" onclick="return doclink('link-54', 'size', 'link-35');">size</a></tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__calibrator</tt> <tt class="py-op">=</tt> <tt class="py-name">Calibrator</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__calibratorNode</tt><tt class="py-op">,</tt> <tt class="py-name">appStarter</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">)</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__calibrator</tt><tt class="py-op">.</tt><tt class="py-name">setOnCalibrationSuccess</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__onCalibrationSuccess</tt><tt class="py-op">)</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__calibrator</tt><tt class="py-op">.</tt><tt id="link-55" class="py-name" targets="Method libavg.AVGApp'.AVGApp.init()=libavg.AVGApp%27.AVGApp-class.html#init,Function libavg.anim.init()=libavg.anim-module.html#init,Method libavg.avg.ParPort.init()=libavg.avg.ParPort-class.html#init,Function libavg.button.init()=libavg.button-module.html#init,Function libavg.draggable.init()=libavg.draggable-module.html#init,Function libavg.textarea.init()=libavg.textarea-module.html#init"><a title="libavg.AVGApp'.AVGApp.init
+libavg.anim.init
+libavg.avg.ParPort.init
+libavg.button.init
+libavg.draggable.init
+libavg.textarea.init" class="py-name" href="#" onclick="return doclink('link-55', 'init', 'link-55');">init</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__calibrator</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__showTrackerImage</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__updateTrackerImageInterval</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__trackerImageNode</tt> <tt class="py-op">=</tt> <tt id="link-56" class="py-name"><a title="libavg.AVGAppStarter'.g_player
+libavg.AVGAppStarterHelp.g_player
+libavg.AVGAppUtil.g_player
+libavg.AVGMTAppStarter'.g_player
+libavg.grabbable.g_player
+libavg.trackerhelper.g_player" class="py-name" href="#" onclick="return doclink('link-56', 'g_player', 'link-4');">g_player</a></tt><tt class="py-op">.</tt><tt id="link-57" class="py-name"><a title="libavg.avg.Player.createNode" class="py-name" href="#" onclick="return doclink('link-57', 'createNode', 'link-49');">createNode</a></tt><tt class="py-op">(</tt><tt class="py-string">'image'</tt><tt class="py-op">,</tt> <tt class="py-op">{</tt><tt class="py-string">'sensitive'</tt><tt class="py-op">:</tt> <tt class="py-name">False</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt id="link-58" class="py-name"><a title="libavg.AVGAppStarter'.g_player
+libavg.AVGAppStarterHelp.g_player
+libavg.AVGAppUtil.g_player
+libavg.AVGMTAppStarter'.g_player
+libavg.grabbable.g_player
+libavg.trackerhelper.g_player" class="py-name" href="#" onclick="return doclink('link-58', 'g_player', 'link-4');">g_player</a></tt><tt class="py-op">.</tt><tt id="link-59" class="py-name"><a title="libavg.avg.Player.getRootNode" class="py-name" href="#" onclick="return doclink('link-59', 'getRootNode', 'link-37');">getRootNode</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-60" class="py-name"><a title="libavg.avg.DivNode.appendChild" class="py-name" href="#" onclick="return doclink('link-60', 'appendChild', 'link-52');">appendChild</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__trackerImageNode</tt><tt class="py-op">)</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__updateTrackerImageFixup</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">         </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-61" class="py-name" targets="Method libavg.AVGAppStarter'.AVGAppStarter.bindKey()=libavg.AVGAppStarter%27.AVGAppStarter-class.html#bindKey"><a title="libavg.AVGAppStarter'.AVGAppStarter.bindKey" class="py-name" href="#" onclick="return doclink('link-61', 'bindKey', 'link-61');">bindKey</a></tt><tt class="py-op">(</tt><tt class="py-string">'h'</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tracker</tt><tt class="py-op">.</tt><tt id="link-62" class="py-name" targets="Method libavg.avg.Tracker.resetHistory()=libavg.avg.Tracker-class.html#resetHistory"><a title="libavg.avg.Tracker.resetHistory" class="py-name" href="#" onclick="return doclink('link-62', 'resetHistory', 'link-62');">resetHistory</a></tt><tt class="py-op">,</tt> <tt class="py-string">'RESET tracker history'</tt><tt class="py-op">)</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-63" class="py-name"><a title="libavg.AVGAppStarter'.AVGAppStarter.bindKey" class="py-name" href="#" onclick="return doclink('link-63', 'bindKey', 'link-61');">bindKey</a></tt><tt class="py-op">(</tt><tt class="py-string">'d'</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-64" class="py-name" targets="Method libavg.AVGMTAppStarter'.AVGMTAppStarter.toggleTrackerImage()=libavg.AVGMTAppStarter%27.AVGMTAppStarter-class.html#toggleTrackerImage"><a title="libavg.AVGMTAppStarter'.AVGMTAppStarter.toggleTrackerImage" class="py-name" href="#" onclick="return doclink('link-64', 'toggleTrackerImage', 'link-64');">toggleTrackerImage</a></tt><tt class="py-op">,</tt> <tt class="py-string">'toggle tracker image'</tt><tt class="py-op">)</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line"> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__calibrator</tt><tt class="py-op">:</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-65" class="py-name"><a title="libavg.AVGAppStarter'.AVGAppStarter.bindKey" class="py-name" href="#" onclick="return doclink('link-65', 'bindKey', 'link-61');">bindKey</a></tt><tt class="py-op">(</tt><tt class="py-string">'c'</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__enterCalibrator</tt><tt class="py-op">,</tt> <tt class="py-string">'enter calibrator'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"> </tt>
+<a name="AVGMTAppStarter._initClickTest"></a><div id="AVGMTAppStarter._initClickTest-def"><a name="L118"></a><tt class="py-lineno">118</tt> <a class="py-toggle" href="#" id="AVGMTAppStarter._initClickTest-toggle" onclick="return toggle('AVGMTAppStarter._initClickTest');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.AVGMTAppStarter'.AVGMTAppStarter-class.html#_initClickTest">_initClickTest</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="AVGMTAppStarter._initClickTest-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="AVGMTAppStarter._initClickTest-expanded"><a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">ClickTest</tt><tt class="py-op">:</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_clickTest</tt> <tt class="py-op">=</tt> <tt class="py-name">ClickTest</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_appNode</tt><tt class="py-op">,</tt> <tt class="py-name">multiClick</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_clickTest</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+</div><a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"> </tt>
+<a name="AVGMTAppStarter.__updateTrackerImageFixup"></a><div id="AVGMTAppStarter.__updateTrackerImageFixup-def"><a name="L124"></a><tt class="py-lineno">124</tt> <a class="py-toggle" href="#" id="AVGMTAppStarter.__updateTrackerImageFixup-toggle" onclick="return toggle('AVGMTAppStarter.__updateTrackerImageFixup');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.AVGMTAppStarter'.AVGMTAppStarter-class.html#__updateTrackerImageFixup">__updateTrackerImageFixup</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="AVGMTAppStarter.__updateTrackerImageFixup-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="AVGMTAppStarter.__updateTrackerImageFixup-expanded"><a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">        <tt class="py-comment"># finger bitmap might need to be rotated/flipped</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">trackerAngle</tt> <tt class="py-op">=</tt> <tt class="py-name">float</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tracker</tt><tt class="py-op">.</tt><tt id="link-66" class="py-name" targets="Method libavg.avg.Tracker.getParam()=libavg.avg.Tracker-class.html#getParam"><a title="libavg.avg.Tracker.getParam" class="py-name" href="#" onclick="return doclink('link-66', 'getParam', 'link-66');">getParam</a></tt><tt class="py-op">(</tt><tt class="py-string">'/transform/angle/@value'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">        <tt id="link-67" class="py-name" targets="Variable libavg.avg.AreaNode.angle=libavg.avg.AreaNode-class.html#angle,Variable libavg.avg.RectNode.angle=libavg.avg.RectNode-class.html#angle"><a title="libavg.avg.AreaNode.angle
+libavg.avg.RectNode.angle" class="py-name" href="#" onclick="return doclink('link-67', 'angle', 'link-67');">angle</a></tt> <tt class="py-op">=</tt> <tt class="py-name">round</tt><tt class="py-op">(</tt><tt class="py-name">trackerAngle</tt><tt class="py-op">/</tt><tt class="py-name">math</tt><tt class="py-op">.</tt><tt class="py-name">pi</tt><tt class="py-op">)</tt> <tt class="py-op">*</tt> <tt class="py-name">math</tt><tt class="py-op">.</tt><tt class="py-name">pi</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__trackerImageNode</tt><tt class="py-op">.</tt><tt id="link-68" class="py-name"><a title="libavg.avg.AreaNode.angle
+libavg.avg.RectNode.angle" class="py-name" href="#" onclick="return doclink('link-68', 'angle', 'link-67');">angle</a></tt> <tt class="py-op">=</tt> <tt id="link-69" class="py-name"><a title="libavg.avg.AreaNode.angle
+libavg.avg.RectNode.angle" class="py-name" href="#" onclick="return doclink('link-69', 'angle', 'link-67');">angle</a></tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">trackerFlipX</tt> <tt class="py-op">=</tt> <tt class="py-name">float</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tracker</tt><tt class="py-op">.</tt><tt id="link-70" class="py-name"><a title="libavg.avg.Tracker.getParam" class="py-name" href="#" onclick="return doclink('link-70', 'getParam', 'link-66');">getParam</a></tt><tt class="py-op">(</tt><tt class="py-string">'/transform/displayscale/@x'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">&lt;</tt> <tt class="py-number">0</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">trackerFlipY</tt> <tt class="py-op">=</tt> <tt class="py-name">float</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tracker</tt><tt class="py-op">.</tt><tt id="link-71" class="py-name"><a title="libavg.avg.Tracker.getParam" class="py-name" href="#" onclick="return doclink('link-71', 'getParam', 'link-66');">getParam</a></tt><tt class="py-op">(</tt><tt class="py-string">'/transform/displayscale/@y'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-op">&lt;</tt> <tt class="py-number">0</tt> </tt>
+</div><a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"> </tt>
+<a name="AVGMTAppStarter.__onCalibrationSuccess"></a><div id="AVGMTAppStarter.__onCalibrationSuccess-def"><a name="L132"></a><tt class="py-lineno">132</tt> <a class="py-toggle" href="#" id="AVGMTAppStarter.__onCalibrationSuccess-toggle" onclick="return toggle('AVGMTAppStarter.__onCalibrationSuccess');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.AVGMTAppStarter'.AVGMTAppStarter-class.html#__onCalibrationSuccess">__onCalibrationSuccess</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="AVGMTAppStarter.__onCalibrationSuccess-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="AVGMTAppStarter.__onCalibrationSuccess-expanded"><a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__updateTrackerImageFixup</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"> </tt>
+<a name="AVGMTAppStarter.__enterCalibrator"></a><div id="AVGMTAppStarter.__enterCalibrator-def"><a name="L135"></a><tt class="py-lineno">135</tt> <a class="py-toggle" href="#" id="AVGMTAppStarter.__enterCalibrator-toggle" onclick="return toggle('AVGMTAppStarter.__enterCalibrator');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.AVGMTAppStarter'.AVGMTAppStarter-class.html#__enterCalibrator">__enterCalibrator</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="AVGMTAppStarter.__enterCalibrator-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="AVGMTAppStarter.__enterCalibrator-expanded"><a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">        <tt class="py-keyword">def</tt> <tt class="py-def-name">leaveCalibrator</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">             </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-72" class="py-name" targets="Method libavg.AVGAppStarter'.AVGAppStarter.unbindKey()=libavg.AVGAppStarter%27.AVGAppStarter-class.html#unbindKey"><a title="libavg.AVGAppStarter'.AVGAppStarter.unbindKey" class="py-name" href="#" onclick="return doclink('link-72', 'unbindKey', 'link-72');">unbindKey</a></tt><tt class="py-op">(</tt><tt class="py-string">'e'</tt><tt class="py-op">)</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_activeApp</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_appInstance</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_appInstance</tt><tt class="py-op">.</tt><tt id="link-73" class="py-name" targets="Method libavg.AVGApp'.AVGApp.enter()=libavg.AVGApp%27.AVGApp-class.html#enter"><a title="libavg.AVGApp'.AVGApp.enter" class="py-name" href="#" onclick="return doclink('link-73', 'enter', 'link-73');">enter</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt>   </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__calibrator</tt><tt class="py-op">.</tt><tt id="link-74" class="py-name" targets="Method libavg.AVGApp'.AVGApp.leave()=libavg.AVGApp%27.AVGApp-class.html#leave"><a title="libavg.AVGApp'.AVGApp.leave" class="py-name" href="#" onclick="return doclink('link-74', 'leave', 'link-74');">leave</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_appNode</tt><tt class="py-op">.</tt><tt id="link-75" class="py-name"><a title="libavg.avg.Node.opacity" class="py-name" href="#" onclick="return doclink('link-75', 'opacity', 'link-16');">opacity</a></tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_appNode</tt><tt class="py-op">.</tt><tt id="link-76" class="py-name" targets="Variable libavg.avg.Node.active=libavg.avg.Node-class.html#active"><a title="libavg.avg.Node.active" class="py-name" href="#" onclick="return doclink('link-76', 'active', 'link-76');">active</a></tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__calibratorNode</tt><tt class="py-op">.</tt><tt id="link-77" class="py-name"><a title="libavg.avg.Node.opacity" class="py-name" href="#" onclick="return doclink('link-77', 'opacity', 'link-16');">opacity</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__calibratorNode</tt><tt class="py-op">.</tt><tt id="link-78" class="py-name"><a title="libavg.avg.Node.active" class="py-name" href="#" onclick="return doclink('link-78', 'active', 'link-76');">active</a></tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+</div><a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line"> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__calibrator</tt><tt class="py-op">.</tt><tt id="link-79" class="py-name" targets="Method libavg.AVGApp'.AVGApp.isRunning()=libavg.AVGApp%27.AVGApp-class.html#isRunning,Method libavg.avg.Anim.isRunning()=libavg.avg.Anim-class.html#isRunning"><a title="libavg.AVGApp'.AVGApp.isRunning
+libavg.avg.Anim.isRunning" class="py-name" href="#" onclick="return doclink('link-79', 'isRunning', 'link-79');">isRunning</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt> <tt class="py-string">"calibrator already running!"</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">       </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_activeApp</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__calibrator</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__calibrator</tt><tt class="py-op">.</tt><tt id="link-80" class="py-name"><a title="libavg.AVGApp'.AVGApp.enter" class="py-name" href="#" onclick="return doclink('link-80', 'enter', 'link-73');">enter</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt>      </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-81" class="py-name"><a title="libavg.AVGAppStarter'.AVGAppStarter.bindKey" class="py-name" href="#" onclick="return doclink('link-81', 'bindKey', 'link-61');">bindKey</a></tt><tt class="py-op">(</tt><tt class="py-string">'e'</tt><tt class="py-op">,</tt> <tt class="py-name">leaveCalibrator</tt><tt class="py-op">,</tt> <tt class="py-string">'leave Calibrator'</tt><tt class="py-op">)</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_appInstance</tt><tt class="py-op">.</tt><tt id="link-82" class="py-name"><a title="libavg.AVGApp'.AVGApp.leave" class="py-name" href="#" onclick="return doclink('link-82', 'leave', 'link-74');">leave</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__calibratorNode</tt><tt class="py-op">.</tt><tt id="link-83" class="py-name"><a title="libavg.avg.Node.opacity" class="py-name" href="#" onclick="return doclink('link-83', 'opacity', 'link-16');">opacity</a></tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__calibratorNode</tt><tt class="py-op">.</tt><tt id="link-84" class="py-name"><a title="libavg.avg.Node.active" class="py-name" href="#" onclick="return doclink('link-84', 'active', 'link-76');">active</a></tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_appNode</tt><tt class="py-op">.</tt><tt id="link-85" class="py-name"><a title="libavg.avg.Node.opacity" class="py-name" href="#" onclick="return doclink('link-85', 'opacity', 'link-16');">opacity</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_appNode</tt><tt class="py-op">.</tt><tt id="link-86" class="py-name"><a title="libavg.avg.Node.active" class="py-name" href="#" onclick="return doclink('link-86', 'active', 'link-76');">active</a></tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+</div></div><a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">       </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line"><tt id="link-87" class="py-name"><a title="libavg.AVGMTAppStarter'.AVGMTAppStarter" class="py-name" href="#" onclick="return doclink('link-87', 'AVGMTAppStarter', 'link-8');">AVGMTAppStarter</a></tt><tt class="py-op">.</tt><tt id="link-88" class="py-name"><a title="libavg.AVGMTAppStarter'.AVGMTAppStarter.instance" class="py-name" href="#" onclick="return doclink('link-88', 'instance', 'link-9');">instance</a></tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="libavg-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="../index.php">libavg</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Jan  8 16:09:02 2010
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

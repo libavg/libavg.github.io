@@ -1,0 +1,683 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>User Interface Classes &mdash; libavg v1.7 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="libavg v1.7 documentation" href="index.html" />
+    <link rel="next" title="Misc. Classes" href="misc.html" />
+    <link rel="prev" title="Effect Nodes" href="fx.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="misc.html" title="Misc. Classes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="fx.html" title="Effect Nodes"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">libavg v1.7 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="fx.html"
+                        title="previous chapter">Effect Nodes</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="misc.html"
+                        title="next chapter">Misc. Classes</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/ui.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="user-interface-classes">
+<h1>User Interface Classes<a class="headerlink" href="#user-interface-classes" title="Permalink to this headline">¶</a></h1>
+<p>The namespace libavg.ui contains python modules that expose higher-level user interface
+functionality</p>
+<span class="target" id="module-libavg.ui"></span><p class="graphviz">
+<img src="_images/inheritance-cbe91d0fac010c7921cc44e4b4d6376c34aa3585.png" alt="Inheritance diagram of DragRecognizer, TapRecognizer, TransformRecognizer, DoubletapRecognizer, HoldRecognizer" class="inheritance"/>
+</p>
+<p class="graphviz">
+<img src="_images/inheritance-3cdf9d98e6530b7be09e8cf7c07c848800daa064.png" alt="Inheritance diagram of Button, TouchButton, Keyboard" usemap="#inheritancee3b7ae538c" class="inheritance"/>
+<map id="inheritancee3b7ae538c" name="inheritancee3b7ae538c">
+<area shape="rect" id="node5" href="basenodes.html#libavg.avg.Node" title="Node" alt="" coords="120,83,192,111"/>
+<area shape="rect" id="node2" href="areanodes.html#libavg.avg.DivNode" title="DivNode" alt="" coords="117,238,195,266"/>
+<area shape="rect" id="node3" href="areanodes.html#libavg.avg.AreaNode" title="AreaNode" alt="" coords="112,161,200,189"/>
+</map>
+</p>
+<dl class="class">
+<dt id="libavg.ui.Button">
+<em class="property">class </em><tt class="descclassname">libavg.ui.</tt><tt class="descname">Button</tt><big>(</big><em>upNode</em>, <em>downNode</em><span class="optional">[</span>, <em>disabledNode=None</em>, <em>activeAreaNode=None</em>, <em>pressHandler=None</em>, <em>clickHandler=None</em>, <em>stateChangeHandler=None</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.ui.Button" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="areanodes.html#libavg.avg.DivNode" title="libavg.avg.DivNode"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.DivNode</span></tt></a></p>
+<p>A generic button that shows different user-supplied nodes depending on it&#8217;s
+state. Possible button states are up, down and disabled. The nodes are attached
+as children to the Button on construction. For a simple button, image nodes can
+be passed. Button behaviour corresponds to standard GUI buttons.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>upNode</strong> (<em>avg.Node</em>) &#8211; The node displayed when the button is not pressed.</li>
+<li><strong>downNode</strong> (<em>avg.Node</em>) &#8211; The node displayed when the button is pressed.</li>
+<li><strong>disabledNode</strong> (<em>avg.Node</em>) &#8211; The node displayed when the button is disabled.</li>
+<li><strong>activeAreaNode</strong> (<em>avg.Node</em>) &#8211; A node that is used only to determine if a click is over the button. Usually,
+this node is invisible. <tt class="xref py py-attr docutils literal"><span class="pre">activeAreaNode</span></tt> is useful for small touch
+buttons, where the active area should be larger than the visible button to
+accout for touch inaccuracies.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Callbacks:</p>
+<blockquote>
+<div><dl class="method">
+<dt id="libavg.ui.Button.pressHandler">
+<tt class="descname">pressHandler</tt><big>(</big><em>event</em><big>)</big><a class="headerlink" href="#libavg.ui.Button.pressHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when the button is pressed. This happens on a down event.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>event</strong> &#8211; The corresponding cursor down event.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.ui.Button.clickHandler">
+<tt class="descname">clickHandler</tt><big>(</big><em>event</em><big>)</big><a class="headerlink" href="#libavg.ui.Button.clickHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when the button is clicked. A click is generated when an up event
+happens inside the button.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.ui.Button.stateChangeHandler">
+<tt class="descname">stateChangeHandler</tt><big>(</big><em>state</em><big>)</big><a class="headerlink" href="#libavg.ui.Button.stateChangeHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called whenever the button state changes.</p>
+</dd></dl>
+
+</div></blockquote>
+<dl class="method">
+<dt id="libavg.ui.Button.delete">
+<tt class="descname">delete</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.ui.Button.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="libavg.ui.Button.getUpNode">
+<tt class="descname">getUpNode</tt><big>(</big><big>)</big> &rarr; Node<a class="headerlink" href="#libavg.ui.Button.getUpNode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="libavg.ui.Button.getDownNode">
+<tt class="descname">getDownNode</tt><big>(</big><big>)</big> &rarr; Node<a class="headerlink" href="#libavg.ui.Button.getDownNode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="libavg.ui.Button.getDisabledNode">
+<tt class="descname">getDisabledNode</tt><big>(</big><big>)</big> &rarr; Node<a class="headerlink" href="#libavg.ui.Button.getDisabledNode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="libavg.ui.Button.setEnabled">
+<tt class="descname">setEnabled</tt><big>(</big><em>isEnabled</em><big>)</big><a class="headerlink" href="#libavg.ui.Button.setEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="libavg.ui.Button.isEnabled">
+<tt class="descname">isEnabled</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.ui.Button.isEnabled" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.ui.DoubletapRecognizer">
+<em class="property">class </em><tt class="descclassname">libavg.ui.</tt><tt class="descname">DoubletapRecognizer</tt><big>(</big><em>node</em><span class="optional">[</span>, <em>eventSource=avg.TOUCH | avg.MOUSE</em>, <em>maxTime=MAX_DOUBLETAP_TIME</em>, <em>initialEvent=None</em>, <em>possibleHandler=None</em>, <em>failHandler=None</em>, <em>detectedHandler=None</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.ui.DoubletapRecognizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">libavg.ui.gesture.Recognizer</span></tt></p>
+<p>A <a class="reference internal" href="#libavg.ui.DoubletapRecognizer" title="libavg.ui.DoubletapRecognizer"><tt class="xref py py-class docutils literal"><span class="pre">DoubletapRecognizer</span></tt></a> detects doubletaps: Two short touches in quick
+succession without a large change of the cursor position.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>maxTime</strong> &#8211; The maximum time that each phase of the tap may take.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.ui.DragRecognizer">
+<em class="property">class </em><tt class="descclassname">libavg.ui.</tt><tt class="descname">DragRecognizer</tt><big>(</big><em>eventNode</em><span class="optional">[</span>, <em>coordSysNode=None</em>, <em>eventSource=avg.TOUCH | avg.MOUSE</em>, <em>initialEvent=None</em>, <em>direction=ANY_DIRECTION</em>, <em>directionTolerance=pi/4</em>, <em>friction=-1</em>, <em>possibleHandler=None</em>, <em>failHandler=None</em>, <em>detectedHandler=None</em>, <em>moveHandler=None</em>, <em>upHandler=None</em>, <em>endHandler=None</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.ui.DragRecognizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">libavg.ui.gesture.Recognizer</span></tt></p>
+<p>A <a class="reference internal" href="#libavg.ui.DragRecognizer" title="libavg.ui.DragRecognizer"><tt class="xref py py-class docutils literal"><span class="pre">DragRecognizer</span></tt></a> attaches itself to a node&#8217;s cursor events and
+delivers higher-level callbacks that can be used to implement dragging or
+drag-like functionality.</p>
+<p><a class="reference internal" href="#libavg.ui.DragRecognizer" title="libavg.ui.DragRecognizer"><tt class="xref py py-class docutils literal"><span class="pre">DragRecognizer</span></tt></a> supports inertia after the node is released.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>eventNode</strong> (<em>avg.Node</em>) &#8211; The node to attach to. The <a class="reference internal" href="#libavg.ui.DragRecognizer" title="libavg.ui.DragRecognizer"><tt class="xref py py-class docutils literal"><span class="pre">DragRecognizer</span></tt></a> registers an event
+handler to react to any contacts for this node.</li>
+<li><strong>coordSysNode</strong> (<em>avg.Node</em>) &#8211; Used to determine the coordinate system for the offsets returned by the
+callbacks. If <tt class="xref py py-attr docutils literal"><span class="pre">coordSysNode</span></tt> is not given, <tt class="xref py py-attr docutils literal"><span class="pre">eventNode</span></tt> is
+used as default. The <a class="reference internal" href="#libavg.ui.DragRecognizer" title="libavg.ui.DragRecognizer"><tt class="xref py py-class docutils literal"><span class="pre">DragRecognizer</span></tt></a> never modifies any nodes
+itself. <tt class="xref py py-attr docutils literal"><span class="pre">coordSysNode</span></tt> can be used to separate the node that
+is the &#8216;handle&#8217; for the events from the node that is being moved - for
+instance, to allow moving a window by dragging the title bar.</li>
+<li><strong>direction</strong> &#8211; Can be used to constrain the recognizer to <tt class="xref py py-const docutils literal"><span class="pre">VERTICAL</span></tt> or
+<tt class="xref py py-const docutils literal"><span class="pre">HORIZONTAL</span></tt> drags only. If one of these constants is passed as
+<tt class="xref py py-attr docutils literal"><span class="pre">direction</span></tt>, the recognizer invokes <tt class="xref py py-meth docutils literal"><span class="pre">onPossible()</span></tt>
+when the down event arrives, then determines whether the drag is a
+predominantly horizontal or vertical drag and invokes either
+<tt class="xref py py-meth docutils literal"><span class="pre">onDetected()</span></tt> or <tt class="xref py py-meth docutils literal"><span class="pre">onFail()</span></tt> depending on the result.</li>
+<li><strong>directionTolerance</strong> (<em>float</em>) &#8211; A tolerance angle in radians for the detection of horizontal and vertical
+drags.</li>
+<li><strong>friction</strong> (<em>float</em>) &#8211; If set, this parameter enables inertia processing. It describes how
+quickly the drag comes to a stop after the cursor is released.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Callbacks:</p>
+<blockquote>
+<div><dl class="method">
+<dt id="libavg.ui.DragRecognizer.moveHandler">
+<tt class="descname">moveHandler</tt><big>(</big><em>event</em>, <em>offset</em><big>)</big><a class="headerlink" href="#libavg.ui.DragRecognizer.moveHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when the drag should cause a position change. This usually happens
+in response to a <tt class="xref py py-const docutils literal"><span class="pre">CURSORMOTION</span></tt> event, but may also happen
+because of inertia.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>event</strong> &#8211; The corresponding cursor motion event. If there was no event,
+this parameter is <tt class="xref py py-const xref docutils literal"><span class="pre">None</span></tt>.</li>
+<li><strong>offset</strong> (<em>avg.Point2D</em>) &#8211; The current offset from the start of the drag in coordinates relative
+to the <tt class="xref py py-attr docutils literal"><span class="pre">coordSysNode</span></tt>&#8216;s parent.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.ui.DragRecognizer.upHandler">
+<tt class="descname">upHandler</tt><big>(</big><em>event</em>, <em>offset</em><big>)</big><a class="headerlink" href="#libavg.ui.DragRecognizer.upHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when the cursor is released. If inertia is enabled, there may be
+move events after the up event.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>event</strong> &#8211; The corresponding <tt class="xref py py-const docutils literal"><span class="pre">CURSORUP</span></tt> event.</li>
+<li><strong>offset</strong> (<em>avg.Point2D</em>) &#8211; The current offset from the start of the drag in coordinates relative
+to the <tt class="xref py py-class docutils literal"><span class="pre">coordSysNode</span></tt>&#8216;s parent.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.ui.DragRecognizer.endHandler">
+<tt class="descname">endHandler</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.ui.DragRecognizer.endHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when movement stops. This is either directly after the up event
+or when inertia has run its course.</p>
+</dd></dl>
+
+</div></blockquote>
+<dl class="method">
+<dt id="libavg.ui.DragRecognizer.abortInertia">
+<tt class="descname">abortInertia</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.ui.DragRecognizer.abortInertia" title="Permalink to this definition">¶</a></dt>
+<dd><p>Causes inertia processing to end immediately.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.ui.HoldRecognizer">
+<em class="property">class </em><tt class="descclassname">libavg.ui.</tt><tt class="descname">HoldRecognizer</tt><big>(</big><em>node</em><span class="optional">[</span>, <em>eventSource=avg.TOUCH | avg.MOUSE</em>, <em>delay=HOLD_DELAY</em>, <em>initialEvent=None</em>, <em>possibleHandler=None</em>, <em>failHandler=None</em>, <em>detectedHandler=None</em>, <em>stopHandler=None</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.ui.HoldRecognizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">libavg.ui.gesture.Recognizer</span></tt></p>
+<p>A <a class="reference internal" href="#libavg.ui.HoldRecognizer" title="libavg.ui.HoldRecognizer"><tt class="xref py py-class docutils literal"><span class="pre">HoldRecognizer</span></tt></a> detects if a touch is held for a certain amount of
+time. Holds are continuous events: the <tt class="xref py py-meth docutils literal"><span class="pre">stopHandler()</span></tt> is called when the
+contact up event arrives.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>delay</strong> &#8211; The amount of time that has to pass before the hold is recognized.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.ui.Keyboard">
+<em class="property">class </em><tt class="descclassname">libavg.ui.</tt><tt class="descname">Keyboard</tt><big>(</big><em>bgHref</em>, <em>ovlHref</em>, <em>keyDefs</em>, <em>shiftKeyCode</em><span class="optional">[</span>, <em>altGrKeyCode</em>, <em>stickyShift</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.ui.Keyboard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="areanodes.html#libavg.avg.DivNode" title="libavg.avg.DivNode"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.DivNode</span></tt></a></p>
+<p>Implements an onscreen keyboard that turns mouse clicks or touches into key
+presses. The keyboard is completely configurable. Keyboard graphics are determined
+by the two image files in bgHref and ovlHref. Keys can be defined as rectangles
+anywhere on these images. Works for both single-touch and multitouch devices.
+When a key is pressed, a callback function is invoked.</p>
+<p>Needs offscreen rendering support on the machine.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>bgHref</strong> (<em>string</em>) &#8211; Filename of an image that contains the keyboard with unpressed keys.</li>
+<li><strong>ovlHref</strong> (<em>string</em>) &#8211; Filename of an image that contains the keyboard with pressed keys.</li>
+<li><strong>keyDefs</strong> (<em>list</em>) &#8211; <p>List of key definitions. Keys can be either character keys:</p>
+<blockquote>
+<div>[(&lt;keycode&gt;, &lt;shift keycode&gt;, &lt;altgr keycode&gt;), &lt;pos&gt;, &lt;size&gt;]</div></blockquote>
+<p>or command keys:</p>
+<blockquote>
+<div>[&lt;keycode&gt;, &lt;pos&gt;, &lt;size&gt;]</div></blockquote>
+<p>For character keys, the shift and altgr keycodes are optional. To define
+entire rows of evenly-spaced keys, use <a class="reference internal" href="#libavg.ui.Keyboard.makeRowKeyDefs" title="libavg.ui.Keyboard.makeRowKeyDefs"><tt class="xref py py-meth docutils literal"><span class="pre">makeRowKeyDefs()</span></tt></a>.</p>
+</li>
+<li><strong>shiftKeyCode</strong> &#8211; One of the command keycodes. When the key with this code is pressed,
+pressing other keys causes them to return the shifted keycode.</li>
+<li><strong>altGrKeyCode</strong> &#8211; One of the command keycodes. When the key with this code is pressed,
+pressing other keys causes them to return the altgr keycode.</li>
+<li><strong>stickyShift</strong> (<em>bool</em>) &#8211; For single-touch devices, the shift key must stay in the pressed state
+until the next normal key is pressed to have any effect. This is the
+behaviour if <tt class="xref py py-attr docutils literal"><span class="pre">stickyShift</span></tt> is <tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt>. If it is
+<tt class="xref py py-const xref docutils literal"><span class="pre">False</span></tt> (the default), a
+multitouch device is assumed and shift works like on a physical keyboard.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="libavg.ui.Keyboard.reset">
+<tt class="descname">reset</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.ui.Keyboard.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets any sticky keys (shift, altgr) to their default state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.ui.Keyboard.setKeyHandler">
+<tt class="descname">setKeyHandler</tt><big>(</big><em>self</em>, <em>downHandler</em><span class="optional">[</span>, <em>upHandler</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.ui.Keyboard.setKeyHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set callbacks to invoke on key press and -release. Handlers take three
+paramters: (event, char, cmd)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>downHandler</strong> &#8211; Callable to invoke on key down event or <cite>None</cite>.</li>
+<li><strong>upHandler</strong> &#8211; Callable to invoke on key up event or <tt class="xref py py-const xref docutils literal"><span class="pre">None</span></tt>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="libavg.ui.Keyboard.makeRowKeyDefs">
+<em class="property">classmethod </em><tt class="descname">makeRowKeyDefs</tt><big>(</big><em>startPos</em>, <em>keySize</em>, <em>spacing</em>, <em>keyStr</em>, <em>shiftKeyStr</em><span class="optional">[</span>, <em>altGrKeyStr</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.ui.Keyboard.makeRowKeyDefs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates key definitions for a row of uniform keys. Useful for creating the
+keyDefs parameter of the Keyboard constructor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startPos</strong> (<em>avg.Point2D</em>) &#8211; Top left position of the row.</li>
+<li><strong>keySize</strong> (<em>avg.Point2D</em>) &#8211; Size of each key.</li>
+<li><strong>spacing</strong> (<em>int</em>) &#8211; Number of empty pixels between two keys.</li>
+<li><strong>keyStr</strong> (<em>string</em>) &#8211; Unicode string containing the unshifted keycodes (i.e.
+<tt class="samp docutils literal"><span class="pre">u&quot;qwertzuiopżś&quot;</span></tt>)</li>
+<li><strong>shiftKeyStr</strong> (<em>string</em>) &#8211; Unicode string containing the shifted keycodes
+(i.e. <tt class="samp docutils literal"><span class="pre">u&quot;QWERTZUIOPńć&quot;</span></tt>)</li>
+<li><strong>altGrKeyStr</strong> (<em>string</em>) &#8211; Unicode string containing the keycodes when altgr is pressed.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.ui.Recognizer">
+<em class="property">class </em><tt class="descclassname">libavg.ui.</tt><tt class="descname">Recognizer</tt><big>(</big><em>node</em>, <em>isContinuous</em>, <em>eventSource</em>, <em>maxContacts</em>, <em>initialEvent</em><span class="optional">[</span>, <em>possibleHandler=None</em>, <em>failHandler=None</em>, <em>detectedHandler=None</em>, <em>endHandler=None</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.ui.Recognizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Base class for gesture recognizers that attach to a node&#8217;s cursor events and
+emit higher-level events. Gesture recognizers have a standard set of states and
+callbacks, but derived classes may add their own callbacks and do not need to
+invoke all base class callbacks. The possible states vary depending on the value
+of <tt class="xref py py-attr docutils literal"><span class="pre">isContinuous</span></tt>:</p>
+<img alt="_images/Recognizer.png" src="_images/Recognizer.png" />
+<p>A usage example for the recognizers can be found under
+<tt class="samp docutils literal"><span class="pre">src/samples/gestures.py</span></tt>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>node</strong> (<em>Node</em>) &#8211; Node to attach to.</li>
+<li><strong>isContinuous</strong> (<em>bool</em>) &#8211; <tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt> if the gesture stays active after it has been detected.</li>
+<li><strong>eventSource</strong> &#8211; One of the standard event sources (<tt class="xref py py-const docutils literal"><span class="pre">TRACK</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">TOUCH</span></tt>
+etc.).</li>
+<li><strong>maxContacts</strong> &#8211; The maximum number of contacts that the recognizer should handle.
+<tt class="xref py py-const xref docutils literal"><span class="pre">None</span></tt> if there is no maximum.</li>
+<li><strong>initialEvent</strong> &#8211; A cursordown event to pass to the recognizer immediately.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Callbacks:</p>
+<blockquote>
+<div><dl class="method">
+<dt id="libavg.ui.Recognizer.possibleHandler">
+<tt class="descname">possibleHandler</tt><big>(</big><em>event</em><big>)</big><a class="headerlink" href="#libavg.ui.Recognizer.possibleHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when gesture recognition begins - usually after a cursordown event.
+Some continuous gestures (such as unconstrained drags) never invoke
+<a class="reference internal" href="#libavg.ui.Recognizer.possibleHandler" title="libavg.ui.Recognizer.possibleHandler"><tt class="xref py py-meth docutils literal"><span class="pre">possibleHandler()</span></tt></a> but call <a class="reference internal" href="#libavg.ui.Recognizer.detectedHandler" title="libavg.ui.Recognizer.detectedHandler"><tt class="xref py py-meth docutils literal"><span class="pre">detectedHandler()</span></tt></a>
+immediately.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.ui.Recognizer.failHandler">
+<tt class="descname">failHandler</tt><big>(</big><em>event</em><big>)</big><a class="headerlink" href="#libavg.ui.Recognizer.failHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when gesture recognition is aborted.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.ui.Recognizer.detectedHandler">
+<tt class="descname">detectedHandler</tt><big>(</big><em>event</em><big>)</big><a class="headerlink" href="#libavg.ui.Recognizer.detectedHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when the gesture is recognized. For discrete gestures, this
+signifies the end of gesture processing.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.ui.Recognizer.endHandler">
+<tt class="descname">endHandler</tt><big>(</big><em>event</em><big>)</big><a class="headerlink" href="#libavg.ui.Recognizer.endHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a continuous gesture ends.</p>
+</dd></dl>
+
+</div></blockquote>
+<dl class="method">
+<dt id="libavg.ui.Recognizer.enable">
+<tt class="descname">enable</tt><big>(</big><em>isEnabled</em><big>)</big><a class="headerlink" href="#libavg.ui.Recognizer.enable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables or disables the <a class="reference internal" href="#libavg.ui.Recognizer" title="libavg.ui.Recognizer"><tt class="xref py py-class docutils literal"><span class="pre">Recognizer</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.ui.Recognizer.getState">
+<tt class="descname">getState</tt><big>(</big><big>)</big> &rarr; String<a class="headerlink" href="#libavg.ui.Recognizer.getState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the state (&#8220;IDLE&#8221;, &#8220;POSSIBLE&#8221; or &#8220;RUNNING&#8221;) of the recognizer.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.ui.TapRecognizer">
+<em class="property">class </em><tt class="descclassname">libavg.ui.</tt><tt class="descname">TapRecognizer</tt><big>(</big><em>node</em><span class="optional">[</span>, <em>eventSource=avg.TOUCH | avg.MOUSE</em>, <em>maxTime=MAX_TAP_TIME</em>, <em>initialEvent=None</em>, <em>possibleHandler=None</em>, <em>failHandler=None</em>, <em>detectedHandler=None</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.ui.TapRecognizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">libavg.ui.gesture.Recognizer</span></tt></p>
+<p>A <a class="reference internal" href="#libavg.ui.TapRecognizer" title="libavg.ui.TapRecognizer"><tt class="xref py py-class docutils literal"><span class="pre">TapRecognizer</span></tt></a> detects short touches without a large change of the
+cursor position.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>maxTime</strong> &#8211; The maximum time that the tap may take in milliseconds.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.ui.TouchButton">
+<em class="property">class </em><tt class="descclassname">libavg.ui.</tt><tt class="descname">TouchButton</tt><big>(</big><em>upNode, downNode, disabledNode=None, activeAreaNode=None, fatFingerEnlarge=False, clickHandler=None]</em><big>)</big><a class="headerlink" href="#libavg.ui.TouchButton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="areanodes.html#libavg.avg.DivNode" title="libavg.avg.DivNode"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.DivNode</span></tt></a></p>
+<p>A button made specifically for touch input. Uses the <a class="reference internal" href="#libavg.ui.TapRecognizer" title="libavg.ui.TapRecognizer"><tt class="xref py py-class docutils literal"><span class="pre">TapRecognizer</span></tt></a> to
+detect clicks.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>upNode</strong> (<em>avg.Node</em>) &#8211; The node displayed when the button is not pressed.</li>
+<li><strong>downNode</strong> (<em>avg.Node</em>) &#8211; The node displayed when the button is pressed.</li>
+<li><strong>disabledNode</strong> (<em>avg.Node</em>) &#8211; The node displayed when the button is disabled.</li>
+<li><strong>activeAreaNode</strong> (<em>avg.Node</em>) &#8211; A node that is used only to determine if a click is over the button. Usually,
+this node is invisible. <tt class="xref py py-attr docutils literal"><span class="pre">activeAreaNode</span></tt> is useful for small touch
+buttons, where the active area should be larger than the visible button to
+account for touch inaccuracies.</li>
+<li><strong>fatFingerEnlarge</strong> (<em>bool</em>) &#8211; If this parameter is set to <tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt>, the button generates it&#8217;s own
+internal <tt class="xref py py-attr docutils literal"><span class="pre">activeAreaNode</span></tt> that is at least 20x20mm large.
+<tt class="xref py py-attr docutils literal"><span class="pre">fatFingerEnlarge</span></tt> is incompatible with a custom
+<tt class="xref py py-attr docutils literal"><span class="pre">activeAreaNode</span></tt>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Callbacks:</p>
+<blockquote>
+<div><dl class="method">
+<dt id="libavg.ui.TouchButton.clickHandler">
+<tt class="descname">clickHandler</tt><big>(</big><em>event</em><big>)</big><a class="headerlink" href="#libavg.ui.TouchButton.clickHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when the button is clicked.</p>
+</dd></dl>
+
+</div></blockquote>
+<dl class="attribute">
+<dt id="libavg.ui.TouchButton.enabled">
+<tt class="descname">enabled</tt><a class="headerlink" href="#libavg.ui.TouchButton.enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p><tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt> if the button accepts input. If the button is disabled,
+it shows the <tt class="xref py py-attr docutils literal"><span class="pre">disabledNode</span></tt>.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="libavg.ui.TouchButton.fromSrc">
+<em class="property">classmethod </em><tt class="descname">fromSrc</tt><big>(</big><em>upSrc</em>, <em>downSrc</em><span class="optional">[</span>, <em>disabledSrc=None</em>, <em>**kwargs</em><span class="optional">]</span><big>)</big> &rarr; Button<a class="headerlink" href="#libavg.ui.TouchButton.fromSrc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Factory method that creates a button from filenames of the images to be
+displayed for different states.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.ui.Transform">
+<em class="property">class </em><tt class="descclassname">libavg.ui.</tt><tt class="descname">Transform</tt><big>(</big><em>trans</em><span class="optional">[</span>, <em>rot=0</em>, <em>scale=1</em>, <em>pivot=(0</em>, <em>0)</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.ui.Transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encapsulates a coordinate transformation and can be used to change the position,
+rotation and scale of a node.</p>
+<dl class="attribute">
+<dt id="libavg.ui.Transform.pivot">
+<tt class="descname">pivot</tt><a class="headerlink" href="#libavg.ui.Transform.pivot" title="Permalink to this definition">¶</a></dt>
+<dd><p>The point around which rot and scale are applied.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.ui.Transform.rot">
+<tt class="descname">rot</tt><a class="headerlink" href="#libavg.ui.Transform.rot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotation in radians.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.ui.Transform.scale">
+<tt class="descname">scale</tt><a class="headerlink" href="#libavg.ui.Transform.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Multiplies the size of the node.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.ui.Transform.trans">
+<tt class="descname">trans</tt><a class="headerlink" href="#libavg.ui.Transform.trans" title="Permalink to this definition">¶</a></dt>
+<dd><p>The translation.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.ui.Transform.moveNode">
+<tt class="descname">moveNode</tt><big>(</big><em>node</em><big>)</big><a class="headerlink" href="#libavg.ui.Transform.moveNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes a <tt class="xref py py-attr docutils literal"><span class="pre">node</span></tt>&#8216;s pos, angle and size by applying the transform.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.ui.TransformRecognizer">
+<em class="property">class </em><tt class="descclassname">libavg.ui.</tt><tt class="descname">TransformRecognizer</tt><big>(</big><em>eventNode</em><span class="optional">[</span>, <em>coordSysNode=None</em>, <em>eventSource=avg.TOUCH | avg.MOUSE</em>, <em>initialEvent=None</em>, <em>friction=-1</em>, <em>detectedHandler=None</em>, <em>moveHandler=None</em>, <em>upHandler=None</em>, <em>endHandler=None</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.ui.TransformRecognizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">libavg.ui.gesture.Recognizer</span></tt></p>
+<p>A <a class="reference internal" href="#libavg.ui.TransformRecognizer" title="libavg.ui.TransformRecognizer"><tt class="xref py py-class docutils literal"><span class="pre">TransformRecognizer</span></tt></a> is used to support drag/zoom/rotate
+functionality. From any number of touches on a node, it calculates an aggregate
+transform that can be used to change the position, size and angle of a node.
+The class supports intertia after the node is released.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>eventNode</strong> (<em>avg.Node</em>) &#8211; The node to attach to. The <a class="reference internal" href="#libavg.ui.TransformRecognizer" title="libavg.ui.TransformRecognizer"><tt class="xref py py-class docutils literal"><span class="pre">TransformRecognizer</span></tt></a> registers an event
+handler to react to any contacts for this node.</li>
+<li><strong>coordSysNode</strong> (<em>avg.Node</em>) &#8211; Used to determine the coordinate system for the transforms returned by the
+callbacks.  If <tt class="xref py py-attr docutils literal"><span class="pre">coordSysNode</span></tt> is not given, <tt class="xref py py-attr docutils literal"><span class="pre">eventNode</span></tt> is
+used as default. The <a class="reference internal" href="#libavg.ui.TransformRecognizer" title="libavg.ui.TransformRecognizer"><tt class="xref py py-class docutils literal"><span class="pre">TransformRecognizer</span></tt></a> never modifies any nodes
+itself. <tt class="xref py py-attr docutils literal"><span class="pre">coordSysNode</span></tt> can be used to separate the node that
+is the &#8216;handle&#8217; for the events from the node that is being moved - for
+instance, to allow moving and rotating a window by dragging the title bar.</li>
+<li><strong>friction</strong> (<em>float</em>) &#8211; If set, this parameter enables inertia processing. It describes how
+quickly the transform comes to a stop after the cursor is released.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Callbacks:</p>
+<blockquote>
+<div><dl class="method">
+<dt id="libavg.ui.TransformRecognizer.moveHandler">
+<tt class="descname">moveHandler</tt><big>(</big><em>transform</em><big>)</big><a class="headerlink" href="#libavg.ui.TransformRecognizer.moveHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called whenever the transform changes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>transform</strong> (<em>Transform</em>) &#8211; The change in transformation since the last call of move or up.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.ui.TransformRecognizer.upHandler">
+<tt class="descname">upHandler</tt><big>(</big><em>transform</em><big>)</big><a class="headerlink" href="#libavg.ui.TransformRecognizer.upHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when the last touch is released.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>transform</strong> &#8211; The change in transformation since the last call of move.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.ui.TransformRecognizer.endHandler">
+<tt class="descname">endHandler</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.ui.TransformRecognizer.endHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when movement stops. This is either directly after the up event
+or when inertia has run its course.</p>
+</dd></dl>
+
+</div></blockquote>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="misc.html" title="Misc. Classes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="fx.html" title="Effect Nodes"
+             >previous</a> |</li>
+        <li><a href="index.html">libavg v1.7 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, Ulrich von Zadow.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,727 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Input Handling &mdash; libavg 1.8 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="libavg 1.8 documentation" href="index.html" />
+    <link rel="next" title="Animation" href="animation.html" />
+    <link rel="prev" title="Vector Nodes" href="vectornodes.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="animation.html" title="Animation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="vectornodes.html" title="Vector Nodes"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">libavg 1.8 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="vectornodes.html"
+                        title="previous chapter">Vector Nodes</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="animation.html"
+                        title="next chapter">Animation</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/events.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-libavg.avg">
+<span id="input-handling"></span><h1>Input Handling<a class="headerlink" href="#module-libavg.avg" title="Permalink to this headline">¶</a></h1>
+<p class="graphviz">
+<img src="_images/inheritance-6dcef7a07fdb062cdac177c27f65ca8cc04eedf5.png" alt="Inheritance diagram of Event, CursorEvent, MouseEvent, TouchEvent, KeyEvent" usemap="#inheritance96e210a49f" class="inheritance"/>
+<map id="inheritance96e210a49f" name="inheritance96e210a49f">
+<area shape="rect" id="node1" href="#libavg.avg.Event" title="Event" alt="" coords="132,83,204,111"/>
+<area shape="rect" id="node5" href="#libavg.avg.CursorEvent" title="CursorEvent" alt="" coords="63,161,161,189"/>
+<area shape="rect" id="node9" href="#libavg.avg.KeyEvent" title="KeyEvent" alt="" coords="185,161,265,189"/>
+<area shape="rect" id="node4" href="#libavg.avg.TouchEvent" title="TouchEvent" alt="" coords="5,238,99,266"/>
+<area shape="rect" id="node7" href="#libavg.avg.MouseEvent" title="MouseEvent" alt="" coords="123,238,221,266"/>
+</map>
+</p>
+<p class="graphviz">
+<img src="_images/inheritance-4a76a3d10e3d6f3adb0a3d2974373dd0bf81fa5b.png" alt="Inheritance diagram of Contact" usemap="#inheritance19baf3bb2f" class="inheritance"/>
+<map id="inheritance19baf3bb2f" name="inheritance19baf3bb2f">
+<area shape="rect" id="node1" href="basenodes.html#libavg.avg.Publisher" title="Publisher" alt="" coords="25,161,105,189"/>
+<area shape="rect" id="node4" href="#libavg.avg.Contact" title="Contact" alt="" coords="29,238,101,266"/>
+</map>
+</p>
+<p class="graphviz">
+<img src="_images/inheritance-18338f497dd2f39326ed932741c38d631106b3f1.png" alt="Inheritance diagram of InputDevice" usemap="#inheritance63d3b18b3c" class="inheritance"/>
+<map id="inheritance63d3b18b3c" name="inheritance63d3b18b3c">
+<area shape="rect" id="node1" href="#libavg.avg.InputDevice" title="InputDevice" alt="" coords="5,83,101,111"/>
+</map>
+</p>
+<dl class="class">
+<dt id="libavg.avg.Contact">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">Contact</tt><a class="headerlink" href="#libavg.avg.Contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="basenodes.html#libavg.avg.Publisher" title="libavg.avg.Publisher"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.Publisher</span></tt></a></p>
+<p>A Contact encapsulates the information of one touch on an input device from
+the down event to an up event. It exposes some aggregate information about the
+touch - distance and direction travelled etc. - and supports event handlers that
+are only called for this single contact.</p>
+<p>For compatibility reasons, a mouse device also produces contacts. A mouse contact
+exists from the press of a button to its release. If multiple buttons are
+pressed without a complete release (e.g. LEFTDOWN-RIGHTDOWN-LEFTUP-RIGHTUP), the
+mouse contact exists for the complete sequence.</p>
+<p><strong>Messages:</strong></p>
+<blockquote>
+<div><p>All message parameters are of type <a class="reference internal" href="#libavg.avg.CursorEvent" title="libavg.avg.CursorEvent"><tt class="xref py py-class docutils literal"><span class="pre">CursorEvent</span></tt></a>.
+To get these messages, call <a class="reference internal" href="basenodes.html#libavg.avg.Publisher.subscribe" title="libavg.avg.Publisher.subscribe"><tt class="xref py py-meth docutils literal"><span class="pre">Publisher.subscribe()</span></tt></a>. All subscribers
+are unsubscribed automatically after the up event.</p>
+<dl class="method">
+<dt id="libavg.avg.Contact.CURSOR_MOTION">
+<tt class="descname">CURSOR_MOTION</tt><big>(</big><em>cursorevent</em><big>)</big><a class="headerlink" href="#libavg.avg.Contact.CURSOR_MOTION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted whenever the contact moves.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Contact.CURSOR_UP">
+<tt class="descname">CURSOR_UP</tt><big>(</big><em>cursorevent</em><big>)</big><a class="headerlink" href="#libavg.avg.Contact.CURSOR_UP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when the mouse button is released or the touch leaves the surface.</p>
+</dd></dl>
+
+</div></blockquote>
+<dl class="attribute">
+<dt id="libavg.avg.Contact.age">
+<tt class="descname">age</tt><a class="headerlink" href="#libavg.avg.Contact.age" title="Permalink to this definition">¶</a></dt>
+<dd><p>Time that has passed since the down event in milliseconds. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.Contact.distancefromstart">
+<tt class="descname">distancefromstart</tt><a class="headerlink" href="#libavg.avg.Contact.distancefromstart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Distance of the current position from the initial position in pixels.
+Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.Contact.distancetravelled">
+<tt class="descname">distancetravelled</tt><a class="headerlink" href="#libavg.avg.Contact.distancetravelled" title="Permalink to this definition">¶</a></dt>
+<dd><p>The total distance travelled since the initial down event. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.Contact.events">
+<tt class="descname">events</tt><a class="headerlink" href="#libavg.avg.Contact.events" title="Permalink to this definition">¶</a></dt>
+<dd><p>An array containing all events that this contact has generated in the past.
+Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.Contact.id">
+<tt class="descname">id</tt><a class="headerlink" href="#libavg.avg.Contact.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A numerical id for this contact. This corresponds to the
+<a class="reference internal" href="#libavg.avg.CursorEvent.cursorid" title="libavg.avg.CursorEvent.cursorid"><tt class="xref py py-attr docutils literal"><span class="pre">CursorEvent.cursorid</span></tt></a> field. Contacts for touch events have unique
+ids, while contacts for mouse events always have the <a class="reference internal" href="#libavg.avg.Contact.id" title="libavg.avg.Contact.id"><tt class="xref py py-attr docutils literal"><span class="pre">id</span></tt></a>
+<tt class="xref py py-const docutils literal"><span class="pre">-1</span></tt>. ids are not reused. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.Contact.motionangle">
+<tt class="descname">motionangle</tt><a class="headerlink" href="#libavg.avg.Contact.motionangle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Angle of the current position from the initial position in radians. Like all
+angles in libavg, <a class="reference internal" href="#libavg.avg.Contact.motionangle" title="libavg.avg.Contact.motionangle"><tt class="xref py py-attr docutils literal"><span class="pre">motionangle</span></tt></a> is 0 on the positive x axis and
+increases clockwise. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.Contact.motionvec">
+<tt class="descname">motionvec</tt><a class="headerlink" href="#libavg.avg.Contact.motionvec" title="Permalink to this definition">¶</a></dt>
+<dd><p>The difference of the current position and the initial position as a
+<a class="reference internal" href="misc.html#libavg.avg.Point2D" title="libavg.avg.Point2D"><tt class="xref py py-class docutils literal"><span class="pre">Point2D</span></tt></a>. Read-only.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Contact.connectListener">
+<tt class="descname">connectListener</tt><big>(</big><em>motionCallback</em>, <em>upCallback</em><big>)</big> &rarr; id<a class="headerlink" href="#libavg.avg.Contact.connectListener" title="Permalink to this definition">¶</a></dt>
+<dd><p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.8: </span>Use the message interface instead.</p>
+<p>Registers event handlers that get called when CURSORMOTION and CURSORUP
+events for this <a class="reference internal" href="#libavg.avg.Contact" title="libavg.avg.Contact"><tt class="xref py py-class docutils literal"><span class="pre">Contact</span></tt></a> occur. Event handlers can be unregistered
+using <a class="reference internal" href="#libavg.avg.Contact.disconnectListener" title="libavg.avg.Contact.disconnectListener"><tt class="xref py py-meth docutils literal"><span class="pre">disconnectListener()</span></tt></a>. They are automatically unregistered
+after the up event. The <a class="reference internal" href="#libavg.avg.Contact.id" title="libavg.avg.Contact.id"><tt class="xref py py-attr docutils literal"><span class="pre">id</span></tt></a> returned is unique for this contact.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Contact.disconnectListener">
+<tt class="descname">disconnectListener</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#libavg.avg.Contact.disconnectListener" title="Permalink to this definition">¶</a></dt>
+<dd><p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.8: </span>Use the message interface instead.</p>
+<p>Unregisters an event handler. The parameter is the <a class="reference internal" href="#libavg.avg.Contact.id" title="libavg.avg.Contact.id"><tt class="xref py py-attr docutils literal"><span class="pre">id</span></tt></a> returned in
+<a class="reference internal" href="#libavg.avg.Contact.connectListener" title="libavg.avg.Contact.connectListener"><tt class="xref py py-meth docutils literal"><span class="pre">connectListener()</span></tt></a>. It is an error to call
+<a class="reference internal" href="#libavg.avg.Contact.disconnectListener" title="libavg.avg.Contact.disconnectListener"><tt class="xref py py-meth docutils literal"><span class="pre">disconnectListener()</span></tt></a> with an invalid id.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.CursorEvent">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">CursorEvent</tt><a class="headerlink" href="#libavg.avg.CursorEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.Event" title="libavg.avg.Event"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.Event</span></tt></a></p>
+<p>Base class for all events which contain a position in the global coordinate
+system.</p>
+<dl class="attribute">
+<dt id="libavg.avg.CursorEvent.contact">
+<tt class="descname">contact</tt><a class="headerlink" href="#libavg.avg.CursorEvent.contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="#libavg.avg.Contact" title="libavg.avg.Contact"><tt class="xref py py-class docutils literal"><span class="pre">Contact</span></tt></a> that the event belongs to, if there is one.
+Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CursorEvent.cursorid">
+<tt class="descname">cursorid</tt><a class="headerlink" href="#libavg.avg.CursorEvent.cursorid" title="Permalink to this definition">¶</a></dt>
+<dd><p>A numerical identifier for the current cursor.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CursorEvent.node">
+<tt class="descname">node</tt><a class="headerlink" href="#libavg.avg.CursorEvent.node" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="basenodes.html#libavg.avg.Node" title="libavg.avg.Node"><tt class="xref py py-class docutils literal"><span class="pre">Node</span></tt></a> that the event occured in. If this is <tt class="xref py py-const docutils literal"><span class="pre">None</span></tt>,
+the event happened outside of the application window and the cursor was
+captured by the application.
+Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CursorEvent.pos">
+<tt class="descname">pos</tt><a class="headerlink" href="#libavg.avg.CursorEvent.pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Position in the global coordinate system. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CursorEvent.source">
+<tt class="descname">source</tt><a class="headerlink" href="#libavg.avg.CursorEvent.source" title="Permalink to this definition">¶</a></dt>
+<dd><p>The type of the device that emitted the event. See <a class="reference internal" href="#libavg.avg.Event.source" title="libavg.avg.Event.source"><tt class="xref py py-attr docutils literal"><span class="pre">Event.source</span></tt></a>.
+Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CursorEvent.x">
+<tt class="descname">x</tt><a class="headerlink" href="#libavg.avg.CursorEvent.x" title="Permalink to this definition">¶</a></dt>
+<dd><p>x position in the global coordinate system. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CursorEvent.y">
+<tt class="descname">y</tt><a class="headerlink" href="#libavg.avg.CursorEvent.y" title="Permalink to this definition">¶</a></dt>
+<dd><p>y position in the global coordinate system. Read-only.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.Event">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">Event</tt><big>(</big><em>type</em>, <em>source</em><span class="optional">[</span>, <em>when</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.Event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></tt></p>
+<p>Base class for user input events.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>type</strong> (<em>type</em>) &#8211; The type of the event. See <a class="reference internal" href="#libavg.avg.Event.type" title="libavg.avg.Event.type"><tt class="xref py py-attr docutils literal"><span class="pre">Event.type</span></tt></a>.</li>
+<li><strong>source</strong> (<em>source</em>) &#8211; The source of the event. See <a class="reference internal" href="#libavg.avg.Event.source" title="libavg.avg.Event.source"><tt class="xref py py-attr docutils literal"><span class="pre">Event.source</span></tt></a>.</li>
+<li><strong>when</strong> (<em>Integer</em>) &#8211; The time the event occured</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="libavg.avg.Event.inputdevice">
+<tt class="descname">inputdevice</tt><a class="headerlink" href="#libavg.avg.Event.inputdevice" title="Permalink to this definition">¶</a></dt>
+<dd><p>The address of the device that emitted the event.
+Read-only</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.Event.inputdevicename">
+<tt class="descname">inputdevicename</tt><a class="headerlink" href="#libavg.avg.Event.inputdevicename" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the device that emitted the event.
+Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.Event.source">
+<tt class="descname">source</tt><a class="headerlink" href="#libavg.avg.Event.source" title="Permalink to this definition">¶</a></dt>
+<dd><p>One of <tt class="xref py py-const docutils literal"><span class="pre">MOUSE</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">TOUCH</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">TRACK</span></tt>,
+<tt class="xref py py-const docutils literal"><span class="pre">CUSTOM</span></tt> or <tt class="xref py py-const docutils literal"><span class="pre">NONE</span></tt>. Read-only</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.Event.type">
+<tt class="descname">type</tt><a class="headerlink" href="#libavg.avg.Event.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>One of <tt class="xref py py-const docutils literal"><span class="pre">KEYUP</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">KEYDOWN</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">CURSORMOTION</span></tt>,
+<tt class="xref py py-const docutils literal"><span class="pre">CURSORUP</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">CURSORDOWN</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">CURSOROVER</span></tt>
+or <tt class="xref py py-const docutils literal"><span class="pre">CURSOROUT</span></tt>. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.Event.when">
+<tt class="descname">when</tt><a class="headerlink" href="#libavg.avg.Event.when" title="Permalink to this definition">¶</a></dt>
+<dd><p>The time when the event occured in milliseconds since program start.
+Read-only.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.InputDevice">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">InputDevice</tt><big>(</big><em>name</em><span class="optional">[</span>, <em>eventReceiverNode</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.InputDevice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></tt></p>
+<p>Base class for input devices which feed events to the system. Derived classes can
+be either user-defined or one of the predefined libavg input devices. User-defined
+InputDevice objects are registered with the system by calling
+<a class="reference internal" href="player.html#libavg.avg.Player.addInputDevice" title="libavg.avg.Player.addInputDevice"><tt class="xref py py-meth docutils literal"><span class="pre">Player.addInputDevice()</span></tt></a>. After this, the emitted
+events are processed like any other events.</p>
+<dl class="attribute">
+<dt id="libavg.avg.InputDevice.eventreceivernode">
+<tt class="descname">eventreceivernode</tt><a class="headerlink" href="#libavg.avg.InputDevice.eventreceivernode" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="areanodes.html#libavg.avg.DivNode" title="libavg.avg.DivNode"><tt class="xref py py-class docutils literal"><span class="pre">DivNode</span></tt></a> that the input device will deliver events to. By
+default, this is the libavg root node. Useful for restricting events to a
+part of the total canvas or for sending events directly to an offscreen
+canvas. Event bubbling starts at this node and proceeds down the tree from
+there. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.InputDevice.name">
+<tt class="descname">name</tt><a class="headerlink" href="#libavg.avg.InputDevice.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the device. Read-only.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.InputDevice.pollEvents">
+<tt class="descname">pollEvents</tt><big>(</big><big>)</big> &rarr; list<a class="headerlink" href="#libavg.avg.InputDevice.pollEvents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method which returns a list of pending events. Override this method
+in your derived input device class. After registering
+the input device, this method gets called on every frame.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.InputDevice.start">
+<tt class="descname">start</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.InputDevice.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes the input device if needed. By default this is an empty method.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.KeyEvent">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">KeyEvent</tt><a class="headerlink" href="#libavg.avg.KeyEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.Event" title="libavg.avg.Event"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.Event</span></tt></a></p>
+<p>Generated when a key is pressed or released.</p>
+<dl class="attribute">
+<dt id="libavg.avg.KeyEvent.keycode">
+<tt class="descname">keycode</tt><a class="headerlink" href="#libavg.avg.KeyEvent.keycode" title="Permalink to this definition">¶</a></dt>
+<dd><p>The keycode of the key according to US keyboard layout. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.KeyEvent.keystring">
+<tt class="descname">keystring</tt><a class="headerlink" href="#libavg.avg.KeyEvent.keystring" title="Permalink to this definition">¶</a></dt>
+<dd><p>A character or word describing the key pressed. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.KeyEvent.modifiers">
+<tt class="descname">modifiers</tt><a class="headerlink" href="#libavg.avg.KeyEvent.modifiers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Any modifier keys pressed, or&#8217;ed together. Possible Modifiers are
+<tt class="xref py py-const docutils literal"><span class="pre">KEYMOD_NONE</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">KEYMOD_LSHIFT</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">KEYMOD_RSHIFT</span></tt>,
+<tt class="xref py py-const docutils literal"><span class="pre">KEYMOD_LCTRL</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">KEYMOD_RCTRL</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">KEYMOD_LALT</span></tt>,
+<tt class="xref py py-const docutils literal"><span class="pre">KEYMOD_RALT</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">KEYMOD_LMETA</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">KEYMOD_RMETA</span></tt>,
+<tt class="xref py py-const docutils literal"><span class="pre">KEYMOD_NUM</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">KEYMOD_CAPS</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">KEYMOD_MODE</span></tt>.
+Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.KeyEvent.scancode">
+<tt class="descname">scancode</tt><a class="headerlink" href="#libavg.avg.KeyEvent.scancode" title="Permalink to this definition">¶</a></dt>
+<dd><p>The untranslated (hardware-dependent) scancode of the key pressed.
+Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.KeyEvent.unicode">
+<tt class="descname">unicode</tt><a class="headerlink" href="#libavg.avg.KeyEvent.unicode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unicode index of the character. Takes into account the current keyboard
+layout and any modifiers pressed. This attribute is only filled in the
+<tt class="xref py py-const docutils literal"><span class="pre">KEYDOWN</span></tt> event. Read-only.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.MouseEvent">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">MouseEvent</tt><big>(</big><em>type</em>, <em>leftButtonState</em>, <em>middleButtonState</em>, <em>rightButtonState</em>, <em>pos</em>, <em>button</em><span class="optional">[</span>, <em>speed</em>, <em>when</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.MouseEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.CursorEvent" title="libavg.avg.CursorEvent"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.CursorEvent</span></tt></a></p>
+<p>Generated when a mouse-related event occurs.</p>
+<dl class="attribute">
+<dt id="libavg.avg.MouseEvent.button">
+<tt class="descname">button</tt><a class="headerlink" href="#libavg.avg.MouseEvent.button" title="Permalink to this definition">¶</a></dt>
+<dd><p>The button that caused the event. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.MouseEvent.cursorid">
+<tt class="descname">cursorid</tt><a class="headerlink" href="#libavg.avg.MouseEvent.cursorid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Always <tt class="samp docutils literal"><span class="pre">-1</span></tt> for mouse events, but can be used to handle mouse and
+tracking events in one handler. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.MouseEvent.leftbuttonstate">
+<tt class="descname">leftbuttonstate</tt><a class="headerlink" href="#libavg.avg.MouseEvent.leftbuttonstate" title="Permalink to this definition">¶</a></dt>
+<dd><p><tt class="xref py py-const docutils literal"><span class="pre">True</span></tt> if the left mouse button is currently pressed. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.MouseEvent.middlebuttonstate">
+<tt class="descname">middlebuttonstate</tt><a class="headerlink" href="#libavg.avg.MouseEvent.middlebuttonstate" title="Permalink to this definition">¶</a></dt>
+<dd><p><tt class="xref py py-const docutils literal"><span class="pre">True</span></tt> if the middle mouse button is currently pressed. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.MouseEvent.rightbuttonstate">
+<tt class="descname">rightbuttonstate</tt><a class="headerlink" href="#libavg.avg.MouseEvent.rightbuttonstate" title="Permalink to this definition">¶</a></dt>
+<dd><p><tt class="xref py py-const docutils literal"><span class="pre">True</span></tt> if the right mouse button is currently pressed. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.MouseEvent.source">
+<tt class="descname">source</tt><a class="headerlink" href="#libavg.avg.MouseEvent.source" title="Permalink to this definition">¶</a></dt>
+<dd><p>Always <tt class="xref py py-const docutils literal"><span class="pre">MOUSE</span></tt>. Read-only</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.MouseEvent.speed">
+<tt class="descname">speed</tt><a class="headerlink" href="#libavg.avg.MouseEvent.speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Current speed of the mouse in pixels per millisecond as a
+<a class="reference internal" href="misc.html#libavg.avg.Point2D" title="libavg.avg.Point2D"><tt class="xref py py-class docutils literal"><span class="pre">Point2D</span></tt></a>. Read-only.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.TouchEvent">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">TouchEvent</tt><big>(</big><em>id</em>, <em>type</em>, <em>pos</em>, <em>source</em><span class="optional">[</span>, <em>speed</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.TouchEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.CursorEvent" title="libavg.avg.CursorEvent"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.CursorEvent</span></tt></a></p>
+<p>Generated when a touch or other tracking event occurs. Touch events happen
+only when a multi-touch sensitive surface or other camera tracker is
+active.</p>
+<dl class="attribute">
+<dt id="libavg.avg.TouchEvent.area">
+<tt class="descname">area</tt><a class="headerlink" href="#libavg.avg.TouchEvent.area" title="Permalink to this definition">¶</a></dt>
+<dd><p>Size of the blob found in pixels. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.TouchEvent.center">
+<tt class="descname">center</tt><a class="headerlink" href="#libavg.avg.TouchEvent.center" title="Permalink to this definition">¶</a></dt>
+<dd><p>Position as <a class="reference internal" href="misc.html#libavg.avg.Point2D" title="libavg.avg.Point2D"><tt class="xref py py-class docutils literal"><span class="pre">Point2D</span></tt></a>, with sub-pixel accuracy. Used for
+calibration. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.TouchEvent.cursorid">
+<tt class="descname">cursorid</tt><a class="headerlink" href="#libavg.avg.TouchEvent.cursorid" title="Permalink to this definition">¶</a></dt>
+<dd><p>An identifier for the current touch. A single touch will generate a down,
+zero or more motion and a single up event in its lifetime, all with the same
+<a class="reference internal" href="#libavg.avg.TouchEvent.cursorid" title="libavg.avg.TouchEvent.cursorid"><tt class="xref py py-attr docutils literal"><span class="pre">cursorid</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.TouchEvent.eccentricity">
+<tt class="descname">eccentricity</tt><a class="headerlink" href="#libavg.avg.TouchEvent.eccentricity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.TouchEvent.handorientation">
+<tt class="descname">handorientation</tt><a class="headerlink" href="#libavg.avg.TouchEvent.handorientation" title="Permalink to this definition">¶</a></dt>
+<dd><p>The angle of the hand relative to the finger. <a class="reference internal" href="#libavg.avg.TouchEvent.handorientation" title="libavg.avg.TouchEvent.handorientation"><tt class="xref py py-attr docutils literal"><span class="pre">handorientation</span></tt></a> is
+only defined for events with <tt class="xref py py-attr docutils literal"><span class="pre">source`=:py:const:`TOUCH</span></tt>. If the
+tracker has detected a hovering hand attached to the finger, this is the
+actual hand-finger angle. If no hand was detected, the angle is approximated
+using the position of the touch on the surface. <a class="reference internal" href="#libavg.avg.TouchEvent.handorientation" title="libavg.avg.TouchEvent.handorientation"><tt class="xref py py-attr docutils literal"><span class="pre">handorientation</span></tt></a>
+ranges from <tt class="xref py py-const docutils literal"><span class="pre">-pi</span></tt> to <tt class="xref py py-const docutils literal"><span class="pre">pi</span></tt>, with 0 being the positive x
+axis. Angles increase in a clockwise fashion.</p>
+<p>For <tt class="xref py py-const docutils literal"><span class="pre">CURSORUP</span></tt> events, the angle is always approximated.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.TouchEvent.majoraxis">
+<tt class="descname">majoraxis</tt><a class="headerlink" href="#libavg.avg.TouchEvent.majoraxis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Major axis of an ellipse that is similar to the blob. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.TouchEvent.minoraxis">
+<tt class="descname">minoraxis</tt><a class="headerlink" href="#libavg.avg.TouchEvent.minoraxis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minor axis of an ellipse that is similar to the blob. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.TouchEvent.orientation">
+<tt class="descname">orientation</tt><a class="headerlink" href="#libavg.avg.TouchEvent.orientation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Angle of the blob in radians. For hovering hands, this is roughly the
+direction of the hand, modulo 180 degrees. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.TouchEvent.source">
+<tt class="descname">source</tt><a class="headerlink" href="#libavg.avg.TouchEvent.source" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#libavg.avg.TouchEvent.source" title="libavg.avg.TouchEvent.source"><tt class="xref py py-attr docutils literal"><span class="pre">source</span></tt></a> can be either <tt class="xref py py-const docutils literal"><span class="pre">TRACK</span></tt> or <tt class="xref py py-const docutils literal"><span class="pre">TOUCH</span></tt>.
+In most cases, actual touches will generate <tt class="xref py py-const docutils literal"><span class="pre">TOUCH</span></tt> events. When
+used with a DI device, the internal tracker also generates <tt class="xref py py-const docutils literal"><span class="pre">TRACK</span></tt>
+events for hands above the surface. When used with an FTIR device, the
+internal tracker generates <tt class="xref py py-const docutils literal"><span class="pre">TRACK</span></tt> events for the actual touches.
+Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.TouchEvent.speed">
+<tt class="descname">speed</tt><a class="headerlink" href="#libavg.avg.TouchEvent.speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Current speed of the touch in pixels per millisecond as a
+<a class="reference internal" href="misc.html#libavg.avg.Point2D" title="libavg.avg.Point2D"><tt class="xref py py-class docutils literal"><span class="pre">Point2D</span></tt></a>. Read-only.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.TouchEvent.getContour">
+<tt class="descname">getContour</tt><big>(</big><big>)</big> &rarr; list<a class="headerlink" href="#libavg.avg.TouchEvent.getContour" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the contour of the blob as a list of points if supported by the
+tracker being used.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.TouchEvent.getRelatedEvents">
+<tt class="descname">getRelatedEvents</tt><big>(</big><big>)</big> &rarr; events<a class="headerlink" href="#libavg.avg.TouchEvent.getRelatedEvents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only for DI devices and the internal tracker: Returns a python tuple
+containing the events &#8216;related&#8217; to this one. For <tt class="xref py py-const docutils literal"><span class="pre">TOUCH</span></tt> events
+(fingers), the tuple contains one element: the corresponding
+<tt class="xref py py-const docutils literal"><span class="pre">TRACK</span></tt> event (hand). For <tt class="xref py py-const docutils literal"><span class="pre">TRACK</span></tt> events,
+the tuple contains all <tt class="xref py py-const docutils literal"><span class="pre">TOUCH</span></tt> events that belong to the same hand.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.Tracker">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">Tracker</tt><a class="headerlink" href="#libavg.avg.Tracker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></tt></p>
+<p>A class that uses a camera to track moving objects and delivers the movements
+as avg events. Create a tracker by using <a class="reference internal" href="player.html#libavg.avg.Player.enableMultitouch" title="libavg.avg.Player.enableMultitouch"><tt class="xref py py-meth docutils literal"><span class="pre">Player.enableMultitouch()</span></tt></a> with
+<tt class="samp docutils literal"><span class="pre">AVG_MULTITOUCH_DRIVER=TRACKER</span></tt>. The properties of this class are explained
+under <a class="reference external" href="https://www.libavg.de/wiki/ProgrammersGuide/Tracker">https://www.libavg.de/wiki/ProgrammersGuide/Tracker</a>.</p>
+<dl class="method">
+<dt id="libavg.avg.Tracker.abortCalibration">
+<tt class="descname">abortCalibration</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.Tracker.abortCalibration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aborts coordinate calibration session and restores the previous
+coordinate transformer.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Tracker.endCalibration">
+<tt class="descname">endCalibration</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.Tracker.endCalibration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ends coordinate calibration session and activates the coordinate
+transformer generated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Tracker.getDisplayROIPos">
+<tt class="descname">getDisplayROIPos</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.Tracker.getDisplayROIPos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Tracker.getDisplayROISize">
+<tt class="descname">getDisplayROISize</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.Tracker.getDisplayROISize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Tracker.getImage">
+<tt class="descname">getImage</tt><big>(</big><em>imageid</em><big>)</big> &rarr; Bitmap<a class="headerlink" href="#libavg.avg.Tracker.getImage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns one of the intermediate images necessary for tracking.
+These images are only available if setDebugImages was called before
+with appropriate parameters. Possible <tt class="xref py py-attr docutils literal"><span class="pre">imageid</span></tt> values are
+<tt class="xref py py-const docutils literal"><span class="pre">IMG_CAMERA</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">IMG_DISTORTED</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">IMG_NOHISTORY</span></tt>,
+<tt class="xref py py-const docutils literal"><span class="pre">IMG_HISTOGRAM</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">IMG_FINGERS</span></tt> or
+<tt class="xref py py-const docutils literal"><span class="pre">IMG_HIGHPASS</span></tt>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Tracker.getParam">
+<tt class="descname">getParam</tt><big>(</big><em>element</em><big>)</big> &rarr; value<a class="headerlink" href="#libavg.avg.Tracker.getParam" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a tracker configuration parameter.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Tracker.resetHistory">
+<tt class="descname">resetHistory</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.Tracker.resetHistory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Throws away the current history image and generates a new one from
+the next second of images.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Tracker.saveConfig">
+<tt class="descname">saveConfig</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.Tracker.saveConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the current tracker configuration to the default config file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Tracker.setDebugImages">
+<tt class="descname">setDebugImages</tt><big>(</big><em>img</em>, <em>finger</em><big>)</big><a class="headerlink" href="#libavg.avg.Tracker.setDebugImages" title="Permalink to this definition">¶</a></dt>
+<dd><p>Controls whether debug images of intermediate tracking results
+and detected finger positions are generated and exported to
+python. Generating the debug images takes a moderate amount of
+time, so it is turned off by default.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>img</strong> &#8211; Whether to generate intermediate result images.</li>
+<li><strong>finger</strong> &#8211; Whether to generate the <tt class="xref py py-const docutils literal"><span class="pre">IMG_FINGERS</span></tt> result image.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Tracker.setParam">
+<tt class="descname">setParam</tt><big>(</big><em>element</em>, <em>value</em><big>)</big><a class="headerlink" href="#libavg.avg.Tracker.setParam" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets one of the tracker configuration parameters.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Tracker.startCalibration">
+<tt class="descname">startCalibration</tt><big>(</big><em>displayextents</em><big>)</big> &rarr; TrackerCalibrator<a class="headerlink" href="#libavg.avg.Tracker.startCalibration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts coordinate calibration session. The returned
+<a class="reference internal" href="#libavg.avg.TrackerCalibrator" title="libavg.avg.TrackerCalibrator"><tt class="xref py py-class docutils literal"><span class="pre">TrackerCalibrator</span></tt></a> exists until <a class="reference internal" href="#libavg.avg.Tracker.endCalibration" title="libavg.avg.Tracker.endCalibration"><tt class="xref py py-meth docutils literal"><span class="pre">endCalibration()</span></tt></a>
+or <a class="reference internal" href="#libavg.avg.Tracker.abortCalibration" title="libavg.avg.Tracker.abortCalibration"><tt class="xref py py-meth docutils literal"><span class="pre">abortCalibration()</span></tt></a> is called.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>displayextents</strong> &#8211; The width and height of the display area.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.TrackerCalibrator">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">TrackerCalibrator</tt><a class="headerlink" href="#libavg.avg.TrackerCalibrator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></tt></p>
+<p>Generates a mapping of display points to camera points using a set of reference
+points. Python code should display reference points that the user must
+touch to establish a mapping. Created by <a class="reference internal" href="#libavg.avg.Tracker.startCalibration" title="libavg.avg.Tracker.startCalibration"><tt class="xref py py-meth docutils literal"><span class="pre">Tracker.startCalibration()</span></tt></a>.</p>
+<dl class="method">
+<dt id="libavg.avg.TrackerCalibrator.getDisplayPoint">
+<tt class="descname">getDisplayPoint</tt><big>(</big><big>)</big> &rarr; Point2D<a class="headerlink" href="#libavg.avg.TrackerCalibrator.getDisplayPoint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.TrackerCalibrator.nextPoint">
+<tt class="descname">nextPoint</tt><big>(</big><big>)</big> &rarr; bool<a class="headerlink" href="#libavg.avg.TrackerCalibrator.nextPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Advances to the next point. Returns <tt class="xref py py-const docutils literal"><span class="pre">False</span></tt> and ends calibration if
+all points have been set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.TrackerCalibrator.setCamPoint">
+<tt class="descname">setCamPoint</tt><big>(</big><em>pos</em><big>)</big><a class="headerlink" href="#libavg.avg.TrackerCalibrator.setCamPoint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="animation.html" title="Animation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="vectornodes.html" title="Vector Nodes"
+             >previous</a> |</li>
+        <li><a href="index.html">libavg 1.8 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Ulrich von Zadow.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

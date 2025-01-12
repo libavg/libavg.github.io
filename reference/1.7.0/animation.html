@@ -1,0 +1,462 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Animation &mdash; libavg v1.7 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="libavg v1.7 documentation" href="index.html" />
+    <link rel="next" title="Effect Nodes" href="fx.html" />
+    <link rel="prev" title="Input Handling" href="events.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="fx.html" title="Effect Nodes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="events.html" title="Input Handling"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">libavg v1.7 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="events.html"
+                        title="previous chapter">Input Handling</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="fx.html"
+                        title="next chapter">Effect Nodes</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/animation.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-libavg.avg">
+<span id="animation"></span><h1>Animation<a class="headerlink" href="#module-libavg.avg" title="Permalink to this headline">¶</a></h1>
+<p class="graphviz">
+<img src="_images/inheritance-52027cedcec9fc31311217fbbed3e0464955bb4c.png" alt="Inheritance diagram of AnimState, ContinuousAnim, EaseInOutAnim, LinearAnim, ParallelAnim, StateAnim, WaitAnim" usemap="#inheritancead66dd8038" class="inheritance"/>
+<map id="inheritancead66dd8038" name="inheritancead66dd8038">
+<area shape="rect" id="node1" href="#libavg.avg.AnimState" title="AnimState" alt="" coords="223,83,316,111"/>
+<area shape="rect" id="node4" href="#libavg.avg.Anim" title="Anim" alt="" coords="340,83,412,111"/>
+<area shape="rect" id="node7" href="#libavg.avg.AttrAnim" title="AttrAnim" alt="" coords="163,161,245,189"/>
+<area shape="rect" id="node11" href="#libavg.avg.StateAnim" title="StateAnim" alt="" coords="269,161,363,189"/>
+<area shape="rect" id="node14" href="#libavg.avg.ParallelAnim" title="ParallelAnim" alt="" coords="387,161,488,189"/>
+<area shape="rect" id="node18" href="#libavg.avg.WaitAnim" title="WaitAnim" alt="" coords="512,161,597,189"/>
+<area shape="rect" id="node6" href="#libavg.avg.SimpleAnim" title="SimpleAnim" alt="" coords="85,238,184,266"/>
+<area shape="rect" id="node9" href="#libavg.avg.EaseInOutAnim" title="EaseInOutAnim" alt="" coords="5,315,131,343"/>
+<area shape="rect" id="node16" href="#libavg.avg.LinearAnim" title="LinearAnim" alt="" coords="155,315,251,343"/>
+<area shape="rect" id="node20" href="#libavg.avg.ContinuousAnim" title="ContinuousAnim" alt="" coords="208,238,339,266"/>
+</map>
+</p>
+<dl class="class">
+<dt id="libavg.avg.Anim">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">Anim</tt><a class="headerlink" href="#libavg.avg.Anim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></tt></p>
+<p>Base class for all animations.</p>
+<dl class="method">
+<dt id="libavg.avg.Anim.setStartCallback">
+<tt class="descname">setStartCallback</tt><big>(</big><em>pyfunc</em><big>)</big><a class="headerlink" href="#libavg.avg.Anim.setStartCallback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a python callable to be invoked when the animation starts.
+Corresponds to the constructor parameter startCallback.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Anim.setStopCallback">
+<tt class="descname">setStopCallback</tt><big>(</big><em>pyfunc</em><big>)</big><a class="headerlink" href="#libavg.avg.Anim.setStopCallback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a python callable to invoke when the animation has
+finished running. Corresponds to the constructor parameter stopCallback.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Anim.abort">
+<tt class="descname">abort</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.Anim.abort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops the animation.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Anim.start">
+<tt class="descname">start</tt><big>(</big><em>keepAttr</em><big>)</big><a class="headerlink" href="#libavg.avg.Anim.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts the animation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>keepAttr</strong> &#8211; If this parameter is set to <tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt>, the animation doesn&#8217;t
+set the attribute value when starting. Instead, it calculates a virtual
+start time from the current attribute value and proceeds from there.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Anim.isRunning">
+<tt class="descname">isRunning</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.Anim.isRunning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns <tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt> if the animation is currently executing.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.AnimState">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">AnimState</tt><big>(</big><em>name</em>, <em>anim</em>, <em>nextName=&quot;&quot;</em><big>)</big><a class="headerlink" href="#libavg.avg.AnimState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></tt></p>
+<p>One state of a <a class="reference internal" href="#libavg.avg.StateAnim" title="libavg.avg.StateAnim"><tt class="xref py py-class docutils literal"><span class="pre">StateAnim</span></tt></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> &#8211; The name of the state. Used in <a class="reference internal" href="#libavg.avg.StateAnim.setState" title="libavg.avg.StateAnim.setState"><tt class="xref py py-meth docutils literal"><span class="pre">StateAnim.setState()</span></tt></a> and
+<a class="reference internal" href="#libavg.avg.StateAnim.getState" title="libavg.avg.StateAnim.getState"><tt class="xref py py-meth docutils literal"><span class="pre">StateAnim.getState()</span></tt></a>.</li>
+<li><strong>anim</strong> &#8211; The child animation to run when this state is active.</li>
+<li><strong>nextName</strong> &#8211; The name of the state to enter when this state is done.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.AttrAnim">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">AttrAnim</tt><a class="headerlink" href="#libavg.avg.AttrAnim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.Anim" title="libavg.avg.Anim"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.Anim</span></tt></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.ContinuousAnim">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">ContinuousAnim</tt><big>(</big><em>node</em>, <em>attrName</em>, <em>startValue</em>, <em>speed</em><span class="optional">[</span>, <em>useInt=False</em>, <em>startCallback=None</em>, <em>stopCallback=None</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.ContinuousAnim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.AttrAnim" title="libavg.avg.AttrAnim"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.AttrAnim</span></tt></a></p>
+<p>Class that animates an attribute of a libavg node continuously and
+linearly. The animation will not stop until the <tt class="xref py py-meth docutils literal"><span class="pre">abort()</span></tt> method is
+called.</p>
+<p>A possible use case is the continuous rotation of an object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>node</strong> &#8211; The libavg node object to animate.</li>
+<li><strong>attrName</strong> &#8211; The name of the attribute to change.</li>
+<li><strong>startValue</strong> &#8211; Initial value of the attribute.</li>
+<li><strong>speed</strong> &#8211; Attribute change per second.</li>
+<li><strong>useInt</strong> &#8211; If <tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt>, the attribute is always set to an integer value.</li>
+<li><strong>startCallback</strong> &#8211; Python callable to invoke when the animation starts.</li>
+<li><strong>stopCallback</strong> &#8211; Python callable to invoke when the animation has
+finished running, either because abort was called or because
+another animation for the same attribute was started.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.EaseInOutAnim">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">EaseInOutAnim</tt><big>(</big><em>node</em>, <em>attrName</em>, <em>duration</em>, <em>startValue</em>, <em>endValue</em>, <em>easeInDuration</em>, <em>easeOutDuration</em><span class="optional">[</span>, <em>useInt=False</em>, <em>startCallback=None</em>, <em>stopCallback=None</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.EaseInOutAnim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.SimpleAnim" title="libavg.avg.SimpleAnim"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.SimpleAnim</span></tt></a></p>
+<p>Class that animates an attribute of a libavg node. The animation proceeds
+in three phases: ease-in, linear and ease-out. Start and end speed are
+zero. Ease-in and ease-out phases have the shape of one quadrant of the
+sine curve.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>node</strong> &#8211; The libavg node object to animate.</li>
+<li><strong>attrName</strong> &#8211; The name of the attribute to change.</li>
+<li><strong>duration</strong> &#8211; The length of the animation in milliseconds.</li>
+<li><strong>startValue</strong> &#8211; Initial value of the attribute.</li>
+<li><strong>endValue</strong> &#8211; Value of the attribute after duration has elapsed.</li>
+<li><strong>easeInDuration</strong> &#8211; The duration of the ease-in phase in milliseconds.</li>
+<li><strong>easeOutDuration</strong> &#8211; The duration of the ease-out phase in milliseconds.</li>
+<li><strong>useInt</strong> &#8211; If <tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt>, the attribute is always set to an integer value.</li>
+<li><strong>startCallback</strong> &#8211; Python callable to invoke when the animation starts.</li>
+<li><strong>stopCallback</strong> &#8211; Python callable to invoke when the animation has
+finished running, either because it&#8217;s run the allotted time, because
+abort was called or because another animation for the same
+attribute was started.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.LinearAnim">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">LinearAnim</tt><big>(</big><em>node</em>, <em>attrName</em>, <em>duration</em>, <em>startValue</em>, <em>endValue</em><span class="optional">[</span>, <em>useInt=False</em>, <em>startCallback=None</em>, <em>stopCallback=None</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.LinearAnim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.SimpleAnim" title="libavg.avg.SimpleAnim"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.SimpleAnim</span></tt></a></p>
+<p>Class that animates an attribute of a libavg node by interpolating
+linearly between start and end values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>node</strong> &#8211; The libavg node object to animate.</li>
+<li><strong>attrName</strong> &#8211; The name of the attribute to change.</li>
+<li><strong>duration</strong> &#8211; The length of the animation in milliseconds.</li>
+<li><strong>startValue</strong> &#8211; Initial value of the attribute.</li>
+<li><strong>endValue</strong> &#8211; Value of the attribute after duration has elapsed.</li>
+<li><strong>useInt</strong> &#8211; If <tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt>, the attribute is always set to an integer value.</li>
+<li><strong>startCallback</strong> &#8211; Python callable to invoke when the animation starts.</li>
+<li><strong>stopCallback</strong> &#8211; Python callable to invoke when the animation has
+finished running, either because it&#8217;s run the allotted time, because
+abort was called or because another animation for the same
+attribute was started.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.ParallelAnim">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">ParallelAnim</tt><big>(</big><em>anims</em><span class="optional">[</span>, <em>startCallback</em>, <em>stopCallback</em>, <em>maxAge</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.ParallelAnim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.Anim" title="libavg.avg.Anim"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.Anim</span></tt></a></p>
+<p>Animation that executes several child animations at the same time. The
+duration of the ParallelAnim is the maximum of the child&#8217;s durations or
+maxAge, whatever is shorter.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>anims</strong> &#8211; A list of child animations.</li>
+<li><strong>startCallback</strong> &#8211; Python callable to invoke when the animation starts.</li>
+<li><strong>stopCallback</strong> &#8211; Python callable to invoke when the animation has
+finished running, either because it&#8217;s run the allotted time or because
+abort was called.</li>
+<li><strong>maxAge</strong> &#8211; The maximum duration of the animation in milliseconds.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="libavg.avg.ParallelAnim.start">
+<tt class="descname">start</tt><big>(</big><em>keepAttr</em><big>)</big><a class="headerlink" href="#libavg.avg.ParallelAnim.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts the animation by calling <a class="reference internal" href="#libavg.avg.ParallelAnim.start" title="libavg.avg.ParallelAnim.start"><tt class="xref py py-meth docutils literal"><span class="pre">start()</span></tt></a> for each of the child
+animations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>keepAttr</strong> &#8211; This parameter is passed to the child animations.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.SimpleAnim">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">SimpleAnim</tt><a class="headerlink" href="#libavg.avg.SimpleAnim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.AttrAnim" title="libavg.avg.AttrAnim"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.AttrAnim</span></tt></a></p>
+<p>Base class for animations that change libavg node attributes by
+interpolating over a set amount of time. If <a class="reference internal" href="#libavg.avg.Anim.abort" title="libavg.avg.Anim.abort"><tt class="xref py py-meth docutils literal"><span class="pre">Anim.abort()</span></tt></a> isn&#8217;t needed,
+there is no need to hold on to the animation object after calling
+<a class="reference internal" href="#libavg.avg.Anim.start" title="libavg.avg.Anim.start"><tt class="xref py py-meth docutils literal"><span class="pre">Anim.start()</span></tt></a> - it will exist exactly as long as the animation lasts and
+then disappear.</p>
+<p>The animation framework makes sure that only one animation per attribute
+of a node runs at any given time. If a second one is started, the first
+one is aborted.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.StateAnim">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">StateAnim</tt><big>(</big><em>states</em><big>)</big><a class="headerlink" href="#libavg.avg.StateAnim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.Anim" title="libavg.avg.Anim"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.Anim</span></tt></a></p>
+<p>Animation that executes one of several child animations depending on it&#8217;s
+current state. The state can be None, in which case no animation is
+executed. None is the initial state. Note that changing the state of an
+animation during a start or stop callback of a child animation is not
+possible. An attempt to do so is silently ignored.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>states</strong> &#8211; A list of AnimState objects.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="libavg.avg.StateAnim.getState">
+<tt class="descname">getState</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.StateAnim.getState" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.StateAnim.setDebug">
+<tt class="descname">setDebug</tt><big>(</big><em>debug</em><big>)</big><a class="headerlink" href="#libavg.avg.StateAnim.setDebug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setting this to <tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt> causes all state changes to be printed on
+the console.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.StateAnim.setState">
+<tt class="descname">setState</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.StateAnim.setState" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.WaitAnim">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">WaitAnim</tt><big>(</big><span class="optional">[</span><em>duration=-1</em>, <em>startCallback</em>, <em>stopCallback</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.WaitAnim" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.Anim" title="libavg.avg.Anim"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.Anim</span></tt></a></p>
+<p>Animation that simply does nothing for a specified duration. Useful
+in the context of StateAnims.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>duration</strong> &#8211; The length of the animation in milliseconds.</li>
+<li><strong>startCallback</strong> &#8211; Python callable to invoke when the animation starts.</li>
+<li><strong>stopCallback</strong> &#8211; Python callable to invoke when the animation has
+finished running, either because it&#8217;s run the allotted time or because
+abort was called.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="libavg.avg.WaitAnim.start">
+<tt class="descname">start</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.WaitAnim.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="libavg.avg.fadeIn">
+<tt class="descclassname">libavg.avg.</tt><tt class="descname">fadeIn</tt><big>(</big><em>node</em>, <em>duration</em><span class="optional">[</span>, <em>max=1.0</em>, <em>stopCallback</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.fadeIn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fades the opacity of a node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>node</strong> &#8211; The node to fade.</li>
+<li><strong>duration</strong> &#8211; Length of the fade in milliseconds.</li>
+<li><strong>max</strong> &#8211; The opacity of the node at the end of the fade.</li>
+<li><strong>stopCallback</strong> &#8211; Function to call when the fade is over.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="libavg.avg.fadeOut">
+<tt class="descclassname">libavg.avg.</tt><tt class="descname">fadeOut</tt><big>(</big><em>node</em>, <em>duration</em><span class="optional">[</span>, <em>stopCallback</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.fadeOut" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fades the opacity of a node to zero.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>node</strong> &#8211; The node to fade.</li>
+<li><strong>duration</strong> &#8211; Length of the fade in milliseconds.</li>
+<li><strong>stopCallback</strong> &#8211; Function to call when the fade is over.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="libavg.avg.getNumRunningAnims">
+<tt class="descclassname">libavg.avg.</tt><tt class="descname">getNumRunningAnims</tt><big>(</big><big>)</big> &rarr; int<a class="headerlink" href="#libavg.avg.getNumRunningAnims" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the total number of running attribute-based animations (this
+includes LinearAnim, EaseInOutAnim and ContinuousAnim). Useful for
+debugging memory leaks.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="fx.html" title="Effect Nodes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="events.html" title="Input Handling"
+             >previous</a> |</li>
+        <li><a href="index.html">libavg v1.7 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, Ulrich von Zadow.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

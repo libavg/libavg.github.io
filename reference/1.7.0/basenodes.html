@@ -1,0 +1,423 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Base Node Classes &mdash; libavg v1.7 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="libavg v1.7 documentation" href="index.html" />
+    <link rel="next" title="Area Nodes" href="areanodes.html" />
+    <link rel="prev" title="Player &amp; Canvas" href="player.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="areanodes.html" title="Area Nodes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="player.html" title="Player &amp; Canvas"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">libavg v1.7 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="player.html"
+                        title="previous chapter">Player &amp; Canvas</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="areanodes.html"
+                        title="next chapter">Area Nodes</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/basenodes.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="base-node-classes">
+<h1>Base Node Classes<a class="headerlink" href="#base-node-classes" title="Permalink to this headline">¶</a></h1>
+<p>This section describes the base classes for all node classes that libavg provides.</p>
+<span class="target" id="module-libavg.avg"></span><p class="graphviz">
+<img src="_images/inheritance-a28b7d6e64da6950f18ea7640a95ae41aa2c9aa3.png" alt="Inheritance diagram of Node" usemap="#inheritanceaafc11817e" class="inheritance"/>
+<map id="inheritanceaafc11817e" name="inheritanceaafc11817e">
+<area shape="rect" id="node1" href="#libavg.avg.Node" title="Node" alt="" coords="9,83,81,111"/>
+</map>
+</p>
+<p>To be rendered, a <a class="reference internal" href="#libavg.avg.Node" title="libavg.avg.Node"><tt class="xref py py-class docutils literal"><span class="pre">Node</span></tt></a> must be part of a scene graph. Scene graphs are
+trees of <a class="reference internal" href="#libavg.avg.Node" title="libavg.avg.Node"><tt class="xref py py-class docutils literal"><span class="pre">Node</span></tt></a> objects associated with a <a class="reference internal" href="player.html#libavg.avg.Canvas" title="libavg.avg.Canvas"><tt class="xref py py-class docutils literal"><span class="pre">Canvas</span></tt></a>. A
+<a class="reference internal" href="areanodes.html#libavg.avg.CanvasNode" title="libavg.avg.CanvasNode"><tt class="xref py py-class docutils literal"><span class="pre">CanvasNode</span></tt></a> is at the root of each scene graph. Scene graphs are pure tree
+structures, so each <a class="reference internal" href="#libavg.avg.Node" title="libavg.avg.Node"><tt class="xref py py-class docutils literal"><span class="pre">Node</span></tt></a> only has one parent node. Nodes that are not
+linked to a canvas are not rendered. Any media that these nodes need are loaded from
+disk, however.</p>
+<p>libavg <a class="reference internal" href="#libavg.avg.Node" title="libavg.avg.Node"><tt class="xref py py-class docutils literal"><span class="pre">Node</span></tt></a> classes make heavy use of inheritance. Concepts like
+<tt class="xref py py-attr docutils literal"><span class="pre">id</span></tt>, <tt class="xref py py-attr docutils literal"><span class="pre">position</span></tt> and <tt class="xref py py-attr docutils literal"><span class="pre">opacity</span></tt> are defined in base classes
+and can be used in any of the subclasses.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To reduce redundancy in the reference,
+inherited methods and attributes are not mentioned in the derived class
+documentation - follow the link to the base class to access them. This also
+applies to constructor parameters: When constructing an object of a derived class,
+constructor parameters of the base classes are also accepted.</p>
+</div>
+<p>There are several ways of constructing a
+node. The reference documentation follows the python constructor syntax. The
+parameters remain the same in all syntactic variations, however. The options for
+construction are as follows:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>Use the standard python constructor</strong>:</dt>
+<dd><p class="first">Nodes can be created using a standard python constructor. As an example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">node</span> <span class="o">=</span> <span class="n">ImageNode</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s">&quot;background&quot;</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;sunset.png&quot;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
+        <span class="n">parent</span><span class="o">=</span><span class="n">rootNode</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="last">Parameters to a node constructor are always named parameters. Nodes never have
+positional constructor parameters.</p>
+</dd>
+<dt><strong>Use</strong> <a class="reference internal" href="player.html#libavg.avg.Player.createNode" title="libavg.avg.Player.createNode"><tt class="xref py py-meth docutils literal"><span class="pre">Player.createNode()</span></tt></a>:</dt>
+<dd><p class="first">There are two ways to create a node using createNode:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">node</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">createNode</span><span class="p">(</span><span class="s">&quot;image&quot;</span><span class="p">,</span>
+        <span class="p">{</span><span class="s">&quot;id&quot;</span><span class="p">:</span><span class="s">&quot;background&quot;</span><span class="p">,</span> <span class="s">&quot;href&quot;</span><span class="p">:</span><span class="s">&quot;sunset.png&quot;</span><span class="p">,</span> <span class="s">&quot;pos&quot;</span><span class="p">:(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
+         <span class="s">&quot;parent&quot;</span><span class="p">:</span><span class="n">rootNode</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>and:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">node</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">createNode</span><span class="p">(</span>
+        <span class="sd">&quot;&quot;&quot;&lt;image id=&quot;background&quot; href=&quot;sunset.png&quot;</span>
+<span class="sd">                      pos=&quot;(0,0)&quot;/&gt;&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="last">Using the second option, complete trees of nodes can be constructed in one
+statement.</p>
+</dd>
+<dt><strong>Load it from an avg file</strong>:</dt>
+<dd><p class="first">Complete scene graphs for onscreen display can be loaded from disk using
+<a class="reference internal" href="player.html#libavg.avg.Player.loadFile" title="libavg.avg.Player.loadFile"><tt class="xref py py-meth docutils literal"><span class="pre">Player.loadFile()</span></tt></a>:</p>
+<div class="last highlight-python"><div class="highlight"><pre><span class="n">root</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">loadFile</span><span class="p">(</span><span class="s">&quot;scene.avg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+<dt><strong>Create a complete scene graph using inline xml</strong>:</dt>
+<dd><p class="first"><a class="reference internal" href="player.html#libavg.avg.Player.loadString" title="libavg.avg.Player.loadString"><tt class="xref py py-meth docutils literal"><span class="pre">Player.loadString()</span></tt></a> allows using an avg-formatted xml string to
+create a scene graph of nodes:</p>
+<div class="last highlight-python"><div class="highlight"><pre><span class="n">root</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">loadString</span><span class="p">(</span><span class="s">&quot;&quot;&quot;</span>
+<span class="s">        &lt;avg size=&quot;(800,600)&quot;&gt;</span>
+<span class="s">            &lt;image id=&quot;background&quot; href=&quot;sunset.png&quot;</span>
+<span class="s">                      pos=&quot;(0,0)&quot;/&gt;</span>
+<span class="s">        &lt;/avg&gt;</span>
+<span class="s">    &quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>The methods <a class="reference internal" href="player.html#libavg.avg.Player.loadFile" title="libavg.avg.Player.loadFile"><tt class="xref py py-meth docutils literal"><span class="pre">Player.loadFile()</span></tt></a> and <a class="reference internal" href="player.html#libavg.avg.Player.loadString" title="libavg.avg.Player.loadString"><tt class="xref py py-meth docutils literal"><span class="pre">Player.loadString()</span></tt></a> create
+onscreen scene graphs. <a class="reference internal" href="player.html#libavg.avg.Player.loadCanvasFile" title="libavg.avg.Player.loadCanvasFile"><tt class="xref py py-meth docutils literal"><span class="pre">Player.loadCanvasFile()</span></tt></a> and
+<a class="reference internal" href="player.html#libavg.avg.Player.loadCanvasString" title="libavg.avg.Player.loadCanvasString"><tt class="xref py py-meth docutils literal"><span class="pre">Player.loadCanvasString()</span></tt></a> are the equivalent methods for offscreen
+canvases.</p>
+</div></blockquote>
+<dl class="class">
+<dt id="libavg.avg.Node">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">Node</tt><big>(</big><span class="optional">[</span><em>oncursormove</em>, <em>oncursorup</em>, <em>uncursordown</em>, <em>oncursorover</em>, <em>oncursorout</em>, <em>id: string=&quot;&quot;</em>, <em>parent: DivNode=None</em>, <em>active=True</em>, <em>sensitive=True</em>, <em>opacity=1.0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.Node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></tt></p>
+<p>Base class for everything that can be put into an avg tree.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>oncursormove</strong> (<em>string</em>) &#8211; <p>Name of python function to call when a cursor moves.</p>
+<p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.5: </span>Use <a class="reference internal" href="#libavg.avg.Node.connectEventHandler" title="libavg.avg.Node.connectEventHandler"><tt class="xref py py-func docutils literal"><span class="pre">connectEventHandler()</span></tt></a> instead.</p>
+</li>
+<li><strong>oncursorup</strong> (<em>string</em>) &#8211; <p>Name of python function to call when an up event occurs.</p>
+<p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.5: </span>Use <a class="reference internal" href="#libavg.avg.Node.connectEventHandler" title="libavg.avg.Node.connectEventHandler"><tt class="xref py py-func docutils literal"><span class="pre">connectEventHandler()</span></tt></a> instead.</p>
+</li>
+<li><strong>oncursordown</strong> (<em>string</em>) &#8211; <p>Name of python function to call when a down event occurs.</p>
+<p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.5: </span>Use <a class="reference internal" href="#libavg.avg.Node.connectEventHandler" title="libavg.avg.Node.connectEventHandler"><tt class="xref py py-func docutils literal"><span class="pre">connectEventHandler()</span></tt></a> instead.</p>
+</li>
+<li><strong>oncursorover</strong> (<em>string</em>) &#8211; <p>Name of python function to call when a cursor enters the node.</p>
+<p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.5: </span>Use <a class="reference internal" href="#libavg.avg.Node.connectEventHandler" title="libavg.avg.Node.connectEventHandler"><tt class="xref py py-func docutils literal"><span class="pre">connectEventHandler()</span></tt></a> instead.</p>
+</li>
+<li><strong>oncursorout</strong> (<em>string</em>) &#8211; <p>Name of python function to call when a cursor leaves the node.</p>
+<p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.5: </span>Use <a class="reference internal" href="#libavg.avg.Node.connectEventHandler" title="libavg.avg.Node.connectEventHandler"><tt class="xref py py-func docutils literal"><span class="pre">connectEventHandler()</span></tt></a> instead.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="libavg.avg.Node.id">
+<tt class="descname">id</tt><a class="headerlink" href="#libavg.avg.Node.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unique identifier that can be used to reference the node, for instance using
+<a class="reference internal" href="player.html#libavg.avg.Player.getElementByID" title="libavg.avg.Player.getElementByID"><tt class="xref py py-meth docutils literal"><span class="pre">Player.getElementByID()</span></tt></a>. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.Node.parent">
+<tt class="descname">parent</tt><a class="headerlink" href="#libavg.avg.Node.parent" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <a class="reference internal" href="areanodes.html#libavg.avg.DivNode" title="libavg.avg.DivNode"><tt class="xref py py-class docutils literal"><span class="pre">DivNode</span></tt></a> that the node will become a child of. Equivalent to
+calling <a class="reference internal" href="areanodes.html#libavg.avg.DivNode.appendChild" title="libavg.avg.DivNode.appendChild"><tt class="xref py py-meth docutils literal"><span class="pre">DivNode.appendChild()</span></tt></a> directly after construction.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.Node.active">
+<tt class="descname">active</tt><a class="headerlink" href="#libavg.avg.Node.active" title="Permalink to this definition">¶</a></dt>
+<dd><p>If this attribute is true, the node behaves as usual. If not, it
+is neither drawn nor does it react to events.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.Node.opacity">
+<tt class="descname">opacity</tt><a class="headerlink" href="#libavg.avg.Node.opacity" title="Permalink to this definition">¶</a></dt>
+<dd><p>A measure of the node&#8217;s transparency. 0.0 is completely
+transparent, 1.0 is completely opaque. Opacity is relative to
+the parent node&#8217;s opacity.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.Node.sensitive">
+<tt class="descname">sensitive</tt><a class="headerlink" href="#libavg.avg.Node.sensitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>A node only reacts to events if sensitive is true.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Node.connectEventHandler">
+<tt class="descname">connectEventHandler</tt><big>(</big><em>type</em>, <em>source</em>, <em>pyobj</em>, <em>pyfunc</em><big>)</big><a class="headerlink" href="#libavg.avg.Node.connectEventHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a callback function that is invoked whenever an event of the
+specified type from the specified source occurs. Unlike
+<a class="reference internal" href="#libavg.avg.Node.setEventHandler" title="libavg.avg.Node.setEventHandler"><tt class="xref py py-meth docutils literal"><span class="pre">setEventHandler()</span></tt></a>, this method allows several handlers for one
+type/source-combination. To remove a handler installed using
+<a class="reference internal" href="#libavg.avg.Node.connectEventHandler" title="libavg.avg.Node.connectEventHandler"><tt class="xref py py-meth docutils literal"><span class="pre">connectEventHandler()</span></tt></a>, call <a class="reference internal" href="#libavg.avg.Node.disconnectEventHandler" title="libavg.avg.Node.disconnectEventHandler"><tt class="xref py py-meth docutils literal"><span class="pre">disconnectEventHandler()</span></tt></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>type</strong> &#8211; One of the event types <tt class="xref py py-const docutils literal"><span class="pre">KEYUP</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">KEYDOWN</span></tt>,
+<tt class="xref py py-const docutils literal"><span class="pre">CURSORMOTION</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">CURSORUP</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">CURSORDOWN</span></tt>,
+<tt class="xref py py-const docutils literal"><span class="pre">CURSOROVER</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">CURSOROUT</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">RESIZE</span></tt> or
+<tt class="xref py py-const docutils literal"><span class="pre">QUIT</span></tt>.</li>
+<li><strong>source</strong> &#8211; <tt class="xref py py-const docutils literal"><span class="pre">MOUSE</span></tt> for mouse events, <tt class="xref py py-const docutils literal"><span class="pre">TOUCH</span></tt> for multitouch touch
+events, <tt class="xref py py-const docutils literal"><span class="pre">TRACK</span></tt> for multitouch track events or other tracking,
+<tt class="xref py py-const docutils literal"><span class="pre">NONE</span></tt> for keyboard events. Sources can be or&#8217;ed together to
+set a handler for several sources at once.</li>
+<li><strong>pyobj</strong> &#8211; The python object that hosts the callback. This parameter is only needed
+so that <a class="reference internal" href="#libavg.avg.Node.disconnectEventHandler" title="libavg.avg.Node.disconnectEventHandler"><tt class="xref py py-meth docutils literal"><span class="pre">disconnectEventHandler()</span></tt></a> can be called to remove all
+handlers hosted by one object in one call.</li>
+<li><strong>pyfunc</strong> &#8211; The python callable to invoke. This callable must take the event to
+process as a parameter. In contrast to callbacks set up using
+<a class="reference internal" href="#libavg.avg.Node.setEventHandler" title="libavg.avg.Node.setEventHandler"><tt class="xref py py-meth docutils literal"><span class="pre">setEventHandler()</span></tt></a>, it should not return anything. If
+<a class="reference internal" href="#libavg.avg.Node.connectEventHandler" title="libavg.avg.Node.connectEventHandler"><tt class="xref py py-meth docutils literal"><span class="pre">connectEventHandler()</span></tt></a> is used, all events bubble up the tree.
+pyfunc may not be <tt class="xref py py-const xref docutils literal"><span class="pre">None</span></tt>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Node.disconnectEventHandler">
+<tt class="descname">disconnectEventHandler</tt><big>(</big><em>pyobj</em><span class="optional">[</span>, <em>pyfunc</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.Node.disconnectEventHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes one or more event handlers from the node&#8217;s table of event handlers.
+If several event handlers conform to the parameters given, all are removed.
+It is an error if no matching event handler exists.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pyobj</strong> &#8211; The python object that hosts the event handler.</li>
+<li><strong>pyfunc</strong> &#8211; The python callable that should not be called anymore. If pyfunc is
+absent, all callbacks hosted by <tt class="xref py py-attr docutils literal"><span class="pre">pyobj</span></tt> are removed.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Node.getAbsPos">
+<tt class="descname">getAbsPos</tt><big>(</big><em>relpos</em><big>)</big> &rarr; Point2D<a class="headerlink" href="#libavg.avg.Node.getAbsPos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transforms a position in coordinates relative to the node to a
+position in window coordinates.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Node.getElementByPos">
+<tt class="descname">getElementByPos</tt><big>(</big><em>pos</em><big>)</big> &rarr; Node<a class="headerlink" href="#libavg.avg.Node.getElementByPos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the topmost child node that is at the position given. <tt class="xref py py-attr docutils literal"><span class="pre">pos</span></tt>
+is in coordinates relative to the called node. The algorithm used
+is the same as the cursor hit test algorithm used for events.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Node.getParent">
+<tt class="descname">getParent</tt><big>(</big><big>)</big> &rarr; Node<a class="headerlink" href="#libavg.avg.Node.getParent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the container (<a class="reference internal" href="areanodes.html#libavg.avg.AVGNode" title="libavg.avg.AVGNode"><tt class="xref py py-class docutils literal"><span class="pre">AVGNode</span></tt></a> or <a class="reference internal" href="areanodes.html#libavg.avg.DivNode" title="libavg.avg.DivNode"><tt class="xref py py-class docutils literal"><span class="pre">DivNode</span></tt></a>) the node
+is in. For the root node, returns <tt class="xref py py-const xref docutils literal"><span class="pre">None</span></tt>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Node.getRelPos">
+<tt class="descname">getRelPos</tt><big>(</big><em>abspos</em><big>)</big> &rarr; Point2D<a class="headerlink" href="#libavg.avg.Node.getRelPos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transforms a position in window coordinates to a position
+in coordinates relative to the node.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Node.releaseEventCapture">
+<tt class="descname">releaseEventCapture</tt><big>(</big><span class="optional">[</span><em>cursorid</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.Node.releaseEventCapture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restores normal cursor event handling after a call to
+<a class="reference internal" href="#libavg.avg.Node.setEventCapture" title="libavg.avg.Node.setEventCapture"><tt class="xref py py-func docutils literal"><span class="pre">setEventCapture()</span></tt></a>. <tt class="xref py py-attr docutils literal"><span class="pre">cursorid</span></tt> is the id of the
+cursor to release. If <tt class="xref py py-attr docutils literal"><span class="pre">cursorid</span></tt> is not given, the mouse cursor is
+used.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Node.setEventCapture">
+<tt class="descname">setEventCapture</tt><big>(</big><span class="optional">[</span><em>cursorid</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.Node.setEventCapture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets up event capturing so that cursor events are sent to this node
+regardless of the cursor position. cursorid is optional; if left out,
+the mouse cursor is captured. If not, events from a specific tracker
+cursor are captured. The event propagates to the capturing node&#8217;s
+parent normally. This function is useful for the
+implementation of user interface elements such as scroll bars. Only one
+node can capture a cursor at any one time. Normal operation can
+be restored by calling <a class="reference internal" href="#libavg.avg.Node.releaseEventCapture" title="libavg.avg.Node.releaseEventCapture"><tt class="xref py py-func docutils literal"><span class="pre">releaseEventCapture()</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Node.setEventHandler">
+<tt class="descname">setEventHandler</tt><big>(</big><em>type</em>, <em>source</em>, <em>pyfunc</em><big>)</big><a class="headerlink" href="#libavg.avg.Node.setEventHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a callback function that is invoked whenever an event of the
+specified type from the specified source occurs. This method removes all
+other event handlers from this type/source-combination.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>type</strong> &#8211; One of the event types <tt class="xref py py-const docutils literal"><span class="pre">KEYUP</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">KEYDOWN</span></tt>,
+<tt class="xref py py-const docutils literal"><span class="pre">CURSORMOTION</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">CURSORUP</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">CURSORDOWN</span></tt>,
+<tt class="xref py py-const docutils literal"><span class="pre">CURSOROVER</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">CURSOROUT</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">RESIZE</span></tt> or
+<tt class="xref py py-const docutils literal"><span class="pre">QUIT</span></tt>.</li>
+<li><strong>source</strong> &#8211; <tt class="xref py py-const docutils literal"><span class="pre">MOUSE</span></tt> for mouse events, <tt class="xref py py-const docutils literal"><span class="pre">TOUCH</span></tt> for multitouch
+touch events, <tt class="xref py py-const docutils literal"><span class="pre">TRACK</span></tt> for multitouch track events or other
+tracking, <tt class="xref py py-const docutils literal"><span class="pre">NONE</span></tt> for keyboard events. Sources can be or&#8217;ed
+together to set a handler for several sources at once.</li>
+<li><strong>pyfunc</strong> &#8211; <p>The python callable to invoke. This callable must take the event to
+process as a parameter. If pyfunc returns <tt class="xref py py-const xref docutils literal"><span class="pre">None</span></tt> or
+<tt class="xref py py-const xref docutils literal"><span class="pre">False</span></tt>, the event bubbles up the node tree. If it is
+<tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt>, bubbling is suppressed.</p>
+<p>If pyfunc is <tt class="xref py py-const xref docutils literal"><span class="pre">None</span></tt>, the previous handler is removed.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Node.unlink">
+<tt class="descname">unlink</tt><big>(</big><span class="optional">[</span><em>kill=False</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.Node.unlink" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes a node from it&#8217;s parent container and optionally deletes all resources
+the node holds. In the default case, <a class="reference internal" href="#libavg.avg.Node.unlink" title="libavg.avg.Node.unlink"><tt class="xref py py-func docutils literal"><span class="pre">unlink()</span></tt></a> is equivalent to
+<tt class="samp docutils literal"><span class="pre">node.getParent().removeChild(node.getParent().indexOf(node))</span></tt>,
+except that if the node has no parent, unlink does nothing. Also in the
+default case, textures are moved back to the CPU and event handlers are
+preserved.</p>
+<p>If <tt class="samp docutils literal"><span class="pre">kill=True</span></tt>, textures are not moved back. Event handlers for events
+routed to this node are reset, all textures are deleted and the href is reset
+to empty in this case, saving some time and making sure there are no
+references to the node left on the libavg side. <tt class="xref py py-attr docutils literal"><span class="pre">kill</span></tt> should always
+be set to <tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt> if the node will not be used after the unlink.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="areanodes.html" title="Area Nodes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="player.html" title="Player &amp; Canvas"
+             >previous</a> |</li>
+        <li><a href="index.html">libavg v1.7 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, Ulrich von Zadow.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

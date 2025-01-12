@@ -1,0 +1,1175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Misc. Classes &mdash; libavg 1.8.dev documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.8.dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="libavg 1.8.dev documentation" href="index.html" />
+    <link rel="prev" title="Widget Classes" href="widget.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="widget.html" title="Widget Classes"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">libavg 1.8.dev documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="widget.html"
+                        title="previous chapter">Widget Classes</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/misc.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-libavg.avg">
+<span id="misc-classes"></span><h1>Misc. Classes<a class="headerlink" href="#module-libavg.avg" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="libavg.avg.Bitmap">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">Bitmap</code><a class="headerlink" href="#libavg.avg.Bitmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></code></p>
+<p>Class representing a rectangular set of pixels in CPU memory. Bitmaps can be
+obtained from any <a class="reference internal" href="areanodes.html#libavg.avg.RasterNode" title="libavg.avg.RasterNode"><code class="xref py py-class docutils literal"><span class="pre">RasterNode</span></code></a> or loaded from disk. For nodes of type
+<a class="reference internal" href="areanodes.html#libavg.avg.ImageNode" title="libavg.avg.ImageNode"><code class="xref py py-class docutils literal"><span class="pre">ImageNode</span></code></a>, the current bitmap can be set as well. In general, huge
+Bitmaps (e.g. width&gt;65536) are supported as long as they fit into memory.</p>
+<p>The layout of the pixels in the bitmap is described by its pixel format.
+You can receive a complete list of all supported pixel formats by calling
+<code class="xref py py-func docutils literal"><span class="pre">avg.getSupportedPixelFormats()</span></code>.
+The pixel formats are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="xref py py-const docutils literal"><span class="pre">B5G6R5</span></code>: 16 bits per pixel blue, green, red components.</li>
+<li><code class="xref py py-const docutils literal"><span class="pre">B8G8R8</span></code>: 24 bits per pixel blue, green, red components.</li>
+<li><code class="xref py py-const docutils literal"><span class="pre">B8G8R8A8</span></code>: 32 bits per pixel: blue, green, red and an
+alpha (opacity) component.</li>
+<li><code class="xref py py-const docutils literal"><span class="pre">B8G8R8X8</span></code>: 32 bits per pixel, with the last byte unused.</li>
+<li><code class="xref py py-const docutils literal"><span class="pre">A8B8G8R8</span></code></li>
+<li><code class="xref py py-const docutils literal"><span class="pre">X8B8G8R8</span></code></li>
+<li><code class="xref py py-const docutils literal"><span class="pre">R5G6B5</span></code></li>
+<li><code class="xref py py-const docutils literal"><span class="pre">R8G8B8</span></code></li>
+<li><code class="xref py py-const docutils literal"><span class="pre">R8G8B8A8</span></code></li>
+<li><code class="xref py py-const docutils literal"><span class="pre">R8G8B8X8</span></code></li>
+<li><code class="xref py py-const docutils literal"><span class="pre">A8R8G8B8</span></code></li>
+<li><code class="xref py py-const docutils literal"><span class="pre">X8R8G8B8</span></code></li>
+<li><code class="xref py py-const docutils literal"><span class="pre">I8</span></code>: 8 bits of greyscale intensity.</li>
+<li><code class="xref py py-const docutils literal"><span class="pre">I16</span></code>: 16 bits of greyscale intensity.</li>
+<li><code class="xref py py-const docutils literal"><span class="pre">A8</span></code>: 8 bits of transparency information.</li>
+<li><code class="xref py py-const docutils literal"><span class="pre">YCbCr411</span></code>: Interleaved YCbCr: Y Y Cb Y Y Cr.
+Effectively 12 bits per pixel. Output format of some cameras.</li>
+<li><code class="xref py py-const docutils literal"><span class="pre">YCbCr422</span></code>: Interleaved YCbCr: Cb Y Cr Y.
+Effectively 16 bits per pixel. Output format of some cameras.</li>
+<li><code class="xref py py-const docutils literal"><span class="pre">YUYV422</span></code>: Like YCbCr422, but grey values come first, so the
+order is Y Cb Y Cr.</li>
+<li><code class="xref py py-const docutils literal"><span class="pre">YCbCr420p</span></code>: Not a valid pixel format for a single bitmap, but
+still a description of planar bitmap coding. Signifies separate
+bitmaps for Y, Cb and Cr components, with Cb and Cr half as big in both x
+and y dimensions. This is mpeg YCbCr, where the color components have
+values from 16...235. Used by many video formats, including mpeg.</li>
+<li><code class="xref py py-const docutils literal"><span class="pre">YCbCrJ420p</span></code>: Same as YCbCr420p, but this is the jpeg version
+with component values in the range 0...255. Used in video as well, for
+instance in motion jpeg encoding.</li>
+<li><code class="xref py py-const docutils literal"><span class="pre">YCbCrA420p</span></code>: YCbCr420p with an additional alpha (transparency)
+bitmap at full resolution. Used in flash video with transparency.</li>
+<li><code class="xref py py-const docutils literal"><span class="pre">BAYER8</span></code>: Bayer pattern. This is raw camera sensor data with
+an unspecified pixel order. The other <code class="xref py py-const docutils literal"><span class="pre">BAYER_XXX</span></code> constants
+specify differing camera sensor arrangements.</li>
+<li><code class="xref py py-const docutils literal"><span class="pre">BAYER8_RGGB</span></code></li>
+<li><code class="xref py py-const docutils literal"><span class="pre">BAYER8_GBRG</span></code></li>
+<li><code class="xref py py-const docutils literal"><span class="pre">BAYER8_GRBG</span></code></li>
+<li><code class="xref py py-const docutils literal"><span class="pre">BAYER8_BGGR</span></code></li>
+<li><code class="xref py py-const docutils literal"><span class="pre">R32G32B32A32F</span></code>: 32 bits per channel float RGBA.</li>
+<li><code class="xref py py-const docutils literal"><span class="pre">I32F</span></code>: 32 bits per channel greyscale intensity.</li>
+</ul>
+</div></blockquote>
+<dl class="method">
+<dt id="libavg.avg.Bitmap.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>size</em>, <em>pixelFormat</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.Bitmap.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an uninitialized bitmap of the given size and pixel format.
+<code class="xref py py-attr docutils literal"><span class="pre">name</span></code> is a name to be used in debug output.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>bitmap</em><span class="sig-paren">)</span></dt>
+<dd><p>Creates a copy of an already existing bitmap.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>bitmap</em>, <em>tlPos</em>, <em>brPos</em><span class="sig-paren">)</span></dt>
+<dd><p>Returns a rectangle inside an existing bitmap as a new bitmap. Note that the
+pixels are not copied and write operations will therefore effect the
+original bitmap as well.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>fileName</em><span class="sig-paren">)</span></dt>
+<dd><p>Loads an image file from disk and returns it as bitmap object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Bitmap.blt">
+<code class="descname">blt</code><span class="sig-paren">(</span><em>srcBmp</em>, <em>pos</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.Bitmap.blt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copies the pixels of srcBmp into the current bitmap at pos.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Bitmap.getAvg">
+<code class="descname">getAvg</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; float<a class="headerlink" href="#libavg.avg.Bitmap.getAvg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the average of all bitmap pixels.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Bitmap.getChannelAvg">
+<code class="descname">getChannelAvg</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span> &rarr; float<a class="headerlink" href="#libavg.avg.Bitmap.getChannelAvg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the average of one of the bitmap color channels (red, green or blue).
+Used for automatic tests.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Bitmap.getFormat">
+<code class="descname">getFormat</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.Bitmap.getFormat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the bitmap&#8217;s pixel format.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Bitmap.getName">
+<code class="descname">getName</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; string<a class="headerlink" href="#libavg.avg.Bitmap.getName" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Bitmap.getPixel">
+<code class="descname">getPixel</code><span class="sig-paren">(</span><em>pos) -&gt; (r</em>, <em>g</em>, <em>b</em>, <em>a</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.Bitmap.getPixel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns one image pixel as a color tuple. This should only be used
+for single pixels, as it is very slow.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Bitmap.getPixels">
+<code class="descname">getPixels</code><span class="sig-paren">(</span><em>copyData = True</em><span class="sig-paren">)</span> &rarr; string<a class="headerlink" href="#libavg.avg.Bitmap.getPixels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the raw pixel data in the bitmap as a python buffer. This
+method can be used to interface to external libraries such as the python
+imaging library PIL (<a class="reference external" href="http://www.pythonware.com/products/pil/">http://www.pythonware.com/products/pil/</a>).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>copyData</strong> (<em>bool</em>) &#8211; Whether to copy the bitmap data into the returned python buffer or return
+a view to the memory in the bitmap. Note that the second variant
+(<code class="docutils literal"><span class="pre">copyData</span> <span class="pre">=</span> <span class="pre">False</span></code>) is dangerous, since referencing the buffer after
+the bitmap is deleted will cause a crash.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Bitmap.getResized">
+<code class="descname">getResized</code><span class="sig-paren">(</span><em>newSize</em><span class="sig-paren">)</span> &rarr; Bitmap<a class="headerlink" href="#libavg.avg.Bitmap.getResized" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a new bitmap that is a resized version of the original.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Bitmap.getSize">
+<code class="descname">getSize</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; Point2D<a class="headerlink" href="#libavg.avg.Bitmap.getSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the size of the image in pixels.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Bitmap.getStdDev">
+<code class="descname">getStdDev</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; float<a class="headerlink" href="#libavg.avg.Bitmap.getStdDev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the standard deviation of all bitmap pixels.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Bitmap.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.Bitmap.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes the image to a file. File format is determined using the
+extension. Supported file types are those supported by gdk-pixbuf. This
+includes at least png, jpeg, gif, tiff and xpixmaps.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Bitmap.setPixels">
+<code class="descname">setPixels</code><span class="sig-paren">(</span><em>pixels</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.Bitmap.setPixels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the raw pixel data in the bitmap. Doesn&#8217;t change dimensions
+or pixel format. Can be used to interface to the python imaging
+library PIL (<a class="reference external" href="http://www.pythonware.com/products/pil/">http://www.pythonware.com/products/pil/</a>).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pixels</strong> (<em>string</em>) &#8211; Image data.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Bitmap.subtract">
+<code class="descname">subtract</code><span class="sig-paren">(</span><em>otherbitmap</em><span class="sig-paren">)</span> &rarr; bmp<a class="headerlink" href="#libavg.avg.Bitmap.subtract" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subtracts two bitmaps and returns the result. Used mainly to compare
+test images with the intended results (along with <a class="reference internal" href="#libavg.avg.Bitmap.getAvg" title="libavg.avg.Bitmap.getAvg"><code class="xref py py-meth docutils literal"><span class="pre">getAvg()</span></code></a> and
+<a class="reference internal" href="#libavg.avg.Bitmap.getStdDev" title="libavg.avg.Bitmap.getStdDev"><code class="xref py py-meth docutils literal"><span class="pre">getStdDev()</span></code></a>).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.BitmapManager">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">BitmapManager</code><a class="headerlink" href="#libavg.avg.BitmapManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></code></p>
+<p>(EXPERIMENTAL) Singleton class that allow an asynchronous load of bitmaps.
+The instance is accessed by <a class="reference internal" href="#libavg.avg.BitmapManager.get" title="libavg.avg.BitmapManager.get"><code class="xref py py-meth docutils literal"><span class="pre">get()</span></code></a>.</p>
+<dl class="method">
+<dt id="libavg.avg.BitmapManager.loadBitmap">
+<code class="descname">loadBitmap</code><span class="sig-paren">(</span><em>fileName</em>, <em>callback</em>, <em>pixelformat=NO_PIXELFORMAT</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.BitmapManager.loadBitmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Asynchronously loads a file into a Bitmap. The provided callback is invoked
+with a Bitmap instance as argument in case of a successful load or with an
+<code class="xref py py-class docutils literal"><span class="pre">avg.Exception</span></code> instance in case of failure. The optional parameter
+<code class="xref py py-attr docutils literal"><span class="pre">pixelformat</span></code> can be used to convert the bitmap to a specific format
+asynchronously as well.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="libavg.avg.BitmapManager.get">
+<em class="property">classmethod </em><code class="descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; BitmapManager<a class="headerlink" href="#libavg.avg.BitmapManager.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method gives access to the BitmapManager instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.BitmapManager.setNumThreads">
+<code class="descname">setNumThreads</code><span class="sig-paren">(</span><em>numThreads</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.BitmapManager.setNumThreads" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the number of threads used to load bitmaps. The default is a single
+thread. This should generally be less than the number of logical cores
+available.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.Color">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">Color</code><a class="headerlink" href="#libavg.avg.Color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></code></p>
+<p>A color in the rgb colorspace. libavg <code class="xref py py-class docutils literal"><span class="pre">Colors</span></code> can be constructed either
+from tuples or using html-like string syntax. Colors can be animated, and any
+interpolation between two colors is performed in the CIE-Lch color space for best
+results (See <a class="reference external" href="http://www.stuartdenman.com/improved-color-blending/">http://www.stuartdenman.com/improved-color-blending/</a>).</p>
+<dl class="method">
+<dt id="libavg.avg.Color.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>string</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.Color.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a color from a three- or six-character hex code (<code class="docutils literal"><span class="pre">F80</span></code> and
+<code class="docutils literal"><span class="pre">FF8800</span></code> are equivalent colors).</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>r</em>, <em>g</em>, <em>b</em><span class="sig-paren">)</span></dt>
+<dd><p>Constructs a color from three channel values in the range 0..255.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>(r</em>, <em>g</em>, <em>b)</em><span class="sig-paren">)</span></dt>
+<dd><p>Constructs a color from an rgb tuple.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.Color.r">
+<code class="descname">r</code><a class="headerlink" href="#libavg.avg.Color.r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Red component of the color (ro).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.Color.g">
+<code class="descname">g</code><a class="headerlink" href="#libavg.avg.Color.g" title="Permalink to this definition">¶</a></dt>
+<dd><p>Green component of the color (ro).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.Color.b">
+<code class="descname">b</code><a class="headerlink" href="#libavg.avg.Color.b" title="Permalink to this definition">¶</a></dt>
+<dd><p>Blue component of the color (ro).</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="libavg.avg.Color.mix">
+<em class="property">classmethod </em><code class="descname">mix</code><span class="sig-paren">(</span><em>color1</em>, <em>color2</em>, <em>ratio</em><span class="sig-paren">)</span> &rarr; color<a class="headerlink" href="#libavg.avg.Color.mix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a color that is a mix of the two colors passed as parameters.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="libavg.avg.Color.fromLch">
+<em class="property">classmethod </em><code class="descname">fromLch</code><span class="sig-paren">(</span><em>l</em>, <em>c</em>, <em>h</em><span class="sig-paren">)</span> &rarr; color<a class="headerlink" href="#libavg.avg.Color.fromLch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a color from values in Lch color space.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.CubicSpline">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">CubicSpline</code><span class="sig-paren">(</span><em>controlpoints</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.CubicSpline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></code></p>
+<p>Class that generates a smooth curve between control points using cubic
+spline-based interpolation. For an introduction on spline interpolation,
+see <a class="reference external" href="http://en.wikipedia.org/wiki/Spline_interpolation">http://en.wikipedia.org/wiki/Spline_interpolation</a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>controlpoints</strong> &#8211; A list of 2D coordinates. The x coordinates must be in increasing order.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="libavg.avg.CubicSpline.interpolate">
+<code class="descname">interpolate</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span> &rarr; y<a class="headerlink" href="#libavg.avg.CubicSpline.interpolate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes an x coordinate and delivers a corresponding y coordinate.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.FontStyle">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">FontStyle</code><span class="sig-paren">(</span><em>font=&quot;sans&quot;</em>, <em>variant=&quot;&quot;</em>, <em>color=&quot;FFFFFF&quot;</em>, <em>fontsize=15</em>, <em>indent=0</em>, <em>linespacing=-1</em>, <em>alignment=&quot;left&quot;</em>, <em>wrapmode=&quot;word&quot;</em>, <em>justify=False</em>, <em>letterspacing=0</em>, <em>aagamma=1</em>, <em>hint=True</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.FontStyle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">libavg.avg.ExportedObject</span></code></p>
+<p>A <a class="reference internal" href="#libavg.avg.FontStyle" title="libavg.avg.FontStyle"><code class="xref py py-class docutils literal"><span class="pre">FontStyle</span></code></a> object encapsulates all configurable font attributes in a
+<a class="reference internal" href="areanodes.html#libavg.avg.WordsNode" title="libavg.avg.WordsNode"><code class="xref py py-class docutils literal"><span class="pre">WordsNode</span></code></a>. It provides a way to set all relevant attributes
+(<code class="xref py py-attr docutils literal"><span class="pre">font</span></code>, <code class="xref py py-attr docutils literal"><span class="pre">fontsize</span></code>, etc.) in one line of code. The attributes
+correspond to the <a class="reference internal" href="areanodes.html#libavg.avg.WordsNode" title="libavg.avg.WordsNode"><code class="xref py py-class docutils literal"><span class="pre">WordsNode</span></code></a> attributes; refer to the
+<a class="reference internal" href="areanodes.html#libavg.avg.WordsNode" title="libavg.avg.WordsNode"><code class="xref py py-class docutils literal"><span class="pre">WordsNode</span></code></a> reference for descriptions.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.ImageCache">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">ImageCache</code><a class="headerlink" href="#libavg.avg.ImageCache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></code></p>
+<p>libavg&#8217;s global two-level cache of images in CPU (general system) and GPU
+(graphics card) memory. Access this class using the <code class="samp docutils literal"><span class="pre">player.cache</span></code>
+property. The cache is used for all images loaded from files in textures,
+including <a class="reference internal" href="areanodes.html#libavg.avg.ImageNode" title="libavg.avg.ImageNode"><code class="xref py py-class docutils literal"><span class="pre">ImageNode</span></code></a> images, <a class="reference internal" href="vectornodes.html#libavg.avg.VectorNode" title="libavg.avg.VectorNode"><code class="xref py py-class docutils literal"><span class="pre">VectorNode</span></code></a> textures and fill
+textures, and all <a class="reference internal" href="areanodes.html#libavg.avg.RasterNode" title="libavg.avg.RasterNode"><code class="xref py py-class docutils literal"><span class="pre">RasterNode</span></code></a> mask textures. <a class="reference internal" href="#libavg.avg.Bitmap" title="libavg.avg.Bitmap"><code class="xref py py-class docutils literal"><span class="pre">Bitmap</span></code></a>
+objects are not cached.</p>
+<dl class="attribute">
+<dt id="libavg.avg.ImageCache.capacity">
+<code class="descname">capacity</code><a class="headerlink" href="#libavg.avg.ImageCache.capacity" title="Permalink to this definition">¶</a></dt>
+<dd><p>The capacity of the cache as a tuple (cpu, gpu) in bytes. The capacity can
+also be set using <code class="samp docutils literal"><span class="pre">avgrc</span></code>. Default CPU capacity is one-quarter of
+physical RAM, default GPU capacity is 16 megabytes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">getNumImages -&gt; (cpu, gpu)</code></dt>
+<dd><p>Returns the number of images loaded.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">getMemUsed -&gt; (cpu, gpu)</code></dt>
+<dd><p>Returns the number of bytes used by images.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.Logger">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">Logger</code><a class="headerlink" href="#libavg.avg.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></code></p>
+<blockquote>
+<div><p>An python interface to libavg&#8217;s logger.
+It can be accessed as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">libavg</span>
+<span class="n">libavg</span><span class="o">.</span><span class="n">logger</span>
+</pre></div>
+</div>
+<p><strong>Logging</strong></p>
+<dl class="method">
+<dt id="libavg.avg.Logger.log">
+<code class="descname">log</code><span class="sig-paren">(</span><em>message</em>, <em>category</em>, <em>severity</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.Logger.log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Logs a message if category is active or severity is at least
+<code class="xref py py-const docutils literal"><span class="pre">ERROR</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>category</strong> &#8211; One of the categories listed or a custom category. Defaults to
+<code class="xref py py-const docutils literal"><span class="pre">Logger.Category.APP</span></code>.</li>
+<li><strong>severity</strong> &#8211; One of the severities listed. Defaults to <code class="xref py py-const docutils literal"><span class="pre">Logger.Severity.INFO</span></code>.</li>
+<li><strong>message</strong> &#8211; The log message string.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Logger.critical">
+<code class="descname">critical</code><span class="sig-paren">(</span><em>msg</em>, <em>category</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.Logger.critical" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shortcut to <a class="reference internal" href="#libavg.avg.Logger.log" title="libavg.avg.Logger.log"><code class="xref py py-meth docutils literal"><span class="pre">log()</span></code></a> with <strong>severity=</strong> <code class="xref py py-const docutils literal"><span class="pre">Logger.Severity.CRIT</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Logger.error">
+<code class="descname">error</code><span class="sig-paren">(</span><em>msg</em>, <em>category</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.Logger.error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shortcut to <a class="reference internal" href="#libavg.avg.Logger.log" title="libavg.avg.Logger.log"><code class="xref py py-meth docutils literal"><span class="pre">log()</span></code></a> with <strong>severity=</strong> <code class="xref py py-const docutils literal"><span class="pre">Logger.Severity.ERR</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Logger.warning">
+<code class="descname">warning</code><span class="sig-paren">(</span><em>msg</em>, <em>category</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.Logger.warning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shortcut to <a class="reference internal" href="#libavg.avg.Logger.log" title="libavg.avg.Logger.log"><code class="xref py py-meth docutils literal"><span class="pre">log()</span></code></a> with <strong>severity=</strong> <code class="xref py py-const docutils literal"><span class="pre">Logger.Severity.WARN</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Logger.info">
+<code class="descname">info</code><span class="sig-paren">(</span><em>msg</em>, <em>category</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.Logger.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shortcut to <a class="reference internal" href="#libavg.avg.Logger.log" title="libavg.avg.Logger.log"><code class="xref py py-meth docutils literal"><span class="pre">log()</span></code></a> with <strong>severity=</strong> <code class="xref py py-const docutils literal"><span class="pre">Logger.Severity.INFO</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Logger.debug">
+<code class="descname">debug</code><span class="sig-paren">(</span><em>msg</em>, <em>category</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.Logger.debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shortcut to <a class="reference internal" href="#libavg.avg.Logger.log" title="libavg.avg.Logger.log"><code class="xref py py-meth docutils literal"><span class="pre">log()</span></code></a> with <strong>severity=</strong> <code class="xref py py-const docutils literal"><span class="pre">Logger.Severity.DBG</span></code>.</p>
+</dd></dl>
+
+</div></blockquote>
+<p><strong>Configuration</strong></p>
+<blockquote>
+<div><dl class="method">
+<dt id="libavg.avg.Logger.addSink">
+<code class="descname">addSink</code><span class="sig-paren">(</span><em>logger</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.Logger.addSink" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a python logger object to libavg&#8217;s logging handlers.
+The python logger gets the key <cite>category</cite> as an &#8220;extra&#8221; kwarg, useful for
+formatting the output.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Logger.removeSink">
+<code class="descname">removeSink</code><span class="sig-paren">(</span><em>logger</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.Logger.removeSink" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a previously added logger. It will not receive any messages dispatched
+by the logger annymore. It&#8217;s safe to call the function even if the logger is
+not present.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Logger.removeStdLogSink">
+<code class="descname">removeStdLogSink</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.Logger.removeStdLogSink" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove libavg console printing sink.</p>
+<p>Setting <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal"><span class="pre">AVG_LOG_OMIT_STDERR</span></code> as EnvironmentVar has the same effect.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Logger.configureCategory">
+<code class="descname">configureCategory</code><span class="sig-paren">(</span><em>category</em>, <em>severity</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.Logger.configureCategory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assign a severity  to a given category.
+category is either a custom string or a <code class="xref py py-const docutils literal"><span class="pre">Logger.Category</span></code>
+severity has to be one of <code class="xref py py-const docutils literal"><span class="pre">Logger.Severity</span></code>, or it will default to
+<code class="xref py py-const docutils literal"><span class="pre">Logger.Severity.None</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Logger.getCategories">
+<code class="descname">getCategories</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.Logger.getCategories" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dict with <strong>category</strong> as key and <strong>severity</strong> as value</p>
+</dd></dl>
+
+<p>The Logger can also be configured using <span class="target" id="index-1"></span><code class="xref std std-envvar docutils literal"><span class="pre">AVG_LOG_CATEGORIES</span></code> with
+the format:</p>
+<div class="highlight-bash"><div class="highlight"><pre>CATEGORY<span class="o">[</span>:SEVERITY<span class="o">]</span> <span class="o">[</span>CATEGORY<span class="o">[</span>:SEVERITY<span class="o">]]</span>...
+</pre></div>
+</div>
+<p>Thus it is possible to set a severity level for every category.
+If no severity is given, the default severity is used.
+(refer to: <code class="xref py py-meth docutils literal"><span class="pre">setDefaultSeverity()</span></code>)
+If the category does not exist, it will be created.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">export</span> <span class="nv">AVG_LOG_CATEGORIES</span><span class="o">=</span><span class="s2">&quot;CONFIG:INFO APP:DBG PROFILE:DBG MEMORY&quot;</span>
+</pre></div>
+</div>
+<p>Default categories are <code class="xref py py-const docutils literal"><span class="pre">NONE</span></code>, <code class="xref py py-const docutils literal"><span class="pre">APP</span></code> and
+<code class="xref py py-const docutils literal"><span class="pre">DEPREC</span></code>. They are set to the defaultSeverity.</p>
+</div></blockquote>
+<p><strong>Categories:</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt><code class="xref py py-const docutils literal"><span class="pre">APP</span></code></dt>
+<dd>Reserved for application-level messages issued by python code.</dd>
+<dt><code class="xref py py-const docutils literal"><span class="pre">CONFIG</span></code></dt>
+<dd>Outputs configuration data.</dd>
+<dt><code class="xref py py-const docutils literal"><span class="pre">DEPREC</span></code></dt>
+<dd>Deprecation
+Messages that warn of functionality that will be removed from libavg
+in the future.</dd>
+<dt><code class="xref py py-const docutils literal"><span class="pre">EVENTS</span></code></dt>
+<dd>Outputs basic event data.</dd>
+<dt><code class="xref py py-const docutils literal"><span class="pre">MEMORY</span></code></dt>
+<dd>Outputs open/close information whenever a media file is accessed.</dd>
+<dt><code class="xref py py-const docutils literal"><span class="pre">NONE</span></code></dt>
+<dd>Outputs everything that has not been categorized.</dd>
+<dt><code class="xref py py-const docutils literal"><span class="pre">PROFILE</span></code></dt>
+<dd>Outputs performance statistics on player termination.</dd>
+<dt><code class="xref py py-const docutils literal"><span class="pre">PROFILE_V</span></code></dt>
+<dd>Outputs performance statistics for video decoding.</dd>
+<dt><code class="xref py py-const docutils literal"><span class="pre">PLUGIN</span></code></dt>
+<dd>Messages generated by loading plugins.</dd>
+<dt><code class="xref py py-const docutils literal"><span class="pre">PLAYER</span></code></dt>
+<dd>General libavg playback messages.</dd>
+<dt><code class="xref py py-const docutils literal"><span class="pre">SHADER</span></code></dt>
+<dd>Shader compiler messages.</dd>
+<dt><code class="xref py py-const docutils literal"><span class="pre">VIDEO</span></code></dt>
+<dd>Audio/Video related messages.</dd>
+</dl>
+</div></blockquote>
+<p><strong>Severities</strong></p>
+<blockquote>
+<div><p><code class="xref py py-const docutils literal"><span class="pre">CRIT</span></code> Critical</p>
+<p><code class="xref py py-const docutils literal"><span class="pre">ERR</span></code> Error</p>
+<p><code class="xref py py-const docutils literal"><span class="pre">WARN</span></code> Warning</p>
+<p><code class="xref py py-const docutils literal"><span class="pre">INFO</span></code> Info</p>
+<p><code class="xref py py-const docutils literal"><span class="pre">DBG</span></code> Debug</p>
+<p><code class="xref py py-const docutils literal"><span class="pre">NONE</span></code> None</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.Point2D">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">Point2D</code><span class="sig-paren">(</span><span class="optional">[</span><em>x</em>, <em>y=(0</em>, <em>0)</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.Point2D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></code></p>
+<p>A point in 2D space. Supports most arithmetic operations on vectors. The
+operators <code class="xref py py-attr docutils literal"><span class="pre">+</span></code>, <code class="xref py py-attr docutils literal"><span class="pre">-</span></code>, <code class="xref py py-attr docutils literal"><span class="pre">==</span></code> and <code class="xref py py-attr docutils literal"><span class="pre">!=</span></code> are
+defined for two <a class="reference internal" href="#libavg.avg.Point2D" title="libavg.avg.Point2D"><code class="xref py py-class docutils literal"><span class="pre">Point2D</span></code></a> parameters. Unary <code class="xref py py-attr docutils literal"><span class="pre">-</span></code> (negation)
+is defined as well. <a class="reference internal" href="#libavg.avg.Point2D" title="libavg.avg.Point2D"><code class="xref py py-class docutils literal"><span class="pre">Point2D</span></code></a> objects can also be multiplied and
+divided by a scalar.</p>
+<p><a class="reference internal" href="#libavg.avg.Point2D" title="libavg.avg.Point2D"><code class="xref py py-class docutils literal"><span class="pre">Point2D</span></code></a> implicitly converts from and to 2-element float tuples and
+lists, so in most cases you can use one of these types whenever a point is needed.</p>
+<dl class="attribute">
+<dt id="libavg.avg.Point2D.x">
+<code class="descname">x</code><a class="headerlink" href="#libavg.avg.Point2D.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.Point2D.y">
+<code class="descname">y</code><a class="headerlink" href="#libavg.avg.Point2D.y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="libavg.avg.Point2D.angle">
+<em class="property">classmethod </em><code class="descname">angle</code><span class="sig-paren">(</span><em>p1</em>, <em>p2</em><span class="sig-paren">)</span> &rarr; float<a class="headerlink" href="#libavg.avg.Point2D.angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the angle between the two vectors <code class="xref py py-attr docutils literal"><span class="pre">p1</span></code> and <code class="xref py py-attr docutils literal"><span class="pre">p2</span></code>
+in the range 0 and 2*pi, with 0 being the positive x axis. Angles run
+clockwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Point2D.getAngle">
+<code class="descname">getAngle</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; float<a class="headerlink" href="#libavg.avg.Point2D.getAngle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the direction of the vector as an angle between pi and -pi, with
+0 being the positive x axis. Angles run clockwise.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Point2D.getNorm">
+<code class="descname">getNorm</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; float<a class="headerlink" href="#libavg.avg.Point2D.getNorm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the euclidian norm of the point, that is sqrt(x*x+y*y).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Point2D.getNormalized">
+<code class="descname">getNormalized</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; Point2D<a class="headerlink" href="#libavg.avg.Point2D.getNormalized" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a normalized version of the point with the same angle but a
+norm of one. Throws an exception if called on Point2D(0,0).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Point2D.getRotated">
+<code class="descname">getRotated</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span> &rarr; Point2D<a class="headerlink" href="#libavg.avg.Point2D.getRotated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the position of point rotated around the origin.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">getRotated</code><span class="sig-paren">(</span><em>angle</em>, <em>pivot</em><span class="sig-paren">)</span> &rarr; Point2D</dt>
+<dd><p>Return the position of point rotated around <code class="xref py py-attr docutils literal"><span class="pre">pivot</span></code>.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="libavg.avg.Point2D.fromPolar">
+<em class="property">classmethod </em><code class="descname">fromPolar</code><span class="sig-paren">(</span><em>angle</em>, <em>radius</em><span class="sig-paren">)</span> &rarr; Point2D<a class="headerlink" href="#libavg.avg.Point2D.fromPolar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts polar to cartesian coordinates. <a class="reference internal" href="#libavg.avg.Point2D.angle" title="libavg.avg.Point2D.angle"><code class="xref py py-attr docutils literal"><span class="pre">angle</span></code></a> is in radians with 0
+being the positive x axis. Angle is clockwise (assuming that y points
+downward).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Point2D.isInPolygon">
+<code class="descname">isInPolygon</code><span class="sig-paren">(</span><em>poly</em><span class="sig-paren">)</span> &rarr; bool<a class="headerlink" href="#libavg.avg.Point2D.isInPolygon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the point is inside a polygon.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>poly</strong> &#8211; List of points which constitute a polygon to check against.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><code class="xref py py-const docutils literal"><span class="pre">True</span></code> if point is inside, <code class="xref py py-const docutils literal"><span class="pre">False</span></code> otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.SVG">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">SVG</code><span class="sig-paren">(</span><em>filename</em><span class="optional">[</span>, <em>unescapeIllustratorIDs=False</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.SVG" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></code></p>
+<p><a class="reference internal" href="#libavg.avg.SVG" title="libavg.avg.SVG"><code class="xref py py-class docutils literal"><span class="pre">SVG</span></code></a> objects load and parse an svg file and render images from it.
+svg (<em>Scalable Vector Graphics</em>, see <a class="reference external" href="http://en.wikipedia.org/wiki/Svg">http://en.wikipedia.org/wiki/Svg</a>) files are
+xml-based and contain two-dimensional vector graphics. They can be created with
+editors such as Adobe Illustrator and Inkscape. <a class="reference internal" href="#libavg.avg.SVG" title="libavg.avg.SVG"><code class="xref py py-class docutils literal"><span class="pre">SVG</span></code></a> objects can render
+elements in the file to bitmaps and create image nodes from elements in the file.
+Since the files contain vector graphics, the elements can be scaled to any size
+when rendering without loss of resolution.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filename</strong> &#8211; The name of the file to load.</li>
+<li><strong>unescapeIllustratorIDs</strong> &#8211; If this is <code class="xref py py-const docutils literal"><span class="pre">True</span></code>, the file is assumed to be generated by Adobe
+Illustrator. Illustrator mangles element names to create IDs in the svg file.
+Setting this parameter to <code class="xref py py-const docutils literal"><span class="pre">True</span></code> allows these element names to be
+passed as IDs.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="libavg.avg.SVG.renderElement">
+<code class="descname">renderElement</code><span class="sig-paren">(</span><em>elementID</em><span class="optional">[</span>, <em>size | scale=1</em><span class="optional">]</span><span class="sig-paren">)</span> &rarr; Bitmap<a class="headerlink" href="#libavg.avg.SVG.renderElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renders an element to a <a class="reference internal" href="#libavg.avg.Bitmap" title="libavg.avg.Bitmap"><code class="xref py py-class docutils literal"><span class="pre">Bitmap</span></code></a>. Either <code class="xref py py-attr docutils literal"><span class="pre">scale</span></code> or
+<code class="xref py py-attr docutils literal"><span class="pre">size</span></code> may be given. <code class="xref py py-attr docutils literal"><span class="pre">size</span></code> is the size of the bitmap.
+<code class="xref py py-attr docutils literal"><span class="pre">scale</span></code> is a factor to scale the native bitmap size with.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.SVG.createImageNode">
+<code class="descname">createImageNode</code><span class="sig-paren">(</span><em>elementID</em>, <em>nodeAttrs</em><span class="optional">[</span>, <em>size | scale=1</em><span class="optional">]</span><span class="sig-paren">)</span> &rarr; Node<a class="headerlink" href="#libavg.avg.SVG.createImageNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience method that calls <a class="reference internal" href="#libavg.avg.SVG.renderElement" title="libavg.avg.SVG.renderElement"><code class="xref py py-meth docutils literal"><span class="pre">renderElement()</span></code></a> to render a bitmap
+and then creates an image node that displays that bitmap. <code class="xref py py-attr docutils literal"><span class="pre">nodeAttrs</span></code>
+is a dictionary containing constructor parameters for the node.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.SVG.getElementPos">
+<code class="descname">getElementPos</code><span class="sig-paren">(</span><em>elementID</em><span class="sig-paren">)</span> &rarr; Point2D<a class="headerlink" href="#libavg.avg.SVG.getElementPos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the position of an element.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.SVG.getElementSize">
+<code class="descname">getElementSize</code><span class="sig-paren">(</span><em>elementID</em><span class="sig-paren">)</span> &rarr; Point2D<a class="headerlink" href="#libavg.avg.SVG.getElementSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the original size of an element.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.TestHelper">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">TestHelper</code><a class="headerlink" href="#libavg.avg.TestHelper" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></code></p>
+<p>Miscellaneous routines used by tests. Not intended for normal application usage.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.VersionInfo">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">VersionInfo</code><a class="headerlink" href="#libavg.avg.VersionInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></code></p>
+<p>Exposes version data, including the specs of the builder.</p>
+<dl class="attribute">
+<dt id="libavg.avg.VersionInfo.full">
+<code class="descname">full</code><a class="headerlink" href="#libavg.avg.VersionInfo.full" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Full string containing a compact form of branch and revision number (if the
+build doesn&#8217;t come from an exported tree)</p>
+<dl class="attribute">
+<dt id="libavg.avg.VersionInfo.release">
+<code class="descname">release</code><a class="headerlink" href="#libavg.avg.VersionInfo.release" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>String representation in the form <cite>major.minor.micro</cite></p>
+<dl class="attribute">
+<dt id="libavg.avg.VersionInfo.major">
+<code class="descname">major</code><a class="headerlink" href="#libavg.avg.VersionInfo.major" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Integer component of the release version (major)</p>
+<dl class="attribute">
+<dt id="libavg.avg.VersionInfo.minor">
+<code class="descname">minor</code><a class="headerlink" href="#libavg.avg.VersionInfo.minor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Integer component of the release version (minor)</p>
+<dl class="attribute">
+<dt id="libavg.avg.VersionInfo.micro">
+<code class="descname">micro</code><a class="headerlink" href="#libavg.avg.VersionInfo.micro" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Integer component of the release version (micro)</p>
+<dl class="attribute">
+<dt id="libavg.avg.VersionInfo.revision">
+<code class="descname">revision</code><a class="headerlink" href="#libavg.avg.VersionInfo.revision" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Revision number, if applicable, or 0</p>
+<dl class="attribute">
+<dt id="libavg.avg.VersionInfo.branchurl">
+<code class="descname">branchurl</code><a class="headerlink" href="#libavg.avg.VersionInfo.branchurl" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>Full URL path that represents the branch root, if applicable, or empty string</p>
+<dl class="attribute">
+<dt id="libavg.avg.VersionInfo.builder">
+<code class="descname">builder</code><a class="headerlink" href="#libavg.avg.VersionInfo.builder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>String representation in the form of <cite>user&#64;hostname machinespecs</cite></p>
+<dl class="attribute">
+<dt id="libavg.avg.VersionInfo.buildtime">
+<code class="descname">buildtime</code><a class="headerlink" href="#libavg.avg.VersionInfo.buildtime" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>ISO timestamp representation of the build</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.VideoWriter">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">VideoWriter</code><span class="sig-paren">(</span><em>canvas</em>, <em>filename</em><span class="optional">[</span>, <em>framerate=30</em>, <em>qmin=3</em>, <em>qmax=5</em>, <em>synctoplayback=True</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.VideoWriter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></code></p>
+<p>Class that writes the contents of a canvas to disk as a video file. The videos
+are written as motion jpeg-encoded mov files. Writing commences immediately upon
+object construction and continues until <a class="reference internal" href="#libavg.avg.VideoWriter.stop" title="libavg.avg.VideoWriter.stop"><code class="xref py py-meth docutils literal"><span class="pre">stop()</span></code></a> is called.
+<a class="reference internal" href="#libavg.avg.VideoWriter.pause" title="libavg.avg.VideoWriter.pause"><code class="xref py py-meth docutils literal"><span class="pre">pause()</span></code></a> and <a class="reference internal" href="#libavg.avg.VideoWriter.play" title="libavg.avg.VideoWriter.play"><code class="xref py py-meth docutils literal"><span class="pre">play()</span></code></a> can be used to pause and resume writing.</p>
+<p>The VideoWriter is built for high performance: Opening, writing and closing the
+video file is asynchronous to normal playback. Writing full HD videos of
+offscreen canvasses to disk should cost virtually no time on the main thread of
+execution for an Intel Core-class processor with a graphics card that supports
+shaders.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>canvas</strong> &#8211; A libavg canvas used as source of the video.</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="libavg.avg.VideoWriter.filename">
+<code class="descname">filename</code><a class="headerlink" href="#libavg.avg.VideoWriter.filename" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the file to write to. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.VideoWriter.framerate">
+<code class="descname">framerate</code><a class="headerlink" href="#libavg.avg.VideoWriter.framerate" title="Permalink to this definition">¶</a></dt>
+<dd><p>The speed of the encoded video in frames per second. This is used for two
+purposes. First, it determines the nominal playback speed of the video that is
+encoded in the file. Second, if <a class="reference internal" href="#libavg.avg.VideoWriter.synctoplayback" title="libavg.avg.VideoWriter.synctoplayback"><code class="xref py py-attr docutils literal"><span class="pre">synctoplayback</span></code></a> is
+<code class="xref py py-const docutils literal"><span class="pre">False</span></code>, the <a class="reference internal" href="#libavg.avg.VideoWriter" title="libavg.avg.VideoWriter"><code class="xref py py-class docutils literal"><span class="pre">VideoWriter</span></code></a> will also use the
+<a class="reference internal" href="#libavg.avg.VideoWriter.framerate" title="libavg.avg.VideoWriter.framerate"><code class="xref py py-attr docutils literal"><span class="pre">framerate</span></code></a> value as the actual number of frames per second to
+write. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.VideoWriter.qmin">
+<code class="descname">qmin</code><a class="headerlink" href="#libavg.avg.VideoWriter.qmin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.VideoWriter.qmax">
+<code class="descname">qmax</code><a class="headerlink" href="#libavg.avg.VideoWriter.qmax" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#libavg.avg.VideoWriter.qmin" title="libavg.avg.VideoWriter.qmin"><code class="xref py py-attr docutils literal"><span class="pre">qmin</span></code></a> and <a class="reference internal" href="#libavg.avg.VideoWriter.qmax" title="libavg.avg.VideoWriter.qmax"><code class="xref py py-attr docutils literal"><span class="pre">qmax</span></code></a> specify the minimum and maximum encoding
+quality to use. <code class="samp docutils literal"><span class="pre">qmin</span> <span class="pre">=</span> <span class="pre">qmax</span> <span class="pre">=</span> <span class="pre">1</span></code> give maximum quality at maximum file
+size. <code class="samp docutils literal"><span class="pre">qmin=3</span></code> and <code class="samp docutils literal"><span class="pre">qmax=5</span></code> (the default) give a good quality and
+a smaller file.  Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.VideoWriter.synctoplayback">
+<code class="descname">synctoplayback</code><a class="headerlink" href="#libavg.avg.VideoWriter.synctoplayback" title="Permalink to this definition">¶</a></dt>
+<dd><p>If <a class="reference internal" href="#libavg.avg.VideoWriter.synctoplayback" title="libavg.avg.VideoWriter.synctoplayback"><code class="xref py py-attr docutils literal"><span class="pre">synctoplayback</span></code></a> is <code class="xref py py-const docutils literal"><span class="pre">True</span></code> (the default), each frame
+played back in the canvas will be written to disk. This makes a lot of sense
+in combination with <code class="xref py py-meth docutils literal"><span class="pre">Canvas.registerCameraNode()</span></code>. If not,
+<a class="reference internal" href="#libavg.avg.VideoWriter.framerate" title="libavg.avg.VideoWriter.framerate"><code class="xref py py-attr docutils literal"><span class="pre">framerate</span></code></a> is used to determine which frames to write to disk. For
+instance, if <a class="reference internal" href="#libavg.avg.VideoWriter.synctoplayback" title="libavg.avg.VideoWriter.synctoplayback"><code class="xref py py-attr docutils literal"><span class="pre">synctoplayback</span></code></a> is <code class="xref py py-const docutils literal"><span class="pre">False</span></code>,
+<a class="reference internal" href="#libavg.avg.VideoWriter.framerate" title="libavg.avg.VideoWriter.framerate"><code class="xref py py-attr docutils literal"><span class="pre">framerate</span></code></a> is 25 and the player is running at 60 fps, one movie
+frame will be written for each 2.5 frames of playback. The actual, not the
+nominal playback speed is used in this case. Read-only.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VideoWriter.pause">
+<code class="descname">pause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.VideoWriter.pause" title="Permalink to this definition">¶</a></dt>
+<dd><p>Temporarily stops recording.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VideoWriter.play">
+<code class="descname">play</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.VideoWriter.play" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resumes recording after a call to <a class="reference internal" href="#libavg.avg.VideoWriter.pause" title="libavg.avg.VideoWriter.pause"><code class="xref py py-meth docutils literal"><span class="pre">pause()</span></code></a>. <a class="reference internal" href="#libavg.avg.VideoWriter.play" title="libavg.avg.VideoWriter.play"><code class="xref py py-meth docutils literal"><span class="pre">play()</span></code></a> doesn&#8217;t
+need to be called after construction of the <a class="reference internal" href="#libavg.avg.VideoWriter" title="libavg.avg.VideoWriter"><code class="xref py py-class docutils literal"><span class="pre">VideoWriter</span></code></a> - writing
+commences immediately.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VideoWriter.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.VideoWriter.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ends the recording and writes the rest of the file to disk. Note that this is
+asynchronous to normal playback. If you need to immediately re-open the
+video file (e.g. for playback in a video node), destroy the python object
+first. This waits for sync.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="libavg.avg.validateXml">
+<code class="descclassname">libavg.avg.</code><code class="descname">validateXml</code><span class="sig-paren">(</span><em>xmlString</em>, <em>schemaString</em>, <em>xmlName</em>, <em>schemaName</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.validateXml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validates an xml string using a schema. Throws an exception if the xml doesn&#8217;t
+conform to the schema.</p>
+</dd></dl>
+
+<span class="target" id="module-libavg.statemachine"></span><dl class="class">
+<dt id="libavg.statemachine.StateMachine">
+<em class="property">class </em><code class="descclassname">libavg.statemachine.</code><code class="descname">StateMachine</code><span class="sig-paren">(</span><em>name</em>, <em>startState</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.statemachine.StateMachine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>A generic state machine, useful for user interface and other states. Consists of
+a set of states (represented by strings) and possible transitions between the
+states. The <a class="reference internal" href="#libavg.statemachine.StateMachine" title="libavg.statemachine.StateMachine"><code class="xref py py-class docutils literal"><span class="pre">StateMachine</span></code></a> can be configured to invoke callbacks at
+specific transitions and when entering or leaving a state. All callbacks are
+optional. State changes can be logged for debugging purposes.</p>
+<p>State machines are initialized by calling <a class="reference internal" href="#libavg.statemachine.StateMachine.addState" title="libavg.statemachine.StateMachine.addState"><code class="xref py py-meth docutils literal"><span class="pre">addState()</span></code></a> for each
+possible state after constructing it.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>String</em>) &#8211; A name for the state machine to be used in debugging output.</li>
+<li><strong>startState</strong> (<em>String</em>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="libavg.statemachine.StateMachine.state">
+<code class="descname">state</code><a class="headerlink" href="#libavg.statemachine.StateMachine.state" title="Permalink to this definition">¶</a></dt>
+<dd><p>The current state the <a class="reference internal" href="#libavg.statemachine.StateMachine" title="libavg.statemachine.StateMachine"><code class="xref py py-class docutils literal"><span class="pre">StateMachine</span></code></a> is in. States are strings.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.statemachine.StateMachine.addState">
+<code class="descname">addState</code><span class="sig-paren">(</span><em>state</em>, <em>transitions</em><span class="optional">[</span>, <em>enterFunc=None</em>, <em>leaveFunc=None</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.statemachine.StateMachine.addState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a state to the <a class="reference internal" href="#libavg.statemachine.StateMachine" title="libavg.statemachine.StateMachine"><code class="xref py py-class docutils literal"><span class="pre">StateMachine</span></code></a>. Must be called before the first
+changeState.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>state</strong> (<em>String</em>) &#8211; The name of the state to add.</li>
+<li><strong>transitions</strong> &#8211; This parameter can be either a list of destination states or a dict of
+destinationState: callable pairs. The callables are invoked whenever the
+corresponding state change happens. If <code class="xref py py-meth docutils literal"><span class="pre">transitions()</span></code> is a list,
+no state change callbacks are registered.</li>
+<li><strong>enterFunc</strong> &#8211; A callable to invoke whenever the state is entered.</li>
+<li><strong>leaveFunc</strong> &#8211; A callable to invoke whenever the state is left.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.statemachine.StateMachine.changeState">
+<code class="descname">changeState</code><span class="sig-paren">(</span><em>newState</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.statemachine.StateMachine.changeState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the state. This includes calling the leave callback for the current
+state, actually changing the state, calling the transition callback and
+calling the enter callback for the new state.</p>
+<p>Raises a <code class="xref py py-class docutils literal"><span class="pre">avg.Exception</span></code> if <code class="xref py py-attr docutils literal"><span class="pre">newState</span></code> is not a valid state
+or if there is no transition defined from the current state to
+<code class="xref py py-attr docutils literal"><span class="pre">newState</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.statemachine.StateMachine.dump">
+<code class="descname">dump</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.statemachine.StateMachine.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints all states and transitions to the console.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.statemachine.StateMachine.makeDiagram">
+<code class="descname">makeDiagram</code><span class="sig-paren">(</span><em>imageFName</em><span class="optional">[</span>, <em>showMethods=False</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.statemachine.StateMachine.makeDiagram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dumps a graph of the state machine to an image file using dot. graphviz must
+be installed and in the path for this to work. Very useful for debugging. If
+<code class="xref py py-attr docutils literal"><span class="pre">showMethods</span></code> is true, names of enter, leave and transition
+methods are included in the diagram.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.statemachine.StateMachine.traceChanges">
+<code class="descname">traceChanges</code><span class="sig-paren">(</span><em>trace</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.statemachine.StateMachine.traceChanges" title="Permalink to this definition">¶</a></dt>
+<dd><p>If <code class="xref py py-attr docutils literal"><span class="pre">trace</span></code> is set to <code class="xref py py-const docutils literal"><span class="pre">True</span></code>, all state changes are dumped
+to the console.</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-libavg.persist"></span><dl class="class">
+<dt id="libavg.persist.Persist">
+<em class="property">class </em><code class="descclassname">libavg.persist.</code><code class="descname">Persist</code><span class="sig-paren">(</span><em>storeFile</em>, <em>initialData</em><span class="optional">[</span>, <em>validator=lambda v: True</em>, <em>autoCommit=False</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.persist.Persist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>A general purpose persistent object.
+Its state is defined in the <a class="reference internal" href="#libavg.persist.Persist.data" title="libavg.persist.Persist.data"><code class="xref py py-attr docutils literal"><span class="pre">data</span></code></a> attribute and pickled
+from/to a store file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>storeFile</strong> (<em>string</em>) &#8211; Full path of the store file that is used to store and retrieve a
+serialized version of the data.</li>
+<li><strong>initialData</strong> &#8211; A pickle-able object that is assigned to the <a class="reference internal" href="#libavg.persist.Persist.data" title="libavg.persist.Persist.data"><code class="xref py py-attr docutils literal"><span class="pre">data</span></code></a> attribute
+when no file store exists or when the store file is corrupted.</li>
+<li><strong>validator</strong> (<em>callable</em>) &#8211; An optional callable that receives the object state as soon it&#8217;s
+de-pickled from the store file. If the validator call doesn&#8217;t return True,
+the object state is restored to the provided <cite>initialData</cite>.</li>
+<li><strong>autoCommit</strong> (<em>bool</em>) &#8211; If True, the <a class="reference internal" href="#libavg.persist.Persist.commit" title="libavg.persist.Persist.commit"><code class="xref py py-attr docutils literal"><span class="pre">commit</span></code></a> method is registered as an <cite>atexit</cite> function.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="libavg.persist.Persist.data">
+<code class="descname">data</code><a class="headerlink" href="#libavg.persist.Persist.data" title="Permalink to this definition">¶</a></dt>
+<dd><p>State of the persistent object.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.persist.Persist.storeFile">
+<code class="descname">storeFile</code><a class="headerlink" href="#libavg.persist.Persist.storeFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the full path of the store file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.persist.Persist.commit">
+<code class="descname">commit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.persist.Persist.commit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dumps the contents of the <a class="reference internal" href="#libavg.persist.Persist.data" title="libavg.persist.Persist.data"><code class="xref py py-attr docutils literal"><span class="pre">data</span></code></a> attribute to the store file.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.persist.UserPersistentData">
+<em class="property">class </em><code class="descclassname">libavg.persist.</code><code class="descname">UserPersistentData</code><span class="sig-paren">(</span><em>appName</em>, <em>fileName</em>, <em>initialData</em><span class="optional">[</span>, <em>validator=lambda v: True</em>, <em>autoCommit=False</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.persist.UserPersistentData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.persist.Persist" title="libavg.persist.Persist"><code class="xref py py-class docutils literal"><span class="pre">libavg.persist.Persist</span></code></a></p>
+<p>A <a class="reference internal" href="#libavg.persist.Persist" title="libavg.persist.Persist"><code class="xref py py-class docutils literal"><span class="pre">Persist</span></code></a> subclass that sets up an OS-independent path for
+the store file.
+Under posix-compliant OSes is <cite>$HOME/.avg/&lt;appName&gt;/&lt;fileName&gt;.pkl</cite>
+Under Windows is <cite>%APPDATA%Avg&lt;appName&gt;/&lt;fileName&gt;.pkl</cite></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>appName</strong> (<em>string</em>) &#8211; Name of the application. This string is used to compose the full path to
+the file store and it creates a namespace (directory) for multiple files
+for the same application.</li>
+<li><strong>fileName</strong> (<em>string</em>) &#8211; Name of the file store file. <cite>.pkl</cite> will be added as extension.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="module-libavg.sprites"></span><dl class="class">
+<dt id="libavg.sprites.Spritesheet">
+<em class="property">class </em><code class="descclassname">libavg.sprites.</code><code class="descname">Spritesheet</code><span class="sig-paren">(</span><em>dataFName</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.sprites.Spritesheet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>A sprite sheet is a collection of (possibly animated) images all loaded from one
+large image file (the &#8216;atlas&#8217;). A sample can be found at <cite>src/samples/sprite.py</cite>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dataFName</strong> (<em>string</em>) &#8211; Name of an xml file that stores sprite information such as the name of the
+aggregate image and the locations of the individual sprites in the atlas.
+libavg expects files in Starling format.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.sprites.Sprite">
+<em class="property">class </em><code class="descclassname">libavg.sprites.</code><code class="descname">Sprite</code><span class="sig-paren">(</span><em>spritesheet</em>, <em>spriteName</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.sprites.Sprite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="areanodes.html#libavg.avg.DivNode" title="libavg.avg.DivNode"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.DivNode</span></code></a></p>
+<p>A single-image sprite generated from a sprite sheet.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>spriteName</strong> (<em>string</em>) &#8211; Name of the entry in the data file that specifies where in the atlas the
+sprite is located.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.sprites.AnimatedSprite">
+<em class="property">class </em><code class="descclassname">libavg.sprites.</code><code class="descname">AnimatedSprite</code><span class="sig-paren">(</span><em>spritesheet</em>, <em>spriteName</em><span class="optional">[</span>, <em>loop=False</em>, <em>fps=30</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.sprites.AnimatedSprite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.sprites.Sprite" title="libavg.sprites.Sprite"><code class="xref py py-class docutils literal"><span class="pre">libavg.sprites.Sprite</span></code></a></p>
+<p>A multi-frame sprite generated from a sprite sheet. An <a class="reference internal" href="#libavg.sprites.AnimatedSprite" title="libavg.sprites.AnimatedSprite"><code class="xref py py-class docutils literal"><span class="pre">AnimatedSprite</span></code></a>
+can be used like a small high-performance video, with playback, pause and seek
+functionality.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>spriteName</strong> (<em>string</em>) &#8211; Prefix string for the data file entries that correspond to the individual
+sprite frames. Any entries that consist of this prefix followed by numbers
+digits are added to this sprite.</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="libavg.sprites.AnimatedSprite.curFrameNum">
+<code class="descname">curFrameNum</code><a class="headerlink" href="#libavg.sprites.AnimatedSprite.curFrameNum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of the frame currently shown. To display a different frane, set this
+attribute.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.sprites.AnimatedSprite.fps">
+<code class="descname">fps</code><a class="headerlink" href="#libavg.sprites.AnimatedSprite.fps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Speed in frames per second that the sprite should use for playback.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.sprites.AnimatedSprite.loop">
+<code class="descname">loop</code><a class="headerlink" href="#libavg.sprites.AnimatedSprite.loop" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-const docutils literal"><span class="pre">True</span></code> if the sprite should loop endlessly, <code class="xref py py-const docutils literal"><span class="pre">False</span></code>
+otherwise.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.sprites.AnimatedSprite.numFrames">
+<code class="descname">numFrames</code><a class="headerlink" href="#libavg.sprites.AnimatedSprite.numFrames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of frames in the sprite. Read-only.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.sprites.AnimatedSprite.play">
+<code class="descname">play</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.sprites.AnimatedSprite.play" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts playback.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.sprites.AnimatedSprite.pause">
+<code class="descname">pause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.sprites.AnimatedSprite.pause" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops playback.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="widget.html" title="Widget Classes"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">libavg 1.8.dev documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, Ulrich von Zadow.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.6.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,354 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>User Interface Classes &mdash; libavg v1.6 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="libavg v1.6 documentation" href="index.html" />
+    <link rel="next" title="Misc. Classes" href="misc.html" />
+    <link rel="prev" title="Effect Nodes" href="fx.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="misc.html" title="Misc. Classes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="fx.html" title="Effect Nodes"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">libavg v1.6 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="fx.html"
+                        title="previous chapter">Effect Nodes</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="misc.html"
+                        title="next chapter">Misc. Classes</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/ui.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="user-interface-classes">
+<h1>User Interface Classes<a class="headerlink" href="#user-interface-classes" title="Permalink to this headline">¶</a></h1>
+<p>The namespace libavg.ui contains python modules that expose higher-level user interface
+functionality</p>
+<span class="target" id="module-libavg.ui"></span><dl class="class">
+<dt id="libavg.ui.Keyboard">
+<em class="property">class </em><tt class="descclassname">libavg.ui.</tt><tt class="descname">Keyboard</tt><big>(</big><em>bgHref</em>, <em>ovlHref</em>, <em>keyDefs</em>, <em>shiftKeyCode</em><span class="optional">[</span>, <em>altGrKeyCode</em>, <em>stickyShift</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.ui.Keyboard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="areanodes.html#libavg.avg.DivNode" title="libavg.avg.DivNode"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.DivNode</span></tt></a></p>
+<p>Implements an onscreen keyboard that turns mouse clicks or touches into key
+presses. The keyboard is completely configurable. Keyboard graphics are determined
+by the two image files in bgHref and ovlHref. Keys can be defined as rectangles
+anywhere on these images. Works for both single-touch and multitouch devices.
+When a key is pressed, a callback function is invoked.</p>
+<p>Needs offscreen rendering support on the machine.</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">param string bgHref:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first">Filename of an image that contains the keyboard with unpressed keys.</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">param string ovlHref:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first">Filename of an image that contains the keyboard with pressed keys.</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">param list keyDefs:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first">List of key definitions. Keys can be either character keys:</p>
+<div class="highlight-python"><pre>[(&lt;keycode&gt;, &lt;shift keycode&gt;, &lt;altgr keycode&gt;), &lt;pos&gt;, &lt;size&gt;]</pre>
+</div>
+<p>or command keys:</p>
+<div class="highlight-python"><pre>[&lt;keycode&gt;, &lt;pos&gt;, &lt;size&gt;]</pre>
+</div>
+<p>For character keys, the shift and altgr keycodes are optional. To define
+entire rows of evenly-spaced keys, use <a class="reference internal" href="#libavg.ui.Keyboard.makeRowKeyDefs" title="libavg.ui.Keyboard.makeRowKeyDefs"><tt class="xref py py-meth docutils literal"><span class="pre">makeRowKeyDefs()</span></tt></a>.</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">param shiftKeyCode:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first">One of the command keycodes. When the key with this code is pressed,
+pressing other keys causes them to return the shifted keycode.</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">param altGrKeyCode:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first">One of the command keycodes. When the key with this code is pressed,
+pressing other keys causes them to return the altgr keycode.</p>
+</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">param bool stickyShift:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body"><p class="first last">For single-touch devices, the shift key must stay in the pressed state
+until the next normal key is pressed to have any effect. This is the
+behaviour if <tt class="xref py py-attr docutils literal"><span class="pre">stickyShift</span></tt> is <tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt>. If it is
+<tt class="xref py py-const xref docutils literal"><span class="pre">False</span></tt> (the default), a
+multitouch device is assumed and shift works like on a physical keyboard.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<dl class="method">
+<dt>
+<tt class="descname">reset():</tt></dt>
+<dd><p>Resets any sticky keys (shift, altgr) to their default state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">setKeyHandler(self, downHandler, [upHandler]):</tt></dt>
+<dd><p>Set callbacks to invoke on key press and -release. Handlers take three
+paramters: (event, char, cmd)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>downHandler</strong> &#8211; Callable to invoke on key down event or <cite>None</cite>.</li>
+<li><strong>upHandler</strong> &#8211; Callable to invoke on key up event or <tt class="xref py py-const xref docutils literal"><span class="pre">None</span></tt>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="libavg.ui.Keyboard.makeRowKeyDefs">
+<em class="property">classmethod </em><tt class="descname">makeRowKeyDefs</tt><big>(</big><em>startPos</em>, <em>keySize</em>, <em>spacing</em>, <em>keyStr</em>, <em>shiftKeyStr</em><span class="optional">[</span>, <em>altGrKeyStr</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.ui.Keyboard.makeRowKeyDefs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates key definitions for a row of uniform keys. Useful for creating the
+keyDefs parameter of the Keyboard constructor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startPos</strong> (<em>avg.Point2D</em>) &#8211; Top left position of the row.</li>
+<li><strong>keySize</strong> (<em>avg.Point2D</em>) &#8211; Size of each key.</li>
+<li><strong>spacing</strong> (<em>int</em>) &#8211; Number of empty pixels between two keys.</li>
+<li><strong>keyStr</strong> (<em>string</em>) &#8211; Unicode string containing the unshifted keycodes (i.e.
+<tt class="samp docutils literal"><span class="pre">u&quot;qwertzuiopżś&quot;</span></tt>)</li>
+<li><strong>shiftKeyStr</strong> (<em>string</em>) &#8211; Unicode string containing the shifted keycodes
+(i.e. <tt class="samp docutils literal"><span class="pre">u&quot;QWERTZUIOPńć&quot;</span></tt>)</li>
+<li><strong>altGrKeyStr</strong> (<em>string</em>) &#8211; Unicode string containing the keycodes when altgr is pressed.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.ui.DragProcessor">
+<em class="property">class </em><tt class="descclassname">libavg.ui.</tt><tt class="descname">DragProcessor</tt><big>(</big><em>node</em><span class="optional">[</span>, <em>eventSource=avg.TOUCH | avg.MOUSE</em>, <em>startHandler=None</em>, <em>moveHandler=None</em>, <em>upHandler=None</em>, <em>stopHandler=None</em>, <em>friction=-1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.ui.DragProcessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">libavg.ui.manipulation.ManipulationProcessor</span></tt></p>
+<p>A <a class="reference internal" href="#libavg.ui.DragProcessor" title="libavg.ui.DragProcessor"><tt class="xref py py-class docutils literal"><span class="pre">DragProcessor</span></tt></a> attaches itself to a node&#8217;s cursor events and
+delivers higher-level callbacks that can be used to implement dragging or
+drag-like functionality. For multitouch devices, only one drag can happen at
+a time; subsequent drags are ignored until the first one is released. The
+dragging cursor is captured during the drag.</p>
+<p><a class="reference internal" href="#libavg.ui.DragProcessor" title="libavg.ui.DragProcessor"><tt class="xref py py-class docutils literal"><span class="pre">DragProcessor</span></tt></a> supports inertia after the node is released.</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">param avg.Node node:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">The node to attach to.</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">param eventSource:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">One of the standard event sources (<tt class="xref py py-const docutils literal"><span class="pre">TRACK</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">TOUCH</span></tt>
+etc.).</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">param float friction:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">If set, this parameter enables inertia processing. It describes how
+quickly the drag comes to a stop after the cursor is released.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>The callbacks are:</p>
+<blockquote>
+<div><dl class="method">
+<dt>
+<tt class="descname">startHandler(event):</tt></dt>
+<dd><p>Called when a drag begins.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>event</strong> &#8211; The corresponding cursor down event.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">moveHandler(event, offset):</tt></dt>
+<dd><p>Called when the drag should cause a position change. This usually happens
+in response to a <tt class="xref py py-const docutils literal"><span class="pre">CURSORMOTION</span></tt> event, but may also happen
+because of inertia.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>event</strong> &#8211; The corresponding cursor motion event. If there was no event,
+this parameter is <tt class="xref py py-const xref docutils literal"><span class="pre">None</span></tt>.</li>
+<li><strong>offset</strong> (<em>avg.Point2D</em>) &#8211; The current offset from the start of the drag in global coordinates.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">upHandler(event, offset):</tt></dt>
+<dd><p>Called when the cursor is released. If inertia is enabled, there may be
+move events after the up event.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>event</strong> &#8211; The corresponding <tt class="xref py py-const docutils literal"><span class="pre">CURSORUP</span></tt> event.</li>
+<li><strong>offset</strong> (<em>avg.Point2D</em>) &#8211; The current offset from the start of the drag in global coordinates.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">stopHandler():</tt></dt>
+<dd><p>Called when movement stops. This is either directly after the up event
+or when inertia has run its course.</p>
+</dd></dl>
+
+</div></blockquote>
+<dl class="method">
+<dt>
+<tt class="descname">abortInertia():</tt></dt>
+<dd><p>Causes inertia processing to end immediately.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.ui.ManipulationProcessor">
+<em class="property">class </em><tt class="descclassname">libavg.ui.</tt><tt class="descname">ManipulationProcessor</tt><big>(</big><em>node</em>, <em>eventSource</em><big>)</big><a class="headerlink" href="#libavg.ui.ManipulationProcessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Base class for event processors that attach to a node&#8217;s cursor events and
+emit higher-level events.</p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name" colspan="2">param Node node:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">Node to attach to.</td>
+</tr>
+<tr class="field"><th class="field-name" colspan="2">param eventSource:</th></tr>
+<tr><td>&nbsp;</td><td class="field-body">One of the standard event sources (<tt class="xref py py-const docutils literal"><span class="pre">TRACK</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">TOUCH</span></tt>
+etc.).</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<dl class="method">
+<dt id="libavg.ui.ManipulationProcessor.enable">
+<tt class="descname">enable</tt><big>(</big><em>isEnabled</em><big>)</big><a class="headerlink" href="#libavg.ui.ManipulationProcessor.enable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables or disables the <a class="reference internal" href="#libavg.ui.ManipulationProcessor" title="libavg.ui.ManipulationProcessor"><tt class="xref py py-class docutils literal"><span class="pre">ManipulationProcessor</span></tt></a>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="misc.html" title="Misc. Classes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="fx.html" title="Effect Nodes"
+             >previous</a> |</li>
+        <li><a href="index.html">libavg v1.6 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, Ulrich von Zadow.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

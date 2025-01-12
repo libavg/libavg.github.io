@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>app module &mdash; libavg 1.8.dev documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.8.dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="libavg 1.8.dev documentation" href="index.html" />
+    <link rel="next" title="Base Node Classes" href="basenodes.html" />
+    <link rel="prev" title="Player &amp; Canvas" href="player.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="basenodes.html" title="Base Node Classes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="player.html" title="Player &amp; Canvas"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">libavg 1.8.dev documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">app module</a><ul>
+<li><a class="reference internal" href="#module-libavg.app.keyboardmanager">keyboardmanager Module</a></li>
+<li><a class="reference internal" href="#module-libavg.app.flashmessage">flashmessage Module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="player.html"
+                        title="previous chapter">Player &amp; Canvas</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="basenodes.html"
+                        title="next chapter">Base Node Classes</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/app.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-libavg.app">
+<span id="app-module"></span><h1>app module<a class="headerlink" href="#module-libavg.app" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="libavg.app.App">
+<em class="property">class </em><code class="descclassname">libavg.app.</code><code class="descname">App</code><a class="headerlink" href="#libavg.app.App" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>This class handles global application affairs. Among these are setting up a root
+node along with window size (and possibly screen resolution) and screen
+rotation, and creating an environment for the user&#8217;s <a class="reference internal" href="#libavg.app.MainDiv" title="libavg.app.MainDiv"><code class="xref py py-class docutils literal"><span class="pre">MainDiv</span></code></a>.
+Global user interface items such as a debug panel and keyboard manager are also
+set up. Additionally, <a class="reference internal" href="#libavg.app.App" title="libavg.app.App"><code class="xref py py-class docutils literal"><span class="pre">App</span></code></a> handles configuration settings and command
+line argument support.</p>
+<p><a class="reference internal" href="#libavg.app.App" title="libavg.app.App"><code class="xref py py-class docutils literal"><span class="pre">App</span></code></a> usually does not need to be subclassed. Instead, subclass
+<a class="reference internal" href="#libavg.app.MainDiv" title="libavg.app.MainDiv"><code class="xref py py-class docutils literal"><span class="pre">MainDiv</span></code></a> and pass an instance of the derived class to <a class="reference internal" href="#libavg.app.App.run" title="libavg.app.App.run"><code class="xref py py-meth docutils literal"><span class="pre">run()</span></code></a>.</p>
+<dl class="attribute">
+<dt id="libavg.app.App.debugPanel">
+<code class="descname">debugPanel</code><a class="headerlink" href="#libavg.app.App.debugPanel" title="Permalink to this definition">¶</a></dt>
+<dd><p>An instance of debugpanel.DebugPanel.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.app.App.mainDiv">
+<code class="descname">mainDiv</code><a class="headerlink" href="#libavg.app.App.mainDiv" title="Permalink to this definition">¶</a></dt>
+<dd><p>The instance passed as first argument of the <a class="reference internal" href="#libavg.app.App.run" title="libavg.app.App.run"><code class="xref py py-meth docutils literal"><span class="pre">run()</span></code></a> method.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.app.App.overlayPanel">
+<code class="descname">overlayPanel</code><a class="headerlink" href="#libavg.app.App.overlayPanel" title="Permalink to this definition">¶</a></dt>
+<dd><p>DivNode that stands always on top of the MainDiv.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.app.App.settings">
+<code class="descname">settings</code><a class="headerlink" href="#libavg.app.App.settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>An instance of settings.Settings.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.app.App.dumpTextObjectCount">
+<code class="descname">dumpTextObjectCount</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.app.App.dumpTextObjectCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dumps on the console the current number of initialized objects. Normally
+bound to the keypress <code class="kbd docutils literal"><span class="pre">CTRL-b</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.app.App.onBeforeLaunch">
+<code class="descname">onBeforeLaunch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.app.App.onBeforeLaunch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called just before starting the main loop (<code class="samp docutils literal"><span class="pre">Player.play()</span></code>). Useful only
+for subclassing. The display hasn&#8217;t been initialized at this point.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.app.App.run">
+<code class="descname">run</code><span class="sig-paren">(</span><em>mainDiv</em>, <em>**kargs</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.app.App.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts the application using the provided <a class="reference internal" href="#libavg.app.App.mainDiv" title="libavg.app.App.mainDiv"><code class="xref py py-attr docutils literal"><span class="pre">mainDiv</span></code></a> (an instance of
+<a class="reference internal" href="#libavg.app.MainDiv" title="libavg.app.MainDiv"><code class="xref py py-class docutils literal"><span class="pre">MainDiv</span></code></a>).</p>
+<p>The optional additional kargs are used to set default settings - see
+<code class="xref py py-class docutils literal"><span class="pre">settings.Settings</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.app.App.takeScreenshot">
+<code class="descname">takeScreenshot</code><span class="sig-paren">(</span><em>targetFolder='.'</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.app.App.takeScreenshot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes a screenshot of what is currently visible on the screen. Normally
+bound to the keypress <code class="kbd docutils literal"><span class="pre">CTRL-p</span></code>. Screenshots are saved to the disk under
+the name &#8216;App-nnn.png&#8217;, where nnn is a sequence number.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.app.MainDiv">
+<em class="property">class </em><code class="descclassname">libavg.app.</code><code class="descname">MainDiv</code><span class="sig-paren">(</span><em>**kargs</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.app.MainDiv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="areanodes.html#libavg.avg.DivNode" title="libavg.avg.DivNode"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.DivNode</span></code></a></p>
+<p>This abstract class must be subclassed to write a libavg application. It is the
+main application entry point and should be the parent node for all
+application-created nodes. All the public methods are empty and don&#8217;t do anything
+if not overridden.</p>
+<dl class="attribute">
+<dt id="libavg.app.MainDiv.VERSION">
+<code class="descname">VERSION</code><a class="headerlink" href="#libavg.app.MainDiv.VERSION" title="Permalink to this definition">¶</a></dt>
+<dd><p>A version string. This is shown using the <code class="xref std std-option docutils literal"><span class="pre">-v</span></code> or <code class="xref std std-option docutils literal"><span class="pre">--version</span></code>
+command-line option.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.app.MainDiv.onArgvParsed">
+<code class="descname">onArgvParsed</code><span class="sig-paren">(</span><em>options</em>, <em>args</em>, <em>parser</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.app.MainDiv.onArgvParsed" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method is called after command-line arguments have been parsed and should
+be used to retrieve any application-specific options. The arguments
+<code class="xref py py-attr docutils literal"><span class="pre">options</span></code> and <code class="xref py py-attr docutils literal"><span class="pre">args</span></code> are the result of calling
+<code class="samp docutils literal"><span class="pre">options,</span> <span class="pre">args</span> <span class="pre">=</span> <span class="pre">parser.parse_args()</span></code>, where parser is an instance of
+<code class="xref py py-class docutils literal"><span class="pre">optparse.OptionParser</span></code> configured by calling
+<a class="reference internal" href="#libavg.app.MainDiv.onArgvParserCreated" title="libavg.app.MainDiv.onArgvParserCreated"><code class="xref py py-meth docutils literal"><span class="pre">onArgvParserCreated()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.app.MainDiv.onArgvParserCreated">
+<code class="descname">onArgvParserCreated</code><span class="sig-paren">(</span><em>parser</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.app.MainDiv.onArgvParserCreated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called with an empty <code class="xref py py-class docutils literal"><span class="pre">optparse.OptionParser</span></code> instance. Allows the
+application to add additional command line options. <a class="reference internal" href="#libavg.app.App" title="libavg.app.App"><code class="xref py py-class docutils literal"><span class="pre">App</span></code></a> adds it&#8217;s
+own parameters as well. If this is overridden, <a class="reference internal" href="#libavg.app.MainDiv.onArgvParsed" title="libavg.app.MainDiv.onArgvParsed"><code class="xref py py-meth docutils literal"><span class="pre">onArgvParsed()</span></code></a>
+should probably be overridden as well.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.app.MainDiv.onExit">
+<code class="descname">onExit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.app.MainDiv.onExit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called after the main loop exits.
+Release resources and run cleanups here.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">onExit() doesn&#8217;t get called if an exception is raised on the main thread.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.app.MainDiv.onFrame">
+<code class="descname">onFrame</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.app.MainDiv.onFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called every frame.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.app.MainDiv.onInit">
+<code class="descname">onInit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.app.MainDiv.onInit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called by a libavg timer as soon as the main loop starts. At this point in
+time, the window has been created and all render functions are available.
+Build the application node tree here.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.app.MainDiv.onStartup">
+<code class="descname">onStartup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.app.MainDiv.onStartup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called before libavg has been setup, just after the <code class="samp docutils literal"><span class="pre">App().run()</span></code> call.
+The window has not been created at this time.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.app.MainDiv.toggleTouchVisualization">
+<code class="descname">toggleTouchVisualization</code><span class="sig-paren">(</span><em>visClass=touchvisualization.TouchVisualization</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.app.MainDiv.toggleTouchVisualization" title="Permalink to this definition">¶</a></dt>
+<dd><p>A TouchVisualization gives the user visual feedback whenever a touch event is
+registered. This call switches the feedback on or off.</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="module-libavg.app.keyboardmanager">
+<span id="keyboardmanager-module"></span><h2>keyboardmanager Module<a class="headerlink" href="#module-libavg.app.keyboardmanager" title="Permalink to this headline">¶</a></h2>
+<p>This module makes it possible to attach event handlers to individual keypresses.
+Keys that are bound through the keyboard manager are also be shown in the debug panel
+via the keyboard bindings widget along with their help string.
+<a class="reference internal" href="#libavg.app.App" title="libavg.app.App"><code class="xref py py-class docutils literal"><span class="pre">libavg.app.App</span></code></a> defines a range of keyboard bindings by default.
+The keyboardmanager is usually set up by <a class="reference internal" href="#libavg.app.App" title="libavg.app.App"><code class="xref py py-class docutils literal"><span class="pre">libavg.app.App</span></code></a>.
+<a class="reference internal" href="#libavg.app.App" title="libavg.app.App"><code class="xref py py-class docutils literal"><span class="pre">libavg.app.App</span></code></a> also reserves all keys modified by <code class="kbd docutils literal"><span class="pre">CTRL</span></code>.</p>
+<p>The binding methods accept one of <code class="xref py py-attr docutils literal"><span class="pre">scancode</span></code>, a <code class="xref py py-attr docutils literal"><span class="pre">keyname</span></code>, or
+<cite>text</cite> to match. These are compared to the corresponding fields of
+<code class="xref py py-attr docutils literal"><span class="pre">libavg.avg.Keyevent</span></code> when a key is pressed. The modifiers are
+described under <a class="reference internal" href="events.html#libavg.avg.KeyEvent.modifiers" title="libavg.avg.KeyEvent.modifiers"><code class="xref py py-attr docutils literal"><span class="pre">libavg.avg.KeyEvent.modifiers</span></code></a>, with the additional modifiers
+<code class="xref py py-const docutils literal"><span class="pre">KEYMOD_SHIFT</span></code>, <code class="xref py py-const docutils literal"><span class="pre">KEYMOD_CTRL</span></code> and <code class="xref py py-const docutils literal"><span class="pre">KEYMOD_ALT</span></code> available
+to simplify checking for left and right modifier keys at one time.</p>
+<dl class="function">
+<dt id="libavg.app.keyboardmanager.bindKeyDown">
+<code class="descclassname">libavg.app.keyboardmanager.</code><code class="descname">bindKeyDown</code><span class="sig-paren">(</span><em>scancode=None</em>, <em>keyname=None</em>, <em>text=None</em>, <em>handler=None</em>, <em>help=None</em>, <em>modifiers=avg.KEYMOD_NONE</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.app.keyboardmanager.bindKeyDown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets up a key handler so that <code class="xref py py-attr docutils literal"><span class="pre">handler</span></code> is called whenever
+the selected key is pressed.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="libavg.app.keyboardmanager.bindKeyUp">
+<code class="descclassname">libavg.app.keyboardmanager.</code><code class="descname">bindKeyUp</code><span class="sig-paren">(</span><em>scancode=None</em>, <em>keyname=None</em>, <em>handler=None</em>, <em>help=None</em>, <em>modifiers=avg.KEYMOD_NONE</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.app.keyboardmanager.bindKeyUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets up a key handler so that <code class="xref py py-attr docutils literal"><span class="pre">handler</span></code> is called whenever
+the selected key is released.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="libavg.app.keyboardmanager.disable">
+<code class="descclassname">libavg.app.keyboardmanager.</code><code class="descname">disable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.app.keyboardmanager.disable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Companion to <a class="reference internal" href="#libavg.app.keyboardmanager.enable" title="libavg.app.keyboardmanager.enable"><code class="xref py py-meth docutils literal"><span class="pre">enable()</span></code></a>, disables all handlers.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="libavg.app.keyboardmanager.enable">
+<code class="descclassname">libavg.app.keyboardmanager.</code><code class="descname">enable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.app.keyboardmanager.enable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Companion to <a class="reference internal" href="#libavg.app.keyboardmanager.disable" title="libavg.app.keyboardmanager.disable"><code class="xref py py-meth docutils literal"><span class="pre">disable()</span></code></a>, enables all handlers.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="libavg.app.keyboardmanager.getCurrentBindings">
+<code class="descclassname">libavg.app.keyboardmanager.</code><code class="descname">getCurrentBindings</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.app.keyboardmanager.getCurrentBindings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the currently assigned bindings as a list of named tuples.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="libavg.app.keyboardmanager.init">
+<code class="descclassname">libavg.app.keyboardmanager.</code><code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.app.keyboardmanager.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called by <code class="xref py py-class docutils literal"><span class="pre">App</span></code>. Should not be called by user programs.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="libavg.app.keyboardmanager.pop">
+<code class="descclassname">libavg.app.keyboardmanager.</code><code class="descname">pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.app.keyboardmanager.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Companion to <a class="reference internal" href="#libavg.app.keyboardmanager.push" title="libavg.app.keyboardmanager.push"><code class="xref py py-meth docutils literal"><span class="pre">push()</span></code></a>, restores the non-modified key bindings
+previously pushed onto the stack via <a class="reference internal" href="#libavg.app.keyboardmanager.push" title="libavg.app.keyboardmanager.push"><code class="xref py py-meth docutils literal"><span class="pre">push()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="libavg.app.keyboardmanager.push">
+<code class="descclassname">libavg.app.keyboardmanager.</code><code class="descname">push</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.app.keyboardmanager.push" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pushes all the non-modified key bindings onto a stack and clears them all.
+Useful when the application flow branches to a state where a different key
+bindings set is needed. The bindings can be then restored with <a class="reference internal" href="#libavg.app.keyboardmanager.pop" title="libavg.app.keyboardmanager.pop"><code class="xref py py-meth docutils literal"><span class="pre">pop()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="libavg.app.keyboardmanager.unbindAll">
+<code class="descclassname">libavg.app.keyboardmanager.</code><code class="descname">unbindAll</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.app.keyboardmanager.unbindAll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes all the defined key bindings at once.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="libavg.app.keyboardmanager.unbindKeyDown">
+<code class="descclassname">libavg.app.keyboardmanager.</code><code class="descname">unbindKeyDown</code><span class="sig-paren">(</span><em>scancode=None</em>, <em>keyname=None</em>, <em>text=None</em>, <em>modifiers=avg.KEYMOD_NONE</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.app.keyboardmanager.unbindKeyDown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes a previously defined key binding for a KEY_DOWN event.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descclassname">libavg.app.keyboardmanager.</code><code class="descname">unbindKeyDown</code><span class="sig-paren">(</span><em>scancode=None</em>, <em>keyname=None</em>, <em>modifiers=avg.KEYMOD_NONE</em><span class="sig-paren">)</span></dt>
+<dd><p>Removes a previously defined key binding for a KEY_UP event.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-libavg.app.flashmessage">
+<span id="flashmessage-module"></span><h2>flashmessage Module<a class="headerlink" href="#module-libavg.app.flashmessage" title="Permalink to this headline">¶</a></h2>
+<p>Simple user notification API to report information to the user</p>
+<dl class="class">
+<dt id="libavg.app.flashmessage.FlashMessage">
+<em class="property">class </em><code class="descclassname">libavg.app.flashmessage.</code><code class="descname">FlashMessage</code><span class="sig-paren">(</span><em>text</em>, <em>timeout=DEFAULT_TIMEOUT</em>, <em>parent=None</em>, <em>isError=False</em>, <em>acknowledge=False</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.app.flashmessage.FlashMessage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>A <a class="reference internal" href="#libavg.app.flashmessage.FlashMessage" title="libavg.app.flashmessage.FlashMessage"><code class="xref py py-class docutils literal"><span class="pre">FlashMessage</span></code></a> is an easy way to show debug notification and similar
+text in the libavg window. The message can have an optional timeout or stay
+visible until clicked on by the user. It inserts itself into node tree at the top.
+Multiple <a class="reference internal" href="#libavg.app.flashmessage.FlashMessage" title="libavg.app.flashmessage.FlashMessage"><code class="xref py py-class docutils literal"><span class="pre">FlashMessage</span></code></a> instances are shown in the order they get
+created.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>timeout</strong> &#8211; The time in milliseconds the message should persist on screen
+before it gets removed. Only valid if <code class="xref py py-attr docutils literal"><span class="pre">acknowledge</span></code> is
+<code class="xref py py-const docutils literal"><span class="pre">False</span></code>.</li>
+<li><strong>parent</strong> &#8211; When specified, the parent node the message should be appending
+itself to.</li>
+<li><strong>isError</strong> &#8211; A boolean flag to mark the message as error. Error-flagged
+messages are shown in a different color and are routed to the
+logger as well.</li>
+<li><strong>acknowledge</strong> &#8211; A flag to indicate whether the message should remove itself
+automatically (after timeout has elapsed) or needs to be acknowledged
+by the user (by clicking / touching on it).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="basenodes.html" title="Base Node Classes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="player.html" title="Player &amp; Canvas"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">libavg 1.8.dev documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, Ulrich von Zadow.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.6.
+    </div>
+  </body>
+</html>

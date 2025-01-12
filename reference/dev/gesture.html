@@ -1,0 +1,528 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Gesture Support &mdash; libavg 1.8.dev documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.8.dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="libavg 1.8.dev documentation" href="index.html" />
+    <link rel="next" title="Widget Classes" href="widget.html" />
+    <link rel="prev" title="Effect Nodes" href="fx.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="widget.html" title="Widget Classes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="fx.html" title="Effect Nodes"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">libavg 1.8.dev documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="fx.html"
+                        title="previous chapter">Effect Nodes</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="widget.html"
+                        title="next chapter">Widget Classes</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/gesture.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gesture-support">
+<h1>Gesture Support<a class="headerlink" href="#gesture-support" title="Permalink to this headline">¶</a></h1>
+<p>The namespace libavg.gesture exposes a group of configurable gesture recognizers.</p>
+<span class="target" id="module-libavg.gesture"></span><p class="graphviz">
+<img src="_images/inheritance-a18588c904ad6b8989d9cdd6368e7152b868507e.png" alt="Inheritance diagram of DragRecognizer, SwipeRecognizer, TapRecognizer, TransformRecognizer, DoubletapRecognizer, HoldRecognizer" usemap="#inheritancee07f977d91" class="inheritance"/>
+<map id="inheritancee07f977d91" name="inheritancee07f977d91">
+<area shape="rect" id="node1" href="#libavg.gesture.DoubletapRecognizer" target="_top" title="DoubletapRecognizer" alt="" coords="4,248,135,269"/>
+<area shape="rect" id="node2" href="#libavg.gesture.Recognizer" target="_top" title="Recognizer" alt="" coords="350,187,425,208"/>
+<area shape="rect" id="node3" href="#libavg.gesture.DragRecognizer" target="_top" title="DragRecognizer" alt="" coords="155,248,257,269"/>
+<area shape="rect" id="node6" href="#libavg.gesture.HoldRecognizer" target="_top" title="HoldRecognizer" alt="" coords="277,248,376,269"/>
+<area shape="rect" id="node8" href="#libavg.gesture.SwipeRecognizer" target="_top" title="SwipeRecognizer" alt="" coords="396,248,502,269"/>
+<area shape="rect" id="node9" href="#libavg.gesture.TapRecognizer" target="_top" title="TapRecognizer" alt="" coords="522,248,615,269"/>
+<area shape="rect" id="node10" href="#libavg.gesture.TransformRecognizer" target="_top" title="TransformRecognizer" alt="" coords="635,248,764,269"/>
+<area shape="rect" id="node7" href="basenodes.html#libavg.avg.Publisher" target="_top" title="Publisher" alt="" coords="354,126,421,147"/>
+</map>
+</p>
+<p class="graphviz">
+<img src="_images/inheritance-7e8ce3b27cc7733347e410e0bf7b654d5462f32a.png" alt="Inheritance diagram of Transform" usemap="#inheritance1a7bcab41d" class="inheritance"/>
+<map id="inheritance1a7bcab41d" name="inheritance1a7bcab41d">
+<area shape="rect" id="node1" href="#libavg.gesture.Transform" target="_top" title="Transform" alt="" coords="5,5,91,31"/>
+</map>
+</p>
+<dl class="class">
+<dt id="libavg.gesture.DoubletapRecognizer">
+<em class="property">class </em><code class="descclassname">libavg.gesture.</code><code class="descname">DoubletapRecognizer</code><span class="sig-paren">(</span><em>node</em><span class="optional">[</span>, <em>maxTime=MAX_DOUBLETAP_TIME</em>, <em>maxDist=MAX_TAP_DIST</em>, <em>initialEvent=None</em>, <em>possibleHandler=None</em>, <em>failHandler=None</em>, <em>detectedHandler=None</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.gesture.DoubletapRecognizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.gesture.Recognizer" title="libavg.gesture.Recognizer"><code class="xref py py-class docutils literal"><span class="pre">libavg.gesture.Recognizer</span></code></a></p>
+<p>A <a class="reference internal" href="#libavg.gesture.DoubletapRecognizer" title="libavg.gesture.DoubletapRecognizer"><code class="xref py py-class docutils literal"><span class="pre">DoubletapRecognizer</span></code></a> detects doubletaps: Two short touches in quick
+succession without a large change of the cursor position.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>maxTime</strong> &#8211; The maximum time that each phase of the tap may take.</li>
+<li><strong>maxDist</strong> &#8211; The maximum distance the contact may move in millimeters.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.gesture.DragRecognizer">
+<em class="property">class </em><code class="descclassname">libavg.gesture.</code><code class="descname">DragRecognizer</code><span class="sig-paren">(</span><em>eventNode</em><span class="optional">[</span>, <em>coordSysNode=None</em>, <em>initialEvent=None</em>, <em>direction=ANY_DIRECTION</em>, <em>directionTolerance=DIRECTION_TOLERANCE</em>, <em>friction=-1</em>, <em>minDragDist=None</em>, <em>possibleHandler=None</em>, <em>failHandler=None</em>, <em>detectedHandler=None</em>, <em>moveHandler=None</em>, <em>upHandler=None</em>, <em>endHandler=None</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.gesture.DragRecognizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.gesture.Recognizer" title="libavg.gesture.Recognizer"><code class="xref py py-class docutils literal"><span class="pre">libavg.gesture.Recognizer</span></code></a></p>
+<p>A <a class="reference internal" href="#libavg.gesture.DragRecognizer" title="libavg.gesture.DragRecognizer"><code class="xref py py-class docutils literal"><span class="pre">DragRecognizer</span></code></a> attaches itself to a node&#8217;s cursor events and
+delivers higher-level callbacks that can be used to implement dragging or
+drag-like functionality.</p>
+<p><a class="reference internal" href="#libavg.gesture.DragRecognizer" title="libavg.gesture.DragRecognizer"><code class="xref py py-class docutils literal"><span class="pre">DragRecognizer</span></code></a> supports inertia after the node is released.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>coordSysNode</strong> (<a class="reference internal" href="basenodes.html#libavg.avg.Node" title="libavg.avg.Node"><em>avg.Node</em></a>) &#8211; Used to determine the coordinate system for the offsets returned by the
+callbacks. If <code class="xref py py-attr docutils literal"><span class="pre">coordSysNode</span></code> is not given, <code class="xref py py-attr docutils literal"><span class="pre">eventNode</span></code> is
+used as default. The <a class="reference internal" href="#libavg.gesture.DragRecognizer" title="libavg.gesture.DragRecognizer"><code class="xref py py-class docutils literal"><span class="pre">DragRecognizer</span></code></a> never modifies any nodes
+itself. <code class="xref py py-attr docutils literal"><span class="pre">coordSysNode</span></code> can be used to separate the node that
+is the &#8216;handle&#8217; for the events from the node that is being moved - for
+instance, to allow moving a window by dragging the title bar.</li>
+<li><strong>direction</strong> &#8211; Can be used to constrain the recognizer to <code class="xref py py-const docutils literal"><span class="pre">VERTICAL</span></code> or
+<code class="xref py py-const docutils literal"><span class="pre">HORIZONTAL</span></code> drags only. If one of these constants is passed as
+<code class="xref py py-attr docutils literal"><span class="pre">direction</span></code>, the recognizer invokes <code class="xref py py-meth docutils literal"><span class="pre">onPossible()</span></code>
+when the down event arrives, then determines whether the drag is a
+predominantly horizontal or vertical drag and invokes either
+<code class="xref py py-meth docutils literal"><span class="pre">onDetected()</span></code> or <code class="xref py py-meth docutils literal"><span class="pre">onFail()</span></code> depending on the result.</li>
+<li><strong>directionTolerance</strong> (<em>float</em>) &#8211; A tolerance angle in radians for the detection of horizontal and vertical
+drags.</li>
+<li><strong>eventNode</strong> (<a class="reference internal" href="basenodes.html#libavg.avg.Node" title="libavg.avg.Node"><em>avg.Node</em></a>) &#8211; The node to attach to. The <a class="reference internal" href="#libavg.gesture.DragRecognizer" title="libavg.gesture.DragRecognizer"><code class="xref py py-class docutils literal"><span class="pre">DragRecognizer</span></code></a> registers an event
+handler to react to any contacts for this node.</li>
+<li><strong>friction</strong> (<em>float</em>) &#8211; If set, this parameter enables inertia processing. It describes how
+quickly the drag comes to a stop after the cursor is released.</li>
+<li><strong>minDragDist</strong> (<em>float</em>) &#8211; Minimum distance in mm that the cursor must move for the recognizer to switch
+from <code class="xref py py-const docutils literal"><span class="pre">POSSIBLE</span></code> to <code class="xref py py-const docutils literal"><span class="pre">DETECTED</span></code>. Default is either 0 (for
+<code class="xref py py-const docutils literal"><span class="pre">ANY_DIRECTION</span></code> recognizers) or <code class="xref py py-const docutils literal"><span class="pre">MIN_DRAG_DIST</span></code> (for
+constrained recognizers).</li>
+<li><strong>moveHandler</strong> &#8211; A shortcut for
+<code class="samp docutils literal"><span class="pre">Recognizer.subscribe(Recognizer.MOTION,</span> <span class="pre">moveHandler)</span></code>.</li>
+<li><strong>upHandler</strong> &#8211; A shortcut for
+<code class="samp docutils literal"><span class="pre">Recognizer.subscribe(Recognizer.UP,</span> <span class="pre">upHandler)</span></code>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Messages:</strong></p>
+<blockquote>
+<div><p>To get these messages, call <code class="xref py py-meth docutils literal"><span class="pre">Publisher.subscribe()</span></code>.</p>
+<dl class="method">
+<dt id="libavg.gesture.DragRecognizer.Recognizer.MOTION">
+<code class="descclassname">Recognizer.</code><code class="descname">MOTION</code><span class="sig-paren">(</span><em>offset</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.gesture.DragRecognizer.Recognizer.MOTION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when the drag should cause a position change. This usually happens
+in response to a <code class="xref py py-const docutils literal"><span class="pre">CURSORMOTION</span></code> event, but may also happen
+because of inertia.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>offset</strong> (<a class="reference internal" href="misc.html#libavg.avg.Point2D" title="libavg.avg.Point2D"><em>avg.Point2D</em></a>) &#8211; The current offset from the start of the drag in coordinates relative
+to the <code class="xref py py-attr docutils literal"><span class="pre">coordSysNode</span></code>&#8216;s parent.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.gesture.DragRecognizer.Recognizer.UP">
+<code class="descclassname">Recognizer.</code><code class="descname">UP</code><span class="sig-paren">(</span><em>offset</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.gesture.DragRecognizer.Recognizer.UP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when the cursor is released. If inertia is enabled, there may be
+move events after the up event.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>offset</strong> (<a class="reference internal" href="misc.html#libavg.avg.Point2D" title="libavg.avg.Point2D"><em>avg.Point2D</em></a>) &#8211; The current offset from the start of the drag in coordinates relative
+to the <code class="xref py py-class docutils literal"><span class="pre">coordSysNode</span></code>&#8216;s parent.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div></blockquote>
+<dl class="method">
+<dt id="libavg.gesture.DragRecognizer.abort">
+<code class="descname">abort</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.gesture.DragRecognizer.abort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aborts the present recognized gesture and sliding caused by inertia</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.gesture.HoldRecognizer">
+<em class="property">class </em><code class="descclassname">libavg.gesture.</code><code class="descname">HoldRecognizer</code><span class="sig-paren">(</span><em>node</em><span class="optional">[</span>, <em>delay=HOLD_DELAY</em>, <em>maxDist=MAX_TAP_DIST</em>, <em>initialEvent=None</em>, <em>possibleHandler=None</em>, <em>failHandler=None</em>, <em>detectedHandler=None</em>, <em>endHandler=None</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.gesture.HoldRecognizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.gesture.Recognizer" title="libavg.gesture.Recognizer"><code class="xref py py-class docutils literal"><span class="pre">libavg.gesture.Recognizer</span></code></a></p>
+<p>A <a class="reference internal" href="#libavg.gesture.HoldRecognizer" title="libavg.gesture.HoldRecognizer"><code class="xref py py-class docutils literal"><span class="pre">HoldRecognizer</span></code></a> detects if a touch is held for a certain amount of
+time. Holds are continuous events: the <code class="xref py py-meth docutils literal"><span class="pre">endHandler()</span></code> is called when the
+contact up event arrives.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>delay</strong> &#8211; The amount of time that has to pass before the hold is recognized.</li>
+<li><strong>maxDist</strong> &#8211; The maximum distance the contact may move in millimeters.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.gesture.Recognizer">
+<em class="property">class </em><code class="descclassname">libavg.gesture.</code><code class="descname">Recognizer</code><span class="sig-paren">(</span><em>node</em>, <em>isContinuous</em>, <em>maxContacts</em>, <em>initialEvent</em><span class="optional">[</span>, <em>possibleHandler=None</em>, <em>failHandler=None</em>, <em>detectedHandler=None</em>, <em>endHandler=None</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.gesture.Recognizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="basenodes.html#libavg.avg.Publisher" title="libavg.avg.Publisher"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.Publisher</span></code></a></p>
+<p>Base class for gesture recognizers that attach to a node&#8217;s cursor events and
+emit higher-level events. Gesture recognizers have a standard set of states and
+callbacks, but derived classes may add their own callbacks and do not need to
+invoke all base class callbacks. The possible states vary depending on the value
+of <code class="xref py py-attr docutils literal"><span class="pre">isContinuous</span></code>:</p>
+<img alt="_images/Recognizer.png" src="_images/Recognizer.png" />
+<p>A usage example for the recognizers can be found under
+<code class="samp docutils literal"><span class="pre">src/samples/gestures.py</span></code>. Many of the recognizers have default timeouts
+and distance limits which can be changed by modifying <code class="file docutils literal"><span class="pre">avgrc</span></code>. The sample
+file under <code class="file docutils literal"><span class="pre">src/avgrc</span></code> contains explanations.</p>
+<p>Gesture Recognizers disable themselves automatically if the node they are attached
+to is deleted using <code class="samp docutils literal"><span class="pre">unlink(True)</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>node</strong> (<a class="reference internal" href="basenodes.html#libavg.avg.Node" title="libavg.avg.Node"><em>Node</em></a>) &#8211; Node to attach to.</li>
+<li><strong>isContinuous</strong> (<em>bool</em>) &#8211; <code class="xref py py-const docutils literal"><span class="pre">True</span></code> if the gesture stays active after it has been detected.</li>
+<li><strong>maxContacts</strong> &#8211; The maximum number of contacts that the recognizer should handle.
+<code class="xref py py-const docutils literal"><span class="pre">None</span></code> if there is no maximum.</li>
+<li><strong>initialEvent</strong> &#8211; A cursordown event to pass to the recognizer immediately.</li>
+<li><strong>possibleHandler</strong> &#8211; A shortcut for
+<code class="samp docutils literal"><span class="pre">Recognizer.subscribe(Recognizer.POSSIBLE,</span> <span class="pre">possibleHandler)</span></code>.</li>
+<li><strong>failHandler</strong> &#8211; A shortcut for <code class="samp docutils literal"><span class="pre">Recognizer.subscribe(Recognizer.FAIL,</span> <span class="pre">failHandler)</span></code>.</li>
+<li><strong>detectedHandler</strong> &#8211; A shortcut for
+<code class="samp docutils literal"><span class="pre">Recognizer.subscribe(Recognizer.DETECTED,</span> <span class="pre">detectedHandler)</span></code>.</li>
+<li><strong>endHandler</strong> &#8211; A shortcut for <code class="samp docutils literal"><span class="pre">Recognizer.subscribe(Recognizer.END,</span> <span class="pre">endHandler)</span></code>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Messages:</strong></p>
+<blockquote>
+<div><p>Gesture recognizers emit messages whenever they change state - see the state
+diagrams above. The messages have a parameter of type <code class="xref py py-class docutils literal"><span class="pre">CursorEvent</span></code>.</p>
+<p>To get these messages, call <code class="xref py py-meth docutils literal"><span class="pre">Publisher.subscribe()</span></code>.</p>
+<dl class="method">
+<dt id="libavg.gesture.Recognizer.POSSIBLE">
+<code class="descname">POSSIBLE</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.gesture.Recognizer.POSSIBLE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emit when gesture recognition begins - usually after a cursordown event.
+Some continuous gestures (such as unconstrained drags) never emit
+<a class="reference internal" href="#libavg.gesture.Recognizer.POSSIBLE" title="libavg.gesture.Recognizer.POSSIBLE"><code class="xref py py-meth docutils literal"><span class="pre">POSSIBLE()</span></code></a> but emit <a class="reference internal" href="#libavg.gesture.Recognizer.DETECTED" title="libavg.gesture.Recognizer.DETECTED"><code class="xref py py-meth docutils literal"><span class="pre">DETECTED()</span></code></a> immediately.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.gesture.Recognizer.FAILED">
+<code class="descname">FAILED</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.gesture.Recognizer.FAILED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when gesture recognition is rejected. For instance, in the case
+of a <code class="xref py py-class docutils literal"><span class="pre">DoubleTapRecognizer</span></code>, a <a class="reference internal" href="#libavg.gesture.Recognizer.FAILED" title="libavg.gesture.Recognizer.FAILED"><code class="xref py py-meth docutils literal"><span class="pre">FAILED()</span></code></a> message is
+emitted if the touch stays on the surface for too long.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.gesture.Recognizer.DETECTED">
+<code class="descname">DETECTED</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.gesture.Recognizer.DETECTED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when the gesture is recognized. For discrete gestures, this
+signifies the end of gesture processing.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.gesture.Recognizer.END">
+<code class="descname">END</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.gesture.Recognizer.END" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when a continuous gesture ends. This is often a result of an
+up event, but e.g. in the case of inertia, <a class="reference internal" href="#libavg.gesture.Recognizer.END" title="libavg.gesture.Recognizer.END"><code class="xref py py-meth docutils literal"><span class="pre">END()</span></code></a> is emitted
+when movement stops.</p>
+</dd></dl>
+
+</div></blockquote>
+<dl class="attribute">
+<dt id="libavg.gesture.Recognizer.contacts">
+<code class="descname">contacts</code><a class="headerlink" href="#libavg.gesture.Recognizer.contacts" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of all contacts detected by the <a class="reference internal" href="#libavg.gesture.Recognizer" title="libavg.gesture.Recognizer"><code class="xref py py-class docutils literal"><span class="pre">Recognizer</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.gesture.Recognizer.abort">
+<code class="descname">abort</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.gesture.Recognizer.abort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aborts the present recognized gesture.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.gesture.Recognizer.enable">
+<code class="descname">enable</code><span class="sig-paren">(</span><em>isEnabled</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.gesture.Recognizer.enable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables or disables the <a class="reference internal" href="#libavg.gesture.Recognizer" title="libavg.gesture.Recognizer"><code class="xref py py-class docutils literal"><span class="pre">Recognizer</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.gesture.Recognizer.getState">
+<code class="descname">getState</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; String<a class="headerlink" href="#libavg.gesture.Recognizer.getState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the state (&#8220;IDLE&#8221;, &#8220;POSSIBLE&#8221; or &#8220;RUNNING&#8221;) of the recognizer.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.gesture.SwipeRecognizer">
+<em class="property">class </em><code class="descclassname">libavg.gesture.</code><code class="descname">SwipeRecognizer</code><span class="sig-paren">(</span><em>node</em>, <em>direction</em><span class="optional">[</span>, <em>numContacts=1</em>, <em>directionTolerance=SWIPE_DIRECTION_TOLERANCE</em>, <em>minDist=MIN_SWIPE_DIST</em>, <em>maxContactDist=MAX_SWIPE_CONTACT_DIST</em>, <em>initialEvent=None</em>, <em>possibleHandler=None</em>, <em>failHandler=None</em>, <em>detectedHandler=None</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.gesture.SwipeRecognizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.gesture.Recognizer" title="libavg.gesture.Recognizer"><code class="xref py py-class docutils literal"><span class="pre">libavg.gesture.Recognizer</span></code></a></p>
+<p>A <a class="reference internal" href="#libavg.gesture.SwipeRecognizer" title="libavg.gesture.SwipeRecognizer"><code class="xref py py-class docutils literal"><span class="pre">SwipeRecognizer</span></code></a> detects movement of one or more contacts in a
+specified direction and with a minimal distance. Whether the gesture is recognized
+is determined when an up event occurs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>direction</strong> &#8211; One of <code class="xref py py-const docutils literal"><span class="pre">SwipeRecognizer.UP</span></code>, <code class="xref py py-const docutils literal"><span class="pre">DOWN</span></code>, <code class="xref py py-const docutils literal"><span class="pre">LEFT</span></code> or
+<code class="xref py py-const docutils literal"><span class="pre">RIGHT</span></code>.</li>
+<li><strong>numContacts</strong> &#8211; The minimum number of contacts for the swipe.</li>
+<li><strong>directionTolerance</strong> &#8211; Maximum deviation from the ideal direction that the touch(es) may have in
+radians.</li>
+<li><strong>minDist</strong> &#8211; Minimum distance between start position and end position of each contact in
+millimeters.</li>
+<li><strong>maxInterContactDist</strong> &#8211; Maximum distance between the start positions of the different contacts.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.gesture.TapRecognizer">
+<em class="property">class </em><code class="descclassname">libavg.gesture.</code><code class="descname">TapRecognizer</code><span class="sig-paren">(</span><em>node</em><span class="optional">[</span>, <em>maxTime=MAX_TAP_TIME</em>, <em>maxDist=MAX_TAP_DIST</em>, <em>initialEvent=None</em>, <em>possibleHandler=None</em>, <em>failHandler=None</em>, <em>detectedHandler=None</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.gesture.TapRecognizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.gesture.Recognizer" title="libavg.gesture.Recognizer"><code class="xref py py-class docutils literal"><span class="pre">libavg.gesture.Recognizer</span></code></a></p>
+<p>A <a class="reference internal" href="#libavg.gesture.TapRecognizer" title="libavg.gesture.TapRecognizer"><code class="xref py py-class docutils literal"><span class="pre">TapRecognizer</span></code></a> detects short touches without a large change of the
+cursor position.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>maxTime</strong> &#8211; The maximum time that the tap may take in milliseconds.</li>
+<li><strong>maxDist</strong> &#8211; The maximum distance the contact may move in millimeters.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.gesture.Transform">
+<em class="property">class </em><code class="descclassname">libavg.gesture.</code><code class="descname">Transform</code><span class="sig-paren">(</span><em>trans</em><span class="optional">[</span>, <em>rot=0</em>, <em>scale=1</em>, <em>pivot=(0</em>, <em>0)</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.gesture.Transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Encapsulates a coordinate transformation and can be used to change the position,
+rotation and scale of a node.</p>
+<dl class="attribute">
+<dt id="libavg.gesture.Transform.pivot">
+<code class="descname">pivot</code><a class="headerlink" href="#libavg.gesture.Transform.pivot" title="Permalink to this definition">¶</a></dt>
+<dd><p>The point around which rot and scale are applied.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.gesture.Transform.rot">
+<code class="descname">rot</code><a class="headerlink" href="#libavg.gesture.Transform.rot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotation in radians.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.gesture.Transform.scale">
+<code class="descname">scale</code><a class="headerlink" href="#libavg.gesture.Transform.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Multiplies the size of the node.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.gesture.Transform.trans">
+<code class="descname">trans</code><a class="headerlink" href="#libavg.gesture.Transform.trans" title="Permalink to this definition">¶</a></dt>
+<dd><p>The translation.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.gesture.Transform.moveNode">
+<code class="descname">moveNode</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.gesture.Transform.moveNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes a <code class="xref py py-attr docutils literal"><span class="pre">node</span></code>&#8216;s pos, angle and size by applying the transform.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.gesture.TransformRecognizer">
+<em class="property">class </em><code class="descclassname">libavg.gesture.</code><code class="descname">TransformRecognizer</code><span class="sig-paren">(</span><em>eventNode</em><span class="optional">[</span>, <em>coordSysNode=None</em>, <em>initialEvent=None</em>, <em>friction=-1</em>, <em>detectedHandler=None</em>, <em>moveHandler=None</em>, <em>upHandler=None</em>, <em>endHandler=None</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.gesture.TransformRecognizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.gesture.Recognizer" title="libavg.gesture.Recognizer"><code class="xref py py-class docutils literal"><span class="pre">libavg.gesture.Recognizer</span></code></a></p>
+<p>A <a class="reference internal" href="#libavg.gesture.TransformRecognizer" title="libavg.gesture.TransformRecognizer"><code class="xref py py-class docutils literal"><span class="pre">TransformRecognizer</span></code></a> is used to support drag/zoom/rotate
+functionality. From any number of touches on a node, it calculates an aggregate
+transform that can be used to change the position, size and angle of a node.
+The class supports intertia after the node is released.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>eventNode</strong> (<a class="reference internal" href="basenodes.html#libavg.avg.Node" title="libavg.avg.Node"><em>avg.Node</em></a>) &#8211; The node to attach to. The <a class="reference internal" href="#libavg.gesture.TransformRecognizer" title="libavg.gesture.TransformRecognizer"><code class="xref py py-class docutils literal"><span class="pre">TransformRecognizer</span></code></a> registers an event
+handler to react to any contacts for this node.</li>
+<li><strong>coordSysNode</strong> (<a class="reference internal" href="basenodes.html#libavg.avg.Node" title="libavg.avg.Node"><em>avg.Node</em></a>) &#8211; Used to determine the coordinate system for the transforms returned by the
+callbacks.  If <code class="xref py py-attr docutils literal"><span class="pre">coordSysNode</span></code> is not given, <code class="xref py py-attr docutils literal"><span class="pre">eventNode</span></code> is
+used as default. The <a class="reference internal" href="#libavg.gesture.TransformRecognizer" title="libavg.gesture.TransformRecognizer"><code class="xref py py-class docutils literal"><span class="pre">TransformRecognizer</span></code></a> never modifies any nodes
+itself. <code class="xref py py-attr docutils literal"><span class="pre">coordSysNode</span></code> can be used to separate the node that
+is the &#8216;handle&#8217; for the events from the node that is being moved - for
+instance, to allow moving and rotating a window by dragging the title bar.</li>
+<li><strong>friction</strong> (<em>float</em>) &#8211; If set, this parameter enables inertia processing. It describes how
+quickly the transform comes to a stop after the cursor is released.</li>
+<li><strong>moveHandler</strong> &#8211; A shortcut for
+<code class="samp docutils literal"><span class="pre">Recognizer.subscribe(Recognizer.MOTION,</span> <span class="pre">moveHandler)</span></code>.</li>
+<li><strong>upHandler</strong> &#8211; A shortcut for
+<code class="samp docutils literal"><span class="pre">Recognizer.subscribe(Recognizer.UP,</span> <span class="pre">upHandler)</span></code>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Messages:</strong></p>
+<blockquote>
+<div><p>To get these messages, call <code class="xref py py-meth docutils literal"><span class="pre">Publisher.subscribe()</span></code>.</p>
+<dl class="method">
+<dt id="libavg.gesture.TransformRecognizer.Recognizer.MOTION">
+<code class="descclassname">Recognizer.</code><code class="descname">MOTION</code><span class="sig-paren">(</span><em>transform</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.gesture.TransformRecognizer.Recognizer.MOTION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted whenever the transform changes. This usually happens
+in response to one or more <code class="xref py py-const docutils literal"><span class="pre">CURSORMOTION</span></code> events, but may also
+happen because of inertia.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>transform</strong> (<a class="reference internal" href="#libavg.gesture.Transform" title="libavg.gesture.Transform"><em>Transform</em></a>) &#8211; The change in transformation since the last call of move or up.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.gesture.TransformRecognizer.Recognizer.UP">
+<code class="descclassname">Recognizer.</code><code class="descname">UP</code><span class="sig-paren">(</span><em>transform</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.gesture.TransformRecognizer.Recognizer.UP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when the last touch is released. If inertia is enabled, there may
+be move events after the up event.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>transform</strong> (<a class="reference internal" href="#libavg.gesture.Transform" title="libavg.gesture.Transform"><em>Transform</em></a>) &#8211; The change in transformation since the last call of move.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div></blockquote>
+<dl class="method">
+<dt id="libavg.gesture.TransformRecognizer.abort">
+<code class="descname">abort</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.gesture.TransformRecognizer.abort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aborts the present recognized gesture and sliding caused by inertia.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="widget.html" title="Widget Classes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="fx.html" title="Effect Nodes"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">libavg 1.8.dev documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, Ulrich von Zadow.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.6.
+    </div>
+  </body>
+</html>

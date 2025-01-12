@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>libavg.avg_showcamera</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="libavg-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="../index.php">libavg</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="libavg-module.html">Package&nbsp;libavg</a> ::
+        Module&nbsp;avg_showcamera
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="libavg.avg_showcamera-module.html">Module libavg.avg_showcamera</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment">#!/usr/bin/env python</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># -*- coding: utf-8 -*-</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package libavg=libavg-module.html"><a title="libavg" class="py-name" href="#" onclick="return doclink('link-0', 'libavg', 'link-0');">libavg</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Module libavg.avg=libavg.avg-module.html"><a title="libavg.avg" class="py-name" href="#" onclick="return doclink('link-1', 'avg', 'link-1');">avg</a></tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">time</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"> </tt>
+<a name="printUsage"></a><div id="printUsage-def"><a name="L8"></a><tt class="py-lineno"> 8</tt> <a class="py-toggle" href="#" id="printUsage-toggle" onclick="return toggle('printUsage');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.avg_showcamera-module.html#printUsage">printUsage</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="printUsage-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="printUsage-expanded"><a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-string">"Usage: avg_showcamera.py [&lt;driver&gt; [&lt;device&gt; [&lt;unit&gt; [&lt;width&gt; &lt;height&gt; &lt;pixelformat&gt; &lt;framerate&gt; [&lt;fw800&gt;]]]]]"</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-string">"Valid values for driver: firewire, v4l, directshow."</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> <tt class="py-string">"Valid values for pixelformat: I8, I16, YUV411, YUV422, RGB, BGR, BAYER8"</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line">    <tt class="py-keyword">print</tt> </tt>
+</div><a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"> </tt>
+<a name="checkCamera"></a><div id="checkCamera-def"><a name="L15"></a><tt class="py-lineno">15</tt> <a class="py-toggle" href="#" id="checkCamera-toggle" onclick="return toggle('checkCamera');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.avg_showcamera-module.html#checkCamera">checkCamera</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="checkCamera-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="checkCamera-expanded"><a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt><tt class="py-op">(</tt><tt id="link-2" class="py-name" targets="Variable libavg.avg_showcamera.camNode=libavg.avg_showcamera-module.html#camNode"><a title="libavg.avg_showcamera.camNode" class="py-name" href="#" onclick="return doclink('link-2', 'camNode', 'link-2');">camNode</a></tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Method libavg.avg.Camera.isAvailable()=libavg.avg.Camera-class.html#isAvailable,Method libavg.avg.ParPort.isAvailable()=libavg.avg.ParPort-class.html#isAvailable"><a title="libavg.avg.Camera.isAvailable
+libavg.avg.ParPort.isAvailable" class="py-name" href="#" onclick="return doclink('link-3', 'isAvailable', 'link-3');">isAvailable</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">        <tt id="link-4" class="py-name" targets="Variable libavg.avg_showcamera.Log=libavg.avg_showcamera-module.html#Log,Variable libavg.avg_showfont.Log=libavg.avg_showfont-module.html#Log"><a title="libavg.avg_showcamera.Log
+libavg.avg_showfont.Log" class="py-name" href="#" onclick="return doclink('link-4', 'Log', 'link-4');">Log</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Method libavg.avg.Logger.trace()=libavg.avg.Logger-class.html#trace"><a title="libavg.avg.Logger.trace" class="py-name" href="#" onclick="return doclink('link-5', 'trace', 'link-5');">trace</a></tt><tt class="py-op">(</tt><tt id="link-6" class="py-name"><a title="libavg.avg_showcamera.Log
+libavg.avg_showfont.Log" class="py-name" href="#" onclick="return doclink('link-6', 'Log', 'link-4');">Log</a></tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Variable libavg.avg.Logger.APP=libavg.avg.Logger-class.html#APP"><a title="libavg.avg.Logger.APP" class="py-name" href="#" onclick="return doclink('link-7', 'APP', 'link-7');">APP</a></tt><tt class="py-op">,</tt> <tt class="py-string">"Could not open camera"</tt><tt class="py-op">)</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">        <tt id="link-8" class="py-name" targets="Function libavg.avg_showcamera.printUsage()=libavg.avg_showcamera-module.html#printUsage"><a title="libavg.avg_showcamera.printUsage" class="py-name" href="#" onclick="return doclink('link-8', 'printUsage', 'link-8');">printUsage</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line">        <tt class="py-name">exit</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"><tt id="link-9" class="py-name"><a title="libavg.avg_showcamera.Log
+libavg.avg_showfont.Log" class="py-name" href="#" onclick="return doclink('link-9', 'Log', 'link-4');">Log</a></tt> <tt class="py-op">=</tt> <tt id="link-10" class="py-name"><a title="libavg.avg" class="py-name" href="#" onclick="return doclink('link-10', 'avg', 'link-1');">avg</a></tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Class libavg.avg.Logger=libavg.avg.Logger-class.html"><a title="libavg.avg.Logger" class="py-name" href="#" onclick="return doclink('link-11', 'Logger', 'link-11');">Logger</a></tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Method libavg.avg.ConradRelais.get()=libavg.avg.ConradRelais-class.html#get,Static Method libavg.avg.Logger.get()=libavg.avg.Logger-class.html#get,Static Method libavg.avg.Player.get()=libavg.avg.Player-class.html#get"><a title="libavg.avg.ConradRelais.get
+libavg.avg.Logger.get
+libavg.avg.Player.get" class="py-name" href="#" onclick="return doclink('link-12', 'get', 'link-12');">get</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">;</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"><tt id="link-13" class="py-name"><a title="libavg.avg_showcamera.Log
+libavg.avg_showfont.Log" class="py-name" href="#" onclick="return doclink('link-13', 'Log', 'link-4');">Log</a></tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Method libavg.avg.Logger.setCategories()=libavg.avg.Logger-class.html#setCategories"><a title="libavg.avg.Logger.setCategories" class="py-name" href="#" onclick="return doclink('link-14', 'setCategories', 'link-14');">setCategories</a></tt><tt class="py-op">(</tt><tt id="link-15" class="py-name"><a title="libavg.avg_showcamera.Log
+libavg.avg_showfont.Log" class="py-name" href="#" onclick="return doclink('link-15', 'Log', 'link-4');">Log</a></tt><tt class="py-op">.</tt><tt id="link-16" class="py-name"><a title="libavg.avg.Logger.APP" class="py-name" href="#" onclick="return doclink('link-16', 'APP', 'link-7');">APP</a></tt> <tt class="py-op">|</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">          <tt id="link-17" class="py-name"><a title="libavg.avg_showcamera.Log
+libavg.avg_showfont.Log" class="py-name" href="#" onclick="return doclink('link-17', 'Log', 'link-4');">Log</a></tt><tt class="py-op">.</tt><tt id="link-18" class="py-name" targets="Variable libavg.avg.Logger.WARNING=libavg.avg.Logger-class.html#WARNING"><a title="libavg.avg.Logger.WARNING" class="py-name" href="#" onclick="return doclink('link-18', 'WARNING', 'link-18');">WARNING</a></tt> <tt class="py-op">|</tt>  </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">          <tt id="link-19" class="py-name"><a title="libavg.avg_showcamera.Log
+libavg.avg_showfont.Log" class="py-name" href="#" onclick="return doclink('link-19', 'Log', 'link-4');">Log</a></tt><tt class="py-op">.</tt><tt id="link-20" class="py-name" targets="Variable libavg.avg.Logger.PROFILE=libavg.avg.Logger-class.html#PROFILE"><a title="libavg.avg.Logger.PROFILE" class="py-name" href="#" onclick="return doclink('link-20', 'PROFILE', 'link-20');">PROFILE</a></tt> <tt class="py-op">|</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"><tt class="py-comment">#          Log.PROFILE_LATEFRAMES |</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">          <tt id="link-21" class="py-name"><a title="libavg.avg_showcamera.Log
+libavg.avg_showfont.Log" class="py-name" href="#" onclick="return doclink('link-21', 'Log', 'link-4');">Log</a></tt><tt class="py-op">.</tt><tt id="link-22" class="py-name" targets="Variable libavg.avg.Logger.CONFIG=libavg.avg.Logger-class.html#CONFIG"><a title="libavg.avg.Logger.CONFIG" class="py-name" href="#" onclick="return doclink('link-22', 'CONFIG', 'link-22');">CONFIG</a></tt> <tt class="py-op">|</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"><tt class="py-comment">#          Log.EVENTS |</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">          <tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"><tt id="link-23" class="py-name" targets="Class libavg.avg.Player=libavg.avg.Player-class.html,Variable libavg.avg_showcamera.Player=libavg.avg_showcamera-module.html#Player,Variable libavg.avg_showfont.Player=libavg.avg_showfont-module.html#Player"><a title="libavg.avg.Player
+libavg.avg_showcamera.Player
+libavg.avg_showfont.Player" class="py-name" href="#" onclick="return doclink('link-23', 'Player', 'link-23');">Player</a></tt> <tt class="py-op">=</tt> <tt id="link-24" class="py-name"><a title="libavg.avg" class="py-name" href="#" onclick="return doclink('link-24', 'avg', 'link-1');">avg</a></tt><tt class="py-op">.</tt><tt id="link-25" class="py-name"><a title="libavg.avg.Player
+libavg.avg_showcamera.Player
+libavg.avg_showfont.Player" class="py-name" href="#" onclick="return doclink('link-25', 'Player', 'link-23');">Player</a></tt><tt class="py-op">.</tt><tt id="link-26" class="py-name"><a title="libavg.avg.ConradRelais.get
+libavg.avg.Logger.get
+libavg.avg.Player.get" class="py-name" href="#" onclick="return doclink('link-26', 'get', 'link-12');">get</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line"> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line"><tt id="link-27" class="py-name"><a title="libavg.avg.Player
+libavg.avg_showcamera.Player
+libavg.avg_showfont.Player" class="py-name" href="#" onclick="return doclink('link-27', 'Player', 'link-23');">Player</a></tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Method libavg.avg.Player.loadString()=libavg.avg.Player-class.html#loadString"><a title="libavg.avg.Player.loadString" class="py-name" href="#" onclick="return doclink('link-28', 'loadString', 'link-28');">loadString</a></tt><tt class="py-op">(</tt><tt class="py-string">"""</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line"><tt class="py-string">&lt;?xml version="1.0"?&gt;</tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line"><tt class="py-string">&lt;!DOCTYPE avg SYSTEM "../../doc/avg.dtd"&gt;</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line"><tt class="py-string">&lt;avg width="1280" height="960"&gt;</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"><tt class="py-string">&lt;/avg&gt;</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"><tt class="py-string">"""</tt><tt class="py-op">)</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line"><tt id="link-29" class="py-name" targets="Variable libavg.avg_showcamera.driver=libavg.avg_showcamera-module.html#driver"><a title="libavg.avg_showcamera.driver" class="py-name" href="#" onclick="return doclink('link-29', 'driver', 'link-29');">driver</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"firewire"</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line"><tt id="link-30" class="py-name" targets="Variable libavg.avg.Camera.device=libavg.avg.Camera-class.html#device,Variable libavg.avg_showcamera.device=libavg.avg_showcamera-module.html#device"><a title="libavg.avg.Camera.device
+libavg.avg_showcamera.device" class="py-name" href="#" onclick="return doclink('link-30', 'device', 'link-30');">device</a></tt> <tt class="py-op">=</tt> <tt class="py-string">""</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line"><tt id="link-31" class="py-name" targets="Variable libavg.avg_showcamera.unit=libavg.avg_showcamera-module.html#unit"><a title="libavg.avg_showcamera.unit" class="py-name" href="#" onclick="return doclink('link-31', 'unit', 'link-31');">unit</a></tt> <tt class="py-op">=</tt> <tt class="py-op">-</tt><tt class="py-number">1</tt>  </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line"><tt id="link-32" class="py-name" targets="Variable libavg.avg.AreaNode.width=libavg.avg.AreaNode-class.html#width,Variable libavg.avg.RectNode.width=libavg.avg.RectNode-class.html#width,Variable libavg.avg_showcamera.width=libavg.avg_showcamera-module.html#width"><a title="libavg.avg.AreaNode.width
+libavg.avg.RectNode.width
+libavg.avg_showcamera.width" class="py-name" href="#" onclick="return doclink('link-32', 'width', 'link-32');">width</a></tt> <tt class="py-op">=</tt> <tt class="py-number">640</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line"><tt id="link-33" class="py-name" targets="Variable libavg.avg.AreaNode.height=libavg.avg.AreaNode-class.html#height,Variable libavg.avg.RectNode.height=libavg.avg.RectNode-class.html#height,Variable libavg.avg_showcamera.height=libavg.avg_showcamera-module.html#height"><a title="libavg.avg.AreaNode.height
+libavg.avg.RectNode.height
+libavg.avg_showcamera.height" class="py-name" href="#" onclick="return doclink('link-33', 'height', 'link-33');">height</a></tt> <tt class="py-op">=</tt> <tt class="py-number">480</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line"><tt id="link-34" class="py-name" targets="Variable libavg.avg_showcamera.pixelFormat=libavg.avg_showcamera-module.html#pixelFormat"><a title="libavg.avg_showcamera.pixelFormat" class="py-name" href="#" onclick="return doclink('link-34', 'pixelFormat', 'link-34');">pixelFormat</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"RGB"</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line"><tt id="link-35" class="py-name" targets="Variable libavg.avg.Camera.framerate=libavg.avg.Camera-class.html#framerate,Variable libavg.avg_showcamera.framerate=libavg.avg_showcamera-module.html#framerate"><a title="libavg.avg.Camera.framerate
+libavg.avg_showcamera.framerate" class="py-name" href="#" onclick="return doclink('link-35', 'framerate', 'link-35');">framerate</a></tt> <tt class="py-op">=</tt> <tt class="py-number">15</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line"><tt id="link-36" class="py-name" targets="Variable libavg.avg_showcamera.fw800=libavg.avg_showcamera-module.html#fw800"><a title="libavg.avg_showcamera.fw800" class="py-name" href="#" onclick="return doclink('link-36', 'fw800', 'link-36');">fw800</a></tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">argv</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-number">1</tt><tt class="py-op">:</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">    <tt id="link-37" class="py-name"><a title="libavg.avg_showcamera.printUsage" class="py-name" href="#" onclick="return doclink('link-37', 'printUsage', 'link-8');">printUsage</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">    <tt id="link-38" class="py-name"><a title="libavg.avg" class="py-name" href="#" onclick="return doclink('link-38', 'avg', 'link-1');">avg</a></tt><tt class="py-op">.</tt><tt id="link-39" class="py-name" targets="Class libavg.avg.Camera=libavg.avg.Camera-class.html"><a title="libavg.avg.Camera" class="py-name" href="#" onclick="return doclink('link-39', 'Camera', 'link-39');">Camera</a></tt><tt class="py-op">.</tt><tt id="link-40" class="py-name" targets="Static Method libavg.avg.Camera.dumpCameras()=libavg.avg.Camera-class.html#dumpCameras"><a title="libavg.avg.Camera.dumpCameras" class="py-name" href="#" onclick="return doclink('link-40', 'dumpCameras', 'link-40');">dumpCameras</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">    <tt class="py-name">exit</tt><tt class="py-op">(</tt><tt class="py-number">1</tt><tt class="py-op">)</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line"> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">argv</tt><tt class="py-op">)</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">1</tt><tt class="py-op">:</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">    <tt id="link-41" class="py-name"><a title="libavg.avg_showcamera.driver" class="py-name" href="#" onclick="return doclink('link-41', 'driver', 'link-29');">driver</a></tt> <tt class="py-op">=</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">argv</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">argv</tt><tt class="py-op">)</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">2</tt><tt class="py-op">:</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">    <tt id="link-42" class="py-name"><a title="libavg.avg.Camera.device
+libavg.avg_showcamera.device" class="py-name" href="#" onclick="return doclink('link-42', 'device', 'link-30');">device</a></tt> <tt class="py-op">=</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">argv</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">argv</tt><tt class="py-op">)</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">3</tt><tt class="py-op">:</tt> </tt>
+<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line">    <tt id="link-43" class="py-name"><a title="libavg.avg_showcamera.unit" class="py-name" href="#" onclick="return doclink('link-43', 'unit', 'link-31');">unit</a></tt> <tt class="py-op">=</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">argv</tt><tt class="py-op">[</tt><tt class="py-number">3</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">argv</tt><tt class="py-op">)</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">7</tt><tt class="py-op">:</tt> </tt>
+<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">    <tt id="link-44" class="py-name"><a title="libavg.avg.AreaNode.width
+libavg.avg.RectNode.width
+libavg.avg_showcamera.width" class="py-name" href="#" onclick="return doclink('link-44', 'width', 'link-32');">width</a></tt> <tt class="py-op">=</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">argv</tt><tt class="py-op">[</tt><tt class="py-number">4</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">    <tt id="link-45" class="py-name"><a title="libavg.avg.AreaNode.height
+libavg.avg.RectNode.height
+libavg.avg_showcamera.height" class="py-name" href="#" onclick="return doclink('link-45', 'height', 'link-33');">height</a></tt> <tt class="py-op">=</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">argv</tt><tt class="py-op">[</tt><tt class="py-number">5</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line">    <tt id="link-46" class="py-name"><a title="libavg.avg_showcamera.pixelFormat" class="py-name" href="#" onclick="return doclink('link-46', 'pixelFormat', 'link-34');">pixelFormat</a></tt> <tt class="py-op">=</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">argv</tt><tt class="py-op">[</tt><tt class="py-number">6</tt><tt class="py-op">]</tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line">    <tt id="link-47" class="py-name"><a title="libavg.avg.Camera.framerate
+libavg.avg_showcamera.framerate" class="py-name" href="#" onclick="return doclink('link-47', 'framerate', 'link-35');">framerate</a></tt> <tt class="py-op">=</tt> <tt class="py-name">float</tt><tt class="py-op">(</tt><tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">argv</tt><tt class="py-op">[</tt><tt class="py-number">7</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line"><tt class="py-keyword">if</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">argv</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-number">9</tt><tt class="py-op">:</tt> </tt>
+<a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line">    <tt id="link-48" class="py-name" targets="Variable libavg.avg_showcamera.fw800str=libavg.avg_showcamera-module.html#fw800str"><a title="libavg.avg_showcamera.fw800str" class="py-name" href="#" onclick="return doclink('link-48', 'fw800str', 'link-48');">fw800str</a></tt> <tt class="py-op">=</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">argv</tt><tt class="py-op">[</tt><tt class="py-number">8</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">upper</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt id="link-49" class="py-name"><a title="libavg.avg_showcamera.fw800str" class="py-name" href="#" onclick="return doclink('link-49', 'fw800str', 'link-48');">fw800str</a></tt> <tt class="py-op">==</tt> <tt class="py-string">"FALSE"</tt><tt class="py-op">:</tt> </tt>
+<a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line">        <tt id="link-50" class="py-name"><a title="libavg.avg_showcamera.fw800" class="py-name" href="#" onclick="return doclink('link-50', 'fw800', 'link-36');">fw800</a></tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line">        <tt id="link-51" class="py-name"><a title="libavg.avg_showcamera.fw800" class="py-name" href="#" onclick="return doclink('link-51', 'fw800', 'link-36');">fw800</a></tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line"> </tt>
+<a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line"><tt id="link-52" class="py-name"><a title="libavg.avg_showcamera.Log
+libavg.avg_showfont.Log" class="py-name" href="#" onclick="return doclink('link-52', 'Log', 'link-4');">Log</a></tt><tt class="py-op">.</tt><tt id="link-53" class="py-name"><a title="libavg.avg.Logger.trace" class="py-name" href="#" onclick="return doclink('link-53', 'trace', 'link-5');">trace</a></tt><tt class="py-op">(</tt><tt id="link-54" class="py-name"><a title="libavg.avg_showcamera.Log
+libavg.avg_showfont.Log" class="py-name" href="#" onclick="return doclink('link-54', 'Log', 'link-4');">Log</a></tt><tt class="py-op">.</tt><tt id="link-55" class="py-name"><a title="libavg.avg.Logger.APP" class="py-name" href="#" onclick="return doclink('link-55', 'APP', 'link-7');">APP</a></tt><tt class="py-op">,</tt> <tt class="py-string">"Creating camera, driver="</tt><tt class="py-op">+</tt><tt id="link-56" class="py-name"><a title="libavg.avg_showcamera.driver" class="py-name" href="#" onclick="return doclink('link-56', 'driver', 'link-29');">driver</a></tt><tt class="py-op">+</tt><tt class="py-string">", device="</tt><tt class="py-op">+</tt><tt id="link-57" class="py-name"><a title="libavg.avg.Camera.device
+libavg.avg_showcamera.device" class="py-name" href="#" onclick="return doclink('link-57', 'device', 'link-30');">device</a></tt><tt class="py-op">+</tt> </tt>
+<a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line">        <tt class="py-string">", unit="</tt><tt class="py-op">+</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt id="link-58" class="py-name"><a title="libavg.avg_showcamera.unit" class="py-name" href="#" onclick="return doclink('link-58', 'unit', 'link-31');">unit</a></tt><tt class="py-op">)</tt><tt class="py-op">+</tt><tt class="py-string">", width="</tt><tt class="py-op">+</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt id="link-59" class="py-name"><a title="libavg.avg.AreaNode.width
+libavg.avg.RectNode.width
+libavg.avg_showcamera.width" class="py-name" href="#" onclick="return doclink('link-59', 'width', 'link-32');">width</a></tt><tt class="py-op">)</tt><tt class="py-op">+</tt><tt class="py-string">", height="</tt><tt class="py-op">+</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt id="link-60" class="py-name"><a title="libavg.avg.AreaNode.height
+libavg.avg.RectNode.height
+libavg.avg_showcamera.height" class="py-name" href="#" onclick="return doclink('link-60', 'height', 'link-33');">height</a></tt><tt class="py-op">)</tt><tt class="py-op">+</tt> </tt>
+<a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line">        <tt class="py-string">", pixelformat="</tt><tt class="py-op">+</tt><tt id="link-61" class="py-name"><a title="libavg.avg_showcamera.pixelFormat" class="py-name" href="#" onclick="return doclink('link-61', 'pixelFormat', 'link-34');">pixelFormat</a></tt><tt class="py-op">+</tt><tt class="py-string">", framerate="</tt><tt class="py-op">+</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt id="link-62" class="py-name"><a title="libavg.avg.Camera.framerate
+libavg.avg_showcamera.framerate" class="py-name" href="#" onclick="return doclink('link-62', 'framerate', 'link-35');">framerate</a></tt><tt class="py-op">)</tt><tt class="py-op">+</tt><tt class="py-string">", fw800="</tt><tt class="py-op">+</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt id="link-63" class="py-name"><a title="libavg.avg_showcamera.fw800" class="py-name" href="#" onclick="return doclink('link-63', 'fw800', 'link-36');">fw800</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line"> </tt>
+<a name="L75"></a><tt class="py-lineno">75</tt>  <tt class="py-line"><tt id="link-64" class="py-name"><a title="libavg.avg_showcamera.camNode" class="py-name" href="#" onclick="return doclink('link-64', 'camNode', 'link-2');">camNode</a></tt> <tt class="py-op">=</tt> <tt id="link-65" class="py-name"><a title="libavg.avg.Player
+libavg.avg_showcamera.Player
+libavg.avg_showfont.Player" class="py-name" href="#" onclick="return doclink('link-65', 'Player', 'link-23');">Player</a></tt><tt class="py-op">.</tt><tt id="link-66" class="py-name" targets="Method libavg.avg.Player.createNode()=libavg.avg.Player-class.html#createNode"><a title="libavg.avg.Player.createNode" class="py-name" href="#" onclick="return doclink('link-66', 'createNode', 'link-66');">createNode</a></tt><tt class="py-op">(</tt><tt class="py-string">"camera"</tt><tt class="py-op">,</tt>  </tt>
+<a name="L76"></a><tt class="py-lineno">76</tt>  <tt class="py-line">        <tt class="py-op">{</tt><tt class="py-string">"driver"</tt><tt class="py-op">:</tt> <tt id="link-67" class="py-name"><a title="libavg.avg_showcamera.driver" class="py-name" href="#" onclick="return doclink('link-67', 'driver', 'link-29');">driver</a></tt><tt class="py-op">,</tt> <tt class="py-string">"device"</tt><tt class="py-op">:</tt> <tt id="link-68" class="py-name"><a title="libavg.avg.Camera.device
+libavg.avg_showcamera.device" class="py-name" href="#" onclick="return doclink('link-68', 'device', 'link-30');">device</a></tt><tt class="py-op">,</tt> <tt class="py-string">"unit"</tt><tt class="py-op">:</tt> <tt id="link-69" class="py-name"><a title="libavg.avg_showcamera.unit" class="py-name" href="#" onclick="return doclink('link-69', 'unit', 'link-31');">unit</a></tt><tt class="py-op">,</tt> <tt class="py-string">"fw800"</tt><tt class="py-op">:</tt> <tt id="link-70" class="py-name"><a title="libavg.avg_showcamera.fw800" class="py-name" href="#" onclick="return doclink('link-70', 'fw800', 'link-36');">fw800</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L77"></a><tt class="py-lineno">77</tt>  <tt class="py-line">         <tt class="py-string">"capturewidth"</tt><tt class="py-op">:</tt> <tt id="link-71" class="py-name"><a title="libavg.avg.AreaNode.width
+libavg.avg.RectNode.width
+libavg.avg_showcamera.width" class="py-name" href="#" onclick="return doclink('link-71', 'width', 'link-32');">width</a></tt><tt class="py-op">,</tt> <tt class="py-string">"captureheight"</tt><tt class="py-op">:</tt> <tt id="link-72" class="py-name"><a title="libavg.avg.AreaNode.height
+libavg.avg.RectNode.height
+libavg.avg_showcamera.height" class="py-name" href="#" onclick="return doclink('link-72', 'height', 'link-33');">height</a></tt><tt class="py-op">,</tt> <tt class="py-string">"pixelformat"</tt><tt class="py-op">:</tt> <tt id="link-73" class="py-name"><a title="libavg.avg_showcamera.pixelFormat" class="py-name" href="#" onclick="return doclink('link-73', 'pixelFormat', 'link-34');">pixelFormat</a></tt><tt class="py-op">,</tt>  </tt>
+<a name="L78"></a><tt class="py-lineno">78</tt>  <tt class="py-line">         <tt class="py-string">"framerate"</tt><tt class="py-op">:</tt> <tt id="link-74" class="py-name"><a title="libavg.avg.Camera.framerate
+libavg.avg_showcamera.framerate" class="py-name" href="#" onclick="return doclink('link-74', 'framerate', 'link-35');">framerate</a></tt><tt class="py-op">,</tt> <tt class="py-string">"width"</tt><tt class="py-op">:</tt> <tt class="py-number">1280</tt><tt class="py-op">,</tt> <tt class="py-string">"height"</tt><tt class="py-op">:</tt><tt class="py-number">960</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L79"></a><tt class="py-lineno">79</tt>  <tt class="py-line"><tt id="link-75" class="py-name"><a title="libavg.avg.Player
+libavg.avg_showcamera.Player
+libavg.avg_showfont.Player" class="py-name" href="#" onclick="return doclink('link-75', 'Player', 'link-23');">Player</a></tt><tt class="py-op">.</tt><tt id="link-76" class="py-name" targets="Method libavg.avg.Player.getRootNode()=libavg.avg.Player-class.html#getRootNode"><a title="libavg.avg.Player.getRootNode" class="py-name" href="#" onclick="return doclink('link-76', 'getRootNode', 'link-76');">getRootNode</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-77" class="py-name" targets="Method libavg.avg.DivNode.appendChild()=libavg.avg.DivNode-class.html#appendChild"><a title="libavg.avg.DivNode.appendChild" class="py-name" href="#" onclick="return doclink('link-77', 'appendChild', 'link-77');">appendChild</a></tt><tt class="py-op">(</tt><tt id="link-78" class="py-name"><a title="libavg.avg_showcamera.camNode" class="py-name" href="#" onclick="return doclink('link-78', 'camNode', 'link-2');">camNode</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L80"></a><tt class="py-lineno">80</tt>  <tt class="py-line"><tt id="link-79" class="py-name"><a title="libavg.avg_showcamera.camNode" class="py-name" href="#" onclick="return doclink('link-79', 'camNode', 'link-2');">camNode</a></tt><tt class="py-op">.</tt><tt id="link-80" class="py-name" targets="Method libavg.avg.Player.play()=libavg.avg.Player-class.html#play,Method libavg.avg.Sound.play()=libavg.avg.Sound-class.html#play,Method libavg.avg.VideoBase.play()=libavg.avg.VideoBase-class.html#play"><a title="libavg.avg.Player.play
+libavg.avg.Sound.play
+libavg.avg.VideoBase.play" class="py-name" href="#" onclick="return doclink('link-80', 'play', 'link-80');">play</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno">81</tt>  <tt class="py-line"><tt id="link-81" class="py-name"><a title="libavg.avg.Player
+libavg.avg_showcamera.Player
+libavg.avg_showfont.Player" class="py-name" href="#" onclick="return doclink('link-81', 'Player', 'link-23');">Player</a></tt><tt class="py-op">.</tt><tt id="link-82" class="py-name" targets="Method libavg.avg.Player.setFramerate()=libavg.avg.Player-class.html#setFramerate"><a title="libavg.avg.Player.setFramerate" class="py-name" href="#" onclick="return doclink('link-82', 'setFramerate', 'link-82');">setFramerate</a></tt><tt class="py-op">(</tt><tt id="link-83" class="py-name"><a title="libavg.avg.Camera.framerate
+libavg.avg_showcamera.framerate" class="py-name" href="#" onclick="return doclink('link-83', 'framerate', 'link-35');">framerate</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L82"></a><tt class="py-lineno">82</tt>  <tt class="py-line"><tt id="link-84" class="py-name"><a title="libavg.avg.Player
+libavg.avg_showcamera.Player
+libavg.avg_showfont.Player" class="py-name" href="#" onclick="return doclink('link-84', 'Player', 'link-23');">Player</a></tt><tt class="py-op">.</tt><tt id="link-85" class="py-name" targets="Method libavg.avg.Player.setTimeout()=libavg.avg.Player-class.html#setTimeout"><a title="libavg.avg.Player.setTimeout" class="py-name" href="#" onclick="return doclink('link-85', 'setTimeout', 'link-85');">setTimeout</a></tt><tt class="py-op">(</tt><tt class="py-number">100</tt><tt class="py-op">,</tt> <tt id="link-86" class="py-name" targets="Function libavg.avg_showcamera.checkCamera()=libavg.avg_showcamera-module.html#checkCamera"><a title="libavg.avg_showcamera.checkCamera" class="py-name" href="#" onclick="return doclink('link-86', 'checkCamera', 'link-86');">checkCamera</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L83"></a><tt class="py-lineno">83</tt>  <tt class="py-line"><tt id="link-87" class="py-name"><a title="libavg.avg.Player
+libavg.avg_showcamera.Player
+libavg.avg_showfont.Player" class="py-name" href="#" onclick="return doclink('link-87', 'Player', 'link-23');">Player</a></tt><tt class="py-op">.</tt><tt id="link-88" class="py-name"><a title="libavg.avg.Player.play
+libavg.avg.Sound.play
+libavg.avg.VideoBase.play" class="py-name" href="#" onclick="return doclink('link-88', 'play', 'link-80');">play</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L84"></a><tt class="py-lineno">84</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="libavg-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="../index.php">libavg</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sat Aug 22 23:57:32 2009
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

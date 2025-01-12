@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>libavg.anim</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="libavg-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="../index.php">libavg</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="libavg-module.html">Package&nbsp;libavg</a> ::
+        Module&nbsp;anim
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="libavg.anim-module.html">Module libavg.anim</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment"># TODO:</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># - loops</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># - Folgen, Gruppen</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="SimpleAnim"></a><div id="SimpleAnim-def"><a name="L5"></a><tt class="py-lineno">  5</tt> <a class="py-toggle" href="#" id="SimpleAnim-toggle" onclick="return toggle('SimpleAnim');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="libavg.anim.SimpleAnim-class.html">SimpleAnim</a><tt class="py-op">:</tt> </tt>
+</div><div id="SimpleAnim-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="SimpleAnim-expanded"><a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-docstring">    Base class for animations that change libavg node attributes by interpolating</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-docstring">    over a set amount of time. Constructing an animation object starts the</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-docstring">    animation. If abort() isn't needed, there is no need to hold on to the object - </tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-docstring">    it will exist exactly as long as the animation lasts and then disappear.</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="SimpleAnim.__init__"></a><div id="SimpleAnim.__init__-def"><a name="L12"></a><tt class="py-lineno"> 12</tt> <a class="py-toggle" href="#" id="SimpleAnim.__init__-toggle" onclick="return toggle('SimpleAnim.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.anim.SimpleAnim-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">node</tt><tt class="py-op">,</tt> <tt class="py-param">attrName</tt><tt class="py-op">,</tt> <tt class="py-param">duration</tt><tt class="py-op">,</tt> <tt class="py-param">useInt</tt><tt class="py-op">,</tt> <tt class="py-param">onStop</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SimpleAnim.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SimpleAnim.__init__-expanded"><a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-0" class="py-name" targets="Variable libavg.avg.MouseEvent.node=libavg.avg.MouseEvent-class.html#node,Variable libavg.avg.TouchEvent.node=libavg.avg.TouchEvent-class.html#node"><a title="libavg.avg.MouseEvent.node
+libavg.avg.TouchEvent.node" class="py-name" href="#" onclick="return doclink('link-0', 'node', 'link-0');">node</a></tt> <tt class="py-op">=</tt> <tt id="link-1" class="py-name"><a title="libavg.avg.MouseEvent.node
+libavg.avg.TouchEvent.node" class="py-name" href="#" onclick="return doclink('link-1', 'node', 'link-0');">node</a></tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">attrName</tt> <tt class="py-op">=</tt> <tt class="py-name">attrName</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">duration</tt> <tt class="py-op">=</tt> <tt class="py-name">duration</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">startTime</tt> <tt class="py-op">=</tt> <tt class="py-name">g_Player</tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Method libavg.avg.Player.getFrameTime()=libavg.avg.Player-class.html#getFrameTime"><a title="libavg.avg.Player.getFrameTime" class="py-name" href="#" onclick="return doclink('link-2', 'getFrameTime', 'link-2');">getFrameTime</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">onStop</tt> <tt class="py-op">=</tt> <tt class="py-name">onStop</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">useInt</tt> <tt class="py-op">=</tt> <tt class="py-name">useInt</tt> </tt>
+</div></div><a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"> </tt>
+<a name="LinearAnim"></a><div id="LinearAnim-def"><a name="L20"></a><tt class="py-lineno"> 20</tt> <a class="py-toggle" href="#" id="LinearAnim-toggle" onclick="return toggle('LinearAnim');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="libavg.anim.LinearAnim-class.html">LinearAnim</a><tt class="py-op">(</tt><tt class="py-base-class">SimpleAnim</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LinearAnim-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="LinearAnim-expanded"><a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-docstring">    Class that animates an attribute of a libavg node by interpolating linearly</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-docstring">    between start and end values. </tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="LinearAnim.__init__"></a><div id="LinearAnim.__init__-def"><a name="L25"></a><tt class="py-lineno"> 25</tt> <a class="py-toggle" href="#" id="LinearAnim.__init__-toggle" onclick="return toggle('LinearAnim.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.anim.LinearAnim-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">node</tt><tt class="py-op">,</tt> <tt class="py-param">attrName</tt><tt class="py-op">,</tt> <tt class="py-param">duration</tt><tt class="py-op">,</tt> <tt class="py-param">startValue</tt><tt class="py-op">,</tt> <tt class="py-param">endValue</tt><tt class="py-op">,</tt> <tt class="py-param">useInt</tt><tt class="py-op">,</tt> <tt class="py-param">onStop</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LinearAnim.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="LinearAnim.__init__-expanded"><a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-docstring">        @param node: The libavg node object to animate.</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-docstring">        @param attrName: The name of the attribute to change. Must be a numeric</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-docstring">        attribute.</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-docstring">        @param duration: The length of the animation in milliseconds.</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-docstring">        @param startValue: Initial value of the attribute.</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-docstring">        @param endValue: Value of the attribute after duration has elapsed.</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-docstring">        @param useInt: If True, the attribute is always set to an integer value.</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-docstring">        @param onStop: Python callable to invoke when duration has elapsed and</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-docstring">        the animation has finished. This can be used to chain </tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-docstring">        animations together by using lambda to create a second animation.</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">        <tt id="link-3" class="py-name" targets="Class libavg.anim.SimpleAnim=libavg.anim.SimpleAnim-class.html"><a title="libavg.anim.SimpleAnim" class="py-name" href="#" onclick="return doclink('link-3', 'SimpleAnim', 'link-3');">SimpleAnim</a></tt><tt class="py-op">.</tt><tt id="link-4" class="py-name" targets="Method libavg.anim.LinearAnim.__init__()=libavg.anim.LinearAnim-class.html#__init__,Method libavg.anim.SimpleAnim.__init__()=libavg.anim.SimpleAnim-class.html#__init__,Method libavg.anim.SplineAnim.__init__()=libavg.anim.SplineAnim-class.html#__init__,Method libavg.avg.Bitmap.__init__()=libavg.avg.Bitmap-class.html#__init__,Method libavg.avg.ConradRelais.__init__()=libavg.avg.ConradRelais-class.html#__init__,Method libavg.avg.Event.__init__()=libavg.avg.Event-class.html#__init__,Method libavg.avg.Logger.__init__()=libavg.avg.Logger-class.html#__init__,Method libavg.avg.Node.__init__()=libavg.avg.Node-class.html#__init__,Method libavg.avg.ParPort.__init__()=libavg.avg.ParPort-class.html#__init__,Method libavg.avg.Player.__init__()=libavg.avg.Player-class.html#__init__,Method libavg.avg.TestHelper.__init__()=libavg.avg.TestHelper-class.html#__init__,Method libavg.avg.Tracker.__init__()=libavg.avg.Tracker-class.html#__init__,Method libavg.avg.TrackerCalibrator.__init__()=libavg.avg.TrackerCalibrator-class.html#__init__"><a title="libavg.anim.LinearAnim.__init__
+libavg.anim.SimpleAnim.__init__
+libavg.anim.SplineAnim.__init__
+libavg.avg.Bitmap.__init__
+libavg.avg.ConradRelais.__init__
+libavg.avg.Event.__init__
+libavg.avg.Logger.__init__
+libavg.avg.Node.__init__
+libavg.avg.ParPort.__init__
+libavg.avg.Player.__init__
+libavg.avg.TestHelper.__init__
+libavg.avg.Tracker.__init__
+libavg.avg.TrackerCalibrator.__init__" class="py-name" href="#" onclick="return doclink('link-4', '__init__', 'link-4');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt id="link-5" class="py-name"><a title="libavg.avg.MouseEvent.node
+libavg.avg.TouchEvent.node" class="py-name" href="#" onclick="return doclink('link-5', 'node', 'link-0');">node</a></tt><tt class="py-op">,</tt> <tt class="py-name">attrName</tt><tt class="py-op">,</tt> <tt class="py-name">duration</tt><tt class="py-op">,</tt> <tt class="py-name">useInt</tt><tt class="py-op">,</tt> <tt class="py-name">onStop</tt><tt class="py-op">)</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__stopTimeout</tt> <tt class="py-op">=</tt> <tt class="py-name">g_Player</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Method libavg.avg.Player.setTimeout()=libavg.avg.Player-class.html#setTimeout"><a title="libavg.avg.Player.setTimeout" class="py-name" href="#" onclick="return doclink('link-6', 'setTimeout', 'link-6');">setTimeout</a></tt><tt class="py-op">(</tt><tt class="py-name">duration</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__stop</tt><tt class="py-op">)</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__interval</tt> <tt class="py-op">=</tt> <tt class="py-name">g_Player</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Method libavg.avg.Player.setOnFrameHandler()=libavg.avg.Player-class.html#setOnFrameHandler"><a title="libavg.avg.Player.setOnFrameHandler" class="py-name" href="#" onclick="return doclink('link-7', 'setOnFrameHandler', 'link-7');">setOnFrameHandler</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__step</tt><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__startValue</tt> <tt class="py-op">=</tt> <tt class="py-name">startValue</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__endValue</tt> <tt class="py-op">=</tt> <tt class="py-name">endValue</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__done</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__step</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="LinearAnim.__step"></a><div id="LinearAnim.__step-def"><a name="L45"></a><tt class="py-lineno"> 45</tt> <a class="py-toggle" href="#" id="LinearAnim.__step-toggle" onclick="return toggle('LinearAnim.__step');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.anim.LinearAnim-class.html#__step">__step</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LinearAnim.__step-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="LinearAnim.__step-expanded"><a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__done</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">            <tt class="py-name">part</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-name">float</tt><tt class="py-op">(</tt><tt class="py-name">g_Player</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name"><a title="libavg.avg.Player.getFrameTime" class="py-name" href="#" onclick="return doclink('link-8', 'getFrameTime', 'link-2');">getFrameTime</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">-</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">startTime</tt><tt class="py-op">)</tt><tt class="py-op">/</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">duration</tt><tt class="py-op">)</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">part</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">1.0</tt><tt class="py-op">:</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">                <tt class="py-name">part</tt> <tt class="py-op">=</tt> <tt class="py-number">1.0</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">            <tt class="py-name">curValue</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__startValue</tt><tt class="py-op">+</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__endValue</tt><tt class="py-op">-</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__startValue</tt><tt class="py-op">)</tt><tt class="py-op">*</tt><tt class="py-name">part</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">useInt</tt><tt class="py-op">:</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">                <tt class="py-name">curValue</tt> <tt class="py-op">=</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">curValue</tt><tt class="py-op">+</tt><tt class="py-number">0.5</tt><tt class="py-op">)</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">            <tt class="py-name">setattr</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name"><a title="libavg.avg.MouseEvent.node
+libavg.avg.TouchEvent.node" class="py-name" href="#" onclick="return doclink('link-9', 'node', 'link-0');">node</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">attrName</tt><tt class="py-op">,</tt> <tt class="py-name">curValue</tt><tt class="py-op">)</tt> </tt>
+</div><a name="LinearAnim.__stop"></a><div id="LinearAnim.__stop-def"><a name="L54"></a><tt class="py-lineno"> 54</tt> <a class="py-toggle" href="#" id="LinearAnim.__stop-toggle" onclick="return toggle('LinearAnim.__stop');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.anim.LinearAnim-class.html#__stop">__stop</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LinearAnim.__stop-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="LinearAnim.__stop-expanded"><a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">        <tt class="py-name">setattr</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name"><a title="libavg.avg.MouseEvent.node
+libavg.avg.TouchEvent.node" class="py-name" href="#" onclick="return doclink('link-10', 'node', 'link-0');">node</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">attrName</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__endValue</tt><tt class="py-op">)</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__done</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">        <tt class="py-name">g_Player</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Method libavg.avg.Player.clearInterval()=libavg.avg.Player-class.html#clearInterval"><a title="libavg.avg.Player.clearInterval" class="py-name" href="#" onclick="return doclink('link-11', 'clearInterval', 'link-11');">clearInterval</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__interval</tt><tt class="py-op">)</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">onStop</tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">onStop</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="LinearAnim.abort"></a><div id="LinearAnim.abort-def"><a name="L60"></a><tt class="py-lineno"> 60</tt> <a class="py-toggle" href="#" id="LinearAnim.abort-toggle" onclick="return toggle('LinearAnim.abort');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.anim.LinearAnim-class.html#abort">abort</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LinearAnim.abort-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="LinearAnim.abort-expanded"><a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-docstring">        Stops the animation.</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__done</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__done</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt>  </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">            <tt class="py-name">g_Player</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name"><a title="libavg.avg.Player.clearInterval" class="py-name" href="#" onclick="return doclink('link-12', 'clearInterval', 'link-11');">clearInterval</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__interval</tt><tt class="py-op">)</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">            <tt class="py-name">g_Player</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name"><a title="libavg.avg.Player.clearInterval" class="py-name" href="#" onclick="return doclink('link-13', 'clearInterval', 'link-11');">clearInterval</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__stopTimeout</tt><tt class="py-op">)</tt> </tt>
+</div><a name="LinearAnim.isDone"></a><div id="LinearAnim.isDone-def"><a name="L68"></a><tt class="py-lineno"> 68</tt> <a class="py-toggle" href="#" id="LinearAnim.isDone-toggle" onclick="return toggle('LinearAnim.isDone');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.anim.LinearAnim-class.html#isDone">isDone</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="LinearAnim.isDone-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="LinearAnim.isDone-expanded"><a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"><tt class="py-docstring">        Returns True if the animation has run its course.</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__done</tt> </tt>
+</div></div><a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"> </tt>
+<a name="SplineAnim"></a><div id="SplineAnim-def"><a name="L74"></a><tt class="py-lineno"> 74</tt> <a class="py-toggle" href="#" id="SplineAnim-toggle" onclick="return toggle('SplineAnim');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="libavg.anim.SplineAnim-class.html">SplineAnim</a><tt class="py-op">(</tt><tt class="py-base-class">SimpleAnim</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SplineAnim-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="SplineAnim-expanded"><a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-docstring">    Class that animates an attribute of a libavg node by interpolating </tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-docstring">    between start and end values using a cubic spline.</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="SplineAnim.__init__"></a><div id="SplineAnim.__init__-def"><a name="L79"></a><tt class="py-lineno"> 79</tt> <a class="py-toggle" href="#" id="SplineAnim.__init__-toggle" onclick="return toggle('SplineAnim.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.anim.SplineAnim-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">node</tt><tt class="py-op">,</tt> <tt class="py-param">attrName</tt><tt class="py-op">,</tt> <tt class="py-param">duration</tt><tt class="py-op">,</tt>  </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">            <tt class="py-param">startValue</tt><tt class="py-op">,</tt> <tt class="py-param">startSpeed</tt><tt class="py-op">,</tt> <tt class="py-param">endValue</tt><tt class="py-op">,</tt> <tt class="py-param">endSpeed</tt><tt class="py-op">,</tt> <tt class="py-param">useInt</tt><tt class="py-op">,</tt> <tt class="py-param">onStop</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SplineAnim.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SplineAnim.__init__-expanded"><a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"><tt class="py-docstring">        @param node: The libavg node object to animate.</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"><tt class="py-docstring">        @param attrName: The name of the attribute to change. Must be a numeric</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"><tt class="py-docstring">        attribute.</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"><tt class="py-docstring">        @param duration: The length of the animation in milliseconds.</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"><tt class="py-docstring">        @param startValue: Initial value of the attribute.</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"><tt class="py-docstring">        @param startSpeed: Initial speed of the animation.</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"><tt class="py-docstring">        @param endValue: Value of the attribute after duration has elapsed.</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"><tt class="py-docstring">        @param endSpeed: Final speed of the animation.</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"><tt class="py-docstring">        @param useInt: If True, the attribute is always set to an integer value.</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"><tt class="py-docstring">        @param onStop: Python callable to invoke when duration has elapsed and</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-docstring">        the animation has finished. This can be used to chain </tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-docstring">        animations together by using lambda to create a second animation.</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt id="link-14" class="py-name"><a title="libavg.anim.SimpleAnim" class="py-name" href="#" onclick="return doclink('link-14', 'SimpleAnim', 'link-3');">SimpleAnim</a></tt><tt class="py-op">.</tt><tt id="link-15" class="py-name"><a title="libavg.anim.LinearAnim.__init__
+libavg.anim.SimpleAnim.__init__
+libavg.anim.SplineAnim.__init__
+libavg.avg.Bitmap.__init__
+libavg.avg.ConradRelais.__init__
+libavg.avg.Event.__init__
+libavg.avg.Logger.__init__
+libavg.avg.Node.__init__
+libavg.avg.ParPort.__init__
+libavg.avg.Player.__init__
+libavg.avg.TestHelper.__init__
+libavg.avg.Tracker.__init__
+libavg.avg.TrackerCalibrator.__init__" class="py-name" href="#" onclick="return doclink('link-15', '__init__', 'link-4');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt id="link-16" class="py-name"><a title="libavg.avg.MouseEvent.node
+libavg.avg.TouchEvent.node" class="py-name" href="#" onclick="return doclink('link-16', 'node', 'link-0');">node</a></tt><tt class="py-op">,</tt> <tt class="py-name">attrName</tt><tt class="py-op">,</tt> <tt class="py-name">duration</tt><tt class="py-op">,</tt> <tt class="py-name">useInt</tt><tt class="py-op">,</tt> <tt class="py-name">onStop</tt><tt class="py-op">)</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">        <tt class="py-name">g_Player</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name"><a title="libavg.avg.Player.setTimeout" class="py-name" href="#" onclick="return doclink('link-17', 'setTimeout', 'link-6');">setTimeout</a></tt><tt class="py-op">(</tt><tt class="py-name">duration</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__stop</tt><tt class="py-op">)</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">interval</tt> <tt class="py-op">=</tt> <tt class="py-name">g_Player</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name"><a title="libavg.avg.Player.setOnFrameHandler" class="py-name" href="#" onclick="return doclink('link-18', 'setOnFrameHandler', 'link-7');">setOnFrameHandler</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__step</tt><tt class="py-op">)</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__startValue</tt> <tt class="py-op">=</tt> <tt class="py-name">startValue</tt><tt class="py-op">+</tt><tt class="py-number">0.0</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__startSpeed</tt> <tt class="py-op">=</tt> <tt class="py-name">startSpeed</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__endValue</tt> <tt class="py-op">=</tt> <tt class="py-name">endValue</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__endSpeed</tt> <tt class="py-op">=</tt> <tt class="py-name">endSpeed</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__a</tt> <tt class="py-op">=</tt> <tt class="py-op">-</tt><tt class="py-number">2</tt><tt class="py-op">*</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__endValue</tt><tt class="py-op">-</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__startValue</tt><tt class="py-op">)</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__startSpeed</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__endSpeed</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__b</tt> <tt class="py-op">=</tt> <tt class="py-number">3</tt><tt class="py-op">*</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__endValue</tt><tt class="py-op">-</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__startValue</tt><tt class="py-op">)</tt><tt class="py-op">-</tt><tt class="py-number">2</tt><tt class="py-op">*</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__startSpeed</tt><tt class="py-op">-</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__endSpeed</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__c</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__startSpeed</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__d</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__startValue</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__done</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__step</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="SplineAnim.__step"></a><div id="SplineAnim.__step-def"><a name="L108"></a><tt class="py-lineno">108</tt> <a class="py-toggle" href="#" id="SplineAnim.__step-toggle" onclick="return toggle('SplineAnim.__step');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.anim.SplineAnim-class.html#__step">__step</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SplineAnim.__step-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SplineAnim.__step-expanded"><a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__done</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">            <tt class="py-name">part</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-name">float</tt><tt class="py-op">(</tt><tt class="py-name">g_Player</tt><tt class="py-op">.</tt><tt id="link-19" class="py-name"><a title="libavg.avg.Player.getFrameTime" class="py-name" href="#" onclick="return doclink('link-19', 'getFrameTime', 'link-2');">getFrameTime</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">-</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">startTime</tt><tt class="py-op">)</tt><tt class="py-op">/</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">duration</tt><tt class="py-op">)</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">part</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">1.0</tt><tt class="py-op">:</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">                <tt class="py-name">part</tt> <tt class="py-op">=</tt> <tt class="py-number">1.0</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">            <tt class="py-name">curValue</tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__a</tt><tt class="py-op">*</tt><tt class="py-name">part</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__b</tt><tt class="py-op">)</tt><tt class="py-op">*</tt><tt class="py-name">part</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__c</tt><tt class="py-op">)</tt><tt class="py-op">*</tt><tt class="py-name">part</tt><tt class="py-op">+</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__d</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">useInt</tt><tt class="py-op">:</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">                <tt class="py-name">curValue</tt> <tt class="py-op">=</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">curValue</tt><tt class="py-op">+</tt><tt class="py-number">0.5</tt><tt class="py-op">)</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">            <tt class="py-name">setattr</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name"><a title="libavg.avg.MouseEvent.node
+libavg.avg.TouchEvent.node" class="py-name" href="#" onclick="return doclink('link-20', 'node', 'link-0');">node</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">attrName</tt><tt class="py-op">,</tt> <tt class="py-name">curValue</tt><tt class="py-op">)</tt> </tt>
+</div><a name="SplineAnim.__stop"></a><div id="SplineAnim.__stop-def"><a name="L117"></a><tt class="py-lineno">117</tt> <a class="py-toggle" href="#" id="SplineAnim.__stop-toggle" onclick="return toggle('SplineAnim.__stop');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.anim.SplineAnim-class.html#__stop">__stop</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SplineAnim.__stop-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SplineAnim.__stop-expanded"><a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">        <tt class="py-name">setattr</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name"><a title="libavg.avg.MouseEvent.node
+libavg.avg.TouchEvent.node" class="py-name" href="#" onclick="return doclink('link-21', 'node', 'link-0');">node</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">attrName</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__endValue</tt><tt class="py-op">)</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__done</tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">        <tt class="py-name">g_Player</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="libavg.avg.Player.clearInterval" class="py-name" href="#" onclick="return doclink('link-22', 'clearInterval', 'link-11');">clearInterval</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">interval</tt><tt class="py-op">)</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">onStop</tt> <tt class="py-op">!=</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">onStop</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"> </tt>
+<a name="fadeOut"></a><div id="fadeOut-def"><a name="L124"></a><tt class="py-lineno">124</tt> <a class="py-toggle" href="#" id="fadeOut-toggle" onclick="return toggle('fadeOut');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.anim-module.html#fadeOut">fadeOut</a><tt class="py-op">(</tt><tt class="py-param">node</tt><tt class="py-op">,</tt> <tt class="py-param">duration</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="fadeOut-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="fadeOut-expanded"><a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line"><tt class="py-docstring">    Fades the opacity of a node to zero.</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"><tt class="py-docstring">    @param node: The node to fade.</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line"><tt class="py-docstring">    @param duration: Length of the fade in milliseconds.</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">    <tt class="py-name">curValue</tt> <tt class="py-op">=</tt> <tt class="py-name">getattr</tt><tt class="py-op">(</tt><tt id="link-23" class="py-name"><a title="libavg.avg.MouseEvent.node
+libavg.avg.TouchEvent.node" class="py-name" href="#" onclick="return doclink('link-23', 'node', 'link-0');">node</a></tt><tt class="py-op">,</tt> <tt class="py-string">"opacity"</tt><tt class="py-op">)</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">    <tt id="link-24" class="py-name" targets="Class libavg.anim.LinearAnim=libavg.anim.LinearAnim-class.html"><a title="libavg.anim.LinearAnim" class="py-name" href="#" onclick="return doclink('link-24', 'LinearAnim', 'link-24');">LinearAnim</a></tt><tt class="py-op">(</tt><tt id="link-25" class="py-name"><a title="libavg.avg.MouseEvent.node
+libavg.avg.TouchEvent.node" class="py-name" href="#" onclick="return doclink('link-25', 'node', 'link-0');">node</a></tt><tt class="py-op">,</tt> <tt class="py-string">"opacity"</tt><tt class="py-op">,</tt> <tt class="py-name">duration</tt><tt class="py-op">,</tt> <tt class="py-name">curValue</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line"> </tt>
+<a name="fadeIn"></a><div id="fadeIn-def"><a name="L133"></a><tt class="py-lineno">133</tt> <a class="py-toggle" href="#" id="fadeIn-toggle" onclick="return toggle('fadeIn');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.anim-module.html#fadeIn">fadeIn</a><tt class="py-op">(</tt><tt class="py-param">node</tt><tt class="py-op">,</tt> <tt class="py-param">duration</tt><tt class="py-op">,</tt> <tt class="py-param">max</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="fadeIn-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="fadeIn-expanded"><a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line"><tt class="py-docstring">    Fades the opacity of a node.</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"><tt class="py-docstring">    @param node: The node to fade.</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line"><tt class="py-docstring">    @param duration: Length of the fade in milliseconds.</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"><tt class="py-docstring">    @param max: The opacity of the node at the end of the fade.</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">    <tt class="py-name">curValue</tt> <tt class="py-op">=</tt> <tt class="py-name">getattr</tt><tt class="py-op">(</tt><tt id="link-26" class="py-name"><a title="libavg.avg.MouseEvent.node
+libavg.avg.TouchEvent.node" class="py-name" href="#" onclick="return doclink('link-26', 'node', 'link-0');">node</a></tt><tt class="py-op">,</tt> <tt class="py-string">"opacity"</tt><tt class="py-op">)</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">    <tt id="link-27" class="py-name"><a title="libavg.anim.LinearAnim" class="py-name" href="#" onclick="return doclink('link-27', 'LinearAnim', 'link-24');">LinearAnim</a></tt><tt class="py-op">(</tt><tt id="link-28" class="py-name"><a title="libavg.avg.MouseEvent.node
+libavg.avg.TouchEvent.node" class="py-name" href="#" onclick="return doclink('link-28', 'node', 'link-0');">node</a></tt><tt class="py-op">,</tt> <tt class="py-string">"opacity"</tt><tt class="py-op">,</tt> <tt class="py-name">duration</tt><tt class="py-op">,</tt> <tt class="py-name">curValue</tt><tt class="py-op">,</tt> <tt class="py-name">max</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line"> </tt>
+<a name="init"></a><div id="init-def"><a name="L143"></a><tt class="py-lineno">143</tt> <a class="py-toggle" href="#" id="init-toggle" onclick="return toggle('init');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.anim-module.html#init">init</a><tt class="py-op">(</tt><tt class="py-param">Player</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="init-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="init-expanded"><a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">    <tt class="py-keyword">global</tt> <tt class="py-name">g_Player</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">    <tt class="py-name">g_Player</tt> <tt class="py-op">=</tt> <tt id="link-29" class="py-name" targets="Class libavg.avg.Player=libavg.avg.Player-class.html"><a title="libavg.avg.Player" class="py-name" href="#" onclick="return doclink('link-29', 'Player', 'link-29');">Player</a></tt> </tt>
+</div><a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="libavg-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="../index.php">libavg</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0beta1 on Mon Aug 27 20:37:13 2007
+    </td>
+    <td align="right" class="footer">
+      <a href="http://epydoc.sourceforge.net">http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie()
+  // -->
+</script>
+  
+</body>
+</html>

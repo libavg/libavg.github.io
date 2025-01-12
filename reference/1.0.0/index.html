@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>libavg</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="../index.php">libavg</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Package&nbsp;libavg
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PACKAGE DESCRIPTION ==================== -->
+<h1 class="epydoc">Package libavg</h1><p class="nomargin-top"><span class="codelink"><a href="libavg-pysrc.html">source&nbsp;code</a></span></p>
+<!-- ==================== SUBMODULES ==================== -->
+<a name="section-Submodules"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Submodules</span></td>
+</tr>
+  <tr><td class="summary">
+  <ul class="nomargin">
+    <li> <strong class="uidlink">libavg.AVGApp</strong>    </li>
+    <li> <strong class="uidlink"><a href="libavg.AVGApp%27-module.html">libavg.AVGApp'</a></strong>    </li>
+    <li> <strong class="uidlink">libavg.AVGAppStarter</strong>    </li>
+    <li> <strong class="uidlink"><a href="libavg.AVGAppStarter%27-module.html">libavg.AVGAppStarter'</a></strong>    </li>
+    <li> <strong class="uidlink"><a href="libavg.AVGAppStarterHelp-module.html">libavg.AVGAppStarterHelp</a></strong>: <em class="summary">this class is for displaying all active keys.</em>    </li>
+    <li> <strong class="uidlink"><a href="libavg.AVGAppUtil-module.html">libavg.AVGAppUtil</a></strong>    </li>
+    <li> <strong class="uidlink">libavg.AVGMTAppStarter</strong>    </li>
+    <li> <strong class="uidlink"><a href="libavg.AVGMTAppStarter%27-module.html">libavg.AVGMTAppStarter'</a></strong>    </li>
+    <li> <strong class="uidlink"><a href="libavg.anim-module.html">libavg.anim</a></strong>: <em class="summary">Provides a framework for time-based animations.</em>    </li>
+    <li> <strong class="uidlink"><a href="libavg.avg-module.html">libavg.avg</a></strong>: <em class="summary">The main libavg module.</em>    </li>
+    <li> <strong class="uidlink"><a href="libavg.button-module.html">libavg.button</a></strong>    </li>
+    <li> <strong class="uidlink"><a href="libavg.clusteredEventList-module.html">libavg.clusteredEventList</a></strong>    </li>
+    <li> <strong class="uidlink"><a href="libavg.draggable-module.html">libavg.draggable</a></strong>    </li>
+    <li> <strong class="uidlink"><a href="libavg.eventList-module.html">libavg.eventList</a></strong>    </li>
+    <li> <strong class="uidlink"><a href="libavg.grabbable-module.html">libavg.grabbable</a></strong>    </li>
+    <li> <strong class="uidlink"><a href="libavg.mathutil-module.html">libavg.mathutil</a></strong>    </li>
+    <li> <strong class="uidlink"><a href="libavg.mtemu-module.html">libavg.mtemu</a></strong>: <em class="summary">this class provides a test to emulate one or two TOUCH/TRACK events.</em>    </li>
+    <li> <strong class="uidlink"><a href="libavg.textarea-module.html">libavg.textarea</a></strong>: <em class="summary">Single/Multi-Line editable text field widget for libavg</em>    </li>
+    <li> <strong class="uidlink"><a href="libavg.trackerhelper-module.html">libavg.trackerhelper</a></strong>    </li>
+  </ul></td></tr>
+</table>
+
+<br />
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Classes</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="libavg.DataBits-class.html" class="summary-name">DataBits</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="libavg.KeyModifier-class.html" class="summary-name">KeyModifier</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="libavg.Source-class.html" class="summary-name">Source</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="libavg.TrackerImageID-class.html" class="summary-name">TrackerImageID</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="libavg.Type-class.html" class="summary-name">Type</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="libavg.controllines-class.html" class="summary-name">controllines</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="libavg.pixelformat-class.html" class="summary-name">pixelformat</a>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="libavg.statuslines-class.html" class="summary-name">statuslines</a>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Functions</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="libavg-module.html#fadeIn" class="summary-sig-name">fadeIn</a>(<span class="summary-sig-arg">...</span>)</span><br />
+      Fades the opacity of a node.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="libavg-pysrc.html#avg.fadeIn">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="libavg-module.html#fadeOut" class="summary-sig-name">fadeOut</a>(<span class="summary-sig-arg">...</span>)</span><br />
+      Fades the opacity of a node to zero.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="libavg-pysrc.html#avg.fadeOut">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="libavg-module.html#getMemoryUsage" class="summary-sig-name">getMemoryUsage</a>(<span class="summary-sig-arg">...</span>)</span><br />
+      Returns the amount of memory used by the application in bytes.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="libavg-pysrc.html#avg.getMemoryUsage">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="libavg-module.html#getNumRunningAnims" class="summary-sig-name">getNumRunningAnims</a>(<span class="summary-sig-arg">...</span>)</span><br />
+      Returns the total number of running attribute-based animations (this 
+      includes LinearAnim, EaseInOutAnim and ContinuousAnim).</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="libavg-pysrc.html#avg.getNumRunningAnims">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="A8B8G8R8"></a><span class="summary-name">A8B8G8R8</span> = <code title="libavg.avg.pixelformat.A8B8G8R8">libavg.avg.pixelformat.A8B8G8R8</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="A8R8G8B8"></a><span class="summary-name">A8R8G8B8</span> = <code title="libavg.avg.pixelformat.A8R8G8B8">libavg.avg.pixelformat.A8R8G8B8</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="B5G6R5"></a><span class="summary-name">B5G6R5</span> = <code title="libavg.avg.pixelformat.B5G6R5">libavg.avg.pixelformat.B5G6R5</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="B8G8R8"></a><span class="summary-name">B8G8R8</span> = <code title="libavg.avg.pixelformat.B8G8R8">libavg.avg.pixelformat.B8G8R8</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="B8G8R8A8"></a><span class="summary-name">B8G8R8A8</span> = <code title="libavg.avg.pixelformat.B8G8R8A8">libavg.avg.pixelformat.B8G8R8A8</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="B8G8R8X8"></a><span class="summary-name">B8G8R8X8</span> = <code title="libavg.avg.pixelformat.B8G8R8X8">libavg.avg.pixelformat.B8G8R8X8</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="CONTROL_AUTOFD"></a><span class="summary-name">CONTROL_AUTOFD</span> = <code title="libavg.avg.controllines.CONTROL_AUTOFD">libavg.avg.controllines.CONTROL_AUTOFD</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="CONTROL_INIT"></a><span class="summary-name">CONTROL_INIT</span> = <code title="libavg.avg.controllines.CONTROL_INIT">libavg.avg.controllines.CONTROL_INIT</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="CONTROL_SELECT"></a><span class="summary-name">CONTROL_SELECT</span> = <code title="libavg.avg.controllines.CONTROL_SELECT">libavg.avg.controllines.CONTROL_SELECT</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="CONTROL_STROBE"></a><span class="summary-name">CONTROL_STROBE</span> = <code title="libavg.avg.controllines.CONTROL_STROBE">libavg.avg.controllines.CONTROL_STROBE</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="CURSORDOWN"></a><span class="summary-name">CURSORDOWN</span> = <code title="libavg.avg.Type.CURSORDOWN">libavg.avg.Type.CURSORDOWN</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="CURSORMOTION"></a><span class="summary-name">CURSORMOTION</span> = <code title="libavg.avg.Type.CURSORMOTION">libavg.avg.Type.CURSORMOTION</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="CURSOROUT"></a><span class="summary-name">CURSOROUT</span> = <code title="libavg.avg.Type.CURSOROUT">libavg.avg.Type.CURSOROUT</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="CURSOROVER"></a><span class="summary-name">CURSOROVER</span> = <code title="libavg.avg.Type.CURSOROVER">libavg.avg.Type.CURSOROVER</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="CURSORUP"></a><span class="summary-name">CURSORUP</span> = <code title="libavg.avg.Type.CURSORUP">libavg.avg.Type.CURSORUP</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="I8"></a><span class="summary-name">I8</span> = <code title="libavg.avg.pixelformat.I8">libavg.avg.pixelformat.I8</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="IMG_CAMERA"></a><span class="summary-name">IMG_CAMERA</span> = <code title="libavg.avg.TrackerImageID.IMG_CAMERA">libavg.avg.TrackerImageID.IMG_CAMERA</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="IMG_DISTORTED"></a><span class="summary-name">IMG_DISTORTED</span> = <code title="libavg.avg.TrackerImageID.IMG_DISTORTED">libavg.avg.TrackerImageID.IMG_DISTORTED</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="IMG_FINGERS"></a><span class="summary-name">IMG_FINGERS</span> = <code title="libavg.avg.TrackerImageID.IMG_FINGERS">libavg.avg.TrackerImageID.IMG_FINGERS</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="IMG_HIGHPASS"></a><span class="summary-name">IMG_HIGHPASS</span> = <code title="libavg.avg.TrackerImageID.IMG_HIGHPASS">libavg.avg.TrackerImageID.IMG_HIGHPASS</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="IMG_HISTOGRAM"></a><span class="summary-name">IMG_HISTOGRAM</span> = <code title="libavg.avg.TrackerImageID.IMG_HISTOGRAM">libavg.avg.TrackerImageID.IMG_HISTOGRAM</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="IMG_NOHISTORY"></a><span class="summary-name">IMG_NOHISTORY</span> = <code title="libavg.avg.TrackerImageID.IMG_NOHISTORY">libavg.avg.TrackerImageID.IMG_NOHISTORY</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="KEYDOWN"></a><span class="summary-name">KEYDOWN</span> = <code title="libavg.avg.Type.KEYDOWN">libavg.avg.Type.KEYDOWN</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="KEYMOD_ALT"></a><span class="summary-name">KEYMOD_ALT</span> = <code title="libavg.avg.KeyModifier.KEYMOD_ALT">libavg.avg.KeyModifier.KEYMOD_ALT</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="KEYMOD_CAPS"></a><span class="summary-name">KEYMOD_CAPS</span> = <code title="libavg.avg.KeyModifier.KEYMOD_CAPS">libavg.avg.KeyModifier.KEYMOD_CAPS</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="KEYMOD_CTRL"></a><span class="summary-name">KEYMOD_CTRL</span> = <code title="libavg.avg.KeyModifier.KEYMOD_CTRL">libavg.avg.KeyModifier.KEYMOD_CTRL</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="KEYMOD_LALT"></a><span class="summary-name">KEYMOD_LALT</span> = <code title="libavg.avg.KeyModifier.KEYMOD_LALT">libavg.avg.KeyModifier.KEYMOD_LALT</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="KEYMOD_LCTRL"></a><span class="summary-name">KEYMOD_LCTRL</span> = <code title="libavg.avg.KeyModifier.KEYMOD_LCTRL">libavg.avg.KeyModifier.KEYMOD_LCTRL</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="KEYMOD_LMETA"></a><span class="summary-name">KEYMOD_LMETA</span> = <code title="libavg.avg.KeyModifier.KEYMOD_LMETA">libavg.avg.KeyModifier.KEYMOD_LMETA</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="KEYMOD_LSHIFT"></a><span class="summary-name">KEYMOD_LSHIFT</span> = <code title="libavg.avg.KeyModifier.KEYMOD_LSHIFT">libavg.avg.KeyModifier.KEYMOD_LSHIFT</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="KEYMOD_META"></a><span class="summary-name">KEYMOD_META</span> = <code title="libavg.avg.KeyModifier.KEYMOD_META">libavg.avg.KeyModifier.KEYMOD_META</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="KEYMOD_MODE"></a><span class="summary-name">KEYMOD_MODE</span> = <code title="libavg.avg.KeyModifier.KEYMOD_MODE">libavg.avg.KeyModifier.KEYMOD_MODE</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="KEYMOD_NONE"></a><span class="summary-name">KEYMOD_NONE</span> = <code title="libavg.avg.KeyModifier.KEYMOD_NONE">libavg.avg.KeyModifier.KEYMOD_NONE</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="KEYMOD_NUM"></a><span class="summary-name">KEYMOD_NUM</span> = <code title="libavg.avg.KeyModifier.KEYMOD_NUM">libavg.avg.KeyModifier.KEYMOD_NUM</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="KEYMOD_RALT"></a><span class="summary-name">KEYMOD_RALT</span> = <code title="libavg.avg.KeyModifier.KEYMOD_RALT">libavg.avg.KeyModifier.KEYMOD_RALT</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="KEYMOD_RCTRL"></a><span class="summary-name">KEYMOD_RCTRL</span> = <code title="libavg.avg.KeyModifier.KEYMOD_RCTRL">libavg.avg.KeyModifier.KEYMOD_RCTRL</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="KEYMOD_RESERVED"></a><span class="summary-name">KEYMOD_RESERVED</span> = <code title="libavg.avg.KeyModifier.KEYMOD_RESERVED">libavg.avg.KeyModifier.KEYMOD_RESERVED</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="KEYMOD_RMETA"></a><span class="summary-name">KEYMOD_RMETA</span> = <code title="libavg.avg.KeyModifier.KEYMOD_RMETA">libavg.avg.KeyModifier.KEYMOD_RMETA</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="KEYMOD_RSHIFT"></a><span class="summary-name">KEYMOD_RSHIFT</span> = <code title="libavg.avg.KeyModifier.KEYMOD_RSHIFT">libavg.avg.KeyModifier.KEYMOD_RSHIFT</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="KEYMOD_SHIFT"></a><span class="summary-name">KEYMOD_SHIFT</span> = <code title="libavg.avg.KeyModifier.KEYMOD_SHIFT">libavg.avg.KeyModifier.KEYMOD_SHIFT</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="KEYUP"></a><span class="summary-name">KEYUP</span> = <code title="libavg.avg.Type.KEYUP">libavg.avg.Type.KEYUP</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="MOUSE"></a><span class="summary-name">MOUSE</span> = <code title="libavg.avg.Source.MOUSE">libavg.avg.Source.MOUSE</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="NONE"></a><span class="summary-name">NONE</span> = <code title="libavg.avg.Source.NONE">libavg.avg.Source.NONE</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="PARPORTDATA0"></a><span class="summary-name">PARPORTDATA0</span> = <code title="libavg.avg.DataBits.PARPORTDATA0">libavg.avg.DataBits.PARPORTDATA0</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="PARPORTDATA1"></a><span class="summary-name">PARPORTDATA1</span> = <code title="libavg.avg.DataBits.PARPORTDATA1">libavg.avg.DataBits.PARPORTDATA1</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="PARPORTDATA2"></a><span class="summary-name">PARPORTDATA2</span> = <code title="libavg.avg.DataBits.PARPORTDATA2">libavg.avg.DataBits.PARPORTDATA2</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="PARPORTDATA3"></a><span class="summary-name">PARPORTDATA3</span> = <code title="libavg.avg.DataBits.PARPORTDATA3">libavg.avg.DataBits.PARPORTDATA3</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="PARPORTDATA4"></a><span class="summary-name">PARPORTDATA4</span> = <code title="libavg.avg.DataBits.PARPORTDATA4">libavg.avg.DataBits.PARPORTDATA4</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="PARPORTDATA5"></a><span class="summary-name">PARPORTDATA5</span> = <code title="libavg.avg.DataBits.PARPORTDATA5">libavg.avg.DataBits.PARPORTDATA5</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="PARPORTDATA6"></a><span class="summary-name">PARPORTDATA6</span> = <code title="libavg.avg.DataBits.PARPORTDATA6">libavg.avg.DataBits.PARPORTDATA6</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="PARPORTDATA7"></a><span class="summary-name">PARPORTDATA7</span> = <code title="libavg.avg.DataBits.PARPORTDATA7">libavg.avg.DataBits.PARPORTDATA7</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="QUIT"></a><span class="summary-name">QUIT</span> = <code title="libavg.avg.Type.QUIT">libavg.avg.Type.QUIT</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="R5G6B5"></a><span class="summary-name">R5G6B5</span> = <code title="libavg.avg.pixelformat.R5G6B5">libavg.avg.pixelformat.R5G6B5</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="R8G8B8"></a><span class="summary-name">R8G8B8</span> = <code title="libavg.avg.pixelformat.R8G8B8">libavg.avg.pixelformat.R8G8B8</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="R8G8B8A8"></a><span class="summary-name">R8G8B8A8</span> = <code title="libavg.avg.pixelformat.R8G8B8A8">libavg.avg.pixelformat.R8G8B8A8</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="R8G8B8X8"></a><span class="summary-name">R8G8B8X8</span> = <code title="libavg.avg.pixelformat.R8G8B8X8">libavg.avg.pixelformat.R8G8B8X8</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="RESIZE"></a><span class="summary-name">RESIZE</span> = <code title="libavg.avg.Type.RESIZE">libavg.avg.Type.RESIZE</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="STATUS_ACK"></a><span class="summary-name">STATUS_ACK</span> = <code title="libavg.avg.statuslines.STATUS_ACK">libavg.avg.statuslines.STATUS_ACK</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="STATUS_BUSY"></a><span class="summary-name">STATUS_BUSY</span> = <code title="libavg.avg.statuslines.STATUS_BUSY">libavg.avg.statuslines.STATUS_BUSY</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="STATUS_ERROR"></a><span class="summary-name">STATUS_ERROR</span> = <code title="libavg.avg.statuslines.STATUS_ERROR">libavg.avg.statuslines.STATUS_ERROR</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="STATUS_PAPEROUT"></a><span class="summary-name">STATUS_PAPEROUT</span> = <code title="libavg.avg.statuslines.STATUS_PAPEROUT">libavg.avg.statuslines.STATUS_PAPEROUT</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="STATUS_SELECT"></a><span class="summary-name">STATUS_SELECT</span> = <code title="libavg.avg.statuslines.STATUS_SELECT">libavg.avg.statuslines.STATUS_SELECT</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="TOUCH"></a><span class="summary-name">TOUCH</span> = <code title="libavg.avg.Source.TOUCH">libavg.avg.Source.TOUCH</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="TRACK"></a><span class="summary-name">TRACK</span> = <code title="libavg.avg.Source.TRACK">libavg.avg.Source.TRACK</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="X8B8G8R8"></a><span class="summary-name">X8B8G8R8</span> = <code title="libavg.avg.pixelformat.X8B8G8R8">libavg.avg.pixelformat.X8B8G8R8</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="X8R8G8B8"></a><span class="summary-name">X8R8G8B8</span> = <code title="libavg.avg.pixelformat.X8R8G8B8">libavg.avg.pixelformat.X8R8G8B8</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="YCbCr422"></a><span class="summary-name">YCbCr422</span> = <code title="libavg.avg.pixelformat.YCbCr422">libavg.avg.pixelformat.YCbCr422</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Function Details</span></td>
+</tr>
+</table>
+<a name="fadeIn"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">fadeIn</span>(<span class="sig-arg">...</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="libavg-pysrc.html#avg.fadeIn">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Fades the opacity of a node.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> - The node to fade.</li>
+        <li><strong class="pname"><code>duration</code></strong> - Length of the fade in milliseconds.</li>
+        <li><strong class="pname"><code>max</code></strong> - The opacity of the node at the end of the fade.</li>
+        <li><strong class="pname"><code>stopCallback</code></strong> - Function to call when the fade is over.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="fadeOut"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">fadeOut</span>(<span class="sig-arg">...</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="libavg-pysrc.html#avg.fadeOut">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Fades the opacity of a node to zero.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> - The node to fade.</li>
+        <li><strong class="pname"><code>duration</code></strong> - Length of the fade in milliseconds.</li>
+        <li><strong class="pname"><code>stopCallback</code></strong> - Function to call when the fade is over.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMemoryUsage"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMemoryUsage</span>(<span class="sig-arg">...</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="libavg-pysrc.html#avg.getMemoryUsage">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the amount of memory used by the application in bytes. More 
+  precisely, this function returns the resident set size of the process in 
+  bytes. This does not include shared libraries or memory paged out to 
+  disk.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="getNumRunningAnims"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getNumRunningAnims</span>(<span class="sig-arg">...</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="libavg-pysrc.html#avg.getNumRunningAnims">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the total number of running attribute-based animations (this 
+  includes LinearAnim, EaseInOutAnim and ContinuousAnim). Useful for 
+  debugging memory leaks.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="../index.php">libavg</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Jan  8 16:08:59 2010
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>libavg.eventList</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="libavg-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="../index.php">libavg</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="libavg-module.html">Package&nbsp;libavg</a> ::
+        Module&nbsp;eventList
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="libavg.eventList-module.html">Module libavg.eventList</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment"># libavg - Media Playback Engine.</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Copyright (C) 2003-2008 Ulrich von Zadow</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># This library is free software; you can redistribute it and/or</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># modify it under the terms of the GNU Lesser General Public</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># License as published by the Free Software Foundation; either</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># version 2 of the License, or (at your option) any later version.</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># This library is distributed in the hope that it will be useful,</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># but WITHOUT ANY WARRANTY; without even the implied warranty of</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Lesser General Public License for more details.</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># You should have received a copy of the GNU Lesser General Public</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># License along with this library; if not, write to the Free Software</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Current versions can be found at www.libavg.de</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Original author of this file is Martin Heistermann &lt;mh at sponc dot de&gt;</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package libavg=libavg-module.html"><a title="libavg" class="py-name" href="#" onclick="return doclink('link-0', 'libavg', 'link-0');">libavg</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Module libavg.avg=libavg.avg-module.html"><a title="libavg.avg" class="py-name" href="#" onclick="return doclink('link-1', 'avg', 'link-1');">avg</a></tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"> </tt>
+<a name="Cursor"></a><div id="Cursor-def"><a name="L25"></a><tt class="py-lineno"> 25</tt> <a class="py-toggle" href="#" id="Cursor-toggle" onclick="return toggle('Cursor');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="libavg.eventList.Cursor-class.html">Cursor</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Cursor-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Cursor-expanded"><a name="Cursor.__init__"></a><div id="Cursor.__init__-def"><a name="L26"></a><tt class="py-lineno"> 26</tt> <a class="py-toggle" href="#" id="Cursor.__init__-toggle" onclick="return toggle('Cursor.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.eventList.Cursor-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Cursor.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Cursor.__init__-expanded"><a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_pos</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Method libavg.eventList.Cursor.resetMotion()=libavg.eventList.Cursor-class.html#resetMotion"><a title="libavg.eventList.Cursor.resetMotion" class="py-name" href="#" onclick="return doclink('link-2', 'resetMotion', 'link-2');">resetMotion</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"> </tt>
+<a name="Cursor.resetMotion"></a><div id="Cursor.resetMotion-def"><a name="L30"></a><tt class="py-lineno"> 30</tt> <a class="py-toggle" href="#" id="Cursor.resetMotion-toggle" onclick="return toggle('Cursor.resetMotion');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.eventList.Cursor-class.html#resetMotion">resetMotion</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Cursor.resetMotion-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Cursor.resetMotion-expanded"><a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_startPos</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_pos</tt> </tt>
+</div><a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"> </tt>
+<a name="Cursor.getDelta"></a><div id="Cursor.getDelta-def"><a name="L33"></a><tt class="py-lineno"> 33</tt> <a class="py-toggle" href="#" id="Cursor.getDelta-toggle" onclick="return toggle('Cursor.getDelta');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.eventList.Cursor-class.html#getDelta">getDelta</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Cursor.getDelta-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Cursor.getDelta-expanded"><a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_pos</tt> <tt class="py-op">-</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_startPos</tt> </tt>
+</div><a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"> </tt>
+<a name="Cursor.getStartPos"></a><div id="Cursor.getStartPos-def"><a name="L36"></a><tt class="py-lineno"> 36</tt> <a class="py-toggle" href="#" id="Cursor.getStartPos-toggle" onclick="return toggle('Cursor.getStartPos');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.eventList.Cursor-class.html#getStartPos">getStartPos</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Cursor.getStartPos-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Cursor.getStartPos-expanded"><a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_startPos</tt> </tt>
+</div><a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"> </tt>
+<a name="Cursor.getPos"></a><div id="Cursor.getPos-def"><a name="L39"></a><tt class="py-lineno"> 39</tt> <a class="py-toggle" href="#" id="Cursor.getPos-toggle" onclick="return toggle('Cursor.getPos');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.eventList.Cursor-class.html#getPos">getPos</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Cursor.getPos-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Cursor.getPos-expanded"><a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_pos</tt> </tt>
+</div><a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"> </tt>
+<a name="Cursor.setPos"></a><div id="Cursor.setPos-def"><a name="L42"></a><tt class="py-lineno"> 42</tt> <a class="py-toggle" href="#" id="Cursor.setPos-toggle" onclick="return toggle('Cursor.setPos');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.eventList.Cursor-class.html#setPos">setPos</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">newPos</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Cursor.setPos-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Cursor.setPos-expanded"><a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_pos</tt> <tt class="py-op">=</tt> <tt class="py-name">newPos</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_startPos</tt><tt class="py-op">:</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_startPos</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_pos</tt> </tt>
+</div><a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"> </tt>
+<a name="Cursor.getX"></a><div id="Cursor.getX-def"><a name="L47"></a><tt class="py-lineno"> 47</tt> <a class="py-toggle" href="#" id="Cursor.getX-toggle" onclick="return toggle('Cursor.getX');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.eventList.Cursor-class.html#getX">getX</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Cursor.getX-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Cursor.getX-expanded"><a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_pos</tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Variable libavg.avg.AreaNode.x=libavg.avg.AreaNode-class.html#x,Variable libavg.avg.CircleNode.x=libavg.avg.CircleNode-class.html#x,Variable libavg.avg.ConstPoint2D.x=libavg.avg.ConstPoint2D-class.html#x,Variable libavg.avg.MouseEvent.x=libavg.avg.MouseEvent-class.html#x,Variable libavg.avg.Point2D.x=libavg.avg.Point2D-class.html#x,Variable libavg.avg.RectNode.x=libavg.avg.RectNode-class.html#x,Variable libavg.avg.TouchEvent.x=libavg.avg.TouchEvent-class.html#x,Variable libavg.eventList.Cursor.x=libavg.eventList.Cursor-class.html#x"><a title="libavg.avg.AreaNode.x
+libavg.avg.CircleNode.x
+libavg.avg.ConstPoint2D.x
+libavg.avg.MouseEvent.x
+libavg.avg.Point2D.x
+libavg.avg.RectNode.x
+libavg.avg.TouchEvent.x
+libavg.eventList.Cursor.x" class="py-name" href="#" onclick="return doclink('link-3', 'x', 'link-3');">x</a></tt> </tt>
+</div><a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">    <tt id="link-4" class="py-name"><a title="libavg.avg.AreaNode.x
+libavg.avg.CircleNode.x
+libavg.avg.ConstPoint2D.x
+libavg.avg.MouseEvent.x
+libavg.avg.Point2D.x
+libavg.avg.RectNode.x
+libavg.avg.TouchEvent.x
+libavg.eventList.Cursor.x" class="py-name" href="#" onclick="return doclink('link-4', 'x', 'link-3');">x</a></tt> <tt class="py-op">=</tt> <tt class="py-name">property</tt><tt class="py-op">(</tt><tt id="link-5" class="py-name" targets="Method libavg.eventList.Cursor.getX()=libavg.eventList.Cursor-class.html#getX"><a title="libavg.eventList.Cursor.getX" class="py-name" href="#" onclick="return doclink('link-5', 'getX', 'link-5');">getX</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"> </tt>
+<a name="Cursor.getY"></a><div id="Cursor.getY-def"><a name="L51"></a><tt class="py-lineno"> 51</tt> <a class="py-toggle" href="#" id="Cursor.getY-toggle" onclick="return toggle('Cursor.getY');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.eventList.Cursor-class.html#getY">getY</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Cursor.getY-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Cursor.getY-expanded"><a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_pos</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Variable libavg.avg.AreaNode.y=libavg.avg.AreaNode-class.html#y,Variable libavg.avg.CircleNode.y=libavg.avg.CircleNode-class.html#y,Variable libavg.avg.ConstPoint2D.y=libavg.avg.ConstPoint2D-class.html#y,Variable libavg.avg.MouseEvent.y=libavg.avg.MouseEvent-class.html#y,Variable libavg.avg.Point2D.y=libavg.avg.Point2D-class.html#y,Variable libavg.avg.RectNode.y=libavg.avg.RectNode-class.html#y,Variable libavg.avg.TouchEvent.y=libavg.avg.TouchEvent-class.html#y,Variable libavg.eventList.Cursor.y=libavg.eventList.Cursor-class.html#y"><a title="libavg.avg.AreaNode.y
+libavg.avg.CircleNode.y
+libavg.avg.ConstPoint2D.y
+libavg.avg.MouseEvent.y
+libavg.avg.Point2D.y
+libavg.avg.RectNode.y
+libavg.avg.TouchEvent.y
+libavg.eventList.Cursor.y" class="py-name" href="#" onclick="return doclink('link-6', 'y', 'link-6');">y</a></tt> </tt>
+</div><a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">    <tt id="link-7" class="py-name"><a title="libavg.avg.AreaNode.y
+libavg.avg.CircleNode.y
+libavg.avg.ConstPoint2D.y
+libavg.avg.MouseEvent.y
+libavg.avg.Point2D.y
+libavg.avg.RectNode.y
+libavg.avg.TouchEvent.y
+libavg.eventList.Cursor.y" class="py-name" href="#" onclick="return doclink('link-7', 'y', 'link-6');">y</a></tt> <tt class="py-op">=</tt> <tt class="py-name">property</tt><tt class="py-op">(</tt><tt id="link-8" class="py-name" targets="Method libavg.eventList.Cursor.getY()=libavg.eventList.Cursor-class.html#getY"><a title="libavg.eventList.Cursor.getY" class="py-name" href="#" onclick="return doclink('link-8', 'getY', 'link-8');">getY</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"> </tt>
+<a name="Cursor.__unicode__"></a><div id="Cursor.__unicode__-def"><a name="L55"></a><tt class="py-lineno"> 55</tt> <a class="py-toggle" href="#" id="Cursor.__unicode__-toggle" onclick="return toggle('Cursor.__unicode__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.eventList.Cursor-class.html#__unicode__">__unicode__</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Cursor.__unicode__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Cursor.__unicode__-expanded"><a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt> <tt class="py-string">"cursor %s-&gt;%s"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Method libavg.eventList.Cursor.getStartPos()=libavg.eventList.Cursor-class.html#getStartPos"><a title="libavg.eventList.Cursor.getStartPos" class="py-name" href="#" onclick="return doclink('link-9', 'getStartPos', 'link-9');">getStartPos</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Method libavg.eventList.Cursor.getPos()=libavg.eventList.Cursor-class.html#getPos"><a title="libavg.eventList.Cursor.getPos" class="py-name" href="#" onclick="return doclink('link-10', 'getPos', 'link-10');">getPos</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"> </tt>
+<a name="EventCursor"></a><div id="EventCursor-def"><a name="L58"></a><tt class="py-lineno"> 58</tt> <a class="py-toggle" href="#" id="EventCursor-toggle" onclick="return toggle('EventCursor');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="libavg.eventList.EventCursor-class.html">EventCursor</a><tt class="py-op">(</tt><tt class="py-base-class">Cursor</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventCursor-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="EventCursor-expanded"><a name="EventCursor.__init__"></a><div id="EventCursor.__init__-def"><a name="L59"></a><tt class="py-lineno"> 59</tt> <a class="py-toggle" href="#" id="EventCursor.__init__-toggle" onclick="return toggle('EventCursor.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.eventList.EventCursor-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventCursor.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventCursor.__init__-expanded"><a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-11" class="py-name" targets="Class libavg.eventList.EventCursor=libavg.eventList.EventCursor-class.html"><a title="libavg.eventList.EventCursor" class="py-name" href="#" onclick="return doclink('link-11', 'EventCursor', 'link-11');">EventCursor</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Method libavg.AVGApp'.AVGApp.__init__()=libavg.AVGApp%27.AVGApp-class.html#__init__,Method libavg.AVGAppStarter'.AVGAppStarter.__init__()=libavg.AVGAppStarter%27.AVGAppStarter-class.html#__init__,Method libavg.AVGAppStarter'.Graph.__init__()=libavg.AVGAppStarter%27.Graph-class.html#__init__,Method libavg.AVGAppStarterHelp.MThelp.__init__()=libavg.AVGAppStarterHelp.MThelp-class.html#__init__,Method libavg.AVGMTAppStarter'.AVGMTAppStarter.__init__()=libavg.AVGMTAppStarter%27.AVGMTAppStarter-class.html#__init__,Method libavg.anim.AnimTransition.__init__()=libavg.anim.AnimTransition-class.html#__init__,Method libavg.anim.ContinuousAnim.__init__()=libavg.anim.ContinuousAnim-class.html#__init__,Method libavg.anim.EaseInOutAnim.__init__()=libavg.anim.EaseInOutAnim-class.html#__init__,Method libavg.anim.LinearAnim.__init__()=libavg.anim.LinearAnim-class.html#__init__,Method libavg.anim.ParallelAnim.__init__()=libavg.anim.ParallelAnim-class.html#__init__,Method libavg.anim.SimpleAnim.__init__()=libavg.anim.SimpleAnim-class.html#__init__,Method libavg.anim.SplineAnim.__init__()=libavg.anim.SplineAnim-class.html#__init__,Method libavg.anim.StateAnim.__init__()=libavg.anim.StateAnim-class.html#__init__,Method libavg.anim.WaitAnim.__init__()=libavg.anim.WaitAnim-class.html#__init__,Method libavg.avg.Anim.__init__()=libavg.avg.Anim-class.html#__init__,Method libavg.avg.AnimState.__init__()=libavg.avg.AnimState-class.html#__init__,Method libavg.avg.Bitmap.__init__()=libavg.avg.Bitmap-class.html#__init__,Method libavg.avg.ConradRelais.__init__()=libavg.avg.ConradRelais-class.html#__init__,Method libavg.avg.ConstPoint2D.__init__()=libavg.avg.ConstPoint2D-class.html#__init__,Method libavg.avg.ContinuousAnim.__init__()=libavg.avg.ContinuousAnim-class.html#__init__,Method libavg.avg.EaseInOutAnim.__init__()=libavg.avg.EaseInOutAnim-class.html#__init__,Method libavg.avg.Event.__init__()=libavg.avg.Event-class.html#__init__,Method libavg.avg.LinearAnim.__init__()=libavg.avg.LinearAnim-class.html#__init__,Method libavg.avg.Logger.__init__()=libavg.avg.Logger-class.html#__init__,Method libavg.avg.Node.__init__()=libavg.avg.Node-class.html#__init__,Method libavg.avg.ParPort.__init__()=libavg.avg.ParPort-class.html#__init__,Method libavg.avg.ParallelAnim.__init__()=libavg.avg.ParallelAnim-class.html#__init__,Method libavg.avg.Player.__init__()=libavg.avg.Player-class.html#__init__,Method libavg.avg.Point2D.__init__()=libavg.avg.Point2D-class.html#__init__,Method libavg.avg.StateAnim.__init__()=libavg.avg.StateAnim-class.html#__init__,Method libavg.avg.TestHelper.__init__()=libavg.avg.TestHelper-class.html#__init__,Method libavg.avg.Tracker.__init__()=libavg.avg.Tracker-class.html#__init__,Method libavg.avg.TrackerCalibrator.__init__()=libavg.avg.TrackerCalibrator-class.html#__init__,Method libavg.avg.WaitAnim.__init__()=libavg.avg.WaitAnim-class.html#__init__,Method libavg.button.Button.__init__()=libavg.button.Button-class.html#__init__,Method libavg.button.Checkbox.__init__()=libavg.button.Checkbox-class.html#__init__,Method libavg.button.Radio.__init__()=libavg.button.Radio-class.html#__init__,Method libavg.clusteredEventList.Centroid.__init__()=libavg.clusteredEventList.Centroid-class.html#__init__,Method libavg.clusteredEventList.ClusteredEventList.__init__()=libavg.clusteredEventList.ClusteredEventList-class.html#__init__,Method libavg.draggable.Draggable.__init__()=libavg.draggable.Draggable-class.html#__init__,Method libavg.eventList.Cursor.__init__()=libavg.eventList.Cursor-class.html#__init__,Method libavg.eventList.EventCursor.__init__()=libavg.eventList.EventCursor-class.html#__init__,Method libavg.eventList.EventList.__init__()=libavg.eventList.EventList-class.html#__init__,Method libavg.grabbable.Grabbable.__init__()=libavg.grabbable.Grabbable-class.html#__init__,Method libavg.mathutil.MovingAverage.__init__()=libavg.mathutil.MovingAverage-class.html#__init__,Method libavg.mtemu.MTemu.__init__()=libavg.mtemu.MTemu-class.html#__init__,Method libavg.textarea.FocusContext.__init__()=libavg.textarea.FocusContext-class.html#__init__,Method libavg.textarea.TextArea.__init__()=libavg.textarea.TextArea-class.html#__init__,Method libavg.trackerhelper.TrackerImageFlipper.__init__()=libavg.trackerhelper.TrackerImageFlipper-class.html#__init__"><a title="libavg.AVGApp'.AVGApp.__init__
+libavg.AVGAppStarter'.AVGAppStarter.__init__
+libavg.AVGAppStarter'.Graph.__init__
+libavg.AVGAppStarterHelp.MThelp.__init__
+libavg.AVGMTAppStarter'.AVGMTAppStarter.__init__
+libavg.anim.AnimTransition.__init__
+libavg.anim.ContinuousAnim.__init__
+libavg.anim.EaseInOutAnim.__init__
+libavg.anim.LinearAnim.__init__
+libavg.anim.ParallelAnim.__init__
+libavg.anim.SimpleAnim.__init__
+libavg.anim.SplineAnim.__init__
+libavg.anim.StateAnim.__init__
+libavg.anim.WaitAnim.__init__
+libavg.avg.Anim.__init__
+libavg.avg.AnimState.__init__
+libavg.avg.Bitmap.__init__
+libavg.avg.ConradRelais.__init__
+libavg.avg.ConstPoint2D.__init__
+libavg.avg.ContinuousAnim.__init__
+libavg.avg.EaseInOutAnim.__init__
+libavg.avg.Event.__init__
+libavg.avg.LinearAnim.__init__
+libavg.avg.Logger.__init__
+libavg.avg.Node.__init__
+libavg.avg.ParPort.__init__
+libavg.avg.ParallelAnim.__init__
+libavg.avg.Player.__init__
+libavg.avg.Point2D.__init__
+libavg.avg.StateAnim.__init__
+libavg.avg.TestHelper.__init__
+libavg.avg.Tracker.__init__
+libavg.avg.TrackerCalibrator.__init__
+libavg.avg.WaitAnim.__init__
+libavg.button.Button.__init__
+libavg.button.Checkbox.__init__
+libavg.button.Radio.__init__
+libavg.clusteredEventList.Centroid.__init__
+libavg.clusteredEventList.ClusteredEventList.__init__
+libavg.draggable.Draggable.__init__
+libavg.eventList.Cursor.__init__
+libavg.eventList.EventCursor.__init__
+libavg.eventList.EventList.__init__
+libavg.grabbable.Grabbable.__init__
+libavg.mathutil.MovingAverage.__init__
+libavg.mtemu.MTemu.__init__
+libavg.textarea.FocusContext.__init__
+libavg.textarea.TextArea.__init__
+libavg.trackerhelper.TrackerImageFlipper.__init__" class="py-name" href="#" onclick="return doclink('link-12', '__init__', 'link-12');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__cursorid</tt> <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Variable libavg.avg.MouseEvent.cursorid=libavg.avg.MouseEvent-class.html#cursorid,Variable libavg.avg.TouchEvent.cursorid=libavg.avg.TouchEvent-class.html#cursorid"><a title="libavg.avg.MouseEvent.cursorid
+libavg.avg.TouchEvent.cursorid" class="py-name" href="#" onclick="return doclink('link-13', 'cursorid', 'link-13');">cursorid</a></tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Method libavg.eventList.EventCursor.update()=libavg.eventList.EventCursor-class.html#update"><a title="libavg.eventList.EventCursor.update" class="py-name" href="#" onclick="return doclink('link-14', 'update', 'link-14');">update</a></tt> <tt class="py-op">(</tt><tt class="py-name">event</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"> </tt>
+<a name="EventCursor.update"></a><div id="EventCursor.update-def"><a name="L64"></a><tt class="py-lineno"> 64</tt> <a class="py-toggle" href="#" id="EventCursor.update-toggle" onclick="return toggle('EventCursor.update');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.eventList.EventCursor-class.html#update">update</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventCursor.update-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventCursor.update-expanded"><a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">        <tt class="py-keyword">assert</tt> <tt class="py-name">event</tt><tt class="py-op">.</tt><tt id="link-15" class="py-name"><a title="libavg.avg.MouseEvent.cursorid
+libavg.avg.TouchEvent.cursorid" class="py-name" href="#" onclick="return doclink('link-15', 'cursorid', 'link-13');">cursorid</a></tt> <tt class="py-op">==</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__cursorid</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name" targets="Method libavg.eventList.Cursor.setPos()=libavg.eventList.Cursor-class.html#setPos"><a title="libavg.eventList.Cursor.setPos" class="py-name" href="#" onclick="return doclink('link-16', 'setPos', 'link-16');">setPos</a></tt><tt class="py-op">(</tt><tt class="py-name">event</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name" targets="Variable libavg.avg.AreaNode.pos=libavg.avg.AreaNode-class.html#pos,Variable libavg.avg.CircleNode.pos=libavg.avg.CircleNode-class.html#pos,Variable libavg.avg.MouseEvent.pos=libavg.avg.MouseEvent-class.html#pos,Variable libavg.avg.PolyLineNode.pos=libavg.avg.PolyLineNode-class.html#pos,Variable libavg.avg.PolygonNode.pos=libavg.avg.PolygonNode-class.html#pos,Variable libavg.avg.RectNode.pos=libavg.avg.RectNode-class.html#pos,Variable libavg.avg.TouchEvent.pos=libavg.avg.TouchEvent-class.html#pos"><a title="libavg.avg.AreaNode.pos
+libavg.avg.CircleNode.pos
+libavg.avg.MouseEvent.pos
+libavg.avg.PolyLineNode.pos
+libavg.avg.PolygonNode.pos
+libavg.avg.RectNode.pos
+libavg.avg.TouchEvent.pos" class="py-name" href="#" onclick="return doclink('link-17', 'pos', 'link-17');">pos</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__speed</tt> <tt class="py-op">=</tt> <tt class="py-name">event</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name" targets="Variable libavg.avg.MouseEvent.speed=libavg.avg.MouseEvent-class.html#speed,Variable libavg.avg.TouchEvent.speed=libavg.avg.TouchEvent-class.html#speed"><a title="libavg.avg.MouseEvent.speed
+libavg.avg.TouchEvent.speed" class="py-name" href="#" onclick="return doclink('link-18', 'speed', 'link-18');">speed</a></tt> </tt>
+</div><a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"> </tt>
+<a name="EventCursor.getSpeed"></a><div id="EventCursor.getSpeed-def"><a name="L69"></a><tt class="py-lineno"> 69</tt> <a class="py-toggle" href="#" id="EventCursor.getSpeed-toggle" onclick="return toggle('EventCursor.getSpeed');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.eventList.EventCursor-class.html#getSpeed">getSpeed</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventCursor.getSpeed-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventCursor.getSpeed-expanded"><a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__speed</tt> </tt>
+</div><a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"> </tt>
+<a name="EventCursor.getCursorID"></a><div id="EventCursor.getCursorID-def"><a name="L72"></a><tt class="py-lineno"> 72</tt> <a class="py-toggle" href="#" id="EventCursor.getCursorID-toggle" onclick="return toggle('EventCursor.getCursorID');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.eventList.EventCursor-class.html#getCursorID">getCursorID</a> <tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventCursor.getCursorID-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventCursor.getCursorID-expanded"><a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__cursorid</tt> </tt>
+</div></div><a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"> </tt>
+<a name="EventList"></a><div id="EventList-def"><a name="L75"></a><tt class="py-lineno"> 75</tt> <a class="py-toggle" href="#" id="EventList-toggle" onclick="return toggle('EventList');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="libavg.eventList.EventList-class.html">EventList</a><tt class="py-op">:</tt> </tt>
+</div><div id="EventList-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="EventList-expanded"><a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">    <tt class="py-docstring">"""Keep track of cursors pressed on a Node"""</tt> </tt>
+<a name="EventList.__init__"></a><div id="EventList.__init__-def"><a name="L77"></a><tt class="py-lineno"> 77</tt> <a class="py-toggle" href="#" id="EventList.__init__-toggle" onclick="return toggle('EventList.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.eventList.EventList-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">            <tt class="py-param">node</tt><tt class="py-op">,</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">            <tt class="py-param">source</tt><tt class="py-op">,</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">            <tt class="py-param">onDown</tt> <tt class="py-op">=</tt> <tt class="py-keyword">lambda</tt> <tt id="link-19" class="py-name"><a title="libavg.avg.AreaNode.x
+libavg.avg.CircleNode.x
+libavg.avg.ConstPoint2D.x
+libavg.avg.MouseEvent.x
+libavg.avg.Point2D.x
+libavg.avg.RectNode.x
+libavg.avg.TouchEvent.x
+libavg.eventList.Cursor.x" class="py-name" href="#" onclick="return doclink('link-19', 'x', 'link-3');">x</a></tt><tt class="py-op">:</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">            <tt class="py-name">onUp</tt> <tt class="py-op">=</tt> <tt class="py-keyword">lambda</tt> <tt id="link-20" class="py-name"><a title="libavg.avg.AreaNode.x
+libavg.avg.CircleNode.x
+libavg.avg.ConstPoint2D.x
+libavg.avg.MouseEvent.x
+libavg.avg.Point2D.x
+libavg.avg.RectNode.x
+libavg.avg.TouchEvent.x
+libavg.eventList.Cursor.x" class="py-name" href="#" onclick="return doclink('link-20', 'x', 'link-3');">x</a></tt><tt class="py-op">:</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">            <tt class="py-name">onMotion</tt> <tt class="py-op">=</tt> <tt class="py-keyword">lambda</tt> <tt id="link-21" class="py-name"><a title="libavg.avg.AreaNode.x
+libavg.avg.CircleNode.x
+libavg.avg.ConstPoint2D.x
+libavg.avg.MouseEvent.x
+libavg.avg.Point2D.x
+libavg.avg.RectNode.x
+libavg.avg.TouchEvent.x
+libavg.eventList.Cursor.x" class="py-name" href="#" onclick="return doclink('link-21', 'x', 'link-3');">x</a></tt><tt class="py-op">:</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">            <tt id="link-22" class="py-name"><a title="libavg.eventList.Cursor.resetMotion" class="py-name" href="#" onclick="return doclink('link-22', 'resetMotion', 'link-2');">resetMotion</a></tt> <tt class="py-op">=</tt> <tt class="py-keyword">lambda</tt><tt class="py-op">:</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">            <tt class="py-name">maxEvents</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">            <tt class="py-name">captureEvents</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventList.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventList.__init__-expanded"><a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__node</tt> <tt class="py-op">=</tt> <tt id="link-23" class="py-name" targets="Variable libavg.avg.MouseEvent.node=libavg.avg.MouseEvent-class.html#node,Variable libavg.avg.TouchEvent.node=libavg.avg.TouchEvent-class.html#node"><a title="libavg.avg.MouseEvent.node
+libavg.avg.TouchEvent.node" class="py-name" href="#" onclick="return doclink('link-23', 'node', 'link-23');">node</a></tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__source</tt> <tt class="py-op">=</tt> <tt id="link-24" class="py-name" targets="Variable libavg.avg.MouseEvent.source=libavg.avg.MouseEvent-class.html#source,Variable libavg.avg.TouchEvent.source=libavg.avg.TouchEvent-class.html#source"><a title="libavg.avg.MouseEvent.source
+libavg.avg.TouchEvent.source" class="py-name" href="#" onclick="return doclink('link-24', 'source', 'link-24');">source</a></tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__callback</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">                <tt class="py-string">'onDown'</tt><tt class="py-op">:</tt> <tt class="py-name">onDown</tt><tt class="py-op">,</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">                <tt class="py-string">'onUp'</tt><tt class="py-op">:</tt> <tt class="py-name">onUp</tt><tt class="py-op">,</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">                <tt class="py-string">'onMotion'</tt><tt class="py-op">:</tt> <tt class="py-name">onMotion</tt><tt class="py-op">,</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">                <tt class="py-string">'resetMotion'</tt><tt class="py-op">:</tt> <tt id="link-25" class="py-name"><a title="libavg.eventList.Cursor.resetMotion" class="py-name" href="#" onclick="return doclink('link-25', 'resetMotion', 'link-2');">resetMotion</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">        <tt class="py-op">}</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__maxEvents</tt> <tt class="py-op">=</tt> <tt class="py-name">maxEvents</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__captureEvents</tt> <tt class="py-op">=</tt> <tt class="py-name">captureEvents</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__capturedCursors</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__node</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name" targets="Method libavg.avg.Node.setEventHandler()=libavg.avg.Node-class.html#setEventHandler"><a title="libavg.avg.Node.setEventHandler" class="py-name" href="#" onclick="return doclink('link-26', 'setEventHandler', 'link-26');">setEventHandler</a></tt> <tt class="py-op">(</tt><tt id="link-27" class="py-name"><a title="libavg.avg" class="py-name" href="#" onclick="return doclink('link-27', 'avg', 'link-1');">avg</a></tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Variable libavg.CURSORDOWN=libavg-module.html#CURSORDOWN,Variable libavg.Type.CURSORDOWN=libavg.Type-class.html#CURSORDOWN,Variable libavg.avg.CURSORDOWN=libavg.avg-module.html#CURSORDOWN"><a title="libavg.CURSORDOWN
+libavg.Type.CURSORDOWN
+libavg.avg.CURSORDOWN" class="py-name" href="#" onclick="return doclink('link-28', 'CURSORDOWN', 'link-28');">CURSORDOWN</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__source</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__onDown</tt><tt class="py-op">)</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__node</tt><tt class="py-op">.</tt><tt id="link-29" class="py-name"><a title="libavg.avg.Node.setEventHandler" class="py-name" href="#" onclick="return doclink('link-29', 'setEventHandler', 'link-26');">setEventHandler</a></tt> <tt class="py-op">(</tt><tt id="link-30" class="py-name"><a title="libavg.avg" class="py-name" href="#" onclick="return doclink('link-30', 'avg', 'link-1');">avg</a></tt><tt class="py-op">.</tt><tt id="link-31" class="py-name" targets="Variable libavg.CURSORUP=libavg-module.html#CURSORUP,Variable libavg.Type.CURSORUP=libavg.Type-class.html#CURSORUP,Variable libavg.avg.CURSORUP=libavg.avg-module.html#CURSORUP"><a title="libavg.CURSORUP
+libavg.Type.CURSORUP
+libavg.avg.CURSORUP" class="py-name" href="#" onclick="return doclink('link-31', 'CURSORUP', 'link-31');">CURSORUP</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__source</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__onUp</tt><tt class="py-op">)</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__node</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name"><a title="libavg.avg.Node.setEventHandler" class="py-name" href="#" onclick="return doclink('link-32', 'setEventHandler', 'link-26');">setEventHandler</a></tt> <tt class="py-op">(</tt><tt id="link-33" class="py-name"><a title="libavg.avg" class="py-name" href="#" onclick="return doclink('link-33', 'avg', 'link-1');">avg</a></tt><tt class="py-op">.</tt><tt id="link-34" class="py-name" targets="Variable libavg.CURSORMOTION=libavg-module.html#CURSORMOTION,Variable libavg.Type.CURSORMOTION=libavg.Type-class.html#CURSORMOTION,Variable libavg.avg.CURSORMOTION=libavg.avg-module.html#CURSORMOTION"><a title="libavg.CURSORMOTION
+libavg.Type.CURSORMOTION
+libavg.avg.CURSORMOTION" class="py-name" href="#" onclick="return doclink('link-34', 'CURSORMOTION', 'link-34');">CURSORMOTION</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__source</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__onMotion</tt><tt class="py-op">)</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__eventCursors</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"> </tt>
+<a name="EventList.handleInitialDown"></a><div id="EventList.handleInitialDown-def"><a name="L106"></a><tt class="py-lineno">106</tt> <a class="py-toggle" href="#" id="EventList.handleInitialDown-toggle" onclick="return toggle('EventList.handleInitialDown');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.eventList.EventList-class.html#handleInitialDown">handleInitialDown</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventList.handleInitialDown-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventList.handleInitialDown-expanded"><a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__onDown</tt><tt class="py-op">(</tt><tt class="py-name">event</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"> </tt>
+<a name="EventList.delete"></a><div id="EventList.delete-def"><a name="L109"></a><tt class="py-lineno">109</tt> <a class="py-toggle" href="#" id="EventList.delete-toggle" onclick="return toggle('EventList.delete');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.eventList.EventList-class.html#delete">delete</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventList.delete-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventList.delete-expanded"><a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt id="link-35" class="py-name"><a title="libavg.avg.MouseEvent.cursorid
+libavg.avg.TouchEvent.cursorid" class="py-name" href="#" onclick="return doclink('link-35', 'cursorid', 'link-13');">cursorid</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__capturedCursors</tt><tt class="py-op">:</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__node</tt><tt class="py-op">.</tt><tt id="link-36" class="py-name" targets="Method libavg.avg.Node.releaseEventCapture()=libavg.avg.Node-class.html#releaseEventCapture"><a title="libavg.avg.Node.releaseEventCapture" class="py-name" href="#" onclick="return doclink('link-36', 'releaseEventCapture', 'link-36');">releaseEventCapture</a></tt> <tt class="py-op">(</tt><tt id="link-37" class="py-name"><a title="libavg.avg.MouseEvent.cursorid
+libavg.avg.TouchEvent.cursorid" class="py-name" href="#" onclick="return doclink('link-37', 'cursorid', 'link-13');">cursorid</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__capturedCursors</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">type_</tt> <tt class="py-keyword">in</tt> <tt id="link-38" class="py-name"><a title="libavg.avg" class="py-name" href="#" onclick="return doclink('link-38', 'avg', 'link-1');">avg</a></tt><tt class="py-op">.</tt><tt id="link-39" class="py-name"><a title="libavg.CURSORDOWN
+libavg.Type.CURSORDOWN
+libavg.avg.CURSORDOWN" class="py-name" href="#" onclick="return doclink('link-39', 'CURSORDOWN', 'link-28');">CURSORDOWN</a></tt><tt class="py-op">,</tt> <tt id="link-40" class="py-name"><a title="libavg.avg" class="py-name" href="#" onclick="return doclink('link-40', 'avg', 'link-1');">avg</a></tt><tt class="py-op">.</tt><tt id="link-41" class="py-name"><a title="libavg.CURSORMOTION
+libavg.Type.CURSORMOTION
+libavg.avg.CURSORMOTION" class="py-name" href="#" onclick="return doclink('link-41', 'CURSORMOTION', 'link-34');">CURSORMOTION</a></tt><tt class="py-op">,</tt> <tt id="link-42" class="py-name"><a title="libavg.avg" class="py-name" href="#" onclick="return doclink('link-42', 'avg', 'link-1');">avg</a></tt><tt class="py-op">.</tt><tt id="link-43" class="py-name"><a title="libavg.CURSORUP
+libavg.Type.CURSORUP
+libavg.avg.CURSORUP" class="py-name" href="#" onclick="return doclink('link-43', 'CURSORUP', 'link-31');">CURSORUP</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__node</tt><tt class="py-op">.</tt><tt id="link-44" class="py-name"><a title="libavg.avg.Node.setEventHandler" class="py-name" href="#" onclick="return doclink('link-44', 'setEventHandler', 'link-26');">setEventHandler</a></tt><tt class="py-op">(</tt><tt class="py-name">type_</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__source</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__node</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+</div><a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"> </tt>
+<a name="EventList.__setitem__"></a><div id="EventList.__setitem__-def"><a name="L118"></a><tt class="py-lineno">118</tt> <a class="py-toggle" href="#" id="EventList.__setitem__-toggle" onclick="return toggle('EventList.__setitem__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.eventList.EventList-class.html#__setitem__">__setitem__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">key</tt><tt class="py-op">,</tt> <tt class="py-param">val</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventList.__setitem__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventList.__setitem__-expanded"><a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">Exception</tt> </tt>
+</div><a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line"> </tt>
+<a name="EventList.__findEventCursor"></a><div id="EventList.__findEventCursor-def"><a name="L121"></a><tt class="py-lineno">121</tt> <a class="py-toggle" href="#" id="EventList.__findEventCursor-toggle" onclick="return toggle('EventList.__findEventCursor');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.eventList.EventList-class.html#__findEventCursor">__findEventCursor</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventList.__findEventCursor-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventList.__findEventCursor-expanded"><a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">        <tt class="py-name">found</tt> <tt class="py-op">=</tt> <tt class="py-name">filter</tt> <tt class="py-op">(</tt><tt class="py-keyword">lambda</tt> <tt class="py-name">ec</tt><tt class="py-op">:</tt> <tt class="py-name">ec</tt><tt class="py-op">.</tt><tt id="link-45" class="py-name" targets="Method libavg.eventList.EventCursor.getCursorID()=libavg.eventList.EventCursor-class.html#getCursorID"><a title="libavg.eventList.EventCursor.getCursorID" class="py-name" href="#" onclick="return doclink('link-45', 'getCursorID', 'link-45');">getCursorID</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-name">event</tt><tt class="py-op">.</tt><tt id="link-46" class="py-name"><a title="libavg.avg.MouseEvent.cursorid
+libavg.avg.TouchEvent.cursorid" class="py-name" href="#" onclick="return doclink('link-46', 'cursorid', 'link-13');">cursorid</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__eventCursors</tt><tt class="py-op">)</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">found</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-keyword">if</tt> <tt class="py-name">found</tt> <tt class="py-keyword">else</tt> <tt class="py-name">None</tt> </tt>
+</div><a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"> </tt>
+<a name="EventList.__resetMotion"></a><div id="EventList.__resetMotion-def"><a name="L125"></a><tt class="py-lineno">125</tt> <a class="py-toggle" href="#" id="EventList.__resetMotion-toggle" onclick="return toggle('EventList.__resetMotion');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.eventList.EventList-class.html#__resetMotion">__resetMotion</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventList.__resetMotion-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventList.__resetMotion-expanded"><a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">        <tt class="py-name">map</tt><tt class="py-op">(</tt><tt id="link-47" class="py-name"><a title="libavg.eventList.EventCursor" class="py-name" href="#" onclick="return doclink('link-47', 'EventCursor', 'link-11');">EventCursor</a></tt><tt class="py-op">.</tt><tt id="link-48" class="py-name"><a title="libavg.eventList.Cursor.resetMotion" class="py-name" href="#" onclick="return doclink('link-48', 'resetMotion', 'link-2');">resetMotion</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__eventCursors</tt><tt class="py-op">)</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__callback</tt><tt class="py-op">[</tt><tt class="py-string">'resetMotion'</tt><tt class="py-op">]</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line"> </tt>
+<a name="EventList.__onUp"></a><div id="EventList.__onUp-def"><a name="L129"></a><tt class="py-lineno">129</tt> <a class="py-toggle" href="#" id="EventList.__onUp-toggle" onclick="return toggle('EventList.__onUp');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.eventList.EventList-class.html#__onUp">__onUp</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventList.__onUp-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventList.__onUp-expanded"><a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">        <tt class="py-keyword">def</tt> <tt class="py-def-name">__removeCursor</tt> <tt class="py-op">(</tt><tt class="py-param">cursor</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">            <tt class="py-keyword">def</tt> <tt class="py-def-name">__releaseCapture</tt> <tt class="py-op">(</tt><tt class="py-param">cursorid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt id="link-49" class="py-name"><a title="libavg.avg.MouseEvent.cursorid
+libavg.avg.TouchEvent.cursorid" class="py-name" href="#" onclick="return doclink('link-49', 'cursorid', 'link-13');">cursorid</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__capturedCursors</tt><tt class="py-op">:</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">                    <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__node</tt><tt class="py-op">.</tt><tt id="link-50" class="py-name"><a title="libavg.avg.Node.releaseEventCapture" class="py-name" href="#" onclick="return doclink('link-50', 'releaseEventCapture', 'link-36');">releaseEventCapture</a></tt> <tt class="py-op">(</tt><tt id="link-51" class="py-name"><a title="libavg.avg.MouseEvent.cursorid
+libavg.avg.TouchEvent.cursorid" class="py-name" href="#" onclick="return doclink('link-51', 'cursorid', 'link-13');">cursorid</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__capturedCursors</tt><tt class="py-op">.</tt><tt class="py-name">remove</tt> <tt class="py-op">(</tt><tt id="link-52" class="py-name"><a title="libavg.avg.MouseEvent.cursorid
+libavg.avg.TouchEvent.cursorid" class="py-name" href="#" onclick="return doclink('link-52', 'cursorid', 'link-13');">cursorid</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">                    <tt class="py-keyword">except</tt> <tt class="py-name">RuntimeError</tt><tt class="py-op">:</tt> <tt class="py-comment"># XXX</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">                        <tt class="py-keyword">print</tt> <tt class="py-string">"warning: could not release event capture for cursor %u"</tt> <tt class="py-op">%</tt> <tt id="link-53" class="py-name"><a title="libavg.avg.MouseEvent.cursorid
+libavg.avg.TouchEvent.cursorid" class="py-name" href="#" onclick="return doclink('link-53', 'cursorid', 'link-13');">cursorid</a></tt> </tt>
+</div><a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">            <tt class="py-name">__releaseCapture</tt> <tt class="py-op">(</tt><tt class="py-name">cursor</tt><tt class="py-op">.</tt><tt id="link-54" class="py-name"><a title="libavg.eventList.EventCursor.getCursorID" class="py-name" href="#" onclick="return doclink('link-54', 'getCursorID', 'link-45');">getCursorID</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__eventCursors</tt><tt class="py-op">.</tt><tt class="py-name">remove</tt> <tt class="py-op">(</tt><tt class="py-name">cursor</tt><tt class="py-op">)</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__resetMotion</tt> <tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">        <tt class="py-name">ec</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__findEventCursor</tt> <tt class="py-op">(</tt><tt class="py-name">event</tt><tt class="py-op">)</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">ec</tt><tt class="py-op">:</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">            <tt class="py-name">ec</tt><tt class="py-op">.</tt><tt id="link-55" class="py-name"><a title="libavg.eventList.EventCursor.update" class="py-name" href="#" onclick="return doclink('link-55', 'update', 'link-14');">update</a></tt> <tt class="py-op">(</tt><tt class="py-name">event</tt><tt class="py-op">)</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">            <tt class="py-name">__removeCursor</tt> <tt class="py-op">(</tt><tt class="py-name">ec</tt><tt class="py-op">)</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__callback</tt><tt class="py-op">[</tt><tt class="py-string">'onUp'</tt><tt class="py-op">]</tt><tt class="py-op">(</tt><tt class="py-name">ec</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line"> </tt>
+<a name="EventList.__onDown"></a><div id="EventList.__onDown-def"><a name="L148"></a><tt class="py-lineno">148</tt> <a class="py-toggle" href="#" id="EventList.__onDown-toggle" onclick="return toggle('EventList.__onDown');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.eventList.EventList-class.html#__onDown">__onDown</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventList.__onDown-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventList.__onDown-expanded"><a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__maxEvents</tt> <tt class="py-keyword">and</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__eventCursors</tt><tt class="py-op">)</tt> <tt class="py-op">&gt;=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__maxEvents</tt><tt class="py-op">:</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt>  </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__captureEvents</tt><tt class="py-op">:</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">            <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__node</tt><tt class="py-op">.</tt><tt id="link-56" class="py-name" targets="Method libavg.avg.Node.setEventCapture()=libavg.avg.Node-class.html#setEventCapture"><a title="libavg.avg.Node.setEventCapture" class="py-name" href="#" onclick="return doclink('link-56', 'setEventCapture', 'link-56');">setEventCapture</a></tt><tt class="py-op">(</tt><tt class="py-name">event</tt><tt class="py-op">.</tt><tt id="link-57" class="py-name"><a title="libavg.avg.MouseEvent.cursorid
+libavg.avg.TouchEvent.cursorid" class="py-name" href="#" onclick="return doclink('link-57', 'cursorid', 'link-13');">cursorid</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__capturedCursors</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">event</tt><tt class="py-op">.</tt><tt id="link-58" class="py-name"><a title="libavg.avg.MouseEvent.cursorid
+libavg.avg.TouchEvent.cursorid" class="py-name" href="#" onclick="return doclink('link-58', 'cursorid', 'link-13');">cursorid</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">            <tt class="py-keyword">except</tt> <tt class="py-name">RuntimeError</tt><tt class="py-op">:</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">                <tt class="py-keyword">print</tt> <tt class="py-string">"warning: could capture events for cursor %u"</tt> <tt class="py-op">%</tt> <tt class="py-name">event</tt><tt class="py-op">.</tt><tt id="link-59" class="py-name"><a title="libavg.avg.MouseEvent.cursorid
+libavg.avg.TouchEvent.cursorid" class="py-name" href="#" onclick="return doclink('link-59', 'cursorid', 'link-13');">cursorid</a></tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line"> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">        <tt class="py-name">ec</tt> <tt class="py-op">=</tt> <tt id="link-60" class="py-name"><a title="libavg.eventList.EventCursor" class="py-name" href="#" onclick="return doclink('link-60', 'EventCursor', 'link-11');">EventCursor</a></tt> <tt class="py-op">(</tt><tt class="py-name">event</tt><tt class="py-op">)</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__eventCursors</tt><tt class="py-op">.</tt><tt class="py-name">append</tt> <tt class="py-op">(</tt><tt class="py-name">ec</tt><tt class="py-op">)</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__resetMotion</tt> <tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__callback</tt><tt class="py-op">[</tt><tt class="py-string">'onDown'</tt><tt class="py-op">]</tt><tt class="py-op">(</tt><tt class="py-name">ec</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line"> </tt>
+<a name="EventList.__onMotion"></a><div id="EventList.__onMotion-def"><a name="L164"></a><tt class="py-lineno">164</tt> <a class="py-toggle" href="#" id="EventList.__onMotion-toggle" onclick="return toggle('EventList.__onMotion');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.eventList.EventList-class.html#__onMotion">__onMotion</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">event</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventList.__onMotion-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventList.__onMotion-expanded"><a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">        <tt class="py-name">ec</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__findEventCursor</tt> <tt class="py-op">(</tt><tt class="py-name">event</tt><tt class="py-op">)</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">ec</tt><tt class="py-op">:</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">            <tt class="py-name">ec</tt><tt class="py-op">.</tt><tt id="link-61" class="py-name"><a title="libavg.eventList.EventCursor.update" class="py-name" href="#" onclick="return doclink('link-61', 'update', 'link-14');">update</a></tt> <tt class="py-op">(</tt><tt class="py-name">event</tt><tt class="py-op">)</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__callback</tt><tt class="py-op">[</tt><tt class="py-string">'onMotion'</tt><tt class="py-op">]</tt><tt class="py-op">(</tt><tt class="py-name">ec</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line"> </tt>
+<a name="EventList.getCursors"></a><div id="EventList.getCursors-def"><a name="L170"></a><tt class="py-lineno">170</tt> <a class="py-toggle" href="#" id="EventList.getCursors-toggle" onclick="return toggle('EventList.getCursors');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.eventList.EventList-class.html#getCursors">getCursors</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventList.getCursors-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventList.getCursors-expanded"><a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__eventCursors</tt> </tt>
+</div><a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line"> </tt>
+<a name="EventList.__len__"></a><div id="EventList.__len__-def"><a name="L173"></a><tt class="py-lineno">173</tt> <a class="py-toggle" href="#" id="EventList.__len__-toggle" onclick="return toggle('EventList.__len__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.eventList.EventList-class.html#__len__">__len__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventList.__len__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventList.__len__-expanded"><a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__eventCursors</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="libavg-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="../index.php">libavg</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Jan  8 16:09:02 2010
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

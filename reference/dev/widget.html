@@ -1,0 +1,829 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Widget Classes &mdash; libavg 1.8.dev documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.8.dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="libavg 1.8.dev documentation" href="index.html" />
+    <link rel="next" title="Misc. Classes" href="misc.html" />
+    <link rel="prev" title="Gesture Support" href="gesture.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="misc.html" title="Misc. Classes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="gesture.html" title="Gesture Support"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">libavg 1.8.dev documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="gesture.html"
+                        title="previous chapter">Gesture Support</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="misc.html"
+                        title="next chapter">Misc. Classes</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/widget.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="widget-classes">
+<h1>Widget Classes<a class="headerlink" href="#widget-classes" title="Permalink to this headline">¶</a></h1>
+<p>The libavg.widget module contains high-level user interface elements such as buttons and
+list boxes. Widgets are fully skinnable (using the <code class="xref py py-class docutils literal"><span class="pre">Skin</span></code> class and an xml
+configuration file) and multitouch-enabled. Sample code for all widgets can be found in the
+<code class="samp docutils literal"><span class="pre">widget.py</span></code> sample.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The widget module is experimental. Functionality and interface are still in flux and
+subject to change.</p>
+</div>
+<span class="target" id="module-libavg.widget"></span><p class="graphviz">
+<img src="_images/inheritance-75072c2dfe1077cabf034924a705e015fe0794c8.png" alt="Inheritance diagram of SwitchNode, Button, TextButton, BmpButton, ToggleButton, CheckBox, BmpToggleButton, Keyboard, Slider, ScrollBar, ProgressBar, ScrollArea, ScrollPane, TimeSlider, MediaControl" usemap="#inheritance17bd1d2dfb" class="inheritance"/>
+<map id="inheritance17bd1d2dfb" name="inheritance17bd1d2dfb">
+<area shape="rect" id="node1" href="areanodes.html#libavg.avg.AreaNode" target="_top" title="AreaNode" alt="" coords="288,234,356,254"/>
+<area shape="rect" id="node8" href="areanodes.html#libavg.avg.DivNode" target="_top" title="DivNode" alt="" coords="292,292,351,312"/>
+<area shape="rect" id="node2" href="basenodes.html#libavg.avg.Node" target="_top" title="Node" alt="" coords="293,177,350,197"/>
+<area shape="rect" id="node13" href="basenodes.html#libavg.avg.Publisher" target="_top" title="Publisher" alt="" coords="290,119,353,139"/>
+</map>
+</p>
+<p class="graphviz">
+<img src="_images/inheritance-df1364545f8547b2e66eaaf5b51f094fda21dd07.png" alt="Inheritance diagram of HStretchNode, VStretchNode, HVStretchNode, Skin" class="inheritance"/>
+</p>
+<dl class="class">
+<dt id="libavg.widget.BmpButton">
+<em class="property">class </em><code class="descclassname">libavg.widget.</code><code class="descname">BmpButton</code><span class="sig-paren">(</span><em>upSrc</em>, <em>downSrc</em><span class="optional">[</span>, <em>disabledSrc=None</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.BmpButton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">libavg.widget.button.Button</span></code></p>
+<p>A <a class="reference internal" href="#libavg.widget.Button" title="libavg.widget.Button"><code class="xref py py-class docutils literal"><span class="pre">Button</span></code></a> that is created from image files. Internally, it creates two or
+three <code class="xref py py-class docutils literal"><span class="pre">ImageNode</span></code> s and uses them as constructor parameters for
+<a class="reference internal" href="#libavg.widget.Button" title="libavg.widget.Button"><code class="xref py py-class docutils literal"><span class="pre">Button</span></code></a>.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.widget.BmpToggleButton">
+<em class="property">class </em><code class="descclassname">libavg.widget.</code><code class="descname">BmpToggleButton</code><span class="sig-paren">(</span><em>uncheckedUpSrc</em>, <em>uncheckedDownSrc</em>, <em>checkedUpSrc</em>, <em>checkedDownSrc</em><span class="optional">[</span>, <em>uncheckedDisabledSrc=None</em>, <em>checkedDisabledSrc=None</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.BmpToggleButton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">libavg.widget.button.ToggleButton</span></code></p>
+<p>A <a class="reference internal" href="#libavg.widget.ToggleButton" title="libavg.widget.ToggleButton"><code class="xref py py-class docutils literal"><span class="pre">ToggleButton</span></code></a> that is created from image files. Internally, it creates
+image nodes for the src parameters and uses them as constructor parameters for
+<a class="reference internal" href="#libavg.widget.ToggleButton" title="libavg.widget.ToggleButton"><code class="xref py py-class docutils literal"><span class="pre">ToggleButton</span></code></a>.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.widget.Button">
+<em class="property">class </em><code class="descclassname">libavg.widget.</code><code class="descname">Button</code><span class="sig-paren">(</span><em>upNode</em>, <em>downNode</em><span class="optional">[</span>, <em>disabledNode=None</em>, <em>activeAreaNode=None</em>, <em>fatFingerEnlarge=False</em>, <em>enabled=True</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.Button" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">libavg.widget.button._ButtonBase</span></code></p>
+<p>A button that shows different user-supplied nodes depending on its
+state. Possible button states are up, down and disabled. The nodes are attached
+as children to the Button on construction. For a simple button, image nodes can
+be passed. Uses the <code class="xref py py-class docutils literal"><span class="pre">TapRecognizer</span></code> to detect clicks.</p>
+<img alt="_images/ButtonStates.png" src="_images/ButtonStates.png" />
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>upNode</strong> (<a class="reference internal" href="basenodes.html#libavg.avg.Node" title="libavg.avg.Node"><em>avg.Node</em></a>) &#8211; The node displayed when the button is not pressed.</li>
+<li><strong>downNode</strong> (<a class="reference internal" href="basenodes.html#libavg.avg.Node" title="libavg.avg.Node"><em>avg.Node</em></a>) &#8211; The node displayed when the button is pressed.</li>
+<li><strong>disabledNode</strong> (<a class="reference internal" href="basenodes.html#libavg.avg.Node" title="libavg.avg.Node"><em>avg.Node</em></a>) &#8211; The node displayed when the button is disabled.</li>
+<li><strong>activeAreaNode</strong> (<a class="reference internal" href="basenodes.html#libavg.avg.Node" title="libavg.avg.Node"><em>avg.Node</em></a>) &#8211; A node that is used only to determine if a click is over the button. Usually,
+this node is invisible. <code class="xref py py-attr docutils literal"><span class="pre">activeAreaNode</span></code> is useful for small touch
+buttons, where the active area should be larger than the visible button to
+account for touch inaccuracies.</li>
+<li><strong>fatFingerEnlarge</strong> (<em>bool</em>) &#8211; If this parameter is set to <code class="xref py py-const docutils literal"><span class="pre">True</span></code>, the button generates its own
+internal <code class="xref py py-attr docutils literal"><span class="pre">activeAreaNode</span></code> that is at least 20x20mm large.
+<code class="xref py py-attr docutils literal"><span class="pre">fatFingerEnlarge</span></code> is incompatible with a custom
+<code class="xref py py-attr docutils literal"><span class="pre">activeAreaNode</span></code>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Messages:</strong></p>
+<blockquote>
+<div><p>To get these messages, call <code class="xref py py-meth docutils literal"><span class="pre">Publisher.subscribe()</span></code>.</p>
+<dl class="method">
+<dt id="libavg.widget.Button.PRESSED">
+<code class="descname">PRESSED</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.Button.PRESSED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a tap on the button is initiated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.widget.Button.RELEASED">
+<code class="descname">RELEASED</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.Button.RELEASED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a tap on the button ends. Emitted for both successful and
+aborted taps.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.widget.Button.CLICKED">
+<code class="descname">CLICKED</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.Button.CLICKED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when the button is clicked.</p>
+</dd></dl>
+
+</div></blockquote>
+<dl class="attribute">
+<dt id="libavg.widget.Button.enabled">
+<code class="descname">enabled</code><a class="headerlink" href="#libavg.widget.Button.enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-const docutils literal"><span class="pre">True</span></code> if the button accepts input. If the button is disabled,
+it shows the <code class="xref py py-attr docutils literal"><span class="pre">disabledNode</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.widget.CheckBox">
+<em class="property">class </em><code class="descclassname">libavg.widget.</code><code class="descname">CheckBox</code><span class="sig-paren">(</span><span class="optional">[</span><em>text=&quot;&quot;</em>, <em>skinObj=skin.Skin.default</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.CheckBox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">libavg.widget.button.ToggleButton</span></code></p>
+<p>This is a classic checkbox with text to the right.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.widget.HStretchNode">
+<em class="property">class </em><code class="descclassname">libavg.widget.</code><code class="descname">HStretchNode</code><span class="sig-paren">(</span><em>endsExtent</em><span class="optional">[</span>, <em>src=None</em>, <em>minExtent=-1</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.HStretchNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">libavg.widget.base._StretchNodeBase</span></code></p>
+<p>A node that stretches its graphics to fill the size given horizontally. It is used
+as base component for scrollbars and buttons. The base
+bitmap is split into three parts: left, center and right. The left and right parts
+are <code class="xref py py-attr docutils literal"><span class="pre">endsExtent</span></code> wide and generated from the corresponding parts of the
+source bitmap. The center part is generated from a one pixel wide slice of the
+source bitmap and stretched to fill the space left between the left and right
+parts.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>endsExtent</strong> (<em>int</em>) &#8211; Width of the left and right bitmaps in pixels.</li>
+<li><strong>src</strong> &#8211; Either the name of a bitmap file or a <code class="xref py py-class docutils literal"><span class="pre">Bitmap</span></code> object. Used to
+generate the graphics used.</li>
+<li><strong>minExtent</strong> (<em>int</em>) &#8211; Minimum horizontal size. The default of -1 uses <code class="xref py py-const docutils literal"><span class="pre">2*endsExtent+1</span></code> as
+minimum.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.widget.HVStretchNode">
+<em class="property">class </em><code class="descclassname">libavg.widget.</code><code class="descname">HVStretchNode</code><span class="sig-paren">(</span><em>endsExtent</em><span class="optional">[</span>, <em>src=None</em>, <em>minExtent=-(1</em>, <em>-1)</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.HVStretchNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">libavg.widget.base._StretchNodeBase</span></code></p>
+<p>A node that stretches its graphics to fill the size given horizontally and
+vertically. It is used as base component for scrollareas. Similar to
+<a class="reference internal" href="#libavg.widget.HStretchNode" title="libavg.widget.HStretchNode"><code class="xref py py-class docutils literal"><span class="pre">HStretchNode</span></code></a>, the base bitmap is split and partial bitmaps are
+extracted. Four corner bitmaps of size <code class="xref py py-attr docutils literal"><span class="pre">endsExtent</span></code> stay the same size,
+four one-pixel-slice bitmaps fill the sides, and a single one-pixel bitmap is used
+to fill the center area.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>endsExtent</strong> (<em>IntPoint</em>) &#8211; Size of the corner bitmaps in pixels.</li>
+<li><strong>src</strong> &#8211; Either the name of a bitmap file or a <code class="xref py py-class docutils literal"><span class="pre">Bitmap</span></code> object. Used to
+generate the graphics used.</li>
+<li><strong>minExtent</strong> (<em>IntPoint</em>) &#8211; Minimum size. The default of <code class="xref py py-const docutils literal"><span class="pre">(-1,-1]</span></code> uses <code class="xref py py-const docutils literal"><span class="pre">2*endsExtent+1</span></code> as
+minimum.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.widget.Keyboard">
+<em class="property">class </em><code class="descclassname">libavg.widget.</code><code class="descname">Keyboard</code><span class="sig-paren">(</span><em>bgSrc</em>, <em>downSrc</em>, <em>keyDefs</em>, <em>shiftKeyCode</em><span class="optional">[</span>, <em>altGrKeyCode=None</em>, <em>stickyShift=False</em>, <em>feedbackSrc=None</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.Keyboard" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="areanodes.html#libavg.avg.DivNode" title="libavg.avg.DivNode"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.DivNode</span></code></a></p>
+<p>Implements an onscreen keyboard that turns mouse clicks or touches into key
+presses. The keyboard is completely configurable. Keyboard graphics are determined
+by the two image files in <code class="xref py py-attr docutils literal"><span class="pre">bgSrc</span></code> and <code class="xref py py-attr docutils literal"><span class="pre">downSrc</span></code>. Keys can be
+defined as rectangles anywhere on these images. Works for both single-touch and
+multitouch devices. Generates events when keys are pressed or released.
+An additional enlarged image of the key being pressed can be rendered above a
+pending touch as well by using <code class="xref py py-attr docutils literal"><span class="pre">feedbackSrc</span></code>.</p>
+<p>Needs offscreen rendering support on the machine to generate individual key images
+from the image files supplied.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>bgSrc</strong> (<em>string</em>) &#8211; Filename of an image that contains the keyboard with unpressed keys.</li>
+<li><strong>downSrc</strong> (<em>string</em>) &#8211; Filename of an image that contains the keyboard with pressed keys.</li>
+<li><strong>keyDefs</strong> (<em>list</em>) &#8211; <p>List of key definitions. Keys can be either character keys:</p>
+<blockquote>
+<div>[(&lt;keycode&gt;, &lt;shift keycode&gt;, &lt;altgr keycode&gt;), &lt;feedback&gt;, &lt;repeat&gt;,
+&lt;pos&gt;, &lt;size&gt;]</div></blockquote>
+<p>or command keys:</p>
+<blockquote>
+<div>[&lt;keycode&gt;, &lt;feedback&gt;, &lt;repeat&gt;, &lt;pos&gt;, &lt;size&gt;]</div></blockquote>
+<p>For character keys, the shift and altgr keycodes are optional. To define
+entire rows of evenly-spaced keys, use <a class="reference internal" href="#libavg.widget.Keyboard.makeRowKeyDefs" title="libavg.widget.Keyboard.makeRowKeyDefs"><code class="xref py py-meth docutils literal"><span class="pre">makeRowKeyDefs()</span></code></a>.</p>
+</li>
+<li><strong>shiftKeyCode</strong> &#8211; One of the command keycodes. When a key with this code is pressed,
+pressing other keys causes them to return the shifted keycode.</li>
+<li><strong>altGrKeyCode</strong> &#8211; One of the command keycodes. When a key with this code is pressed,
+pressing other keys causes them to return the altgr keycode.</li>
+<li><strong>stickyShift</strong> (<em>bool</em>) &#8211; For single-touch devices, the shift key must stay in the pressed state
+until the next normal key is pressed to have any effect. This is the
+behaviour if <code class="xref py py-attr docutils literal"><span class="pre">stickyShift</span></code> is <code class="xref py py-const docutils literal"><span class="pre">True</span></code>. If it is
+<code class="xref py py-const docutils literal"><span class="pre">False</span></code> (the default), a
+multitouch device is assumed and shift works like on a physical keyboard.</li>
+<li><strong>feedbackSrc</strong> (<em>string</em>) &#8211; Filename of an image that contains an enlarged version of bgSrc for use as
+feedback during key pressed. If this parameter not set the feedback funktion
+is turned off.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Messages:</strong></p>
+<blockquote>
+<div><p><a class="reference internal" href="#libavg.widget.Keyboard" title="libavg.widget.Keyboard"><code class="xref py py-class docutils literal"><span class="pre">Keyboard</span></code></a> emits messages on every key press and release:
+To get these messages, call <code class="xref py py-meth docutils literal"><span class="pre">Publisher.subscribe()</span></code>.</p>
+<dl class="method">
+<dt id="libavg.widget.Keyboard.DOWN">
+<code class="descname">DOWN</code><span class="sig-paren">(</span><em>keycode</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.Keyboard.DOWN" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted whenever a key (command or char) is pressed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.widget.Keyboard.UP">
+<code class="descname">UP</code><span class="sig-paren">(</span><em>keycode</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.Keyboard.UP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted whenever a key (command or char) is released.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.widget.Keyboard.CHAR">
+<code class="descname">CHAR</code><span class="sig-paren">(</span><em>char</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.Keyboard.CHAR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted whenever a character is generated. This is generally when a char key
+is released and takes into account shift/altgr status.</p>
+</dd></dl>
+
+</div></blockquote>
+<dl class="method">
+<dt id="libavg.widget.Keyboard.reset">
+<code class="descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.Keyboard.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resets any sticky keys (shift, altgr) to their default state.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="libavg.widget.Keyboard.makeRowKeyDefs">
+<em class="property">classmethod </em><code class="descname">makeRowKeyDefs</code><span class="sig-paren">(</span><em>startPos</em>, <em>keySize</em>, <em>spacing</em>, <em>feedbackStr</em>, <em>keyStr</em>, <em>shiftKeyStr</em><span class="optional">[</span>, <em>altGrKeyStr</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.Keyboard.makeRowKeyDefs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates key definitions for a row of uniform keys. Useful for creating the
+keyDefs parameter of the Keyboard constructor. All the keys get no repeat
+functionality.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>startPos</strong> (<a class="reference internal" href="misc.html#libavg.avg.Point2D" title="libavg.avg.Point2D"><em>avg.Point2D</em></a>) &#8211; Top left position of the row.</li>
+<li><strong>keySize</strong> (<a class="reference internal" href="misc.html#libavg.avg.Point2D" title="libavg.avg.Point2D"><em>avg.Point2D</em></a>) &#8211; Size of each key.</li>
+<li><strong>spacing</strong> (<em>int</em>) &#8211; Number of empty pixels between two keys.</li>
+<li><strong>keyStr</strong> (<em>string</em>) &#8211; Unicode string containing the unshifted keycodes (i.e.
+<code class="samp docutils literal"><span class="pre">u&quot;qwertzuiopżś&quot;</span></code>)</li>
+<li><strong>shiftKeyStr</strong> (<em>string</em>) &#8211; Unicode string containing the shifted keycodes
+(i.e. <code class="samp docutils literal"><span class="pre">u&quot;QWERTZUIOPńć&quot;</span></code>)</li>
+<li><strong>altGrKeyStr</strong> (<em>string</em>) &#8211; Unicode string containing the keycodes when altgr is pressed.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.widget.MediaControl">
+<em class="property">class </em><code class="descclassname">libavg.widget.</code><code class="descname">MediaControl</code><span class="sig-paren">(</span><span class="optional">[</span><em>duration=1000</em>, <em>time=0</em>, <em>skinObj=skin.Skin.default</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.MediaControl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="areanodes.html#libavg.avg.DivNode" title="libavg.avg.DivNode"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.DivNode</span></code></a></p>
+<p>A composite control that incorporates a <a class="reference internal" href="#libavg.widget.Slider" title="libavg.widget.Slider"><code class="xref py py-class docutils literal"><span class="pre">Slider</span></code></a>, a play/pause
+button and text widgets that display the time. By itself, the
+<a class="reference internal" href="#libavg.widget.MediaControl" title="libavg.widget.MediaControl"><code class="xref py py-class docutils literal"><span class="pre">MediaControl</span></code></a> is independent of a media node. The controlling
+application is responsible for keeping track of media node and
+<a class="reference internal" href="#libavg.widget.MediaControl" title="libavg.widget.MediaControl"><code class="xref py py-class docutils literal"><span class="pre">MediaControl</span></code></a> state and syncing the two.</p>
+<p><strong>Messages:</strong></p>
+<blockquote>
+<div><dl class="method">
+<dt id="libavg.widget.MediaControl.PLAY_CLICKED">
+<code class="descname">PLAY_CLICKED</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.MediaControl.PLAY_CLICKED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when the play/pause toggle is switched to play.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.widget.MediaControl.PAUSE_CLICKED">
+<code class="descname">PAUSE_CLICKED</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.MediaControl.PAUSE_CLICKED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when the play/pause toggle is switched to pause.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.widget.MediaControl.SEEK_PRESSED">
+<code class="descname">SEEK_PRESSED</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.MediaControl.SEEK_PRESSED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when the user starts dragging the seek thumb.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.widget.MediaControl.SEEK_MOTION">
+<code class="descname">SEEK_MOTION</code><span class="sig-paren">(</span><em>curTime</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.MediaControl.SEEK_MOTION" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when the user moves the seek thumb.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.widget.MediaControl.SEEK_RELEASED">
+<code class="descname">SEEK_RELEASED</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.MediaControl.SEEK_RELEASED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when the user releases the seek thumb.</p>
+</dd></dl>
+
+</div></blockquote>
+<dl class="attribute">
+<dt id="libavg.widget.MediaControl.duration">
+<code class="descname">duration</code><a class="headerlink" href="#libavg.widget.MediaControl.duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Duration of the medium in milliseconds.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.widget.MediaControl.time">
+<code class="descname">time</code><a class="headerlink" href="#libavg.widget.MediaControl.time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Current media time in milliseconds.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.widget.MediaControl.play">
+<code class="descname">play</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.MediaControl.play" title="Permalink to this definition">¶</a></dt>
+<dd><p>Switches to play mode by toggling the button.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.widget.MediaControl.pause">
+<code class="descname">pause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.MediaControl.pause" title="Permalink to this definition">¶</a></dt>
+<dd><p>Switches to pause mode by toggling the button.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.widget.Orientation">
+<em class="property">class </em><code class="descclassname">libavg.widget.</code><code class="descname">Orientation</code><a class="headerlink" href="#libavg.widget.Orientation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="data">
+<dt id="libavg.widget.Orientation.HORIZONTAL">
+<code class="descname">HORIZONTAL</code><a class="headerlink" href="#libavg.widget.Orientation.HORIZONTAL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="libavg.widget.Orientation.VERTICAL">
+<code class="descname">VERTICAL</code><a class="headerlink" href="#libavg.widget.Orientation.VERTICAL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.widget.ProgressBar">
+<em class="property">class </em><code class="descclassname">libavg.widget.</code><code class="descname">ProgressBar</code><span class="sig-paren">(</span><em>orientation</em><span class="optional">[</span>, <em>skinObj=skin.Skin.default</em>, <em>height=0</em>, <em>width=0</em>, <em>range=(0.</em>, <em>1.)</em>, <em>value=0.0</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.ProgressBar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="areanodes.html#libavg.avg.DivNode" title="libavg.avg.DivNode"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.DivNode</span></code></a></p>
+<p>A horizontal bar-shaped UI element that indicates the progression of an operation.</p>
+<dl class="attribute">
+<dt id="libavg.widget.ProgressBar.range">
+<code class="descname">range</code><a class="headerlink" href="#libavg.widget.ProgressBar.range" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tuple giving minimum and maximum value.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.widget.ProgressBar.value">
+<code class="descname">value</code><a class="headerlink" href="#libavg.widget.ProgressBar.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Current progression. The application is responsible for updating the value. In
+general, <a class="reference internal" href="#libavg.widget.ProgressBar.value" title="libavg.widget.ProgressBar.value"><code class="xref py py-attr docutils literal"><span class="pre">value</span></code></a> will start at <code class="xref py py-attr docutils literal"><span class="pre">range[0]</span></code> and end with
+<code class="xref py py-attr docutils literal"><span class="pre">range[1]</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.widget.ScrollArea">
+<em class="property">class </em><code class="descclassname">libavg.widget.</code><code class="descname">ScrollArea</code><span class="sig-paren">(</span><em>contentNode</em>, <em>size</em><span class="optional">[</span>, <em>skinObj=skin.Skin.default</em>, <em>enabled=True</em>, <em>scrollBars=(Orientation.HORIZONTAL</em>, <em>Orientation.VERTICAL)</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.ScrollArea" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="areanodes.html#libavg.avg.DivNode" title="libavg.avg.DivNode"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.DivNode</span></code></a></p>
+<p>A rectangular area that allows a user to choose a view into arbitrary content. The
+content can be larger than the <a class="reference internal" href="#libavg.widget.ScrollArea" title="libavg.widget.ScrollArea"><code class="xref py py-class docutils literal"><span class="pre">ScrollArea</span></code></a>, in which case scroll bars can
+be used to allow the user to choose which part to view. Dragging the content to
+determine the viewport is also supported. A <a class="reference internal" href="#libavg.widget.ScrollArea" title="libavg.widget.ScrollArea"><code class="xref py py-class docutils literal"><span class="pre">ScrollArea</span></code></a> uses
+<a class="reference internal" href="#libavg.widget.ScrollPane" title="libavg.widget.ScrollPane"><code class="xref py py-class docutils literal"><span class="pre">ScrollPane</span></code></a> and <a class="reference internal" href="#libavg.widget.ScrollBar" title="libavg.widget.ScrollBar"><code class="xref py py-class docutils literal"><span class="pre">ScrollBar</span></code></a> objects internally.</p>
+<p><strong>Messages:</strong></p>
+<blockquote>
+<div><p>To get these messages, call <code class="xref py py-meth docutils literal"><span class="pre">Publisher.subscribe()</span></code>.</p>
+<dl class="method">
+<dt id="libavg.widget.ScrollArea.PRESSED">
+<code class="descname">PRESSED</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.ScrollArea.PRESSED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when a content drag is initiated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.widget.ScrollArea.RELEASED">
+<code class="descname">RELEASED</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.ScrollArea.RELEASED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when a content drag is finished.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.widget.ScrollArea.CONTENT_POS_CHANGED">
+<code class="descname">CONTENT_POS_CHANGED</code><span class="sig-paren">(</span><em>pos</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.ScrollArea.CONTENT_POS_CHANGED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when the viewport changes for any reason.</p>
+</dd></dl>
+
+</div></blockquote>
+<dl class="attribute">
+<dt id="libavg.widget.ScrollArea.contentsize">
+<code class="descname">contentsize</code><a class="headerlink" href="#libavg.widget.ScrollArea.contentsize" title="Permalink to this definition">¶</a></dt>
+<dd><p>The size of the <code class="xref py py-attr docutils literal"><span class="pre">contentNode</span></code>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.widget.ScrollArea.contentpos">
+<code class="descname">contentpos</code><a class="headerlink" href="#libavg.widget.ScrollArea.contentpos" title="Permalink to this definition">¶</a></dt>
+<dd><p>The position of the content within the area.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.widget.ScrollBar">
+<em class="property">class </em><code class="descclassname">libavg.widget.</code><code class="descname">ScrollBar</code><span class="sig-paren">(</span><span class="optional">[</span><em>orientation=Orientation.HORIZONTAL</em>, <em>skinObj=skin.Skin.default</em>, <em>enabled=True</em>, <em>height=0</em>, <em>width=0</em>, <em>range=(0.</em>, <em>1.)</em>, <em>thumbPos=0.0</em>, <em>thumbExtent=0.1</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.ScrollBar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">libavg.widget.slider.SliderBase</span></code></p>
+<p>A vertical or horizontal scroll bar.</p>
+<p><strong>Messages:</strong></p>
+<blockquote>
+<div><p>To get these messages, call <code class="xref py py-meth docutils literal"><span class="pre">Publisher.subscribe()</span></code>.</p>
+<dl class="method">
+<dt id="libavg.widget.ScrollBar.PRESSED">
+<code class="descname">PRESSED</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.ScrollBar.PRESSED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when a drag is initiated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.widget.ScrollBar.RELEASED">
+<code class="descname">RELEASED</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.ScrollBar.RELEASED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when a drag is finished.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.widget.ScrollBar.THUMB_POS_CHANGED">
+<code class="descname">THUMB_POS_CHANGED</code><span class="sig-paren">(</span><em>pos</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.ScrollBar.THUMB_POS_CHANGED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when the thumb is dragged.</p>
+</dd></dl>
+
+</div></blockquote>
+<dl class="attribute">
+<dt id="libavg.widget.ScrollBar.range">
+<code class="descname">range</code><a class="headerlink" href="#libavg.widget.ScrollBar.range" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum and maximum values for the thumb.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.widget.ScrollBar.thumbPos">
+<code class="descname">thumbPos</code><a class="headerlink" href="#libavg.widget.ScrollBar.thumbPos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.widget.ScrollBar.thumbExtent">
+<code class="descname">thumbExtent</code><a class="headerlink" href="#libavg.widget.ScrollBar.thumbExtent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.widget.ScrollPane">
+<em class="property">class </em><code class="descclassname">libavg.widget.</code><code class="descname">ScrollPane</code><span class="sig-paren">(</span><em>contentNode</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.ScrollPane" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="areanodes.html#libavg.avg.DivNode" title="libavg.avg.DivNode"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.DivNode</span></code></a></p>
+<p>A rectangular view into arbitrary content. No user interaction is implemented.</p>
+<dl class="attribute">
+<dt id="libavg.widget.ScrollPane.contentpos">
+<code class="descname">contentpos</code><a class="headerlink" href="#libavg.widget.ScrollPane.contentpos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.widget.ScrollPane.contentsize">
+<code class="descname">contentsize</code><a class="headerlink" href="#libavg.widget.ScrollPane.contentsize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.widget.Skin">
+<em class="property">class </em><code class="descclassname">libavg.widget.</code><code class="descname">Skin</code><span class="sig-paren">(</span><em>skinXmlFName</em><span class="optional">[</span>, <em>mediaDir=&quot;&quot;</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.Skin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>A <a class="reference internal" href="#libavg.widget.Skin" title="libavg.widget.Skin"><code class="xref py py-class docutils literal"><span class="pre">Skin</span></code></a> determines the appearance of any user interface elements that
+use it. Skin configuration is determined by an xml file. This xml file determines
+the bitmaps to use and the sizes of various components. It also determines the
+fonts used by the elements. Skinnable user interface elements include
+<a class="reference internal" href="#libavg.widget.TextButton" title="libavg.widget.TextButton"><code class="xref py py-class docutils literal"><span class="pre">TextButton</span></code></a>, <a class="reference internal" href="#libavg.widget.Slider" title="libavg.widget.Slider"><code class="xref py py-class docutils literal"><span class="pre">Slider</span></code></a>, <a class="reference internal" href="#libavg.widget.ScrollBar" title="libavg.widget.ScrollBar"><code class="xref py py-class docutils literal"><span class="pre">ScrollBar</span></code></a>,
+<a class="reference internal" href="#libavg.widget.ProgressBar" title="libavg.widget.ProgressBar"><code class="xref py py-class docutils literal"><span class="pre">ProgressBar</span></code></a>, <a class="reference internal" href="#libavg.widget.ScrollArea" title="libavg.widget.ScrollArea"><code class="xref py py-class docutils literal"><span class="pre">ScrollArea</span></code></a>, <a class="reference internal" href="#libavg.widget.CheckBox" title="libavg.widget.CheckBox"><code class="xref py py-class docutils literal"><span class="pre">CheckBox</span></code></a> and
+<a class="reference internal" href="#libavg.widget.MediaControl" title="libavg.widget.MediaControl"><code class="xref py py-class docutils literal"><span class="pre">MediaControl</span></code></a>. In addition, the fonts defined can be accessed by the
+application.</p>
+<p>The default skin xml file is located at <code class="samp docutils literal"><span class="pre">src/python/data/SimpleSkin.xml</span></code>. It
+provides a good basis from which to create your own skin.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>skinXmlFName</strong> (<em>string</em>) &#8211; The name of the xml configuration file.</li>
+<li><strong>mediaDir</strong> (<em>string</em>) &#8211; The location of the image files to use.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt>
+<code class="descname">fonts:</code></dt>
+<dd><p>A dictionary of <code class="xref py py-class docutils literal"><span class="pre">FontStyle</span></code> objects created from the xml
+configuration file.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.widget.Slider">
+<em class="property">class </em><code class="descclassname">libavg.widget.</code><code class="descname">Slider</code><span class="sig-paren">(</span><span class="optional">[</span><em>orientation=Orientation.HORIZONTAL</em>, <em>skinObj=skin.Skin.default</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.Slider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">libavg.widget.slider.SliderBase</span></code></p>
+<p>Sliders are horizontal or vertical bar with a draggable thumb that can be used
+to set a value. In contrast to a scroll bar, the slider&#8217;s thumb has no range.</p>
+<p><strong>Messages:</strong></p>
+<blockquote>
+<div><p>To get these messages, call <code class="xref py py-meth docutils literal"><span class="pre">Publisher.subscribe()</span></code>.</p>
+<dl class="method">
+<dt id="libavg.widget.Slider.PRESSED">
+<code class="descname">PRESSED</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.Slider.PRESSED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when a drag is initiated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.widget.Slider.RELEASED">
+<code class="descname">RELEASED</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.Slider.RELEASED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when a drag is finished.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.widget.Slider.THUMB_POS_CHANGED">
+<code class="descname">THUMB_POS_CHANGED</code><span class="sig-paren">(</span><em>pos</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.Slider.THUMB_POS_CHANGED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when the thumb is dragged.</p>
+</dd></dl>
+
+</div></blockquote>
+<dl class="attribute">
+<dt id="libavg.widget.Slider.range">
+<code class="descname">range</code><a class="headerlink" href="#libavg.widget.Slider.range" title="Permalink to this definition">¶</a></dt>
+<dd><p>Minimum and maximum values for the thumb.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.widget.Slider.thumbPos">
+<code class="descname">thumbPos</code><a class="headerlink" href="#libavg.widget.Slider.thumbPos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.widget.SwitchNode">
+<em class="property">class </em><code class="descclassname">libavg.widget.</code><code class="descname">SwitchNode</code><span class="sig-paren">(</span><span class="optional">[</span><em>nodeMap=None</em>, <em>visibleid=None</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.SwitchNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="areanodes.html#libavg.avg.DivNode" title="libavg.avg.DivNode"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.DivNode</span></code></a></p>
+<p>A <code class="xref py py-class docutils literal"><span class="pre">DivNode</span></code> that keeps a map of child nodes and shows only one of
+the map members at any time.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodeMap</strong> (<em>map</em>) &#8211; A map <code class="xref py py-const docutils literal"><span class="pre">id-&gt;node</span></code> that contains the nodes to switch between.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="libavg.widget.SwitchNode.setNodeMap">
+<code class="descname">setNodeMap</code><span class="sig-paren">(</span><em>nodeMap</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.SwitchNode.setNodeMap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Can be used to set the <code class="xref py py-attr docutils literal"><span class="pre">nodeMap</span></code> after construction if no node map
+was set before.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.widget.SwitchNode.visibleid">
+<code class="descname">visibleid</code><a class="headerlink" href="#libavg.widget.SwitchNode.visibleid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The id of the visible child node.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.widget.TextButton">
+<em class="property">class </em><code class="descclassname">libavg.widget.</code><code class="descname">TextButton</code><span class="sig-paren">(</span><em>text</em><span class="optional">[</span>, <em>skinObj=skin.Skin.default</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.TextButton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">libavg.widget.button.Button</span></code></p>
+<p>A <a class="reference internal" href="#libavg.widget.Button" title="libavg.widget.Button"><code class="xref py py-class docutils literal"><span class="pre">Button</span></code></a> that is created using the given <a class="reference internal" href="#libavg.widget.Skin" title="libavg.widget.Skin"><code class="xref py py-class docutils literal"><span class="pre">Skin</span></code></a> and a text.</p>
+<dl class="attribute">
+<dt id="libavg.widget.TextButton.text">
+<code class="descname">text</code><a class="headerlink" href="#libavg.widget.TextButton.text" title="Permalink to this definition">¶</a></dt>
+<dd><p>The string displayed on the button.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.widget.TimeSlider">
+<em class="property">class </em><code class="descclassname">libavg.widget.</code><code class="descname">TimeSlider</code><a class="headerlink" href="#libavg.widget.TimeSlider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">libavg.widget.slider.Slider</span></code></p>
+<p>Works like a <a class="reference internal" href="#libavg.widget.ProgressBar" title="libavg.widget.ProgressBar"><code class="xref py py-class docutils literal"><span class="pre">ProgressBar</span></code></a> with an additional slider thumb.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.widget.ToggleButton">
+<em class="property">class </em><code class="descclassname">libavg.widget.</code><code class="descname">ToggleButton</code><span class="sig-paren">(</span><em>uncheckedUpNode</em>, <em>uncheckedDownNode</em>, <em>checkedUpNode</em>, <em>checkedDownNode</em><span class="optional">[</span>, <em>uncheckedDisabledNode=None</em>, <em>checkedDisabledNode=None</em>, <em>activeAreaNode=None</em>, <em>fatFingerEnlarge=False</em>, <em>enabled=True</em>, <em>checked=False</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.ToggleButton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">libavg.widget.button._ButtonBase</span></code></p>
+<p>A button that can be used to toggle between checked and unchecked states.
+Classical GUI checkboxes are an example of this kind of button.</p>
+<p>A <a class="reference internal" href="#libavg.widget.ToggleButton" title="libavg.widget.ToggleButton"><code class="xref py py-class docutils literal"><span class="pre">ToggleButton</span></code></a> has a total of six visual states. In addition to the
+distinction between checked and unchecked, a button can be enabled or disabled.
+Buttons also change their appearance as soon as they are touched, leading to two
+further states. For each visual state, a node is passed as constructor parameter.
+The constructor attaches the nodes to the <a class="reference internal" href="#libavg.widget.ToggleButton" title="libavg.widget.ToggleButton"><code class="xref py py-class docutils literal"><span class="pre">ToggleButton</span></code></a>.</p>
+<p>Uses the <code class="xref py py-class docutils literal"><span class="pre">TapRecognizer</span></code> to detect clicks.</p>
+<img alt="_images/ToggleButtonStates.png" src="_images/ToggleButtonStates.png" />
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>uncheckedUpNode</strong> (<a class="reference internal" href="basenodes.html#libavg.avg.Node" title="libavg.avg.Node"><em>avg.Node</em></a>) &#8211; The node displayed when the button is unchecked and not touched.</li>
+<li><strong>uncheckedDownNode</strong> (<a class="reference internal" href="basenodes.html#libavg.avg.Node" title="libavg.avg.Node"><em>avg.Node</em></a>) &#8211; The node displayed when the button is unchecked and touched.</li>
+<li><strong>checkedUpNode</strong> (<a class="reference internal" href="basenodes.html#libavg.avg.Node" title="libavg.avg.Node"><em>avg.Node</em></a>) &#8211; The node displayed when the button is checked and not touched.</li>
+<li><strong>checkedDownNode</strong> (<a class="reference internal" href="basenodes.html#libavg.avg.Node" title="libavg.avg.Node"><em>avg.Node</em></a>) &#8211; The node displayed when the button is checked and not touched.</li>
+<li><strong>uncheckedDisabledNode</strong> (<a class="reference internal" href="basenodes.html#libavg.avg.Node" title="libavg.avg.Node"><em>avg.Node</em></a>) &#8211; The node displayed when the button is unchecked and disabled.</li>
+<li><strong>checkedDisabledNode</strong> (<a class="reference internal" href="basenodes.html#libavg.avg.Node" title="libavg.avg.Node"><em>avg.Node</em></a>) &#8211; The node displayed when the button is checked and disabled.</li>
+<li><strong>activeAreaNode</strong> (<a class="reference internal" href="basenodes.html#libavg.avg.Node" title="libavg.avg.Node"><em>avg.Node</em></a>) &#8211; A node that is used only to determine if a click is over the button. Usually,
+this node is invisible. <code class="xref py py-attr docutils literal"><span class="pre">activeAreaNode</span></code> is useful for small touch
+buttons, where the active area should be larger than the visible button to
+account for touch inaccuracies.</li>
+<li><strong>fatFingerEnlarge</strong> (<em>bool</em>) &#8211; If this parameter is set to <code class="xref py py-const docutils literal"><span class="pre">True</span></code>, the button generates its own
+internal <code class="xref py py-attr docutils literal"><span class="pre">activeAreaNode</span></code> that is at least 20x20mm large.
+<code class="xref py py-attr docutils literal"><span class="pre">fatFingerEnlarge</span></code> is incompatible with a custom
+<code class="xref py py-attr docutils literal"><span class="pre">activeAreaNode</span></code>.</li>
+<li><strong>checked</strong> (<em>bool</em>) &#8211; If this parameter is set to <code class="xref py py-const docutils literal"><span class="pre">True</span></code>, the button starts in the checked
+state.</li>
+<li><strong>enabled</strong> (<em>bool</em>) &#8211; If this parameter is set to <code class="xref py py-const docutils literal"><span class="pre">True</span></code>, the button starts in the
+disabled state.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Messages:</strong></p>
+<blockquote>
+<div><p>To get these messages, call <code class="xref py py-meth docutils literal"><span class="pre">Publisher.subscribe()</span></code>.</p>
+<dl class="method">
+<dt id="libavg.widget.ToggleButton.Button.PRESSED">
+<code class="descclassname">Button.</code><code class="descname">PRESSED</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.ToggleButton.Button.PRESSED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a tap on the button is initiated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.widget.ToggleButton.Button.RELEASED">
+<code class="descclassname">Button.</code><code class="descname">RELEASED</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.ToggleButton.Button.RELEASED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when a tap on the button ends. Emitted for both successful and
+aborted taps.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.widget.ToggleButton.Button.TOGGLED">
+<code class="descclassname">Button.</code><code class="descname">TOGGLED</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.ToggleButton.Button.TOGGLED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when the button changes from unchecked to checked or vice-versa.</p>
+</dd></dl>
+
+</div></blockquote>
+<dl class="attribute">
+<dt id="libavg.widget.ToggleButton.checked">
+<code class="descname">checked</code><a class="headerlink" href="#libavg.widget.ToggleButton.checked" title="Permalink to this definition">¶</a></dt>
+<dd><p>The state of the toggle.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.widget.ToggleButton.enabled">
+<code class="descname">enabled</code><a class="headerlink" href="#libavg.widget.ToggleButton.enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether the button accepts input.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.widget.VStretchNode">
+<em class="property">class </em><code class="descclassname">libavg.widget.</code><code class="descname">VStretchNode</code><span class="sig-paren">(</span><em>endsExtent</em><span class="optional">[</span>, <em>src=None</em>, <em>minExtent=-1</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#libavg.widget.VStretchNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">libavg.widget.base._StretchNodeBase</span></code></p>
+<p>A node that stretches its graphics to fill the size given vertically. It is used
+as base component for scrollbars. The base
+bitmap is split into three parts: top, center and bottom. The top and bottom parts
+are <code class="xref py py-attr docutils literal"><span class="pre">endsExtent</span></code> wide and generated from the corresponding parts of the
+source bitmap. The center part is generated from a one pixel high slice of the
+source bitmap and stretched to fill the space left between the top and bottom
+parts.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>endsExtent</strong> (<em>int</em>) &#8211; Width of the top and bottom bitmaps in pixels.</li>
+<li><strong>src</strong> &#8211; Either the name of a bitmap file or a <code class="xref py py-class docutils literal"><span class="pre">Bitmap</span></code> object. Used to
+generate the graphics used.</li>
+<li><strong>minExtent</strong> (<em>int</em>) &#8211; Minimum vertical size. The default of <code class="xref py py-const docutils literal"><span class="pre">-1</span></code> uses
+<code class="xref py py-const docutils literal"><span class="pre">2*endsExtent+1</span></code> as minimum.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="misc.html" title="Misc. Classes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="gesture.html" title="Gesture Support"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">libavg 1.8.dev documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, Ulrich von Zadow.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.6.
+    </div>
+  </body>
+</html>

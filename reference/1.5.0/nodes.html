@@ -1,0 +1,1738 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Nodes &mdash; libavg v1.5.0 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.5.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="libavg v1.5.0 documentation" href="index.html" />
+    <link rel="next" title="Event Handling" href="events.html" />
+    <link rel="prev" title="Player &amp; Canvas" href="player.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="events.html" title="Event Handling"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="player.html" title="Player &amp; Canvas"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">libavg v1.5.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="player.html"
+                        title="previous chapter">Player &amp; Canvas</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="events.html"
+                        title="next chapter">Event Handling</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/nodes.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-libavg.avg">
+<span id="nodes"></span><h1>Nodes<a class="headerlink" href="#module-libavg.avg" title="Permalink to this headline">¶</a></h1>
+<p class="graphviz">
+<img src="_images/inheritance-6de9bea156b7b84226b57bd19329468d08850316.png" alt="Inheritance diagram of AreaNode, CameraNode, CanvasNode, CircleNode, CurveNode, DivNode, FilledVectorNode, ImageNode, LineNode, MeshNode, Node, PanoImageNode, PolygonNode, PolyLineNode, RasterNode, RectNode, SoundNode, VectorNode, VideoNode, VisibleNode, WordsNode" usemap="#inheritanceb708ec1829" class="inheritance"/>
+<map id="inheritanceb708ec1829" name="inheritanceb708ec1829">
+<area shape="rect" id="node1" href="#libavg.avg.VectorNode" title="VectorNode" alt="" coords="368,168,457,194"/>
+<area shape="rect" id="node5" href="#libavg.avg.FilledVectorNode" title="FilledVectorNode" alt="" coords="502,51,620,77"/>
+<area shape="rect" id="node7" href="#libavg.avg.LineNode" title="LineNode" alt="" coords="523,98,599,124"/>
+<area shape="rect" id="node14" href="#libavg.avg.CurveNode" title="CurveNode" alt="" coords="518,145,604,170"/>
+<area shape="rect" id="node21" href="#libavg.avg.MeshNode" title="MeshNode" alt="" coords="519,191,603,217"/>
+<area shape="rect" id="node40" href="#libavg.avg.PolyLineNode" title="PolyLineNode" alt="" coords="512,238,610,264"/>
+<area shape="rect" id="node2" href="#libavg.avg.VisibleNode" title="VisibleNode" alt="" coords="233,262,321,287"/>
+<area shape="rect" id="node12" href="#libavg.avg.AreaNode" title="AreaNode" alt="" coords="373,332,452,358"/>
+<area shape="rect" id="node4" href="#libavg.avg.CircleNode" title="CircleNode" alt="" coords="672,4,756,30"/>
+<area shape="rect" id="node25" href="#libavg.avg.RectNode" title="RectNode" alt="" coords="676,51,752,77"/>
+<area shape="rect" id="node31" href="#libavg.avg.PolygonNode" title="PolygonNode" alt="" coords="665,98,763,124"/>
+<area shape="rect" id="node9" href="#libavg.avg.VideoNode" title="VideoNode" alt="" coords="672,191,756,217"/>
+<area shape="rect" id="node10" href="#libavg.avg.RasterNode" title="RasterNode" alt="" coords="517,285,606,311"/>
+<area shape="rect" id="node19" href="#libavg.avg.WordsNode" title="WordsNode" alt="" coords="671,238,757,264"/>
+<area shape="rect" id="node23" href="#libavg.avg.CameraNode" title="CameraNode" alt="" coords="665,285,763,311"/>
+<area shape="rect" id="node34" href="#libavg.avg.ImageNode" title="ImageNode" alt="" coords="670,332,758,358"/>
+<area shape="rect" id="node17" href="#libavg.avg.DivNode" title="DivNode" alt="" coords="527,332,596,358"/>
+<area shape="rect" id="node27" href="#libavg.avg.PanoImageNode" title="PanoImageNode" alt="" coords="503,378,619,404"/>
+<area shape="rect" id="node42" href="#libavg.avg.SoundNode" title="SoundNode" alt="" coords="517,425,606,451"/>
+<area shape="rect" id="node16" href="#libavg.avg.CanvasNode" title="CanvasNode" alt="" coords="667,378,761,404"/>
+<area shape="rect" id="node29" href="#libavg.avg.Node" title="Node" alt="" coords="121,262,187,287"/>
+</map>
+</p>
+<dl class="class">
+<dt id="libavg.avg.AVGNode">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">AVGNode</tt><a class="headerlink" href="#libavg.avg.AVGNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.CanvasNode" title="libavg.avg.CanvasNode"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.CanvasNode</span></tt></a></p>
+<p>Root node of an onscreen avg tree. Defines the properties of the display
+and handles key press events. The AVGNode&#8217;s width and height define the
+coordinate system for the display and are the default for the window
+size used (i.e. by default, the coordinate system is pixel-based).</p>
+<dl class="method">
+<dt id="libavg.avg.AVGNode.__init__">
+<tt class="descname">__init__</tt><big>(</big><span class="optional">[</span><em>onkeydown: string</em>, <em>onkeyup: string</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.AVGNode.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>onkeyup</strong> (<em>string</em>) &#8211; <p>Name of python function to call when a key up
+event occurs.</p>
+<p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.5: </span>Use <a class="reference internal" href="#libavg.avg.VisibleNode.setEventHandler" title="libavg.avg.VisibleNode.setEventHandler"><tt class="xref py py-func docutils literal"><span class="pre">VisibleNode.setEventHandler()</span></tt></a> instead.</p>
+</li>
+<li><strong>onkeydown</strong> (<em>string</em>) &#8211; <p>Name of python function to call when a key
+down event occurs.</p>
+<p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.5: </span>Use <a class="reference internal" href="#libavg.avg.VisibleNode.setEventHandler" title="libavg.avg.VisibleNode.setEventHandler"><tt class="xref py py-func docutils literal"><span class="pre">VisibleNode.setEventHandler()</span></tt></a> instead.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.AreaNode">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">AreaNode</tt><a class="headerlink" href="#libavg.avg.AreaNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.VisibleNode" title="libavg.avg.VisibleNode"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.VisibleNode</span></tt></a></p>
+<p>Base class for elements in the avg tree that define an area on the screen.
+Responsible for coordinate transformations and event handling. See
+<a class="reference external" href="http://www.libavg.de/wiki/index.php/Coordinate_Systems">http://www.libavg.de/wiki/index.php/Coordinate_Systems</a>
+for an explanation of coordinate systems and reference points.</p>
+<dl class="method">
+<dt id="libavg.avg.AreaNode.__init__">
+<tt class="descname">__init__</tt><big>(</big><span class="optional">[</span><em>x</em>, <em>y</em>, <em>pos</em>, <em>width</em>, <em>height</em>, <em>size</em>, <em>angle</em>, <em>pivot</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.AreaNode.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.AreaNode.getMediaSize">
+<tt class="descname">getMediaSize</tt><big>(</big><big>)</big> &rarr; avg.Point2D<a class="headerlink" href="#libavg.avg.AreaNode.getMediaSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the size in pixels of the media in the node. Image nodes
+return the bitmap size, Camera nodes
+the size of a camera frame and Words nodes the amount of space
+the text takes. Video nodes return the video size if decoding has
+started or (0,0) if not. Decoding starts after <tt class="xref py py-func docutils literal"><span class="pre">play()</span></tt> or
+<tt class="xref py py-func docutils literal"><span class="pre">pause()</span></tt>
+is called and the node can be rendered.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.AreaNode.x">
+<tt class="descname">x</tt><a class="headerlink" href="#libavg.avg.AreaNode.x" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the horizontal position of the node&#8217;s reference point
+relative to it&#8217;s parent node.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.AreaNode.y">
+<tt class="descname">y</tt><a class="headerlink" href="#libavg.avg.AreaNode.y" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the vertical position of the node&#8217;s reference point
+relative to it&#8217;s parent node.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.AreaNode.pos">
+<tt class="descname">pos</tt><a class="headerlink" href="#libavg.avg.AreaNode.pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the position of the node&#8217;s reference point
+relative to it&#8217;s parent node.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.AreaNode.width">
+<tt class="descname">width</tt><a class="headerlink" href="#libavg.avg.AreaNode.width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.AreaNode.height">
+<tt class="descname">height</tt><a class="headerlink" href="#libavg.avg.AreaNode.height" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.AreaNode.angle">
+<tt class="descname">angle</tt><a class="headerlink" href="#libavg.avg.AreaNode.angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>The angle that the node is rotated to in radians. 0 is
+unchanged, 3.14 is upside-down.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.AreaNode.size">
+<tt class="descname">size</tt><a class="headerlink" href="#libavg.avg.AreaNode.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>The size that the node takes on the canvas. Node types usually have sensible
+defaults for the size. For media nodes, this is generally the size of the
+media (so <tt class="samp docutils literal"><span class="pre">size</span> <span class="pre">==</span> <span class="pre">getMediaSize()</span></tt>). For DivNodes, the default size is
+infinite.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.AreaNode.pivot">
+<tt class="descname">pivot</tt><a class="headerlink" href="#libavg.avg.AreaNode.pivot" title="Permalink to this definition">¶</a></dt>
+<dd><p>The position of the point that the node is rotated around.
+Default is the center of the node.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.CameraNode">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">CameraNode</tt><a class="headerlink" href="#libavg.avg.CameraNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.RasterNode" title="libavg.avg.RasterNode"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.RasterNode</span></tt></a></p>
+<p>A node that displays the image of a camera. The attributes correspond to the
+camera properties in .avgtrackerrc and are explained under
+<a class="reference external" href="http://www.libavg.de/wiki/index.php/Tracker_Setup">http://www.libavg.de/wiki/index.php/Tracker_Setup</a>. An easy way to find the
+appropriate parameters for your camera is to use <strong class="command">avg_showcamera.py</strong>.</p>
+<p>CameraNodes open the camera device on construction and set the chosen camera
+parameters immediately.</p>
+<dl class="method">
+<dt id="libavg.avg.CameraNode.__init__">
+<tt class="descname">__init__</tt><big>(</big><span class="optional">[</span><em>driver='firewire'</em>, <em>device=&quot;&quot;</em>, <em>unit=-1</em>, <em>fw800=False</em>, <em>framerate=15</em>, <em>capturewidth=640</em>, <em>captureheight=480</em>, <em>pixelformat=&quot;RGB&quot;</em>, <em>brightness</em>, <em>exposure</em>, <em>sharpness</em>, <em>saturation</em>, <em>camgamma</em>, <em>shutter</em>, <em>gain</em>, <em>strobeduration</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.CameraNode.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CameraNode.brightness">
+<tt class="descname">brightness</tt><a class="headerlink" href="#libavg.avg.CameraNode.brightness" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CameraNode.camgamma">
+<tt class="descname">camgamma</tt><a class="headerlink" href="#libavg.avg.CameraNode.camgamma" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CameraNode.device">
+<tt class="descname">device</tt><a class="headerlink" href="#libavg.avg.CameraNode.device" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CameraNode.driver">
+<tt class="descname">driver</tt><a class="headerlink" href="#libavg.avg.CameraNode.driver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CameraNode.framenum">
+<tt class="descname">framenum</tt><a class="headerlink" href="#libavg.avg.CameraNode.framenum" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of frames the camera has read since playback started. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CameraNode.framerate">
+<tt class="descname">framerate</tt><a class="headerlink" href="#libavg.avg.CameraNode.framerate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CameraNode.gain">
+<tt class="descname">gain</tt><a class="headerlink" href="#libavg.avg.CameraNode.gain" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CameraNode.saturation">
+<tt class="descname">saturation</tt><a class="headerlink" href="#libavg.avg.CameraNode.saturation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CameraNode.sharpness">
+<tt class="descname">sharpness</tt><a class="headerlink" href="#libavg.avg.CameraNode.sharpness" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CameraNode.shutter">
+<tt class="descname">shutter</tt><a class="headerlink" href="#libavg.avg.CameraNode.shutter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CameraNode.strobeduration">
+<tt class="descname">strobeduration</tt><a class="headerlink" href="#libavg.avg.CameraNode.strobeduration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.CameraNode.doOneShotWhitebalance">
+<tt class="descname">doOneShotWhitebalance</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.CameraNode.doOneShotWhitebalance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.CameraNode.getWhitebalanceU">
+<tt class="descname">getWhitebalanceU</tt><big>(</big><big>)</big> &rarr; int<a class="headerlink" href="#libavg.avg.CameraNode.getWhitebalanceU" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.CameraNode.getWhitebalanceV">
+<tt class="descname">getWhitebalanceV</tt><big>(</big><big>)</big> &rarr; int<a class="headerlink" href="#libavg.avg.CameraNode.getWhitebalanceV" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.CameraNode.isAvailable">
+<tt class="descname">isAvailable</tt><big>(</big><big>)</big> &rarr; bool<a class="headerlink" href="#libavg.avg.CameraNode.isAvailable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns <tt class="xref std std-keyword xref docutils literal"><span class="pre">True</span></tt> if there is a working device that can deliver images
+attached to the CameraNode.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.CameraNode.play">
+<tt class="descname">play</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.CameraNode.play" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts reading images from the camera device and displays them. Note that the
+camera device is opened on construction of the CameraNode.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.CameraNode.setWhitebalance">
+<tt class="descname">setWhitebalance</tt><big>(</big><em>u</em>, <em>v</em><big>)</big><a class="headerlink" href="#libavg.avg.CameraNode.setWhitebalance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.CameraNode.stop">
+<tt class="descname">stop</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.CameraNode.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops camera playback.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="libavg.avg.CameraNode.dumpCameras">
+<em class="property">classmethod </em><tt class="descname">dumpCameras</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.CameraNode.dumpCameras" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dumps a list of available cameras to the console.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="libavg.avg.CameraNode.resetFirewireBus">
+<em class="property">classmethod </em><tt class="descname">resetFirewireBus</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.CameraNode.resetFirewireBus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Frees all allocated bandwidth and devices on the firewire bus. Helpful
+if a program using a firewire device has crashed leaving resources
+allocated. Note that all firewire devices (including for instance
+external hard drives) are affected.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.CanvasNode">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">CanvasNode</tt><a class="headerlink" href="#libavg.avg.CanvasNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.DivNode" title="libavg.avg.DivNode"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.DivNode</span></tt></a></p>
+<p>Root node of a scene graph.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.CircleNode">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">CircleNode</tt><a class="headerlink" href="#libavg.avg.CircleNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.FilledVectorNode" title="libavg.avg.FilledVectorNode"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.FilledVectorNode</span></tt></a></p>
+<p>A circle. The reference point for a circle is it&#8217;s center.</p>
+<dl class="method">
+<dt id="libavg.avg.CircleNode.__init__">
+<tt class="descname">__init__</tt><big>(</big><span class="optional">[</span><em>r=1</em>, <em>texcoord1=0</em>, <em>texcoord2=1</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.CircleNode.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CircleNode.r">
+<tt class="descname">r</tt><a class="headerlink" href="#libavg.avg.CircleNode.r" title="Permalink to this definition">¶</a></dt>
+<dd><p>The radius of the circle in pixels.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CircleNode.texcoord1">
+<tt class="descname">texcoord1</tt><a class="headerlink" href="#libavg.avg.CircleNode.texcoord1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CircleNode.texcoord2">
+<tt class="descname">texcoord2</tt><a class="headerlink" href="#libavg.avg.CircleNode.texcoord2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.CurveNode">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">CurveNode</tt><a class="headerlink" href="#libavg.avg.CurveNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.VectorNode" title="libavg.avg.VectorNode"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.VectorNode</span></tt></a></p>
+<p>A bezier curve (<a class="reference external" href="http://en.wikipedia.org/wiki/Bezier_curve">http://en.wikipedia.org/wiki/Bezier_curve</a>). <a class="reference internal" href="#libavg.avg.CurveNode.pos1" title="libavg.avg.CurveNode.pos1"><tt class="xref py py-attr docutils literal"><span class="pre">pos1</span></tt></a>
+and <a class="reference internal" href="#libavg.avg.CurveNode.pos4" title="libavg.avg.CurveNode.pos4"><tt class="xref py py-attr docutils literal"><span class="pre">pos4</span></tt></a> are the two endpoints of the curve. <a class="reference internal" href="#libavg.avg.CurveNode.pos2" title="libavg.avg.CurveNode.pos2"><tt class="xref py py-attr docutils literal"><span class="pre">pos2</span></tt></a>
+and <a class="reference internal" href="#libavg.avg.CurveNode.pos3" title="libavg.avg.CurveNode.pos3"><tt class="xref py py-attr docutils literal"><span class="pre">pos3</span></tt></a> are control points.</p>
+<dl class="method">
+<dt id="libavg.avg.CurveNode.__init__">
+<tt class="descname">__init__</tt><big>(</big><span class="optional">[</span><em>pos1</em>, <em>pos2</em>, <em>pos3</em>, <em>pos4</em>, <em>texcoord1</em>, <em>texcoord2</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.CurveNode.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CurveNode.pos1">
+<tt class="descname">pos1</tt><a class="headerlink" href="#libavg.avg.CurveNode.pos1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CurveNode.pos2">
+<tt class="descname">pos2</tt><a class="headerlink" href="#libavg.avg.CurveNode.pos2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CurveNode.pos3">
+<tt class="descname">pos3</tt><a class="headerlink" href="#libavg.avg.CurveNode.pos3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CurveNode.pos4">
+<tt class="descname">pos4</tt><a class="headerlink" href="#libavg.avg.CurveNode.pos4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CurveNode.texcoord1">
+<tt class="descname">texcoord1</tt><a class="headerlink" href="#libavg.avg.CurveNode.texcoord1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.CurveNode.texcoord2">
+<tt class="descname">texcoord2</tt><a class="headerlink" href="#libavg.avg.CurveNode.texcoord2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.DivNode">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">DivNode</tt><a class="headerlink" href="#libavg.avg.DivNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.AreaNode" title="libavg.avg.AreaNode"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.AreaNode</span></tt></a></p>
+<p>A div node is a node that groups other nodes logically and visually.
+Its positino is used as point of origin for the coordinates
+of its child nodes. Its extents can be used to clip the children if crop is set
+to <tt class="xref std std-keyword xref docutils literal"><span class="pre">True</span></tt>. Its opacity is used as base opacity for the child nodes&#8217;
+opacities. The children of a div node are drawn in the order they are found
+in the avg file, so the first one is below all others in z-order.</p>
+<dl class="method">
+<dt id="libavg.avg.DivNode.__init__">
+<tt class="descname">__init__</tt><big>(</big><span class="optional">[</span><em>crop=False</em>, <em>elementoutlinecolor</em>, <em>mediadir</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.DivNode.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.DivNode.crop">
+<tt class="descname">crop</tt><a class="headerlink" href="#libavg.avg.DivNode.crop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Boolean that turns clipping on or off.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.DivNode.elementoutlinecolor">
+<tt class="descname">elementoutlinecolor</tt><a class="headerlink" href="#libavg.avg.DivNode.elementoutlinecolor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows debugging of div node nesting by rendering the outlines of
+this div and all its div children in the specified color (given in html hex
+format). Turn off by setting the color to the empty string.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.DivNode.mediadir">
+<tt class="descname">mediadir</tt><a class="headerlink" href="#libavg.avg.DivNode.mediadir" title="Permalink to this definition">¶</a></dt>
+<dd><p>The directory that the media files for the children of this node are
+in. Relative mediadirs are taken to mean subdirectories of the parent node&#8217;s
+mediadir.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.DivNode.getNumChildren">
+<tt class="descname">getNumChildren</tt><big>(</big><big>)</big> &rarr; int<a class="headerlink" href="#libavg.avg.DivNode.getNumChildren" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of immediate children that this div contains.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.DivNode.getChild">
+<tt class="descname">getChild</tt><big>(</big><em>i</em><big>)</big> &rarr; Node<a class="headerlink" href="#libavg.avg.DivNode.getChild" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the child at index i.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.DivNode.appendChild">
+<tt class="descname">appendChild</tt><big>(</big><em>node</em><big>)</big><a class="headerlink" href="#libavg.avg.DivNode.appendChild" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new child to the container behind the last existing child.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.DivNode.insertChildBefore">
+<tt class="descname">insertChildBefore</tt><big>(</big><em>newNode</em>, <em>oldChild</em><big>)</big><a class="headerlink" href="#libavg.avg.DivNode.insertChildBefore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new child to the container before the existing node
+oldChild. In z-order, the new child ist behind the old one.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.DivNode.insertChildAfter">
+<tt class="descname">insertChildAfter</tt><big>(</big><em>newNode</em>, <em>oldChild</em><big>)</big><a class="headerlink" href="#libavg.avg.DivNode.insertChildAfter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new child to the container after the existing node
+oldChild. In z-order, the new child ist in front of the old one.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.DivNode.insertChild">
+<tt class="descname">insertChild</tt><big>(</big><em>node</em>, <em>i</em><big>)</big><a class="headerlink" href="#libavg.avg.DivNode.insertChild" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a new child to the container at index i.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.DivNode.removeChild">
+<tt class="descname">removeChild</tt><big>(</big><em>node</em><big>)</big><a class="headerlink" href="#libavg.avg.DivNode.removeChild" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the child given by node from the div. Note that as long as other
+references to the node exist, the node is not deleted.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">removeChild</tt><big>(</big><em>i</em><big>)</big></dt>
+<dd><p>Removes the child at index i from the div. Note that as long as other
+references to the node exist, the node is not deleted.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.DivNode.reorderChild">
+<tt class="descname">reorderChild</tt><big>(</big><em>oldIndex</em>, <em>newIndex</em><big>)</big><a class="headerlink" href="#libavg.avg.DivNode.reorderChild" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moves the child at oldIndex so it&#8217;s at newIndex. This function
+can be used to change the order in which the children are drawn.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">reorderChild</tt><big>(</big><em>node</em>, <em>newPos</em><big>)</big></dt>
+<dd><p>Moves the child node so it&#8217;s at index newPos. This function
+can be used to change the order in which the children are drawn.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.DivNode.indexOf">
+<tt class="descname">indexOf</tt><big>(</big><em>node</em><big>)</big><a class="headerlink" href="#libavg.avg.DivNode.indexOf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the index of the node given or -1 if node isn&#8217;t a
+child of the container.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.DivNode.getEffectiveMediaDir">
+<tt class="descname">getEffectiveMediaDir</tt><big>(</big><big>)</big> &rarr; string<a class="headerlink" href="#libavg.avg.DivNode.getEffectiveMediaDir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the nodes&#8217; effective mediadir by traversing the node
+hierarchy up to the root node.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.FilledVectorNode">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">FilledVectorNode</tt><a class="headerlink" href="#libavg.avg.FilledVectorNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.VectorNode" title="libavg.avg.VectorNode"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.VectorNode</span></tt></a></p>
+<p>Base class for vector nodes which have a filled area and a border. The area can
+be filled either with a solid color (<a class="reference internal" href="#libavg.avg.FilledVectorNode.fillcolor" title="libavg.avg.FilledVectorNode.fillcolor"><tt class="xref py py-attr docutils literal"><span class="pre">fillcolor</span></tt></a>) or with a texture
+loaded from a file (<a class="reference internal" href="#libavg.avg.FilledVectorNode.filltexhref" title="libavg.avg.FilledVectorNode.filltexhref"><tt class="xref py py-attr docutils literal"><span class="pre">filltexhref</span></tt></a>) or taken from a bitmap object
+(<a class="reference internal" href="#libavg.avg.FilledVectorNode.setFillBitmap" title="libavg.avg.FilledVectorNode.setFillBitmap"><tt class="xref py py-meth docutils literal"><span class="pre">setFillBitmap()</span></tt></a>).</p>
+<dl class="method">
+<dt id="libavg.avg.FilledVectorNode.__init__">
+<tt class="descname">__init__</tt><big>(</big><span class="optional">[</span><em>filltexhref</em>, <em>fillopacity=0</em>, <em>fillcolor=&quot;FFFFFF&quot;</em>, <em>filltexcoord1=Point2D(0</em>, <em>0)</em>, <em>filltexcoord2=Point2D(1</em>, <em>1)</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.FilledVectorNode.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.FilledVectorNode.fillcolor">
+<tt class="descname">fillcolor</tt><a class="headerlink" href="#libavg.avg.FilledVectorNode.fillcolor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.FilledVectorNode.fillopacity">
+<tt class="descname">fillopacity</tt><a class="headerlink" href="#libavg.avg.FilledVectorNode.fillopacity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.FilledVectorNode.filltexcoord1">
+<tt class="descname">filltexcoord1</tt><a class="headerlink" href="#libavg.avg.FilledVectorNode.filltexcoord1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.FilledVectorNode.filltexcoord2">
+<tt class="descname">filltexcoord2</tt><a class="headerlink" href="#libavg.avg.FilledVectorNode.filltexcoord2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.FilledVectorNode.filltexhref">
+<tt class="descname">filltexhref</tt><a class="headerlink" href="#libavg.avg.FilledVectorNode.filltexhref" title="Permalink to this definition">¶</a></dt>
+<dd><p>An image file to use as a texture for the area of the node.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.FilledVectorNode.setFillBitmap">
+<tt class="descname">setFillBitmap</tt><big>(</big><em>bitmap</em><big>)</big><a class="headerlink" href="#libavg.avg.FilledVectorNode.setFillBitmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a bitmap to use as a fill texture. Sets <a class="reference internal" href="#libavg.avg.FilledVectorNode.filltexhref" title="libavg.avg.FilledVectorNode.filltexhref"><tt class="xref py py-attr docutils literal"><span class="pre">filltexhref</span></tt></a> to an empty
+string.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.ImageNode">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">ImageNode</tt><a class="headerlink" href="#libavg.avg.ImageNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.RasterNode" title="libavg.avg.RasterNode"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.RasterNode</span></tt></a></p>
+<p>A static raster image on the screen. The content of an ImageNode can be loaded
+from a file. It can also come from a <a class="reference internal" href="misc.html#libavg.avg.Bitmap" title="libavg.avg.Bitmap"><tt class="xref py py-class docutils literal"><span class="pre">Bitmap</span></tt></a> object or from an
+<a class="reference internal" href="player.html#libavg.avg.OffscreenCanvas" title="libavg.avg.OffscreenCanvas"><tt class="xref py py-class docutils literal"><span class="pre">OffscreenCanvas</span></tt></a>. Alpha channels of the image files are used as
+transparency information.</p>
+<dl class="method">
+<dt id="libavg.avg.ImageNode.__init__">
+<tt class="descname">__init__</tt><big>(</big><span class="optional">[</span><em>href</em>, <em>compression</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.ImageNode.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.ImageNode.compression">
+<tt class="descname">compression</tt><a class="headerlink" href="#libavg.avg.ImageNode.compression" title="Permalink to this definition">¶</a></dt>
+<dd><p>The texture compression used for this image. Currently, <tt class="xref py py-const docutils literal"><span class="pre">none</span></tt>
+and <tt class="xref py py-const docutils literal"><span class="pre">B5G6R5</span></tt> are supported. <tt class="xref py py-const docutils literal"><span class="pre">B5G6R5</span></tt> causes the bitmap
+to be compressed to 16 bit per pixel on load and is only valid if the source
+is a filename. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.ImageNode.href">
+<tt class="descname">href</tt><a class="headerlink" href="#libavg.avg.ImageNode.href" title="Permalink to this definition">¶</a></dt>
+<dd><p>In the standard case, this is the source filename of the image. To use a
+bitmap as source, call setBitmap().  To use an offscreen canvas as source,
+use the <tt class="samp docutils literal"><span class="pre">canvas:</span></tt> protocol: <tt class="samp docutils literal"><span class="pre">href=&quot;canvas:</span><em><span class="pre">id</span></em><span class="pre">&quot;</span></tt>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.ImageNode.setBitmap">
+<tt class="descname">setBitmap</tt><big>(</big><em>bitmap</em><big>)</big><a class="headerlink" href="#libavg.avg.ImageNode.setBitmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a bitmap to use as content for the ImageNode. Sets href to an empty
+string.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.LineNode">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">LineNode</tt><a class="headerlink" href="#libavg.avg.LineNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.VectorNode" title="libavg.avg.VectorNode"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.VectorNode</span></tt></a></p>
+<p>A line. <a class="reference internal" href="#libavg.avg.LineNode.pos1" title="libavg.avg.LineNode.pos1"><tt class="xref py py-attr docutils literal"><span class="pre">pos1</span></tt></a> and <a class="reference internal" href="#libavg.avg.LineNode.pos2" title="libavg.avg.LineNode.pos2"><tt class="xref py py-attr docutils literal"><span class="pre">pos2</span></tt></a> are the two endpoints of the line.</p>
+<dl class="method">
+<dt id="libavg.avg.LineNode.__init__">
+<tt class="descname">__init__</tt><big>(</big><span class="optional">[</span><em>pos1</em>, <em>pos2</em>, <em>texcoord1</em>, <em>texcoord2</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.LineNode.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.LineNode.pos1">
+<tt class="descname">pos1</tt><a class="headerlink" href="#libavg.avg.LineNode.pos1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.LineNode.pos2">
+<tt class="descname">pos2</tt><a class="headerlink" href="#libavg.avg.LineNode.pos2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.LineNode.texcoord1">
+<tt class="descname">texcoord1</tt><a class="headerlink" href="#libavg.avg.LineNode.texcoord1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.LineNode.texcoord2">
+<tt class="descname">texcoord2</tt><a class="headerlink" href="#libavg.avg.LineNode.texcoord2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.MeshNode">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">MeshNode</tt><a class="headerlink" href="#libavg.avg.MeshNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.VectorNode" title="libavg.avg.VectorNode"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.VectorNode</span></tt></a></p>
+<p>This is a generalized mesh of textured triangles. See
+<a class="reference external" href="https://www.libavg.de/wiki/index.php/Mesh_Node">https://www.libavg.de/wiki/index.php/Mesh_Node</a> for an example.</p>
+<dl class="method">
+<dt id="libavg.avg.MeshNode.__init__">
+<tt class="descname">__init__</tt><big>(</big><span class="optional">[</span><em>vertexcoords</em>, <em>texcoords</em>, <em>triangles</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.MeshNode.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.MeshNode.texcoords">
+<tt class="descname">texcoords</tt><a class="headerlink" href="#libavg.avg.MeshNode.texcoords" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.MeshNode.triangles">
+<tt class="descname">triangles</tt><a class="headerlink" href="#libavg.avg.MeshNode.triangles" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.MeshNode.vertexcoords">
+<tt class="descname">vertexcoords</tt><a class="headerlink" href="#libavg.avg.MeshNode.vertexcoords" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.Node">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">Node</tt><a class="headerlink" href="#libavg.avg.Node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></tt></p>
+<p>Base class for everything that can be put into an avg tree.</p>
+<dl class="method">
+<dt id="libavg.avg.Node.__init__">
+<tt class="descname">__init__</tt><big>(</big><span class="optional">[</span><em>id: string</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.Node.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.Node.id">
+<tt class="descname">id</tt><a class="headerlink" href="#libavg.avg.Node.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unique identifier that can be used to reference the node, for instance using
+<a class="reference internal" href="player.html#libavg.avg.Player.getElementByID" title="libavg.avg.Player.getElementByID"><tt class="xref py py-meth docutils literal"><span class="pre">Player.getElementByID()</span></tt></a>. Read-only.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.PanoImageNode">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">PanoImageNode</tt><a class="headerlink" href="#libavg.avg.PanoImageNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.AreaNode" title="libavg.avg.AreaNode"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.AreaNode</span></tt></a></p>
+<p>A panorama image displayed in cylindrical projection.</p>
+<p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.5: </span>This is unsupported and probably buggy.</p>
+<dl class="method">
+<dt id="libavg.avg.PanoImageNode.__init__">
+<tt class="descname">__init__</tt><big>(</big><span class="optional">[</span><em>href</em>, <em>sensorwidth</em>, <em>sensorheight</em>, <em>focallength</em>, <em>rotation</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.PanoImageNode.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.PanoImageNode.focallength">
+<tt class="descname">focallength</tt><a class="headerlink" href="#libavg.avg.PanoImageNode.focallength" title="Permalink to this definition">¶</a></dt>
+<dd><p>The focal length of the lens in millimeters.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.PanoImageNode.href">
+<tt class="descname">href</tt><a class="headerlink" href="#libavg.avg.PanoImageNode.href" title="Permalink to this definition">¶</a></dt>
+<dd><p>The source filename of the image.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.PanoImageNode.maxrotation">
+<tt class="descname">maxrotation</tt><a class="headerlink" href="#libavg.avg.PanoImageNode.maxrotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>The maximum angle the viewer can look at. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.PanoImageNode.rotation">
+<tt class="descname">rotation</tt><a class="headerlink" href="#libavg.avg.PanoImageNode.rotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>The current angle the viewer is looking at in radians.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.PanoImageNode.sensorheight">
+<tt class="descname">sensorheight</tt><a class="headerlink" href="#libavg.avg.PanoImageNode.sensorheight" title="Permalink to this definition">¶</a></dt>
+<dd><p>The height of the sensor used to make the image.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.PanoImageNode.sensorwidth">
+<tt class="descname">sensorwidth</tt><a class="headerlink" href="#libavg.avg.PanoImageNode.sensorwidth" title="Permalink to this definition">¶</a></dt>
+<dd><p>The width of the sensor used to make the image. This value
+is used together with sensorheight and focallength to
+determine the projection to use.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.PanoImageNode.getScreenPosFromPanoPos">
+<tt class="descname">getScreenPosFromPanoPos</tt><big>(</big><em>panoPos: Point2D</em><big>)</big> &rarr; Point2D<a class="headerlink" href="#libavg.avg.PanoImageNode.getScreenPosFromPanoPos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a position in panorama image pixels to pixels in coordinates
+relative to the node, taking into account the current rotation angle.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.PanoImageNode.getScreenPosFromAngle">
+<tt class="descname">getScreenPosFromAngle</tt><big>(</big><em>angle</em><big>)</big> &rarr; Point2D<a class="headerlink" href="#libavg.avg.PanoImageNode.getScreenPosFromAngle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts panorama angle to pixels in coordinates
+relative to the node, taking into account the current rotation angle.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.PolygonNode">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">PolygonNode</tt><a class="headerlink" href="#libavg.avg.PolygonNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.FilledVectorNode" title="libavg.avg.FilledVectorNode"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.FilledVectorNode</span></tt></a></p>
+<p>A closed figure bounded by a number of line segments, optionally filled. Filled
+polygons may not be self-intersecting.</p>
+<dl class="method">
+<dt id="libavg.avg.PolygonNode.__init__">
+<tt class="descname">__init__</tt><big>(</big><span class="optional">[</span><em>linejoin:&quot;bevel&quot;</em>, <em>pos</em>, <em>texcoords</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.PolygonNode.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.PolygonNode.linejoin">
+<tt class="descname">linejoin</tt><a class="headerlink" href="#libavg.avg.PolygonNode.linejoin" title="Permalink to this definition">¶</a></dt>
+<dd><p>The method by which line segments are joined together. Valid values are
+<tt class="xref py py-const docutils literal"><span class="pre">bevel</span></tt> and <tt class="xref py py-const docutils literal"><span class="pre">miter</span></tt>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.PolygonNode.pos">
+<tt class="descname">pos</tt><a class="headerlink" href="#libavg.avg.PolygonNode.pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>A sequence (<tt class="xref py py-class docutils literal"><span class="pre">list</span></tt> or <tt class="xref py py-class docutils literal"><span class="pre">tuple</span></tt>) of pixel positions.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.PolygonNode.texcoords">
+<tt class="descname">texcoords</tt><a class="headerlink" href="#libavg.avg.PolygonNode.texcoords" title="Permalink to this definition">¶</a></dt>
+<dd><p>A sequence of float texture coordinates corresponding to the border positions.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.PolyLineNode">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">PolyLineNode</tt><a class="headerlink" href="#libavg.avg.PolyLineNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.VectorNode" title="libavg.avg.VectorNode"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.VectorNode</span></tt></a></p>
+<p>A figure similar to a <a class="reference internal" href="#libavg.avg.PolygonNode" title="libavg.avg.PolygonNode"><tt class="xref py py-class docutils literal"><span class="pre">PolygonNode</span></tt></a>, but not closed and never filled.</p>
+<dl class="method">
+<dt id="libavg.avg.PolyLineNode.__init__">
+<tt class="descname">__init__</tt><big>(</big><span class="optional">[</span><em>linejoin:&quot;bevel&quot;</em>, <em>pos</em>, <em>texcoords</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.PolyLineNode.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.PolyLineNode.linejoin">
+<tt class="descname">linejoin</tt><a class="headerlink" href="#libavg.avg.PolyLineNode.linejoin" title="Permalink to this definition">¶</a></dt>
+<dd><p>The method by which line segments are joined together. Valid values are
+<tt class="xref py py-const docutils literal"><span class="pre">bevel</span></tt> and <tt class="xref py py-const docutils literal"><span class="pre">miter</span></tt>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.PolyLineNode.pos">
+<tt class="descname">pos</tt><a class="headerlink" href="#libavg.avg.PolyLineNode.pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>A sequence (<tt class="xref py py-class docutils literal"><span class="pre">list</span></tt> or <tt class="xref py py-class docutils literal"><span class="pre">tuple</span></tt>) of pixel positions.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.PolyLineNode.texcoords">
+<tt class="descname">texcoords</tt><a class="headerlink" href="#libavg.avg.PolyLineNode.texcoords" title="Permalink to this definition">¶</a></dt>
+<dd><p>A sequence of float texture coordinates corresponding to the border positions.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.RasterNode">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">RasterNode</tt><a class="headerlink" href="#libavg.avg.RasterNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.AreaNode" title="libavg.avg.AreaNode"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.AreaNode</span></tt></a></p>
+<p>Base class for all nodes that have a direct 2d raster representation.
+This includes Image, Word, Camera, and Video nodes. The base class implements
+color controls (<a class="reference internal" href="#libavg.avg.RasterNode.contrast" title="libavg.avg.RasterNode.contrast"><tt class="xref py py-attr docutils literal"><span class="pre">contrast</span></tt></a>, <a class="reference internal" href="#libavg.avg.RasterNode.intensity" title="libavg.avg.RasterNode.intensity"><tt class="xref py py-attr docutils literal"><span class="pre">intensity</span></tt></a>, <a class="reference internal" href="#libavg.avg.RasterNode.gamma" title="libavg.avg.RasterNode.gamma"><tt class="xref py py-attr docutils literal"><span class="pre">gamma</span></tt></a>),
+alpha masks (<a class="reference internal" href="#libavg.avg.RasterNode.maskhref" title="libavg.avg.RasterNode.maskhref"><tt class="xref py py-attr docutils literal"><span class="pre">maskhref</span></tt></a>, <a class="reference internal" href="#libavg.avg.RasterNode.maskpos" title="libavg.avg.RasterNode.maskpos"><tt class="xref py py-attr docutils literal"><span class="pre">maskpos</span></tt></a>, <a class="reference internal" href="#libavg.avg.RasterNode.masksize" title="libavg.avg.RasterNode.masksize"><tt class="xref py py-attr docutils literal"><span class="pre">masksize</span></tt></a>),
+several blend modes that define how compositing is done and mipmapping suport.</p>
+<p>Any Raster Node can have a GPU-based effect added to it by using
+<a class="reference internal" href="#libavg.avg.RasterNode.setEffect" title="libavg.avg.RasterNode.setEffect"><tt class="xref py py-meth docutils literal"><span class="pre">setEffect()</span></tt></a>.</p>
+<p>In addition, RasterNodes can be warped. By default, a RasterNode is rectangular.
+However, it can be subdivided into a grid of reference points using
+<a class="reference internal" href="#libavg.avg.RasterNode.maxtilewidth" title="libavg.avg.RasterNode.maxtilewidth"><tt class="xref py py-attr docutils literal"><span class="pre">maxtilewidth</span></tt></a> and <a class="reference internal" href="#libavg.avg.RasterNode.maxtileheight" title="libavg.avg.RasterNode.maxtileheight"><tt class="xref py py-attr docutils literal"><span class="pre">maxtileheight</span></tt></a>. The position of each of
+these points can be changed with <a class="reference internal" href="#libavg.avg.RasterNode.getOrigVertexCoords" title="libavg.avg.RasterNode.getOrigVertexCoords"><tt class="xref py py-meth docutils literal"><span class="pre">getOrigVertexCoords()</span></tt></a>,
+<a class="reference internal" href="#libavg.avg.RasterNode.getWarpedVertexCoords" title="libavg.avg.RasterNode.getWarpedVertexCoords"><tt class="xref py py-meth docutils literal"><span class="pre">getWarpedVertexCoords()</span></tt></a> and <a class="reference internal" href="#libavg.avg.RasterNode.setWarpedVertexCoords" title="libavg.avg.RasterNode.setWarpedVertexCoords"><tt class="xref py py-meth docutils literal"><span class="pre">setWarpedVertexCoords()</span></tt></a>,
+yielding arbitrary shapes.</p>
+<dl class="method">
+<dt id="libavg.avg.RasterNode.__init__">
+<tt class="descname">__init__</tt><big>(</big><span class="optional">[</span><em>maxtilewidth</em>, <em>maxtileheight</em>, <em>blendmode</em>, <em>mipmap</em>, <em>maskhref</em>, <em>maskpos</em>, <em>masksize</em>, <em>gamma</em>, <em>contrast</em>, <em>intensity</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.RasterNode.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.RasterNode.blendmode">
+<tt class="descname">blendmode</tt><a class="headerlink" href="#libavg.avg.RasterNode.blendmode" title="Permalink to this definition">¶</a></dt>
+<dd><p>The method of compositing the node with the nodes under
+it. Valid values are <tt class="xref py py-const docutils literal"><span class="pre">blend</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">add</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">min</span></tt>
+and <tt class="xref py py-const docutils literal"><span class="pre">max</span></tt>. For <tt class="xref py py-const docutils literal"><span class="pre">min</span></tt> and <tt class="xref py py-const docutils literal"><span class="pre">max</span></tt>
+blend modes, opacity is ignored.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.RasterNode.contrast">
+<tt class="descname">contrast</tt><a class="headerlink" href="#libavg.avg.RasterNode.contrast" title="Permalink to this definition">¶</a></dt>
+<dd><p>A control for the color contrast of the node. contrast is a triple
+that contains separate float values for red, green, and blue. A contrast
+value of 1.0 in all channels leaves the image unchanged.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.RasterNode.gamma">
+<tt class="descname">gamma</tt><a class="headerlink" href="#libavg.avg.RasterNode.gamma" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows node-specific gamma correction. gamma is a triple that
+contains separate float values for red, green, and blue. A gamma value of
+1.0 in all channels leaves the image unchanged. Higher gamma values
+increase, lower values decrease the brightness. In all cases, black
+white pixels are not affected by gamma. See also
+<a class="reference external" href="http://en.wikipedia.org/wiki/Gamma_correction">http://en.wikipedia.org/wiki/Gamma_correction</a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.RasterNode.intensity">
+<tt class="descname">intensity</tt><a class="headerlink" href="#libavg.avg.RasterNode.intensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>A control for the brightness of the node. intensity is a triple
+that contains separate float values for red, green, and blue. An intensity
+value of 1.0 in all channels leaves the image unchanged. This value
+corresponds to the photoshop brightness value.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.RasterNode.maskhref">
+<tt class="descname">maskhref</tt><a class="headerlink" href="#libavg.avg.RasterNode.maskhref" title="Permalink to this definition">¶</a></dt>
+<dd><p>The source filename for a mask image to be used as alpha channel.
+Where this file is white, the node is shown. Where it is black, the
+node is transparent. If the node is an image with an alpha channel,
+the alpha channel is replaced by the mask.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.RasterNode.maskpos">
+<tt class="descname">maskpos</tt><a class="headerlink" href="#libavg.avg.RasterNode.maskpos" title="Permalink to this definition">¶</a></dt>
+<dd><p>An offset for the mask image. For images and videos, the offset is
+given in image or video pixels, respectively. For words nodes, the
+offset is given in screen pixels. If portions of the node extend
+outside the mask, the border pixels of the mask are taken.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.RasterNode.masksize">
+<tt class="descname">masksize</tt><a class="headerlink" href="#libavg.avg.RasterNode.masksize" title="Permalink to this definition">¶</a></dt>
+<dd><p>The size of the mask image. For images and videos, the size is
+given in image or video pixels, respectively. For words nodes, the
+size is given in screen pixels. If portions of the node extend
+outside the mask, the border pixels of the mask are taken.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.RasterNode.maxtileheight">
+<tt class="descname">maxtileheight</tt><a class="headerlink" href="#libavg.avg.RasterNode.maxtileheight" title="Permalink to this definition">¶</a></dt>
+<dd><p>The maximum height of the tiles used for warping. The effective tile size is
+also dependent on hardware and driver limits. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.RasterNode.maxtilewidth">
+<tt class="descname">maxtilewidth</tt><a class="headerlink" href="#libavg.avg.RasterNode.maxtilewidth" title="Permalink to this definition">¶</a></dt>
+<dd><p>The maximum width of the tiles used for warping. The effective tile size is
+also dependent on hardware and driver limits. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.RasterNode.mipmap">
+<tt class="descname">mipmap</tt><a class="headerlink" href="#libavg.avg.RasterNode.mipmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether mipmaps (<a class="reference external" href="http://en.wikipedia.org/wiki/Mipmap">http://en.wikipedia.org/wiki/Mipmap</a>) are
+generated for this node. Setting this to <tt class="xref std std-keyword xref docutils literal"><span class="pre">True</span></tt> improves the quality
+of minified nodes. Depending on the graphics card in use, turning on mipmaps
+may cause a performance hit for every image change. Read-only.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.RasterNode.getBitmap">
+<tt class="descname">getBitmap</tt><big>(</big><big>)</big> &rarr; Bitmap<a class="headerlink" href="#libavg.avg.RasterNode.getBitmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a copy of the bitmap that the node contains.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.RasterNode.getOrigVertexCoords">
+<tt class="descname">getOrigVertexCoords</tt><big>(</big><big>)</big> &rarr; list<a class="headerlink" href="#libavg.avg.RasterNode.getOrigVertexCoords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the unwarped coordinate of all vertices as a list of lists.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.RasterNode.getWarpedVertexCoords">
+<tt class="descname">getWarpedVertexCoords</tt><big>(</big><big>)</big> &rarr; list<a class="headerlink" href="#libavg.avg.RasterNode.getWarpedVertexCoords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returnes the current coordinate of all vertices as a list of lists.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.RasterNode.setEffect">
+<tt class="descname">setEffect</tt><big>(</big><em>FXNode</em><big>)</big><a class="headerlink" href="#libavg.avg.RasterNode.setEffect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets an <a class="reference internal" href="fx.html#libavg.avg.FXNode" title="libavg.avg.FXNode"><tt class="xref py py-class docutils literal"><span class="pre">FXNode</span></tt></a> that modifies the way the node looks.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.RasterNode.setWarpedVertexCoords">
+<tt class="descname">setWarpedVertexCoords</tt><big>(</big><em>grid</em><big>)</big><a class="headerlink" href="#libavg.avg.RasterNode.setWarpedVertexCoords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the current coordinates of all vertices. <tt class="xref py py-attr docutils literal"><span class="pre">grid</span></tt> is a list of
+lists of coordinate tuples.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.RectNode">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">RectNode</tt><a class="headerlink" href="#libavg.avg.RectNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.FilledVectorNode" title="libavg.avg.FilledVectorNode"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.FilledVectorNode</span></tt></a></p>
+<p>A rectangle that can be filled.</p>
+<dl class="method">
+<dt id="libavg.avg.RectNode.__init__">
+<tt class="descname">__init__</tt><big>(</big><span class="optional">[</span><em>pos</em>, <em>size</em>, <em>angle</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.RectNode.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.RectNode.angle">
+<tt class="descname">angle</tt><a class="headerlink" href="#libavg.avg.RectNode.angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>The angle that the rectangle is rotated to in radians. 0 is
+unchanged, 3.14 is upside-down. The rectangle is rotated around it&#8217;s
+center.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.RectNode.pos">
+<tt class="descname">pos</tt><a class="headerlink" href="#libavg.avg.RectNode.pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>The position of the top left corner of the rectangle.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.RectNode.size">
+<tt class="descname">size</tt><a class="headerlink" href="#libavg.avg.RectNode.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.RectNode.texcoords">
+<tt class="descname">texcoords</tt><a class="headerlink" href="#libavg.avg.RectNode.texcoords" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.SoundNode">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">SoundNode</tt><a class="headerlink" href="#libavg.avg.SoundNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.AreaNode" title="libavg.avg.AreaNode"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.AreaNode</span></tt></a></p>
+<p>A sound played from a file.</p>
+<dl class="method">
+<dt id="libavg.avg.SoundNode.__init__">
+<tt class="descname">__init__</tt><big>(</big><span class="optional">[</span><em>href</em>, <em>loop=False</em>, <em>volume=1.0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.SoundNode.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.SoundNode.duration">
+<tt class="descname">duration</tt><a class="headerlink" href="#libavg.avg.SoundNode.duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>The duration of the sound file in milliseconds. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.SoundNode.href">
+<tt class="descname">href</tt><a class="headerlink" href="#libavg.avg.SoundNode.href" title="Permalink to this definition">¶</a></dt>
+<dd><p>The source filename of the sound.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.SoundNode.loop">
+<tt class="descname">loop</tt><a class="headerlink" href="#libavg.avg.SoundNode.loop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether to start the sound again when it has ended. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.SoundNode.volume">
+<tt class="descname">volume</tt><a class="headerlink" href="#libavg.avg.SoundNode.volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Audio playback volume for this sound. 0 is silence, 1 passes media
+file volume through unchanged. Values higher than 1 can be used to
+amplify sound if the sound file doesn&#8217;t use the complete dynamic
+range.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.SoundNode.getAudioCodec">
+<tt class="descname">getAudioCodec</tt><big>(</big><big>)</big> &rarr; string<a class="headerlink" href="#libavg.avg.SoundNode.getAudioCodec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the codec used as a string such as <tt class="samp docutils literal"><span class="pre">&quot;mp2&quot;</span></tt>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.SoundNode.getAudioSampleRate">
+<tt class="descname">getAudioSampleRate</tt><big>(</big><big>)</big> &rarr; int<a class="headerlink" href="#libavg.avg.SoundNode.getAudioSampleRate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the sample rate in samples per second (for example, 44100).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.SoundNode.getCurTime">
+<tt class="descname">getCurTime</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.SoundNode.getCurTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns milliseconds of playback time since audio start.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.SoundNode.getNumAudioChannels">
+<tt class="descname">getNumAudioChannels</tt><big>(</big><big>)</big> &rarr; int<a class="headerlink" href="#libavg.avg.SoundNode.getNumAudioChannels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of channels. 2 for stereo, etc.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.SoundNode.pause">
+<tt class="descname">pause</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.SoundNode.pause" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops audio playback but doesn&#8217;t close the object. The playback
+cursor stays at the same position.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.SoundNode.play">
+<tt class="descname">play</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.SoundNode.play" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts audio playback.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.SoundNode.seekToTime">
+<tt class="descname">seekToTime</tt><big>(</big><em>time</em><big>)</big><a class="headerlink" href="#libavg.avg.SoundNode.seekToTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moves the playback cursor to the time given in milliseconds.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.SoundNode.setEOFCallback">
+<tt class="descname">setEOFCallback</tt><big>(</big><em>pyfunc</em><big>)</big><a class="headerlink" href="#libavg.avg.SoundNode.setEOFCallback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a python callable to be invoked when the audio reaches end of file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.SoundNode.stop">
+<tt class="descname">stop</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.SoundNode.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops audio playback. Closes the object and &#8216;rewinds&#8217; the playback cursor.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.VectorNode">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">VectorNode</tt><a class="headerlink" href="#libavg.avg.VectorNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.VisibleNode" title="libavg.avg.VisibleNode"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.VisibleNode</span></tt></a></p>
+<p>Base class for all nodes that draw geometrical primitives. All vector nodes
+support configurable stroke width. Strokes can be filled either with a solid
+color (<a class="reference internal" href="#libavg.avg.VectorNode.color" title="libavg.avg.VectorNode.color"><tt class="xref py py-attr docutils literal"><span class="pre">color</span></tt></a>) or with a texture loaded from a file
+(<a class="reference internal" href="#libavg.avg.VectorNode.texhref" title="libavg.avg.VectorNode.texhref"><tt class="xref py py-attr docutils literal"><span class="pre">texhref</span></tt></a>) or taken from a bitmap object (<a class="reference internal" href="#libavg.avg.VectorNode.setBitmap" title="libavg.avg.VectorNode.setBitmap"><tt class="xref py py-meth docutils literal"><span class="pre">setBitmap()</span></tt></a>).</p>
+<dl class="method">
+<dt id="libavg.avg.VectorNode.__init__">
+<tt class="descname">__init__</tt><big>(</big><span class="optional">[</span><em>color=&quot;FFFFFF&quot;</em>, <em>strokewidth=1</em>, <em>texhref</em>, <em>blendmode=&quot;blend&quot;</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.VectorNode.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.VectorNode.blendmode">
+<tt class="descname">blendmode</tt><a class="headerlink" href="#libavg.avg.VectorNode.blendmode" title="Permalink to this definition">¶</a></dt>
+<dd><p>The method of compositing the node with the nodes under
+it. Valid values are <tt class="xref py py-const docutils literal"><span class="pre">blend</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">add</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">min</span></tt>
+and <tt class="xref py py-const docutils literal"><span class="pre">max</span></tt>. For <tt class="xref py py-const docutils literal"><span class="pre">min</span></tt> and <tt class="xref py py-const docutils literal"><span class="pre">max</span></tt>
+blend modes, opacity is ignored.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.VectorNode.color">
+<tt class="descname">color</tt><a class="headerlink" href="#libavg.avg.VectorNode.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>The color of the strokes in standard html color notation:
+<tt class="samp docutils literal"><span class="pre">&quot;FF0000&quot;</span></tt> is red, <tt class="samp docutils literal"><span class="pre">&quot;00FF00&quot;</span></tt> green, etc.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.VectorNode.strokewidth">
+<tt class="descname">strokewidth</tt><a class="headerlink" href="#libavg.avg.VectorNode.strokewidth" title="Permalink to this definition">¶</a></dt>
+<dd><p>The width of the strokes in the vector. For lines, this is the line
+width. For rectangles, it is the width of the outline, etc.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.VectorNode.texhref">
+<tt class="descname">texhref</tt><a class="headerlink" href="#libavg.avg.VectorNode.texhref" title="Permalink to this definition">¶</a></dt>
+<dd><p>An image file to use as a texture for the node.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VectorNode.setBitmap">
+<tt class="descname">setBitmap</tt><big>(</big><em>bitmap</em><big>)</big><a class="headerlink" href="#libavg.avg.VectorNode.setBitmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a bitmap to use as a texture. Sets <a class="reference internal" href="#libavg.avg.VectorNode.texhref" title="libavg.avg.VectorNode.texhref"><tt class="xref py py-attr docutils literal"><span class="pre">texhref</span></tt></a> to an empty
+string.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.VideoNode">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">VideoNode</tt><a class="headerlink" href="#libavg.avg.VideoNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.RasterNode" title="libavg.avg.RasterNode"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.RasterNode</span></tt></a></p>
+<p>Video nodes display a video file. Video formats and codecs supported
+are all formats that ffmpeg/libavcodec supports. Usage is described throughly
+in the libavg wiki: <a class="reference external" href="https://www.libavg.de/wiki/index.php/Videos">https://www.libavg.de/wiki/index.php/Videos</a>.</p>
+<dl class="method">
+<dt id="libavg.avg.VideoNode.__init__">
+<tt class="descname">__init__</tt><big>(</big><span class="optional">[</span><em>href</em>, <em>loop=False</em>, <em>threaded=True</em>, <em>fps</em>, <em>queuelength=8</em>, <em>volume=1.0</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.VideoNode.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.VideoNode.fps">
+<tt class="descname">fps</tt><a class="headerlink" href="#libavg.avg.VideoNode.fps" title="Permalink to this definition">¶</a></dt>
+<dd><p>The nominal frames per second the object should display at. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.VideoNode.href">
+<tt class="descname">href</tt><a class="headerlink" href="#libavg.avg.VideoNode.href" title="Permalink to this definition">¶</a></dt>
+<dd><p>The source filename of the video.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.VideoNode.loop">
+<tt class="descname">loop</tt><a class="headerlink" href="#libavg.avg.VideoNode.loop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether to start the video again when it has ended. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.VideoNode.queuelength">
+<tt class="descname">queuelength</tt><a class="headerlink" href="#libavg.avg.VideoNode.queuelength" title="Permalink to this definition">¶</a></dt>
+<dd><p>The length of the decoder queue in video frames. This is the number of
+frames that can be decoded before the first one is displayed. A higher
+number increases memory consumption but also resilience against
+data source latency. Can only be set at node construction. Can&#8217;t be set
+if <tt class="samp docutils literal"><span class="pre">threaded=False</span></tt>, since there is no queue in that case.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.VideoNode.threaded">
+<tt class="descname">threaded</tt><a class="headerlink" href="#libavg.avg.VideoNode.threaded" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether to use separate threads to decode the video. The default is
+<tt class="xref std std-keyword xref docutils literal"><span class="pre">True</span></tt>. Setting this attribute to <tt class="xref std std-keyword xref docutils literal"><span class="pre">False</span></tt> makes seeking much quicker.
+On the other hand, it also disables audio and prevents libavg from
+distributing the CPU load over several cores of a multi-core computer.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.VideoNode.volume">
+<tt class="descname">volume</tt><a class="headerlink" href="#libavg.avg.VideoNode.volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Audio playback volume for this video. 0 is silence, 1 passes media
+file volume through unchanged. Values higher than 1 can be used to
+amplify sound if the sound file doesn&#8217;t use the complete dynamic
+range. If there is no audio track, volume is ignored.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VideoNode.getAudioCodec">
+<tt class="descname">getAudioCodec</tt><big>(</big><big>)</big> &rarr; string<a class="headerlink" href="#libavg.avg.VideoNode.getAudioCodec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the audio codec used as a string such as <tt class="samp docutils literal"><span class="pre">&quot;mp2&quot;</span></tt>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VideoNode.getAudioSampleRate">
+<tt class="descname">getAudioSampleRate</tt><big>(</big><big>)</big> &rarr; int<a class="headerlink" href="#libavg.avg.VideoNode.getAudioSampleRate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the sample rate in samples per second (for example, 44100).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VideoNode.getBitrate">
+<tt class="descname">getBitrate</tt><big>(</big><big>)</big> &rarr; int<a class="headerlink" href="#libavg.avg.VideoNode.getBitrate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of bits in the file per second.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VideoNode.getCurFrame">
+<tt class="descname">getCurFrame</tt><big>(</big><big>)</big> &rarr; int<a class="headerlink" href="#libavg.avg.VideoNode.getCurFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the index of the video frame currently playing.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VideoNode.getCurTime">
+<tt class="descname">getCurTime</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.VideoNode.getCurTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns milliseconds of playback time since video start.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VideoNode.getDuration">
+<tt class="descname">getDuration</tt><big>(</big><big>)</big> &rarr; int<a class="headerlink" href="#libavg.avg.VideoNode.getDuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the duration of the video in milliseconds.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VideoNode.getNumFrames">
+<tt class="descname">getNumFrames</tt><big>(</big><big>)</big> &rarr; int<a class="headerlink" href="#libavg.avg.VideoNode.getNumFrames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of frames in the video.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VideoNode.getNumAudioChannels">
+<tt class="descname">getNumAudioChannels</tt><big>(</big><big>)</big> &rarr; int<a class="headerlink" href="#libavg.avg.VideoNode.getNumAudioChannels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of audio channels. 2 for stereo, etc.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VideoNode.getNumFramesQueued">
+<tt class="descname">getNumFramesQueued</tt><big>(</big><big>)</big> &rarr; int<a class="headerlink" href="#libavg.avg.VideoNode.getNumFramesQueued" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of frames already decoded and waiting for playback.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VideoNode.getStreamPixelFormat">
+<tt class="descname">getStreamPixelFormat</tt><big>(</big><big>)</big> &rarr; string<a class="headerlink" href="#libavg.avg.VideoNode.getStreamPixelFormat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the pixel format of the video file as a string. Possible
+pixel formats are described in
+<a class="reference external" href="http://cekirdek.pardus.org.tr/~ismail/ffmpeg-docs/ffmpeg-r_2libavutil_2avutil_8h.html">http://cekirdek.pardus.org.tr/~ismail/ffmpeg-docs/ffmpeg-r_2libavutil_2avutil_8h.html</a></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VideoNode.getVideoCodec">
+<tt class="descname">getVideoCodec</tt><big>(</big><big>)</big> &rarr; string<a class="headerlink" href="#libavg.avg.VideoNode.getVideoCodec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the video codec used as a string such as <tt class="samp docutils literal"><span class="pre">&quot;mpeg4&quot;</span></tt>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VideoNode.hasAlpha">
+<tt class="descname">hasAlpha</tt><big>(</big><big>)</big> &rarr; bool<a class="headerlink" href="#libavg.avg.VideoNode.hasAlpha" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns <tt class="xref std std-keyword xref docutils literal"><span class="pre">True</span></tt> if the video contains an alpha (transparency) channel.
+Throws an exception if the video has not been opened yet.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VideoNode.hasAudio">
+<tt class="descname">hasAudio</tt><big>(</big><big>)</big> &rarr; bool<a class="headerlink" href="#libavg.avg.VideoNode.hasAudio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns <tt class="xref std std-keyword xref docutils literal"><span class="pre">True</span></tt> if the video contains an audio stream. Throws an
+exception if the video has not been opened yet.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VideoNode.pause">
+<tt class="descname">pause</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.VideoNode.pause" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops video playback but doesn&#8217;t close the object. The playback
+cursor stays at the same position and the decoder queues remain full.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VideoNode.play">
+<tt class="descname">play</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.VideoNode.play" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts video playback.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VideoNode.seekToFrame">
+<tt class="descname">seekToFrame</tt><big>(</big><em>num</em><big>)</big><a class="headerlink" href="#libavg.avg.VideoNode.seekToFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moves the playback cursor to the frame given.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VideoNode.seekToTime">
+<tt class="descname">seekToTime</tt><big>(</big><em>millisecs</em><big>)</big><a class="headerlink" href="#libavg.avg.VideoNode.seekToTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Moves the playback cursor to the time given.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VideoNode.setEOFCallback">
+<tt class="descname">setEOFCallback</tt><big>(</big><em>pyfunc</em><big>)</big><a class="headerlink" href="#libavg.avg.VideoNode.setEOFCallback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a python callable to be invoked when the video reaches end of file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VideoNode.stop">
+<tt class="descname">stop</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.VideoNode.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops video playback. Closes the file, &#8216;rewinds&#8217; the playback
+cursor and clears the decoder queues.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.VisibleNode">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">VisibleNode</tt><a class="headerlink" href="#libavg.avg.VisibleNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.Node" title="libavg.avg.Node"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.Node</span></tt></a></p>
+<p>Base class for all elements in the avg tree that have a visual representation.
+All nodes except those derived from <a class="reference internal" href="fx.html#libavg.avg.FXNode" title="libavg.avg.FXNode"><tt class="xref py py-class docutils literal"><span class="pre">FXNode</span></tt></a> are VisibleNodes.</p>
+<dl class="method">
+<dt id="libavg.avg.VisibleNode.__init__">
+<tt class="descname">__init__</tt><big>(</big><span class="optional">[</span><em>oncursormove</em>, <em>oncursorup</em>, <em>uncursordown</em>, <em>oncursorover</em>, <em>oncursorout</em>, <em>active=True</em>, <em>sensitive=True</em>, <em>opacity=1.0</em>, <em>parent</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.VisibleNode.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>oncursormove</strong> (<em>string</em>) &#8211; <p>Name of python function to call when a cursor moves.</p>
+<p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.5: </span>Use <a class="reference internal" href="#libavg.avg.VisibleNode.setEventHandler" title="libavg.avg.VisibleNode.setEventHandler"><tt class="xref py py-func docutils literal"><span class="pre">setEventHandler()</span></tt></a> instead.</p>
+</li>
+<li><strong>oncursorup</strong> (<em>string</em>) &#8211; <p>Name of python function to call when an up event occurs.</p>
+<p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.5: </span>Use <a class="reference internal" href="#libavg.avg.VisibleNode.setEventHandler" title="libavg.avg.VisibleNode.setEventHandler"><tt class="xref py py-func docutils literal"><span class="pre">setEventHandler()</span></tt></a> instead.</p>
+</li>
+<li><strong>oncursordown</strong> (<em>string</em>) &#8211; <p>Name of python function to call when a down event occurs.</p>
+<p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.5: </span>Use <a class="reference internal" href="#libavg.avg.VisibleNode.setEventHandler" title="libavg.avg.VisibleNode.setEventHandler"><tt class="xref py py-func docutils literal"><span class="pre">setEventHandler()</span></tt></a> instead.</p>
+</li>
+<li><strong>oncursorover</strong> (<em>string</em>) &#8211; <p>Name of python function to call when a cursor enters the node.</p>
+<p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.5: </span>Use <a class="reference internal" href="#libavg.avg.VisibleNode.setEventHandler" title="libavg.avg.VisibleNode.setEventHandler"><tt class="xref py py-func docutils literal"><span class="pre">setEventHandler()</span></tt></a> instead.</p>
+</li>
+<li><strong>oncursorout</strong> (<em>string</em>) &#8211; <p>Name of python function to call when a cursor leaves the node.</p>
+<p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.5: </span>Use <a class="reference internal" href="#libavg.avg.VisibleNode.setEventHandler" title="libavg.avg.VisibleNode.setEventHandler"><tt class="xref py py-func docutils literal"><span class="pre">setEventHandler()</span></tt></a> instead.</p>
+</li>
+<li><strong>parent</strong> (<em>DivNode</em>) &#8211; A <a class="reference internal" href="#libavg.avg.DivNode" title="libavg.avg.DivNode"><tt class="xref py py-class docutils literal"><span class="pre">DivNode</span></tt></a> that the newly constructed Node should be appended
+to.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.VisibleNode.active">
+<tt class="descname">active</tt><a class="headerlink" href="#libavg.avg.VisibleNode.active" title="Permalink to this definition">¶</a></dt>
+<dd><p>If this attribute is true, the node behaves as usual. If not, it
+is neither drawn nor does it react to events.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.VisibleNode.opacity">
+<tt class="descname">opacity</tt><a class="headerlink" href="#libavg.avg.VisibleNode.opacity" title="Permalink to this definition">¶</a></dt>
+<dd><p>A measure of the node&#8217;s transparency. 0.0 is completely
+transparent, 1.0 is completely opaque. Opacity is relative to
+the parent node&#8217;s opacity.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.VisibleNode.sensitive">
+<tt class="descname">sensitive</tt><a class="headerlink" href="#libavg.avg.VisibleNode.sensitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>A node only reacts to events if sensitive is true.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VisibleNode.getAbsPos">
+<tt class="descname">getAbsPos</tt><big>(</big><em>relpos</em><big>)</big> &rarr; Point2D<a class="headerlink" href="#libavg.avg.VisibleNode.getAbsPos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transforms a position in coordinates relative to the node to a
+position in window coordinates.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VisibleNode.getElementByPos">
+<tt class="descname">getElementByPos</tt><big>(</big><em>pos</em><big>)</big> &rarr; Node<a class="headerlink" href="#libavg.avg.VisibleNode.getElementByPos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the topmost child node that is at the position given. <tt class="xref py py-attr docutils literal"><span class="pre">pos</span></tt>
+is in coordinates relative to the called node. The algorithm used
+is the same as the cursor hit test algorithm used for events.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VisibleNode.getParent">
+<tt class="descname">getParent</tt><big>(</big><big>)</big> &rarr; Node<a class="headerlink" href="#libavg.avg.VisibleNode.getParent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the container (<a class="reference internal" href="#libavg.avg.AVGNode" title="libavg.avg.AVGNode"><tt class="xref py py-class docutils literal"><span class="pre">AVGNode</span></tt></a> or <a class="reference internal" href="#libavg.avg.DivNode" title="libavg.avg.DivNode"><tt class="xref py py-class docutils literal"><span class="pre">DivNode</span></tt></a>) the node
+is in. For the root node, returns None.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VisibleNode.getRelPos">
+<tt class="descname">getRelPos</tt><big>(</big><em>abspos</em><big>)</big> &rarr; Point2D<a class="headerlink" href="#libavg.avg.VisibleNode.getRelPos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transforms a position in window coordinates to a position
+in coordinates relative to the node.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VisibleNode.releaseEventCapture">
+<tt class="descname">releaseEventCapture</tt><big>(</big><em>cursorid=-1</em><big>)</big><a class="headerlink" href="#libavg.avg.VisibleNode.releaseEventCapture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restores normal cursor event handling after a call to
+<a class="reference internal" href="#libavg.avg.VisibleNode.setEventCapture" title="libavg.avg.VisibleNode.setEventCapture"><tt class="xref py py-func docutils literal"><span class="pre">setEventCapture()</span></tt></a>. <tt class="xref py py-attr docutils literal"><span class="pre">cursorid</span></tt> is the id of the
+cursor to release. If <tt class="xref py py-attr docutils literal"><span class="pre">cursorid</span></tt> is not given, the mouse cursor is
+used.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VisibleNode.setEventCapture">
+<tt class="descname">setEventCapture</tt><big>(</big><em>cursorid=-1</em><big>)</big><a class="headerlink" href="#libavg.avg.VisibleNode.setEventCapture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets up event capturing so that cursor events are sent to this node
+regardless of the cursor position. cursorid is optional; if left out,
+the mouse cursor is captured. If not, events from a specific tracker
+cursor are captured. The event propagates to the capturing node&#8217;s
+parent normally. This function is useful for the
+implementation of user interface elements such as scroll bars. Only one
+node can capture a cursor at any one time. Normal operation can
+be restored by calling <a class="reference internal" href="#libavg.avg.VisibleNode.releaseEventCapture" title="libavg.avg.VisibleNode.releaseEventCapture"><tt class="xref py py-func docutils literal"><span class="pre">releaseEventCapture()</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VisibleNode.setEventHandler">
+<tt class="descname">setEventHandler</tt><big>(</big><em>type</em>, <em>source</em>, <em>pyfunc</em><big>)</big><a class="headerlink" href="#libavg.avg.VisibleNode.setEventHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a callback function that is invoked whenever an event of the
+specified type from the specified source occurs. This function is
+similar to the event handler node attributes (e.g. oncursordown).
+It is more specific since it takes the event source as a parameter
+and allows the use of any python callable as callback function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>type</strong> &#8211; One of the event types <tt class="xref py py-const docutils literal"><span class="pre">KEYUP</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">KEYDOWN</span></tt>,
+<tt class="xref py py-const docutils literal"><span class="pre">CURSORMOTION</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">CURSORUP</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">CURSORDOWN</span></tt>,
+<tt class="xref py py-const docutils literal"><span class="pre">CURSOROVER</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">CURSOROUT</span></tt>, <tt class="xref py py-const docutils literal"><span class="pre">RESIZE</span></tt> or
+<tt class="xref py py-const docutils literal"><span class="pre">QUIT</span></tt>.</li>
+<li><strong>source</strong> &#8211; <tt class="xref py py-const docutils literal"><span class="pre">MOUSE</span></tt> for mouse events, <tt class="xref py py-const docutils literal"><span class="pre">TOUCH</span></tt> for multitouch touch
+events, <tt class="xref py py-const docutils literal"><span class="pre">TRACK</span></tt> for multitouch track events or other tracking,
+<tt class="xref py py-const docutils literal"><span class="pre">NONE</span></tt> for keyboard events. Sources can be or&#8217;ed together to
+set a handler for several sources at once.</li>
+<li><strong>pyfunc</strong> &#8211; The python callable to invoke.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.VisibleNode.unlink">
+<tt class="descname">unlink</tt><big>(</big><em>kill</em><big>)</big><a class="headerlink" href="#libavg.avg.VisibleNode.unlink" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes a node from it&#8217;s parent container. Equivalent to
+<tt class="samp docutils literal"><span class="pre">node.getParent().removeChild(node.getParent().indexOf(node))</span></tt>,
+except that if the node has no parent, unlink does nothing. Normally, unlink
+moves the node&#8217;s textures back to the CPU and preserves event handlers.
+If <tt class="samp docutils literal"><span class="pre">kill=True</span></tt>, this step is skipped. Event handlers are reset, all
+textures are deleted and the href is reset to empty in this case,
+saving some time and making sure there are no references to the node
+left on the libavg side. <tt class="xref py py-attr docutils literal"><span class="pre">kill</span></tt> should always be set to
+<tt class="xref std std-keyword xref docutils literal"><span class="pre">True</span></tt> if the node will not be used after the unlink.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.WordsNode">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">WordsNode</tt><a class="headerlink" href="#libavg.avg.WordsNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.RasterNode" title="libavg.avg.RasterNode"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.RasterNode</span></tt></a></p>
+<p>A words node displays formatted text. All
+properties are set in pixels. International and multi-byte character
+sets are fully supported. Words nodes use UTF-8 to encode international
+characters (use python unicode strings for this).</p>
+<p>The pos attribute of a words node is the
+logical top left of the first character for left-aligned text. For
+centered and right-aligned text, it is the top center and right of the
+first line, respectively. For latin text, the logical top usually
+corresponds to the height of the ascender. There may be cases where
+portions of the text are rendered to the left of or above the logical position,
+for instance when italics are used.</p>
+<p>Words nodes are rendered using pango internally.</p>
+<dl class="method">
+<dt id="libavg.avg.WordsNode.__init__">
+<tt class="descname">__init__</tt><big>(</big><span class="optional">[</span><em>font=&quot;arial&quot;</em>, <em>variant=&quot;&quot;</em>, <em>text=&quot;&quot;</em>, <em>color=&quot;FFFFFF&quot;</em>, <em>fontsize=15</em>, <em>indent=0</em>, <em>linespacing=-1</em>, <em>alignment=&quot;left&quot;</em>, <em>wrapmode=&quot;word&quot;</em>, <em>justify=False</em>, <em>rawtextmode=False</em>, <em>letterspacing=0</em>, <em>hint=True</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#libavg.avg.WordsNode.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.WordsNode.alignment">
+<tt class="descname">alignment</tt><a class="headerlink" href="#libavg.avg.WordsNode.alignment" title="Permalink to this definition">¶</a></dt>
+<dd><p>The paragraph alignment. Possible values are <tt class="xref py py-const docutils literal"><span class="pre">left</span></tt>,
+<tt class="xref py py-const docutils literal"><span class="pre">center</span></tt> and <tt class="xref py py-const docutils literal"><span class="pre">right</span></tt>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.WordsNode.color">
+<tt class="descname">color</tt><a class="headerlink" href="#libavg.avg.WordsNode.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>The color of the text in standard html color notation: FF0000 is red,
+00FF00 green, etc.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.WordsNode.font">
+<tt class="descname">font</tt><a class="headerlink" href="#libavg.avg.WordsNode.font" title="Permalink to this definition">¶</a></dt>
+<dd><p>The family name of the truetype font to use. Font files can either be
+installed in the system, be in a <tt class="file docutils literal"><span class="pre">fonts/</span></tt> subdirectory of the current
+directory, or be in a directory specified using <a class="reference internal" href="#libavg.avg.WordsNode.addFontDir" title="libavg.avg.WordsNode.addFontDir"><tt class="xref py py-meth docutils literal"><span class="pre">addFontDir()</span></tt></a>. To
+figure out which fonts and variants are available, use the
+<strong class="command">avg_showfonts.py</strong> utility.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.WordsNode.fontsize">
+<tt class="descname">fontsize</tt><a class="headerlink" href="#libavg.avg.WordsNode.fontsize" title="Permalink to this definition">¶</a></dt>
+<dd><p>The font size in pixels. Fractional sizes are supported.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.WordsNode.hint">
+<tt class="descname">hint</tt><a class="headerlink" href="#libavg.avg.WordsNode.hint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether or not hinting (<a class="reference external" href="http://en.wikipedia.org/wiki/Font_hinting">http://en.wikipedia.org/wiki/Font_hinting</a>)
+should be used when rendering the text. Unfortunately, this setting
+does not override the fontconfig settings in
+<tt class="file docutils literal"><span class="pre">/etc/fonts/conf.d/*-hinting.conf</span></tt> or other fontconfig configuration
+files.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.WordsNode.indent">
+<tt class="descname">indent</tt><a class="headerlink" href="#libavg.avg.WordsNode.indent" title="Permalink to this definition">¶</a></dt>
+<dd><p>The indentation of the first line of the text.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.WordsNode.justify">
+<tt class="descname">justify</tt><a class="headerlink" href="#libavg.avg.WordsNode.justify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether each complete line should be stretched to fill
+the entire width of the layout. Default is false.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.WordsNode.letterspacing">
+<tt class="descname">letterspacing</tt><a class="headerlink" href="#libavg.avg.WordsNode.letterspacing" title="Permalink to this definition">¶</a></dt>
+<dd><p>The amount of space between the idividual glyphs of the text in
+pixels, with 0 being standard spacing and negative values indicating
+packed text (less letter spacing than normal). Only active when text
+attribute markup is not being used.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.WordsNode.linespacing">
+<tt class="descname">linespacing</tt><a class="headerlink" href="#libavg.avg.WordsNode.linespacing" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of pixels between different lines of a paragraph. Setting this to
+<tt class="samp docutils literal"><span class="pre">-1</span></tt> results in default line spacing.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.WordsNode.rawtextmode">
+<tt class="descname">rawtextmode</tt><a class="headerlink" href="#libavg.avg.WordsNode.rawtextmode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets whether the text should be parsed to apply markup (<tt class="xref std std-keyword xref docutils literal"><span class="pre">False</span></tt>,
+default) or interpreted as raw string (<tt class="xref std std-keyword xref docutils literal"><span class="pre">True</span></tt>).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.WordsNode.text">
+<tt class="descname">text</tt><a class="headerlink" href="#libavg.avg.WordsNode.text" title="Permalink to this definition">¶</a></dt>
+<dd><p>The string to display. If the node is created using xml, this is either the
+text attribute of the words node or the content of the words
+node itself. In the second case, the string can be formatted
+using the pango text attribute markup language described at
+<a class="reference external" href="http://library.gnome.org/devel/pango/unstable/PangoMarkupFormat.html">http://library.gnome.org/devel/pango/unstable/PangoMarkupFormat.html</a>.
+Markup can also be used if the text is set using the python attribute.</p>
+<p>Markup parsing can be turned on or off with <a class="reference internal" href="#libavg.avg.WordsNode.rawtextmode" title="libavg.avg.WordsNode.rawtextmode"><tt class="xref py py-attr docutils literal"><span class="pre">rawtextmode</span></tt></a> attribute.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.WordsNode.variant">
+<tt class="descname">variant</tt><a class="headerlink" href="#libavg.avg.WordsNode.variant" title="Permalink to this definition">¶</a></dt>
+<dd><p>The variant (<tt class="samp docutils literal"><span class="pre">bold</span></tt>, <tt class="samp docutils literal"><span class="pre">italic</span></tt>, etc.) of the font to use.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.WordsNode.wrapmode">
+<tt class="descname">wrapmode</tt><a class="headerlink" href="#libavg.avg.WordsNode.wrapmode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Controls at which points text can wrap to the next line. Possible values are
+<tt class="xref py py-const docutils literal"><span class="pre">word</span></tt> (split lines at the nearest whitespace, default),
+<tt class="xref py py-const docutils literal"><span class="pre">char</span></tt> (split at any position, ignoring word breaks) and
+<tt class="xref py py-const docutils literal"><span class="pre">wordchar</span></tt> (split at word boundaries but fall back
+to char mode if there is no free space for a full word).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.WordsNode.getCharIndexFromPos">
+<tt class="descname">getCharIndexFromPos</tt><big>(</big><em>pos</em><big>)</big> &rarr; int<a class="headerlink" href="#libavg.avg.WordsNode.getCharIndexFromPos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the index of the character at the coordinates <tt class="xref py py-attr docutils literal"><span class="pre">pos</span></tt>, or
+<tt class="xref std std-keyword xref docutils literal"><span class="pre">None</span></tt> if there is no character at that position. <tt class="xref py py-attr docutils literal"><span class="pre">pos</span></tt>
+is relative to the node position.
+Formatting markup such as &lt;b&gt; or &lt;i&gt; is treated as zero chars,
+&lt;br/&gt; is treated as one char. To get the text matched to this
+use <a class="reference internal" href="#libavg.avg.WordsNode.getTextAsDisplayed" title="libavg.avg.WordsNode.getTextAsDisplayed"><tt class="xref py py-meth docutils literal"><span class="pre">getTextAsDisplayed()</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.WordsNode.getGlyphPos">
+<tt class="descname">getGlyphPos</tt><big>(</big><em>i</em><big>)</big> &rarr; Point2D<a class="headerlink" href="#libavg.avg.WordsNode.getGlyphPos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the position of the glyph at character index <tt class="xref py py-attr docutils literal"><span class="pre">i</span></tt> in the
+layout. The position is in pixels relative to the words
+node. Formatting markup such as &lt;b&gt; or &lt;i&gt; is treated as zero chars,
+&lt;br/&gt; is treated as one char.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.WordsNode.getGlyphSize">
+<tt class="descname">getGlyphSize</tt><big>(</big><em>i</em><big>)</big> &rarr; Point2D<a class="headerlink" href="#libavg.avg.WordsNode.getGlyphSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the size in pixels of the glyph at character index <tt class="xref py py-attr docutils literal"><span class="pre">i</span></tt> in
+the layout. Formatting markup such
+as &lt;b&gt; or &lt;i&gt; is treated as zero chars, &lt;br/&gt; is treated as one char.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.WordsNode.getLineExtents">
+<tt class="descname">getLineExtents</tt><big>(</big><em>line</em><big>)</big> &rarr; Point2D<a class="headerlink" href="#libavg.avg.WordsNode.getLineExtents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the width and height of the specified line in pixels.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.WordsNode.getNumLines">
+<tt class="descname">getNumLines</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.WordsNode.getNumLines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of lines in the layout.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.WordsNode.getTextAsDisplayed">
+<tt class="descname">getTextAsDisplayed</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.WordsNode.getTextAsDisplayed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the text without text attribute markup language. &lt;br/&gt;
+is replaced by \n.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="libavg.avg.WordsNode.addFontDir">
+<em class="property">classmethod </em><tt class="descname">addFontDir</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.WordsNode.addFontDir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a directory to be searched for fonts.
+May only be called before <a class="reference internal" href="player.html#libavg.avg.Player.play" title="libavg.avg.Player.play"><tt class="xref py py-meth docutils literal"><span class="pre">Player.play()</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="libavg.avg.WordsNode.getFontFamilies">
+<em class="property">classmethod </em><tt class="descname">getFontFamilies</tt><big>(</big><big>)</big> &rarr; list<a class="headerlink" href="#libavg.avg.WordsNode.getFontFamilies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of strings containing all font names available.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="libavg.avg.WordsNode.getFontVariants">
+<em class="property">classmethod </em><tt class="descname">getFontVariants</tt><big>(</big><em>fontname</em><big>)</big> &rarr; list<a class="headerlink" href="#libavg.avg.WordsNode.getFontVariants" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of available variants (<tt class="samp docutils literal"><span class="pre">Regular</span></tt>, <tt class="samp docutils literal"><span class="pre">Bold</span></tt>, etc.)
+of a font.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="events.html" title="Event Handling"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="player.html" title="Player &amp; Canvas"
+             >previous</a> |</li>
+        <li><a href="index.html">libavg v1.5.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, Ulrich von Zadow.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.5.
+    </div>
+  </body>
+</html>

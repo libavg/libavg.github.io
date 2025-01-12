@@ -1,0 +1,882 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Player &amp; Canvas &mdash; libavg v1.7 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.7',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="libavg v1.7 documentation" href="index.html" />
+    <link rel="next" title="Base Node Classes" href="basenodes.html" />
+    <link rel="prev" title="libavg Reference" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="basenodes.html" title="Base Node Classes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="libavg Reference"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">libavg v1.7 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">libavg Reference</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="basenodes.html"
+                        title="next chapter">Base Node Classes</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/player.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-libavg.avg">
+<span id="player-canvas"></span><h1>Player &amp; Canvas<a class="headerlink" href="#module-libavg.avg" title="Permalink to this headline">¶</a></h1>
+<p class="graphviz">
+<img src="_images/inheritance-5a9c7ef445cce71351e928ca480c127fed9b3bf2.png" alt="Inheritance diagram of OffscreenCanvas" usemap="#inheritancea4733d1f94" class="inheritance"/>
+<map id="inheritancea4733d1f94" name="inheritancea4733d1f94">
+<area shape="rect" id="node1" href="#libavg.avg.OffscreenCanvas" title="OffscreenCanvas" alt="" coords="5,161,144,189"/>
+<area shape="rect" id="node2" href="#libavg.avg.Canvas" title="Canvas" alt="" coords="39,83,111,111"/>
+</map>
+</p>
+<p class="graphviz">
+<img src="_images/inheritance-c343dd4f2d6f8e511c05ed6994d5051a7d3d7d93.png" alt="Inheritance diagram of Player" usemap="#inheritance0b161daca7" class="inheritance"/>
+<map id="inheritance0b161daca7" name="inheritance0b161daca7">
+<area shape="rect" id="node1" href="#libavg.avg.Player" title="Player" alt="" coords="9,83,81,111"/>
+</map>
+</p>
+<p>This section describes the classes that provide a framework for rendering. The
+<a class="reference internal" href="#libavg.avg.Player" title="libavg.avg.Player"><tt class="xref py py-class docutils literal"><span class="pre">Player</span></tt></a> class is an interface to the avg renderer. The
+<a class="reference internal" href="#libavg.avg.Canvas" title="libavg.avg.Canvas"><tt class="xref py py-class docutils literal"><span class="pre">Canvas</span></tt></a> class and it&#8217;s descendant <a class="reference internal" href="#libavg.avg.OffscreenCanvas" title="libavg.avg.OffscreenCanvas"><tt class="xref py py-class docutils literal"><span class="pre">OffscreenCanvas</span></tt></a> provide
+areas to draw on.</p>
+<dl class="class">
+<dt id="libavg.avg.Canvas">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">Canvas</tt><a class="headerlink" href="#libavg.avg.Canvas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></tt></p>
+<p>A Canvas is a tree of nodes. It is the place where a scenegraph is displayed. In
+a libavg session, there is one main canvas that corresponds to the screen (which
+is of class <a class="reference internal" href="#libavg.avg.Canvas" title="libavg.avg.Canvas"><tt class="xref py py-class docutils literal"><span class="pre">Canvas</span></tt></a>) and zero or more canvases that are rendered
+offscreen (which are of class <a class="reference internal" href="#libavg.avg.OffscreenCanvas" title="libavg.avg.OffscreenCanvas"><tt class="xref py py-class docutils literal"><span class="pre">OffscreenCanvas</span></tt></a>).</p>
+<dl class="method">
+<dt id="libavg.avg.Canvas.getElementByID">
+<tt class="descname">getElementByID</tt><big>(</big><em>id</em><big>)</big> &rarr; Node<a class="headerlink" href="#libavg.avg.Canvas.getElementByID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the element in the canvas&#8217;s tree that has the <tt class="xref py py-attr docutils literal"><span class="pre">id</span></tt>
+given.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Canvas.screenshot">
+<tt class="descname">screenshot</tt><big>(</big><big>)</big> &rarr; Bitmap<a class="headerlink" href="#libavg.avg.Canvas.screenshot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the image the canvas has last rendered as <a class="reference internal" href="misc.html#libavg.avg.Bitmap" title="libavg.avg.Bitmap"><tt class="xref py py-class docutils literal"><span class="pre">Bitmap</span></tt></a>. For
+the main canvas, this is a real screenshot. For offscreen canvases, this
+is the image rendered offscreen.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Canvas.getRootNode">
+<tt class="descname">getRootNode</tt><big>(</big><big>)</big> &rarr; CanvasNode<a class="headerlink" href="#libavg.avg.Canvas.getRootNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the root of the scenegraph. For the main canvas, this is an
+<a class="reference internal" href="areanodes.html#libavg.avg.AVGNode" title="libavg.avg.AVGNode"><tt class="xref py py-class docutils literal"><span class="pre">AVGNode</span></tt></a>. For an offscreen canvas, this is a
+<a class="reference internal" href="areanodes.html#libavg.avg.CanvasNode" title="libavg.avg.CanvasNode"><tt class="xref py py-class docutils literal"><span class="pre">CanvasNode</span></tt></a>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.OffscreenCanvas">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">OffscreenCanvas</tt><a class="headerlink" href="#libavg.avg.OffscreenCanvas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.Canvas" title="libavg.avg.Canvas"><tt class="xref py py-class docutils literal"><span class="pre">libavg.avg.Canvas</span></tt></a></p>
+<p>An OffscreenCanvas is a Canvas that is rendered to a texture. It can be
+referenced in the href attribute of an image node. See
+<a class="reference external" href="https://www.libavg.de/wiki/ProgrammersGuide/OffscreenRendering">https://www.libavg.de/wiki/ProgrammersGuide/OffscreenRendering</a> for an in-depth
+explanation of using offscreen rendering. Offscreen canvases are created by
+calling <a class="reference internal" href="#libavg.avg.Player.loadCanvasFile" title="libavg.avg.Player.loadCanvasFile"><tt class="xref py py-meth docutils literal"><span class="pre">Player.loadCanvasFile()</span></tt></a> and <a class="reference internal" href="#libavg.avg.Player.loadCanvasString" title="libavg.avg.Player.loadCanvasString"><tt class="xref py py-meth docutils literal"><span class="pre">Player.loadCanvasString()</span></tt></a>.</p>
+<dl class="attribute">
+<dt id="libavg.avg.OffscreenCanvas.autorender">
+<tt class="descname">autorender</tt><a class="headerlink" href="#libavg.avg.OffscreenCanvas.autorender" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turns autorendering on or off. Default is <tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.OffscreenCanvas.handleevents">
+<tt class="descname">handleevents</tt><a class="headerlink" href="#libavg.avg.OffscreenCanvas.handleevents" title="Permalink to this definition">¶</a></dt>
+<dd><p><tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt> if events that arrive at an image node that is displaying
+this canvas are routed to the offscreen canvas. Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.OffscreenCanvas.mipmap">
+<tt class="descname">mipmap</tt><a class="headerlink" href="#libavg.avg.OffscreenCanvas.mipmap" title="Permalink to this definition">¶</a></dt>
+<dd><p><tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt> if mipmaps are generated and used for the canvas. This is
+used instead of RasterNode.mipmap for images that render the canvas.
+Read-only.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.OffscreenCanvas.multisamplesamples">
+<tt class="descname">multisamplesamples</tt><a class="headerlink" href="#libavg.avg.OffscreenCanvas.multisamplesamples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of samples per pixel to use for multisampling. Setting this to
+1 disables multisampling. Read-only.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.OffscreenCanvas.getID">
+<tt class="descname">getID</tt><big>(</big><big>)</big> &rarr; string<a class="headerlink" href="#libavg.avg.OffscreenCanvas.getID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the id of the canvas. This is the same as
+calling <tt class="samp docutils literal"><span class="pre">canvas.getRootNode().getID()</span></tt>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.OffscreenCanvas.getNumDependentCanvases">
+<tt class="descname">getNumDependentCanvases</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.OffscreenCanvas.getNumDependentCanvases" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of canvases that reference this canvas. Used mainly
+for unit tests.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.OffscreenCanvas.registerCameraNode">
+<tt class="descname">registerCameraNode</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.OffscreenCanvas.registerCameraNode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.OffscreenCanvas.render">
+<tt class="descname">render</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.OffscreenCanvas.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Forces an immediate redraw of the offscreen canvas. This makes sure that
+following calls to screenshot() get a current version of the canvas and
+is usually used in combination with <tt class="samp docutils literal"><span class="pre">autorender=False</span></tt>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.OffscreenCanvas.unregisterCameraNode">
+<tt class="descname">unregisterCameraNode</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.OffscreenCanvas.unregisterCameraNode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="libavg.avg.OffscreenCanvas.isMultisampleSupported">
+<em class="property">classmethod </em><tt class="descname">isMultisampleSupported</tt><big>(</big><big>)</big> &rarr; bool<a class="headerlink" href="#libavg.avg.OffscreenCanvas.isMultisampleSupported" title="Permalink to this definition">¶</a></dt>
+<dd><p><tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt> if the machine&#8217;s OpenGL implementation supports offscreen
+multisampling.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.Player">
+<em class="property">class </em><tt class="descclassname">libavg.avg.</tt><tt class="descname">Player</tt><a class="headerlink" href="#libavg.avg.Player" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></tt></p>
+<p>The class used to load and play avg files and the main interface to the avg
+renderer. Player is a singleton. There is only one instance, accessed by
+<a class="reference internal" href="#libavg.avg.Player.get" title="libavg.avg.Player.get"><tt class="xref py py-meth docutils literal"><span class="pre">get()</span></tt></a>.</p>
+<dl class="attribute">
+<dt id="libavg.avg.Player.pluginPath">
+<tt class="descname">pluginPath</tt><a class="headerlink" href="#libavg.avg.Player.pluginPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of directories where the player searches for plugins when
+<a class="reference internal" href="#libavg.avg.Player.loadPlugin" title="libavg.avg.Player.loadPlugin"><tt class="xref py py-meth docutils literal"><span class="pre">loadPlugin()</span></tt></a> is called. The separator between path entries is a
+semicolon (&#8216;;&#8217;) under Windows and a colon (&#8216;:&#8217;) under Mac and Linux.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.Player.volume">
+<tt class="descname">volume</tt><a class="headerlink" href="#libavg.avg.Player.volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Total audio playback volume. 0 is silence, 1 passes media file
+volume through unchanged. Values higher than 1 can be used to
+amplify playback. A limiter prevents distortion when the volume
+is set to high.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.addTracker">
+<tt class="descname">addTracker</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.Player.addTracker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a camera-based multitouch tracker to the avg player. The tracker can be
+configured using the <tt class="file docutils literal"><span class="pre">avgtrackerrc</span></tt> file and immediately starts
+reporting events.</p>
+<p class="deprecated">
+<span class="versionmodified">Deprecated since version 1.5: </span>Use <a class="reference internal" href="#libavg.avg.Player.enableMultitouch" title="libavg.avg.Player.enableMultitouch"><tt class="xref py py-func docutils literal"><span class="pre">enableMultitouch()</span></tt></a> instead.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.assumePixelsPerMM">
+<tt class="descname">assumePixelsPerMM</tt><big>(</big><em>ppmm</em><big>)</big><a class="headerlink" href="#libavg.avg.Player.assumePixelsPerMM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tells the system to assume a resolution for the physical screen, overriding
+operating system information. The parameter is the number of pixels per
+millimeter as a <tt class="samp docutils literal"><span class="pre">float</span></tt>. This function affects the values returned by
+<a class="reference internal" href="#libavg.avg.Player.getPhysicalScreenDimensions" title="libavg.avg.Player.getPhysicalScreenDimensions"><tt class="xref py py-meth docutils literal"><span class="pre">getPhysicalScreenDimensions()</span></tt></a> and <a class="reference internal" href="#libavg.avg.Player.getPixelsPerMM" title="libavg.avg.Player.getPixelsPerMM"><tt class="xref py py-meth docutils literal"><span class="pre">getPixelsPerMM()</span></tt></a>. It is
+useful for situations in which the OS cannot know the resolution (e.g.
+projectors) and when the automatic functions return wrong values (which
+happens, unfortunately, because of operating system deficiencies).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.clearInterval">
+<tt class="descname">clearInterval</tt><big>(</big><em>id</em><big>)</big> &rarr; bool<a class="headerlink" href="#libavg.avg.Player.clearInterval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops a timeout, an interval or an onFrameHandler from being called.
+Returns <tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt> if there was an interval with the given
+<tt class="xref py py-attr docutils literal"><span class="pre">id</span></tt>, <tt class="xref py py-const xref docutils literal"><span class="pre">False</span></tt> if not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> (<em>int</em>) &#8211; An id returned by <a class="reference internal" href="#libavg.avg.Player.setInterval" title="libavg.avg.Player.setInterval"><tt class="xref py py-meth docutils literal"><span class="pre">setInterval()</span></tt></a>, <a class="reference internal" href="#libavg.avg.Player.setTimeout" title="libavg.avg.Player.setTimeout"><tt class="xref py py-meth docutils literal"><span class="pre">setTimeout()</span></tt></a>
+or <a class="reference internal" href="#libavg.avg.Player.setOnFrameHandler" title="libavg.avg.Player.setOnFrameHandler"><tt class="xref py py-meth docutils literal"><span class="pre">setOnFrameHandler()</span></tt></a>.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.createCanvas">
+<tt class="descname">createCanvas</tt><big>(</big><em>*params</em><big>)</big> &rarr; OffscreenCanvas<a class="headerlink" href="#libavg.avg.Player.createCanvas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an empty offscreen canvas. Parameters are given under
+<tt class="xref py py-class docutils literal"><span class="pre">OffscreenCanvas.</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.createNode">
+<tt class="descname">createNode</tt><big>(</big><em>xml</em><big>)</big> &rarr; Node<a class="headerlink" href="#libavg.avg.Player.createNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new Node. This node can be used as parameter to
+<a class="reference internal" href="areanodes.html#libavg.avg.DivNode.appendChild" title="libavg.avg.DivNode.appendChild"><tt class="xref py py-meth docutils literal"><span class="pre">DivNode.appendChild()</span></tt></a> and <a class="reference internal" href="areanodes.html#libavg.avg.DivNode.insertChild" title="libavg.avg.DivNode.insertChild"><tt class="xref py py-meth docutils literal"><span class="pre">DivNode.insertChild()</span></tt></a>.
+This method will create any type of node, including <tt class="samp docutils literal"><span class="pre">&lt;div&gt;</span></tt> nodes
+with children.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>xml</strong> &#8211; xml string conforming to the avg dtd that specifies the node to create.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<tt class="descname">createNode</tt><big>(</big><em>type</em>, <em>args</em><big>)</big> &rarr; Node</dt>
+<dd><p>Creates a new Node. This node can be used as parameter to
+<a class="reference internal" href="areanodes.html#libavg.avg.DivNode.appendChild" title="libavg.avg.DivNode.appendChild"><tt class="xref py py-meth docutils literal"><span class="pre">DivNode.appendChild()</span></tt></a> and <a class="reference internal" href="areanodes.html#libavg.avg.DivNode.insertChild" title="libavg.avg.DivNode.insertChild"><tt class="xref py py-meth docutils literal"><span class="pre">DivNode.insertChild()</span></tt></a>.
+This method will only create one node at a time.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>type</strong> (<em>string</em>) &#8211; Type string of the node to create (For example, <tt class="samp docutils literal"><span class="pre">image</span></tt> and
+<tt class="samp docutils literal"><span class="pre">words</span></tt> are valid type strings).</li>
+<li><strong>args</strong> (<em>dict</em>) &#8211; a dictionary specifying attributes of the node.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.deleteCanvas">
+<tt class="descname">deleteCanvas</tt><big>(</big><em>id</em><big>)</big><a class="headerlink" href="#libavg.avg.Player.deleteCanvas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the canvas given by id from the player&#8217;s internal list of
+canvases. It is an error to delete a canvas that is still referenced by
+an image node.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.enableMultitouch">
+<tt class="descname">enableMultitouch</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.Player.enableMultitouch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables multitouch event handling. Several drivers are available that
+generate multitouch events. To choose a driver, set the environment
+variable <span class="target" id="index-0"></span><tt class="xref std std-envvar docutils literal"><span class="pre">AVG_MULTITOUCH_DRIVER</span></tt> to the appropriate value:</p>
+<dl class="docutils">
+<dt><tt class="samp docutils literal"><span class="pre">TUIO</span></tt>:</dt>
+<dd>Listens for TUIO events from a tracker that conforms to the TUIO
+protocol (<a class="reference external" href="http://www.tuio.org">http://www.tuio.org</a>), a de-facto standard for multitouch
+events. By default, it listens to events on the default TUIO UDP port
+3333, but this can be configured using the environment variable
+<span class="target" id="index-1"></span><tt class="xref std std-envvar docutils literal"><span class="pre">AVG_TUIO_PORT</span></tt>.</dd>
+<dt><tt class="samp docutils literal"><span class="pre">APPLETRACKPAD</span></tt>:</dt>
+<dd>Uses the trackpad built into Mac Book Pros to generate events.</dd>
+<dt><tt class="samp docutils literal"><span class="pre">LINUXMTDEV</span></tt>:</dt>
+<dd>Uses the linux mtdev library to interface to multitouch devices.
+The environment variable <span class="target" id="index-2"></span><tt class="xref std std-envvar docutils literal"><span class="pre">AVG_LINUX_MULTITOUCH_DEVICE</span></tt> is used
+to determine which device file to open. Default is
+<tt class="samp docutils literal"><span class="pre">/dev/input/event3</span></tt>.</dd>
+<dt><tt class="samp docutils literal"><span class="pre">TRACKER</span></tt>:</dt>
+<dd>Enables the internal camera-based tracker. Configuring this tracker is
+described under <a class="reference external" href="https://www.libavg.de/wiki/ProgrammersGuide/Tracker">https://www.libavg.de/wiki/ProgrammersGuide/Tracker</a>.</dd>
+<dt><tt class="samp docutils literal"><span class="pre">WIN7TOUCH</span></tt>:</dt>
+<dd>Enables handling of Windows 7 touch events. This works with all devices
+which have Windows 7 drivers.</dd>
+<dt><tt class="samp docutils literal"><span class="pre">XINPUT21</span></tt>:</dt>
+<dd>Uses X11-based multitouch detection. This needs X11 with XInput 2.1
+support.</dd>
+</dl>
+<p>If <span class="target" id="index-3"></span><tt class="xref std std-envvar docutils literal"><span class="pre">AVG_MULTITOUCH_DRIVER</span></tt> is not set, the driver defaults to
+a plattform-specific one. Under Linux, the default is <tt class="samp docutils literal"><span class="pre">XINPUT21</span></tt> if
+XInput 2.1 is available on the system, otherwise <tt class="samp docutils literal"><span class="pre">LINUXMTDEV</span></tt>. Under
+Windows, the default is <tt class="samp docutils literal"><span class="pre">WIN7TOUCH</span></tt>.</p>
+<p><a class="reference internal" href="#libavg.avg.Player.enableMultitouch" title="libavg.avg.Player.enableMultitouch"><tt class="xref py py-meth docutils literal"><span class="pre">enableMultitouch()</span></tt></a> throws an exception if the chosen driver is not
+available or no multitouch device could be found. (Exception: Since there is
+no way to determine if a TUIO device is available, <a class="reference internal" href="#libavg.avg.Player.enableMultitouch" title="libavg.avg.Player.enableMultitouch"><tt class="xref py py-meth docutils literal"><span class="pre">enableMultitouch()</span></tt></a>
+always appears to succeed in this case.)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.getCanvas">
+<tt class="descname">getCanvas</tt><big>(</big><em>id</em><big>)</big> &rarr; OffscreenCanvas<a class="headerlink" href="#libavg.avg.Player.getCanvas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the offscreen canvas with the <tt class="xref py py-attr docutils literal"><span class="pre">id</span></tt> given.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.getEffectiveFramerate">
+<tt class="descname">getEffectiveFramerate</tt><big>(</big><big>)</big> &rarr; float<a class="headerlink" href="#libavg.avg.Player.getEffectiveFramerate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the framerate that the player is actually achieving. The
+value returned is not averaged and reflects only the current frame.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.getElementByID">
+<tt class="descname">getElementByID</tt><big>(</big><em>id</em><big>)</big> &rarr; Node<a class="headerlink" href="#libavg.avg.Player.getElementByID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an element in the main avg tree.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>id</strong> &#8211; id attribute of the node to return.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.getEventHook">
+<tt class="descname">getEventHook</tt><big>(</big><big>)</big> &rarr; pyfunc<a class="headerlink" href="#libavg.avg.Player.getEventHook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the last event hook set using <a class="reference internal" href="#libavg.avg.Player.setEventHook" title="libavg.avg.Player.setEventHook"><tt class="xref py py-meth docutils literal"><span class="pre">setEventHook()</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.getFrameDuration">
+<tt class="descname">getFrameDuration</tt><big>(</big><big>)</big> &rarr; int<a class="headerlink" href="#libavg.avg.Player.getFrameDuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the duration of the last frame in milliseconds.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.getFramerate">
+<tt class="descname">getFramerate</tt><big>(</big><big>)</big> &rarr; float<a class="headerlink" href="#libavg.avg.Player.getFramerate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current target framerate in frames per second. To get the
+actual framerate that the player is currently achieving, call
+<a class="reference internal" href="#libavg.avg.Player.getEffectiveFramerate" title="libavg.avg.Player.getEffectiveFramerate"><tt class="xref py py-meth docutils literal"><span class="pre">getEffectiveFramerate()</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.getFrameTime">
+<tt class="descname">getFrameTime</tt><big>(</big><big>)</big> &rarr; int<a class="headerlink" href="#libavg.avg.Player.getFrameTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of milliseconds that have elapsed since playback
+has started. Honors FakeFPS. The time returned stays constant for an
+entire frame; it is the time of the last display update.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.getKeyModifierState">
+<tt class="descname">getKeyModifierState</tt><big>(</big><big>)</big> &rarr; KeyModifier<a class="headerlink" href="#libavg.avg.Player.getKeyModifierState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current modifier keys (<tt class="kbd docutils literal"><span class="pre">shift</span></tt>, <tt class="kbd docutils literal"><span class="pre">ctrl</span></tt>) pressed.
+The return value is several KeyModifier values or&#8217;ed together.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.getMainCanvas">
+<tt class="descname">getMainCanvas</tt><big>(</big><big>)</big> &rarr; Canvas<a class="headerlink" href="#libavg.avg.Player.getMainCanvas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the main canvas. This is the canvas loaded using <a class="reference internal" href="#libavg.avg.Player.loadFile" title="libavg.avg.Player.loadFile"><tt class="xref py py-meth docutils literal"><span class="pre">loadFile()</span></tt></a>
+or <a class="reference internal" href="#libavg.avg.Player.loadString" title="libavg.avg.Player.loadString"><tt class="xref py py-meth docutils literal"><span class="pre">loadString()</span></tt></a> and displayed on screen.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.addInputDevice">
+<tt class="descname">addInputDevice</tt><big>(</big><em>inputDevice</em><big>)</big><a class="headerlink" href="#libavg.avg.Player.addInputDevice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers an <a class="reference internal" href="events.html#libavg.avg.InputDevice" title="libavg.avg.InputDevice"><tt class="xref py py-class docutils literal"><span class="pre">InputDevice</span></tt></a> with the system.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.getMouseState">
+<tt class="descname">getMouseState</tt><big>(</big><big>)</big> &rarr; MouseEvent<a class="headerlink" href="#libavg.avg.Player.getMouseState" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the last mouse event generated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.getPhysicalScreenDimensions">
+<tt class="descname">getPhysicalScreenDimensions</tt><big>(</big><big>)</big> &rarr; Point2D<a class="headerlink" href="#libavg.avg.Player.getPhysicalScreenDimensions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the size of the primary screen in millimeters.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.getPixelsPerMM">
+<tt class="descname">getPixelsPerMM</tt><big>(</big><big>)</big> &rarr; float<a class="headerlink" href="#libavg.avg.Player.getPixelsPerMM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of dots per millimeter of the primary display. Assumes
+square pixels.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.getRootNode">
+<tt class="descname">getRootNode</tt><big>(</big><big>)</big> &rarr; Node<a class="headerlink" href="#libavg.avg.Player.getRootNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the outermost element in the main avg tree.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.getScreenResolution">
+<tt class="descname">getScreenResolution</tt><big>(</big><big>)</big> &rarr; Point2D<a class="headerlink" href="#libavg.avg.Player.getScreenResolution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the size in pixels of the current screen.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.getTestHelper">
+<tt class="descname">getTestHelper</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.Player.getTestHelper" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.getTimeSinceLastFrame">
+<tt class="descname">getTimeSinceLastFrame</tt><big>(</big><big>)</big> &rarr; int<a class="headerlink" href="#libavg.avg.Player.getTimeSinceLastFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of milliseconds that have elapsed since the last
+frame (i.e. the last display update).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.getTracker">
+<tt class="descname">getTracker</tt><big>(</big><big>)</big> &rarr; Tracker<a class="headerlink" href="#libavg.avg.Player.getTracker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a tracker previously created with <a class="reference internal" href="#libavg.avg.Player.addTracker" title="libavg.avg.Player.addTracker"><tt class="xref py py-meth docutils literal"><span class="pre">addTracker()</span></tt></a> or
+<a class="reference internal" href="#libavg.avg.Player.enableMultitouch" title="libavg.avg.Player.enableMultitouch"><tt class="xref py py-meth docutils literal"><span class="pre">enableMultitouch()</span></tt></a> with the internal tracker configured.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.getVideoRefreshRate">
+<tt class="descname">getVideoRefreshRate</tt><big>(</big><big>)</big> &rarr; float<a class="headerlink" href="#libavg.avg.Player.getVideoRefreshRate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current hardware video refresh rate in number of
+refreshes per second.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.isMultitouchAvailable">
+<tt class="descname">isMultitouchAvailable</tt><big>(</big><big>)</big> &rarr; bool<a class="headerlink" href="#libavg.avg.Player.isMultitouchAvailable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns <tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt> if a multitouch device has been configured and is
+active, <tt class="xref py py-const xref docutils literal"><span class="pre">False</span></tt> if not. Must be called after <a class="reference internal" href="#libavg.avg.Player.play" title="libavg.avg.Player.play"><tt class="xref py py-meth docutils literal"><span class="pre">play()</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.isPlaying">
+<tt class="descname">isPlaying</tt><big>(</big><big>)</big> &rarr; bool<a class="headerlink" href="#libavg.avg.Player.isPlaying" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns <tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt> if <a class="reference internal" href="#libavg.avg.Player.play" title="libavg.avg.Player.play"><tt class="xref py py-meth docutils literal"><span class="pre">play()</span></tt></a> is currently executing,
+<tt class="xref py py-const xref docutils literal"><span class="pre">False</span></tt> if not.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.isUsingShaders">
+<tt class="descname">isUsingShaders</tt><big>(</big><big>)</big> &rarr; bool<a class="headerlink" href="#libavg.avg.Player.isUsingShaders" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns <tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt> if shader support is enabled and working,
+<tt class="xref py py-const xref docutils literal"><span class="pre">False</span></tt> if not.
+May only be called after <a class="reference internal" href="#libavg.avg.Player.play" title="libavg.avg.Player.play"><tt class="xref py py-meth docutils literal"><span class="pre">play()</span></tt></a> has been called.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.loadCanvasFile">
+<tt class="descname">loadCanvasFile</tt><big>(</big><em>filename</em><big>)</big> &rarr; OffscreenCanvas<a class="headerlink" href="#libavg.avg.Player.loadCanvasFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads the canvas file specified in filename and adds it to the
+registered offscreen canvases.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.loadCanvasString">
+<tt class="descname">loadCanvasString</tt><big>(</big><em>avgString</em><big>)</big> &rarr; OffscreenCanvas<a class="headerlink" href="#libavg.avg.Player.loadCanvasString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses avgString, loads the nodes it contains and adds the hierarchy
+to the registered offscreen canvases.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>avgString</strong> (<em>string</em>) &#8211; An xml string containing an avg node hierarchy.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.loadFile">
+<tt class="descname">loadFile</tt><big>(</big><em>filename</em><big>)</big> &rarr; Canvas<a class="headerlink" href="#libavg.avg.Player.loadFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads the avg file specified in filename. Returns the canvas loaded.
+The canvas is the main canvas displayed onscreen.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.loadPlugin">
+<tt class="descname">loadPlugin</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#libavg.avg.Player.loadPlugin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a Plugin.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>string</em>) &#8211; filename of the plugin without directory and
+file extension.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.loadString">
+<tt class="descname">loadString</tt><big>(</big><em>avgString</em><big>)</big> &rarr; Canvas<a class="headerlink" href="#libavg.avg.Player.loadString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses avgString and loads the nodes it contains. Returns the canvas
+loaded. The canvas is the main canvas displayed onscreen.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>avgString</strong> (<em>string</em>) &#8211; An xml string containing an avg node hierarchy.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.play">
+<tt class="descname">play</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.Player.play" title="Permalink to this definition">¶</a></dt>
+<dd><p>Opens a playback window or screen and starts playback. play returns
+when playback has ended.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.screenshot">
+<tt class="descname">screenshot</tt><big>(</big><big>)</big> &rarr; Bitmap<a class="headerlink" href="#libavg.avg.Player.screenshot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the contents of the current screen as a bitmap.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.setCursor">
+<tt class="descname">setCursor</tt><big>(</big><em>bitmap</em>, <em>hotspot</em><big>)</big><a class="headerlink" href="#libavg.avg.Player.setCursor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the mouse cursor to the bitmap given. The bitmap must have a size
+divisible by 8 and an RGBA pixel format. The cursor generated is
+binary black and white with a binary transparency channel. hotspot is
+the relative position of the actual pointing coordinate in the
+bitmap.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.setEventHook">
+<tt class="descname">setEventHook</tt><big>(</big><em>pyfunc</em><big>)</big><a class="headerlink" href="#libavg.avg.Player.setEventHook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a callable which will receive all events before the standard event
+handlers receive them. If this callable returns <tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt>,
+the event is not propagated to the standard event handlers.</p>
+<p>Generally, <a class="reference internal" href="#libavg.avg.Player.setEventHook" title="libavg.avg.Player.setEventHook"><tt class="xref py py-meth docutils literal"><span class="pre">setEventHook()</span></tt></a> should be used as a last resort. In most
+cases, standard event handlers are a lot cleaner. Also, setting several event
+hooks is not supported by libavg. To get around this limitation, you can
+use <a class="reference internal" href="#libavg.avg.Player.getEventHook" title="libavg.avg.Player.getEventHook"><tt class="xref py py-meth docutils literal"><span class="pre">getEventHook()</span></tt></a> to chain event hook functions.</p>
+<p>Note that <tt class="xref py py-attr docutils literal"><span class="pre">event.node</span></tt> is not set in the callback, since the
+system hasn&#8217;t determined the node to send the event to at that
+point.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.setFakeFPS">
+<tt class="descname">setFakeFPS</tt><big>(</big><em>fps</em><big>)</big><a class="headerlink" href="#libavg.avg.Player.setFakeFPS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a fixed number of virtual frames per second that are used as
+clock source for video playback, animations and other time-based
+actions. If a value of <tt class="samp docutils literal"><span class="pre">-1</span></tt> is given as parameter, the real clock is
+used. <a class="reference internal" href="#libavg.avg.Player.setFakeFPS" title="libavg.avg.Player.setFakeFPS"><tt class="xref py py-meth docutils literal"><span class="pre">setFakeFPS()</span></tt></a> can be used to get reproducible results for
+recordings or automated tests. Setting FakeFPS has the side-effect of
+disabling audio.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.setFramerate">
+<tt class="descname">setFramerate</tt><big>(</big><em>framerate</em><big>)</big><a class="headerlink" href="#libavg.avg.Player.setFramerate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the desired framerate for playback. Turns off syncronization
+to the vertical blanking interval.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.setGamma">
+<tt class="descname">setGamma</tt><big>(</big><em>red</em>, <em>green</em>, <em>blue</em><big>)</big><a class="headerlink" href="#libavg.avg.Player.setGamma" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets display gamma. This is a control for overall brightness and
+contrast that leaves black and white unchanged but adjusts greyscale
+values. <tt class="samp docutils literal"><span class="pre">1.0</span></tt> is identity, higher values give a brighter image, lower
+values a darker one.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.setInterval">
+<tt class="descname">setInterval</tt><big>(</big><em>time</em>, <em>pyfunc</em><big>)</big> &rarr; int<a class="headerlink" href="#libavg.avg.Player.setInterval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a python callable object that should be executed regularly.
+<a class="reference internal" href="#libavg.avg.Player.setInterval" title="libavg.avg.Player.setInterval"><tt class="xref py py-meth docutils literal"><span class="pre">setInterval()</span></tt></a> returns an id that can be used to
+call <a class="reference internal" href="#libavg.avg.Player.clearInterval" title="libavg.avg.Player.clearInterval"><tt class="xref py py-meth docutils literal"><span class="pre">clearInterval()</span></tt></a> to stop the function from being called. The
+callback is called at most once per frame.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>time</strong> (<em>int</em>) &#8211; Number of milliseconds between two calls.</li>
+<li><strong>pyfunc</strong> &#8211; Python callable to execute.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.setMousePos">
+<tt class="descname">setMousePos</tt><big>(</big><em>pos</em><big>)</big><a class="headerlink" href="#libavg.avg.Player.setMousePos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the position of the mouse cursor. Generates a mouse motion event.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.setMultiSampleSamples">
+<tt class="descname">setMultiSampleSamples</tt><big>(</big><em>multiSampleSamples</em><big>)</big><a class="headerlink" href="#libavg.avg.Player.setMultiSampleSamples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the number of samples per pixel to compute.
+This costs performance and smoothes the edges of polygons. A value of
+<tt class="samp docutils literal"><span class="pre">1</span></tt>  turns multisampling (also knowna as FSAA - Full-Screen
+Antialiasing) off. Good values are dependent on the graphics driver and
+the performance of the graphics card.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.setOGLOptions">
+<tt class="descname">setOGLOptions</tt><big>(</big><em>usePOW2Textures</em>, <em>useShaders</em>, <em>usePixelBuffers</em>, <em>multiSampleSamples</em><big>)</big><a class="headerlink" href="#libavg.avg.Player.setOGLOptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines which OpenGL extensions to check for and use if possible.
+This method is mainly used for debugging purposes while developing libavg,
+but can also be used to work around buggy drivers. The values set here
+override those in the <tt class="file docutils literal"><span class="pre">avgrc</span></tt> file. Note that with the exception of
+multiSampleSamples, fallbacks are always used - if a feature is
+specified that the system doesn&#8217;t support, a less demanding one will
+be used.</p>
+<p>Must be called before <a class="reference internal" href="#libavg.avg.Player.play" title="libavg.avg.Player.play"><tt class="xref py py-meth docutils literal"><span class="pre">play()</span></tt></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>usePOW2Textures</strong> (<em>bool</em>) &#8211; If <tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt>, restricts textures to power-of-two dimensions.</li>
+<li><strong>useShaders</strong> (<em>bool</em>) &#8211; If <tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt>, shaders are used to render effects,
+do masking and do color space conversions. If <tt class="xref py py-const xref docutils literal"><span class="pre">False</span></tt>, video
+color space conversion is done on the CPU and effects as well as masking
+are turned off.</li>
+<li><strong>usePixelBuffers</strong> (<em>bool</em>) &#8211; If <tt class="xref py py-const xref docutils literal"><span class="pre">False</span></tt>, disables the use of OpenGL pixel buffer objects.</li>
+<li><strong>MultiSampleSamples</strong> (<em>int</em>) &#8211; The number of samples per pixel to compute.
+This costs performance and smoothes the edges of polygons. A value of
+<tt class="samp docutils literal"><span class="pre">1</span></tt> turns multisampling (also known as FSAA - Full-Screen
+Antialiasing) off. Good values are dependent on the graphics driver and
+the performance of the graphics card.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.setOnFrameHandler">
+<tt class="descname">setOnFrameHandler</tt><big>(</big><em>pyfunc</em><big>)</big> &rarr; int<a class="headerlink" href="#libavg.avg.Player.setOnFrameHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a python callable object that should be executed once per frame.
+This is the same as <tt class="samp docutils literal"><span class="pre">setInterval(0,</span> <span class="pre">pyfunc)</span></tt>. Returns an id that can
+be used to call <a class="reference internal" href="#libavg.avg.Player.clearInterval" title="libavg.avg.Player.clearInterval"><tt class="xref py py-meth docutils literal"><span class="pre">clearInterval()</span></tt></a> to stop the function from being
+called.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pyfunc</strong> &#8211; Python callable to execute.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.setResolution">
+<tt class="descname">setResolution</tt><big>(</big><em>fullscreen</em>, <em>width</em>, <em>height</em>, <em>bpp</em><big>)</big><a class="headerlink" href="#libavg.avg.Player.setResolution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets display engine parameters. Must be called before <a class="reference internal" href="#libavg.avg.Player.loadFile" title="libavg.avg.Player.loadFile"><tt class="xref py py-meth docutils literal"><span class="pre">loadFile()</span></tt></a> or
+<a class="reference internal" href="#libavg.avg.Player.loadString" title="libavg.avg.Player.loadString"><tt class="xref py py-meth docutils literal"><span class="pre">loadString()</span></tt></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fullscreen</strong> (<em>bool</em>) &#8211; <tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt> if the avg file should be rendered fullscreen.</li>
+<li><strong>width, height</strong> (<em>int</em>) &#8211; The window size (if fullscreen is <tt class="xref py py-const xref docutils literal"><span class="pre">False</span></tt>)
+or screen resolution (if fullscreen is <tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt>).</li>
+<li><strong>bpp</strong> (<em>int</em>) &#8211; Number of bits per pixel to use. Valid values are <tt class="samp docutils literal"><span class="pre">15</span></tt>, <tt class="samp docutils literal"><span class="pre">16</span></tt>,
+<tt class="samp docutils literal"><span class="pre">24</span></tt> and <tt class="samp docutils literal"><span class="pre">32</span></tt>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.isFullscreen">
+<tt class="descname">isFullscreen</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.Player.isFullscreen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True when the player is running in fullscreen mode.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.setTimeout">
+<tt class="descname">setTimeout</tt><big>(</big><em>time</em>, <em>pyfunc</em><big>)</big> &rarr; int<a class="headerlink" href="#libavg.avg.Player.setTimeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a python callable object that should be executed after a set
+amount of time. <a class="reference internal" href="#libavg.avg.Player.setTimeout" title="libavg.avg.Player.setTimeout"><tt class="xref py py-meth docutils literal"><span class="pre">setTimeout()</span></tt></a> returns an id that can be used to
+call <a class="reference internal" href="#libavg.avg.Player.clearInterval" title="libavg.avg.Player.clearInterval"><tt class="xref py py-meth docutils literal"><span class="pre">clearInterval()</span></tt></a> to stop the function from being called.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>time</strong> (<em>int</em>) &#8211; Number of milliseconds before the call.</li>
+<li><strong>pyfunc</strong> &#8211; Python callable to execute.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.setVBlankFramerate">
+<tt class="descname">setVBlankFramerate</tt><big>(</big><em>rate</em><big>)</big><a class="headerlink" href="#libavg.avg.Player.setVBlankFramerate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the desired number of monitor refreshes before the next
+frame is displayed. The resulting framerate is determined by the
+monitor refresh rate divided by the rate parameter.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>rate</strong> (<em>int</em>) &#8211; Number of vertical blanking intervals to wait. On Mac OS X, only <tt class="samp docutils literal"><span class="pre">1</span></tt>
+is supported as rate.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.setWindowFrame">
+<tt class="descname">setWindowFrame</tt><big>(</big><em>hasWindowFrame</em><big>)</big><a class="headerlink" href="#libavg.avg.Player.setWindowFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p><tt class="xref py py-attr docutils literal"><span class="pre">hasWindowFrame</span></tt> should be set to <tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt> if a
+non-fullscreen player should have a window frame. If set to
+<tt class="xref py py-const xref docutils literal"><span class="pre">False</span></tt>, the player runs with no title bar or window frame. Must
+be called before <a class="reference internal" href="#libavg.avg.Player.play" title="libavg.avg.Player.play"><tt class="xref py py-meth docutils literal"><span class="pre">play()</span></tt></a> is called.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.setWindowPos">
+<tt class="descname">setWindowPos</tt><big>(</big><em>x</em>, <em>y</em><big>)</big><a class="headerlink" href="#libavg.avg.Player.setWindowPos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the location of the player window. Must be called before loadFile
+or loadString.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.showCursor">
+<tt class="descname">showCursor</tt><big>(</big><em>show</em><big>)</big><a class="headerlink" href="#libavg.avg.Player.showCursor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows or hides the mouse cursor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><strong>show</strong> (<em>bool</em>) &#8211; <tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt> if the mouse cursor should be visible.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.stop">
+<tt class="descname">stop</tt><big>(</big><big>)</big><a class="headerlink" href="#libavg.avg.Player.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops playback and resets the video mode if necessary.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="libavg.avg.Player.stopOnEscape">
+<tt class="descname">stopOnEscape</tt><big>(</big><em>stop</em><big>)</big><a class="headerlink" href="#libavg.avg.Player.stopOnEscape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Toggles player stop upon escape keystroke. If stop is <tt class="xref py py-const xref docutils literal"><span class="pre">True</span></tt>
+(the default), if player will halt playback when <tt class="kbd docutils literal"><span class="pre">Esc</span></tt> is pressed.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="libavg.avg.Player.get">
+<em class="property">classmethod </em><tt class="descname">get</tt><big>(</big><big>)</big> &rarr; Player<a class="headerlink" href="#libavg.avg.Player.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method gives access to the player instance. If no player has been
+created yet, a player is created.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="basenodes.html" title="Base Node Classes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="libavg Reference"
+             >previous</a> |</li>
+        <li><a href="index.html">libavg v1.7 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, Ulrich von Zadow.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

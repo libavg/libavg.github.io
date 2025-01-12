@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>libavg.AVGAppUtil</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="libavg-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="../index.php">libavg</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="libavg-module.html">Package&nbsp;libavg</a> ::
+        Module&nbsp;AVGAppUtil
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="libavg.AVGAppUtil-module.html">Module libavg.AVGAppUtil</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment"># libavg - Media Playback Engine.</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Copyright (C) 2003-2008 Ulrich von Zadow</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># This library is free software; you can redistribute it and/or</tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># modify it under the terms of the GNU Lesser General Public</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># License as published by the Free Software Foundation; either</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># version 2 of the License, or (at your option) any later version.</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># This library is distributed in the hope that it will be useful,</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># but WITHOUT ANY WARRANTY; without even the implied warranty of</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Lesser General Public License for more details.</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># You should have received a copy of the GNU Lesser General Public</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># License along with this library; if not, write to the Free Software</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Current versions can be found at www.libavg.de</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment"># Original author of this file is Martin Heistermann &lt;mh at sponc dot de&gt;</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"><tt class="py-comment"></tt><tt class="py-comment">#</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"><tt class="py-comment"></tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package libavg=libavg-module.html"><a title="libavg" class="py-name" href="#" onclick="return doclink('link-0', 'libavg', 'link-0');">libavg</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Module libavg.avg=libavg.avg-module.html"><a title="libavg.avg" class="py-name" href="#" onclick="return doclink('link-1', 'avg', 'link-1');">avg</a></tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-op">.</tt> <tt class="py-keyword">import</tt> <tt id="link-2" class="py-name" targets="Module libavg.mathutil=libavg.mathutil-module.html"><a title="libavg.mathutil" class="py-name" href="#" onclick="return doclink('link-2', 'mathutil', 'link-2');">mathutil</a></tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"><tt id="link-3" class="py-name" targets="Variable libavg.AVGAppStarter'.g_player=libavg.AVGAppStarter%27-module.html#g_player,Variable libavg.AVGAppStarterHelp.g_player=libavg.AVGAppStarterHelp-module.html#g_player,Variable libavg.AVGAppUtil.g_player=libavg.AVGAppUtil-module.html#g_player,Variable libavg.AVGMTAppStarter'.g_player=libavg.AVGMTAppStarter%27-module.html#g_player,Variable libavg.grabbable.g_player=libavg.grabbable-module.html#g_player,Variable libavg.trackerhelper.g_player=libavg.trackerhelper-module.html#g_player"><a title="libavg.AVGAppStarter'.g_player
+libavg.AVGAppStarterHelp.g_player
+libavg.AVGAppUtil.g_player
+libavg.AVGMTAppStarter'.g_player
+libavg.grabbable.g_player
+libavg.trackerhelper.g_player" class="py-name" href="#" onclick="return doclink('link-3', 'g_player', 'link-3');">g_player</a></tt> <tt class="py-op">=</tt> <tt id="link-4" class="py-name"><a title="libavg.avg" class="py-name" href="#" onclick="return doclink('link-4', 'avg', 'link-1');">avg</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Class libavg.avg.Player=libavg.avg.Player-class.html,Variable libavg.mtemu.Player=libavg.mtemu-module.html#Player"><a title="libavg.avg.Player
+libavg.mtemu.Player" class="py-name" href="#" onclick="return doclink('link-5', 'Player', 'link-5');">Player</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Method libavg.avg.ConradRelais.get()=libavg.avg.ConradRelais-class.html#get,Static Method libavg.avg.Logger.get()=libavg.avg.Logger-class.html#get,Static Method libavg.avg.Player.get()=libavg.avg.Player-class.html#get"><a title="libavg.avg.ConradRelais.get
+libavg.avg.Logger.get
+libavg.avg.Player.get" class="py-name" href="#" onclick="return doclink('link-6', 'get', 'link-6');">get</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"> </tt>
+<a name="getMediaDir"></a><div id="getMediaDir-def"><a name="L29"></a><tt class="py-lineno">29</tt> <a class="py-toggle" href="#" id="getMediaDir-toggle" onclick="return toggle('getMediaDir');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.AVGAppUtil-module.html#getMediaDir">getMediaDir</a><tt class="py-op">(</tt><tt class="py-param">_file_</tt><tt class="py-op">,</tt> <tt class="py-param">subdir</tt><tt class="py-op">=</tt><tt class="py-string">'media'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="getMediaDir-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="getMediaDir-expanded"><a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">    <tt class="py-docstring">"""call with _file_=__file__"""</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">    <tt class="py-name">myDir</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">dirname</tt><tt class="py-op">(</tt><tt class="py-name">_file_</tt><tt class="py-op">)</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">    <tt class="py-name">mediaDir</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">myDir</tt><tt class="py-op">,</tt> <tt class="py-name">subdir</tt><tt class="py-op">)</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">abspath</tt><tt class="py-op">(</tt><tt class="py-name">mediaDir</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line"> </tt>
+<a name="getMediaDirFromNode"></a><div id="getMediaDirFromNode-def"><a name="L35"></a><tt class="py-lineno">35</tt> <a class="py-toggle" href="#" id="getMediaDirFromNode-toggle" onclick="return toggle('getMediaDirFromNode');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.AVGAppUtil-module.html#getMediaDirFromNode">getMediaDirFromNode</a><tt class="py-op">(</tt><tt class="py-param">node</tt><tt class="py-op">,</tt> <tt class="py-param">path</tt><tt class="py-op">=</tt><tt class="py-string">''</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="getMediaDirFromNode-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="getMediaDirFromNode-expanded"><a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">    <tt class="py-docstring">'''</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"><tt class="py-docstring">    Recursively build the mediadir path, starting from the given node.</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"><tt class="py-docstring">    '''</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt id="link-7" class="py-name" targets="Variable libavg.avg.MouseEvent.node=libavg.avg.MouseEvent-class.html#node,Variable libavg.avg.TouchEvent.node=libavg.avg.TouchEvent-class.html#node"><a title="libavg.avg.MouseEvent.node
+libavg.avg.TouchEvent.node" class="py-name" href="#" onclick="return doclink('link-7', 'node', 'link-7');">node</a></tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Method libavg.avg.Node.getParent()=libavg.avg.Node-class.html#getParent"><a title="libavg.avg.Node.getParent" class="py-name" href="#" onclick="return doclink('link-8', 'getParent', 'link-8');">getParent</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-9" class="py-name" targets="Function libavg.AVGAppUtil.getMediaDirFromNode()=libavg.AVGAppUtil-module.html#getMediaDirFromNode"><a title="libavg.AVGAppUtil.getMediaDirFromNode" class="py-name" href="#" onclick="return doclink('link-9', 'getMediaDirFromNode', 'link-9');">getMediaDirFromNode</a></tt><tt class="py-op">(</tt><tt id="link-10" class="py-name"><a title="libavg.avg.MouseEvent.node
+libavg.avg.TouchEvent.node" class="py-name" href="#" onclick="return doclink('link-10', 'node', 'link-7');">node</a></tt><tt class="py-op">.</tt><tt id="link-11" class="py-name"><a title="libavg.avg.Node.getParent" class="py-name" href="#" onclick="return doclink('link-11', 'getParent', 'link-8');">getParent</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt id="link-12" class="py-name"><a title="libavg.avg.MouseEvent.node
+libavg.avg.TouchEvent.node" class="py-name" href="#" onclick="return doclink('link-12', 'node', 'link-7');">node</a></tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Variable libavg.avg.DivNode.mediadir=libavg.avg.DivNode-class.html#mediadir"><a title="libavg.avg.DivNode.mediadir" class="py-name" href="#" onclick="return doclink('link-13', 'mediadir', 'link-13');">mediadir</a></tt><tt class="py-op">,</tt> <tt class="py-name">path</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">path</tt> </tt>
+</div><a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line"> </tt>
+<a name="createImagePreviewNode"></a><div id="createImagePreviewNode-def"><a name="L44"></a><tt class="py-lineno">44</tt> <a class="py-toggle" href="#" id="createImagePreviewNode-toggle" onclick="return toggle('createImagePreviewNode');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="libavg.AVGAppUtil-module.html#createImagePreviewNode">createImagePreviewNode</a><tt class="py-op">(</tt><tt class="py-param">maxSize</tt><tt class="py-op">,</tt> <tt class="py-param">absHref</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="createImagePreviewNode-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="createImagePreviewNode-expanded"><a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">    <tt id="link-14" class="py-name"><a title="libavg.avg.MouseEvent.node
+libavg.avg.TouchEvent.node" class="py-name" href="#" onclick="return doclink('link-14', 'node', 'link-7');">node</a></tt> <tt class="py-op">=</tt>  <tt id="link-15" class="py-name"><a title="libavg.AVGAppStarter'.g_player
+libavg.AVGAppStarterHelp.g_player
+libavg.AVGAppUtil.g_player
+libavg.AVGMTAppStarter'.g_player
+libavg.grabbable.g_player
+libavg.trackerhelper.g_player" class="py-name" href="#" onclick="return doclink('link-15', 'g_player', 'link-3');">g_player</a></tt><tt class="py-op">.</tt><tt id="link-16" class="py-name" targets="Method libavg.avg.Player.createNode()=libavg.avg.Player-class.html#createNode"><a title="libavg.avg.Player.createNode" class="py-name" href="#" onclick="return doclink('link-16', 'createNode', 'link-16');">createNode</a></tt><tt class="py-op">(</tt><tt class="py-string">'image'</tt><tt class="py-op">,</tt> <tt class="py-op">{</tt><tt class="py-string">'href'</tt><tt class="py-op">:</tt> <tt class="py-name">absHref</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">    <tt id="link-17" class="py-name"><a title="libavg.avg.MouseEvent.node
+libavg.avg.TouchEvent.node" class="py-name" href="#" onclick="return doclink('link-17', 'node', 'link-7');">node</a></tt><tt class="py-op">.</tt><tt id="link-18" class="py-name" targets="Variable libavg.avg.AreaNode.size=libavg.avg.AreaNode-class.html#size,Variable libavg.avg.RectNode.size=libavg.avg.RectNode-class.html#size"><a title="libavg.avg.AreaNode.size
+libavg.avg.RectNode.size" class="py-name" href="#" onclick="return doclink('link-18', 'size', 'link-18');">size</a></tt> <tt class="py-op">=</tt> <tt id="link-19" class="py-name"><a title="libavg.mathutil" class="py-name" href="#" onclick="return doclink('link-19', 'mathutil', 'link-2');">mathutil</a></tt><tt class="py-op">.</tt><tt id="link-20" class="py-name" targets="Function libavg.mathutil.getScaledDim()=libavg.mathutil-module.html#getScaledDim"><a title="libavg.mathutil.getScaledDim" class="py-name" href="#" onclick="return doclink('link-20', 'getScaledDim', 'link-20');">getScaledDim</a></tt><tt class="py-op">(</tt><tt id="link-21" class="py-name"><a title="libavg.avg.MouseEvent.node
+libavg.avg.TouchEvent.node" class="py-name" href="#" onclick="return doclink('link-21', 'node', 'link-7');">node</a></tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="libavg.avg.AreaNode.size
+libavg.avg.RectNode.size" class="py-name" href="#" onclick="return doclink('link-22', 'size', 'link-18');">size</a></tt><tt class="py-op">,</tt> <tt class="py-name">max</tt> <tt class="py-op">=</tt> <tt class="py-name">maxSize</tt><tt class="py-op">)</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt id="link-23" class="py-name"><a title="libavg.avg.MouseEvent.node
+libavg.avg.TouchEvent.node" class="py-name" href="#" onclick="return doclink('link-23', 'node', 'link-7');">node</a></tt> </tt>
+</div><a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="libavg-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="../index.php">libavg</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Jan  8 16:09:02 2010
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

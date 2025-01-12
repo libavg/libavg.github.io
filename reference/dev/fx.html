@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Effect Nodes &mdash; libavg 1.8.dev documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.8.dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="libavg 1.8.dev documentation" href="index.html" />
+    <link rel="next" title="Gesture Support" href="gesture.html" />
+    <link rel="prev" title="Animation" href="animation.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="gesture.html" title="Gesture Support"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="animation.html" title="Animation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">libavg 1.8.dev documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="animation.html"
+                        title="previous chapter">Animation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gesture.html"
+                        title="next chapter">Gesture Support</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/fx.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-libavg.avg">
+<span id="effect-nodes"></span><h1>Effect Nodes<a class="headerlink" href="#module-libavg.avg" title="Permalink to this headline">¶</a></h1>
+<p class="graphviz">
+<img src="_images/inheritance-7471c041d82a1e36cbd71e838d51b189ec053911.png" alt="Inheritance diagram of BlurFXNode, ChromaKeyFXNode, HueSatFXNode, InvertFXNode, NullFXNode, ShadowFXNode" usemap="#inheritancee67f76fce5" class="inheritance"/>
+<map id="inheritancee67f76fce5" name="inheritancee67f76fce5">
+<area shape="rect" id="node1" href="#libavg.avg.BlurFXNode" target="_top" title="BlurFXNode" alt="" coords="5,143,96,167"/>
+<area shape="rect" id="node2" href="#libavg.avg.FXNode" target="_top" title="FXNode" alt="" coords="364,74,431,98"/>
+<area shape="rect" id="node3" href="#libavg.avg.ChromaKeyFXNode" target="_top" title="ChromaKeyFXNode" alt="" coords="118,143,254,167"/>
+<area shape="rect" id="node5" href="#libavg.avg.HueSatFXNode" target="_top" title="HueSatFXNode" alt="" coords="277,143,389,167"/>
+<area shape="rect" id="node6" href="#libavg.avg.InvertFXNode" target="_top" title="InvertFXNode" alt="" coords="413,143,513,167"/>
+<area shape="rect" id="node7" href="#libavg.avg.NullFXNode" target="_top" title="NullFXNode" alt="" coords="537,143,626,167"/>
+<area shape="rect" id="node8" href="#libavg.avg.ShadowFXNode" target="_top" title="ShadowFXNode" alt="" coords="648,143,763,167"/>
+</map>
+</p>
+<dl class="class">
+<dt id="libavg.avg.BlurFXNode">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">BlurFXNode</code><span class="sig-paren">(</span><em>radius=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.BlurFXNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.FXNode" title="libavg.avg.FXNode"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.FXNode</span></code></a></p>
+<p>Blurs the node it is applied to. Corresponds to the Gaussian Blur effect in
+Photoshop.</p>
+<p>Not supported under minimal shaders. Programs can call
+<a class="reference internal" href="player.html#libavg.avg.Player.areFullShadersSupported" title="libavg.avg.Player.areFullShadersSupported"><code class="xref py py-meth docutils literal"><span class="pre">Player.areFullShadersSupported()</span></code></a> to ensure support.</p>
+<dl class="attribute">
+<dt id="libavg.avg.BlurFXNode.radius">
+<code class="descname">radius</code><a class="headerlink" href="#libavg.avg.BlurFXNode.radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>The width of the blur. This corresponds to the radius parameter of
+photoshop.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.ChromaKeyFXNode">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">ChromaKeyFXNode</code><a class="headerlink" href="#libavg.avg.ChromaKeyFXNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.FXNode" title="libavg.avg.FXNode"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.FXNode</span></code></a></p>
+<p>Chroma keying is the process of removing a uniformly colored background from an
+image. The background is then replaced with a different image or video.
+Actors are filmed in front of a blue- or green-colored background and chroma
+keying is used to insert a different background.</p>
+<p>The <a class="reference internal" href="#libavg.avg.ChromaKeyFXNode" title="libavg.avg.ChromaKeyFXNode"><code class="xref py py-class docutils literal"><span class="pre">ChromaKeyFXNode</span></code></a> implements a high-quality realtime chroma key
+(greenscreen or bluescreen) effect. It replaces all pixels that are similar to a
+configured key color with transparency and can account for noise in the
+background area as well as remove color spill from the background to the
+foreground. All of the parameters can be manipulated for test purposes using the
+<strong class="program">avg_chromakey.py</strong> script. The effect is carried out in the HSL
+colorspace (<a class="reference external" href="http://en.wikipedia.org/wiki/HSL_and_HSV">http://en.wikipedia.org/wiki/HSL_and_HSV</a>).</p>
+<p>Not supported under minimal shaders. Programs can call
+<a class="reference internal" href="player.html#libavg.avg.Player.areFullShadersSupported" title="libavg.avg.Player.areFullShadersSupported"><code class="xref py py-meth docutils literal"><span class="pre">Player.areFullShadersSupported()</span></code></a> to ensure support.</p>
+<dl class="attribute">
+<dt id="libavg.avg.ChromaKeyFXNode.color">
+<code class="descname">color</code><a class="headerlink" href="#libavg.avg.ChromaKeyFXNode.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <a class="reference internal" href="misc.html#libavg.avg.Color" title="libavg.avg.Color"><code class="xref py py-class docutils literal"><span class="pre">Color</span></code></a> to key out. Pixels of this and similar colors are made
+transparent.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.ChromaKeyFXNode.erosion">
+<code class="descname">erosion</code><a class="headerlink" href="#libavg.avg.ChromaKeyFXNode.erosion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes single non-keyed-out pixels in larger transparent areas. Values &gt; 1
+remove larger areas. Useful for removing camera noise.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.ChromaKeyFXNode.htolerance">
+<code class="descname">htolerance</code><a class="headerlink" href="#libavg.avg.ChromaKeyFXNode.htolerance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hue tolerance for the key color.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.ChromaKeyFXNode.ltolerance">
+<code class="descname">ltolerance</code><a class="headerlink" href="#libavg.avg.ChromaKeyFXNode.ltolerance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lightness tolerance for the key color.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.ChromaKeyFXNode.softness">
+<code class="descname">softness</code><a class="headerlink" href="#libavg.avg.ChromaKeyFXNode.softness" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#libavg.avg.ChromaKeyFXNode.softness" title="libavg.avg.ChromaKeyFXNode.softness"><code class="xref py py-attr docutils literal"><span class="pre">softness</span></code></a> &gt; 0 causes pixels with a color close to the keyed-out
+colors to become partially transparent. Greater values increase this effect.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.ChromaKeyFXNode.spillthreshold">
+<code class="descname">spillthreshold</code><a class="headerlink" href="#libavg.avg.ChromaKeyFXNode.spillthreshold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Often, people in greenscreen studios aquire a greenish tint. Spill removal
+works against this by desaturating pixels that are close to the key color.
+Larger values cause more desaturation.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.ChromaKeyFXNode.stolerance">
+<code class="descname">stolerance</code><a class="headerlink" href="#libavg.avg.ChromaKeyFXNode.stolerance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saturation tolerance for the key color.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.FXNode">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">FXNode</code><a class="headerlink" href="#libavg.avg.FXNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Boost.Python.instance</span></code></p>
+<p>Base class for GPU-based effects. These effects can be added to any
+<a class="reference internal" href="areanodes.html#libavg.avg.RasterNode" title="libavg.avg.RasterNode"><code class="xref py py-class docutils literal"><span class="pre">RasterNode</span></code></a> by calling <a class="reference internal" href="areanodes.html#libavg.avg.RasterNode.setEffect" title="libavg.avg.RasterNode.setEffect"><code class="xref py py-meth docutils literal"><span class="pre">RasterNode.setEffect()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.HueSatFXNode">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">HueSatFXNode</code><span class="sig-paren">(</span><em>hue=0.0</em>, <em>saturation=0.0</em>, <em>lightness=0.0</em>, <em>colorize=False</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.HueSatFXNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.FXNode" title="libavg.avg.FXNode"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.FXNode</span></code></a></p>
+<p>Color correction filter that works by converting pixels to the hsl color space
+(<a class="reference external" href="http://en.wikipedia.org/wiki/HSL_and_HSV">http://en.wikipedia.org/wiki/HSL_and_HSV</a>), changing the values there and
+converting back to rgb. Can be used to change hue,
+saturation and lightness of a node. Corresponds to the Photoshop Hue/Saturation
+dialog.</p>
+<dl class="attribute">
+<dt id="libavg.avg.HueSatFXNode.colorize">
+<code class="descname">colorize</code><a class="headerlink" href="#libavg.avg.HueSatFXNode.colorize" title="Permalink to this definition">¶</a></dt>
+<dd><p>If <a class="reference internal" href="#libavg.avg.HueSatFXNode.colorize" title="libavg.avg.HueSatFXNode.colorize"><code class="xref py py-attr docutils literal"><span class="pre">colorize</span></code></a> is <code class="xref py py-const docutils literal"><span class="pre">True</span></code>, all colors will be tinted
+according to the current <a class="reference internal" href="#libavg.avg.HueSatFXNode.hue" title="libavg.avg.HueSatFXNode.hue"><code class="xref py py-attr docutils literal"><span class="pre">hue</span></code></a> value. Otherwise, <a class="reference internal" href="#libavg.avg.HueSatFXNode.hue" title="libavg.avg.HueSatFXNode.hue"><code class="xref py py-attr docutils literal"><span class="pre">hue</span></code></a> is
+treated as a difference value.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.HueSatFXNode.hue">
+<code class="descname">hue</code><a class="headerlink" href="#libavg.avg.HueSatFXNode.hue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to get/set the color angle in degrees. Effective values are 0..360 or
+-180..180, depending on the <a class="reference internal" href="#libavg.avg.HueSatFXNode.colorize" title="libavg.avg.HueSatFXNode.colorize"><code class="xref py py-attr docutils literal"><span class="pre">colorize</span></code></a> value.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.HueSatFXNode.lightness">
+<code class="descname">lightness</code><a class="headerlink" href="#libavg.avg.HueSatFXNode.lightness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set <a class="reference internal" href="#libavg.avg.HueSatFXNode.lightness" title="libavg.avg.HueSatFXNode.lightness"><code class="xref py py-attr docutils literal"><span class="pre">lightness</span></code></a> offset. Adds a per pixel offset in brightness. Values
+range from -100 to 100, with -100 being very dark and 100 very bright.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.HueSatFXNode.saturation">
+<code class="descname">saturation</code><a class="headerlink" href="#libavg.avg.HueSatFXNode.saturation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set <a class="reference internal" href="#libavg.avg.HueSatFXNode.saturation" title="libavg.avg.HueSatFXNode.saturation"><code class="xref py py-attr docutils literal"><span class="pre">saturation</span></code></a> of Node. In <a class="reference internal" href="#libavg.avg.HueSatFXNode.colorize" title="libavg.avg.HueSatFXNode.colorize"><code class="xref py py-attr docutils literal"><span class="pre">colorize</span></code></a> mode, this is the
+overall image saturation in the range 0..100, with 0 being greyscale and 100
+very oversaturated. If <a class="reference internal" href="#libavg.avg.HueSatFXNode.colorize" title="libavg.avg.HueSatFXNode.colorize"><code class="xref py py-attr docutils literal"><span class="pre">colorize</span></code></a> is false, the attribute is an
+offset from -100 to 100.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.InvertFXNode">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">InvertFXNode</code><a class="headerlink" href="#libavg.avg.InvertFXNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.FXNode" title="libavg.avg.FXNode"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.FXNode</span></code></a></p>
+<p>Color Invert Effect. Inverts the brightness of nodes that it is attached to.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.NullFXNode">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">NullFXNode</code><a class="headerlink" href="#libavg.avg.NullFXNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.FXNode" title="libavg.avg.FXNode"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.FXNode</span></code></a></p>
+<p>Do-nothing effect. Exists primarily as aid in debugging libavg.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="libavg.avg.ShadowFXNode">
+<em class="property">class </em><code class="descclassname">libavg.avg.</code><code class="descname">ShadowFXNode</code><span class="sig-paren">(</span><em>offset=(0</em>, <em>0)</em>, <em>radius=1.0</em>, <em>opacity=1.0</em>, <em>color=&quot;FFFFFF&quot;</em><span class="sig-paren">)</span><a class="headerlink" href="#libavg.avg.ShadowFXNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#libavg.avg.FXNode" title="libavg.avg.FXNode"><code class="xref py py-class docutils literal"><span class="pre">libavg.avg.FXNode</span></code></a></p>
+<p>Adds a shadow behind the node.</p>
+<p>Not supported under minimal shaders. Programs can call
+<a class="reference internal" href="player.html#libavg.avg.Player.areFullShadersSupported" title="libavg.avg.Player.areFullShadersSupported"><code class="xref py py-meth docutils literal"><span class="pre">Player.areFullShadersSupported()</span></code></a> to ensure support.</p>
+<dl class="attribute">
+<dt id="libavg.avg.ShadowFXNode.offset">
+<code class="descname">offset</code><a class="headerlink" href="#libavg.avg.ShadowFXNode.offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>An adjustment to the shadow&#8217;s position behind the node in pixels.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.ShadowFXNode.radius">
+<code class="descname">radius</code><a class="headerlink" href="#libavg.avg.ShadowFXNode.radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>The blur radius of the shadow.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.ShadowFXNode.opacity">
+<code class="descname">opacity</code><a class="headerlink" href="#libavg.avg.ShadowFXNode.opacity" title="Permalink to this definition">¶</a></dt>
+<dd><p>The opacity of the shadow.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="libavg.avg.ShadowFXNode.color">
+<code class="descname">color</code><a class="headerlink" href="#libavg.avg.ShadowFXNode.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>The shadow <a class="reference internal" href="misc.html#libavg.avg.Color" title="libavg.avg.Color"><code class="xref py py-class docutils literal"><span class="pre">Color</span></code></a>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="gesture.html" title="Gesture Support"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="animation.html" title="Animation"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">libavg 1.8.dev documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, Ulrich von Zadow.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.6.
+    </div>
+  </body>
+</html>
