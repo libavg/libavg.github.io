@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/BuildingAMultitouchTable by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 17:21:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>BuildingAMultitouchTable - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Building-a-Multitouch-Table"></a>
+<h1 >Building a Multitouch Table<a href="#Building-a-Multitouch-Table" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#Building-a-Multitouch-Table">Building a Multitouch Table</a></li><li><a href="#Materials">Materials</a><ul><li><a href="#Projector">Projector</a></li><li><a href="#Camera">Camera</a></li><li><a href="#IR-Lighting">IR Lighting</a></li><li><a href="#Diffuser">Diffuser</a></li><li><a href="#Computer">Computer</a></li><li><a href="#Fans">Fans</a></li></ul>
+</li><li><a href="#Construction">Construction</a></li></ul>
+
+
+<blockquote>
+
+	<p><img src="../../../plugin_assets/redmine_wiki_extensions/images/warning.png" alt="(!)"> <strong>Note:</strong> <img src="../../../plugin_assets/redmine_wiki_extensions/images/warning.png" alt="(!)"> <br />The information on this page is from 2007, and a lot has happened since then. Our journal article contains newer information.</p>
+
+
+</blockquote>
+
+	<p>Building a multitouch table like the MTC we built at the <a href="http://www.c-base.org/" class="external">c-base</a> in 2006 is really not that much work. The basic setup is shown at the right. A projector, a camera and IR lighting are mounted behind a diffuser (aka projection surface). The camera picks up the infrared light reflected by objects behind the surface and a computer attached to the camera uses image processing to extract positional data from the images. In front of the projection surface, you can attach a transparent surface (we used shatterproof glass) to prevent damage to the projection surface itself.</p>
+
+
+	<p><div style="float:right"><img src="../../../files/BuildingAMultiTouchConsole/Setup.png" alt="" /></div><br />Before you ask: No, this is not an FTIR device like the one Jeff Han (and, in his wake, countless others) built. What we do is similar in some respects (we use active IR camera tracking like he does), but we place the infrared lighting behind the projection surface. That saves lots of soldering. It also means the camera picks up things some distance away from the surface in addition to whatever is touching the surface. Additional image processing is used to separate touches from proximity sensing. As a result, an MTC can sense fingers touching the surface and hands in proximity to it, distinguish between the two, and even figure out which fingers belong to which hand.</p>
+
+
+	<p>That said, most of what follows is applicable to FTIR devices as well. In fact, everything but the part about the IR lighting is.</p>
+
+
+	<a name="Materials"></a>
+<h1 >Materials<a href="#Materials" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>This is a list of the materials that we used to build the table, with some comments on experiences and alternatives. We spent around € 3500 for our table, but depending on your needs, you may end up with a lot less. Prices given are approximate and those that we payed at the time we built the original MTC (Fall 2006).</p>
+
+
+	<p>Disclaimer: None of us is affilated with any of the companies mentioned. We're just passing along our experiences.</p>
+
+
+	<a name="Projector"></a>
+<h2 >Projector<a href="#Projector" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>We used a <a href="www.projectorcentral.com/pdf/projector_spec_3432.html">Panasonic PT-AX100U</a> (€ 1300). It's bright (2000 Lumen), has a resolution of 1280x720 and enough lens shift to allow fairly good freedom in choosing its location inside the table. In our projector, however, the lens doesn't stay put by itself when it's mounted pointing downward. That may or may not be a problem depending on your projection geometry. If you opt for a different one, make sure you consider the lens shift it offers because that is what allows you to have a rectangular projection without degrading the image quality when the projector isn't directly behind the projection surface.</p>
+
+
+	<p>You'll also need a mirror to reflect the image so the projector can be placed inside the table. For good results, use a surface mirror. Foil mirrors like those by <a href="http://www.alluvial.de/" class="external">Alluvial</a> result in good images as well and are a little cheaper - but strong vibrations (like those caused by loud music) cause them to vibrate. Ours was destroyed that way at a techno party. Regular mirrors give ugly double images when used in projection setups and should be avoided.</p>
+
+
+	<a name="Camera"></a>
+<h2 >Camera<a href="#Camera" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>The camera in the original MTC is a <a href="www.ptgrey.com/products/fireflymv/fireflymv.html">Point Grey Firefly MV</a> ($300 plus an incredible $100 shipping to Europe) with an extremely <a href="http://www.1394store.com/eshop/product.asp?dept_id=56&amp;pf_id=4382" class="external">wide angle-lens</a> (€ 24). The camera has a very high IR sensitivity and a framerate of 60 Hz at VGA resolution, and we're very happy with it. If you want to experiment with other cameras, libavg supports a variety of camera subsystems.</p>
+
+
+	<p>For IR filters, the lowest-cost alternative is to use an unexposed but developed film and cut that to the size you need. Works surprisingly well. An alternative is to buy a sheet of Photographic IR Filter, such as the <a href="http://www.calumetphoto.com/eng/product/calumet_3x3_87_infrared_filter/le3787" class="external">Lee #87</a>.</p>
+
+
+	<a name="IR-Lighting"></a>
+<h2 >IR Lighting<a href="#IR-Lighting" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>The original MTC uses halogen lights with IR filters fitted in front, but we don't recommend repeating that. Other MTC-based tables have used high-powered LED floodlights. Currently, they're available from this <a href="http://stores.ebay.de/Internic-Berlin-Shop/_i.html?_fsub=13&amp;_sc=1&amp;_sop=1" class="external">German eBay shop</a> for € 70 a piece. For a square meter-sized table, you'll need four of them. Since they are quite narrow focused - they're not built for usage witin a table - you need to increase their Angle with some <a href="http://en.wikipedia.org/wiki/Concave" class="external">concave</a> lenses, preferrably one <a href="http://en.wikipedia.org/wiki/Fresnel_lens" class="external">fresnel lens</a> used on the back window of Vans.</p>
+
+
+	<a name="Diffuser"></a>
+<h2 >Diffuser<a href="#Diffuser" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>The most cost-effective alternative is <a href="http://www.gerriets.com/de/produkte/screens/produktliste.php?prodKat=201302000" class="external">Gerriets Optitrans</a> as projection surface (€ 80 for 1x2m). If you've got the money, a rear-projection screen like one from ThyssenKrupp gives a much clearer image. Both these screens have a gain of around 1.6. Screens with extremely uniform projection characteristics (gain close to or below one) like Gerriets Opera can cause camera tracking to fail.</p>
+
+
+	<a name="Computer"></a>
+<h2 >Computer<a href="#Computer" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Any modern (i.e dual-core) PC or Mac will do. The original MTC uses a 3.0 MHz Pentium D (Around € 500), but others have successfully used a Mac Mini as well. A single-core computer won't suffice, though, because the finger tracking algorithm runs best if it has a core to itself.</p>
+
+
+	<a name="Fans"></a>
+<h2 >Fans<a href="#Fans" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>You'll need two 8 cm fans for the projector and at least two more for the body.</p>
+
+
+	<a name="Construction"></a>
+<h1 >Construction<a href="#Construction" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>The image below shows the geometry of our MTC. The document <a href="../../../attachments/download/Mtc_construction.pdf" class="attachment">Mtc_construction.pdf</a> contains measurements and materials needed. The table is a wood and MDF (medium density fiberboard) construction that is incredibly robust, transportable, allows access from three sides and has a projection surface of 130x70 cm. Obviously, you can design your own geometry, but make sure all the components really fit into the table. In particular, today's home projectors have limited wide-angle capabilities, so even with a mirror (or two) it's hard to get the projector into the table. Most of the space inside the MTC is taken up by the light of the projector.</p>
+
+
+	<p>The projector is placed in the wedge that sticks out at the back of the construction, pointing downward. We have flexible ducts that transport the exhaust away from the projector and out of the enclosure because otherwise the hot air visibly distorts the projection. If you want the MTC to fit through normal-sized (In Germany they're usually at least 80 cm wide) doors, the wedge needs to be removable.</p>
+
+
+	<p>The mirror is flat on the floor of the MTC, and the camera is mounted directly on the floor as well. The IR lights should be in the four corners - make sure you have an even intensity of IR light on the entire surface.</p>
+
+
+	<p>The left ledge has room for a small computer. <a href="ReleaseInstall.html" class="wiki-page">Install libavg</a> and you're ready to build your own multitouch applications.</p>
+
+
+	<p><img src="../../../files/BuildingAMultiTouchConsole/Mtc.jpg" alt="" /></p>
+
+
+	<p></p>
+</div>
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/BuildingAMultitouchTable by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 17:21:57 GMT -->
+</html>

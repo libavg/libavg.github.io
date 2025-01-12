@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/ImageNode by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>ImageNode - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Image-Nodes"></a>
+<h1 >Image Nodes<a href="#Image-Nodes" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#Image-Nodes">Image Nodes</a></li></ul>
+
+
+	<p>The simplest libavg node type is the <code>ImageNode</code>. It places an image on the screen. An image node is created like this:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>imgNode = libavg.ImageNode(href=<span class="string"><span class="delimiter">&quot;</span><span class="content">rgb24-64x64.png</span><span class="delimiter">&quot;</span></span>, pos=(<span class="integer">10</span>,<span class="integer">30</span>),
+<span class="line-numbers">2</span>        parent=player.getRootNode())
+</span></code></pre>
+
+	<p>This statement causes the image in the file <code>rgb24-64x64.png</code> to be loaded from disk and inserted into the scene graph as child of the main root avg node. As with other node types, position, size, opacity and rotation of the node can be set using attributes.</p>
+
+
+	<p>By default, the size of an image node is the size of the image in the file in pixels. This size can be determined by calling <code>ImageNode.getMediaSize()</code>. There is a maximum size for image nodes which depends on the graphics driver. As examples, for many current graphics cards, the limit is 8192x8192 pixels, and Linux software rendering has a limit of 4096x4096 pixels. libavg outputs the maximum on startup if you set</p>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>$ export AVG_LOG_CATEGORIES=CONFIG:INFO
+</span></code></pre>
+
+	<p>Other than images loaded from disk, <code>ImageNodes</code> can also use in-memory Bitmap objects and offscreen buffers as source for the image data. To use a bitmap object, call <code>ImageNode.setBitmap()</code>. Offscreen buffers are explained on a <a href="OffscreenRendering.html" class="wiki-page">separate page</a>.</p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/ImageNode by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:12 GMT -->
+</html>

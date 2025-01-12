@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/BugReport by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 17:20:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>BugReport - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Reporting-Bugs"></a>
+<h1 >Reporting Bugs<a href="#Reporting-Bugs" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>If you've found a bug in libavg, please report it on the <a href="https://github.com/libavg/libavg/issues?milestone=&amp;page=1&amp;state=open" class="external">bug tracking system</a>.</p>
+
+
+	<p>Please report a bug if you hit a segmentation fault or an assertion, if make check fails on your machine, or if libavg is doing something else that it shouldn't be. If you think you might have found a bug but aren't sure, please ask in the forums. Also, please check the installation guides if you can't get libavg running at all - most causes of installation failures are described in the wiki.</p>
+
+
+	<a name="What-to-Include"></a>
+<h1 >What to Include<a href="#What-to-Include" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>To find out what is happening, we need to reproduce the bug. In the majority of cases, bug reports don't contain enough information for us to do this.</p>
+
+
+	<p>We always need to know:</p>
+
+
+	<ul>
+	<li>The libavg version: Installer, tarball, git checkout? If git checkout: which commit and branch?</li>
+		<li>The exact program output.</li>
+		<li>If make check terminates without errors. If there are errors in make check, please sent the output of make check.</li>
+	</ul>
+
+
+	<p>If it's a configuration-related bug (many are), we need to know:</p>
+
+
+	<ul>
+	<li>What type of system you are running libavg on (OS and exact version, processor, graphics card, driver version).</li>
+		<li>Under Mac OS X, open the System Profiler (About This Mac -> More Info), then choose File -> Save As and RTF file format, or just tell us the version of Mac OS X as well as the model and graphics card of the computer.</li>
+		<li>Under linux, we need to know the distribution (incl. version) and the output of:</li>
+	</ul>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>$ uname -a
+<span class="line-numbers">2</span>$ glxinfo
+</span></code></pre>
+
+	<a name="Segmentation-Faults"></a>
+<h1 >Segmentation Faults<a href="#Segmentation-Faults" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>If you're running into a segmentation fault, a stack trace helps:</p>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span> $ gdb python
+<span class="line-numbers">2</span> (gdb) r Test.py
+<span class="line-numbers">3</span> [...]
+<span class="line-numbers">4</span> ./bin/bash: line 4:  4324 Segmentation fault      ${dir}$tst
+<span class="line-numbers">5</span> (gdb) bt
+</span></code></pre>
+
+	<p>Replace 'Test.py' with whatever libavg program is causing the segfault. If the segfault doesn't happen directly after the 'r Test.py' line, insert a 'c' command (for 'continue'). The 'b' command should then generate your stack trace.</p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/BugReport by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 17:20:00 GMT -->
+</html>

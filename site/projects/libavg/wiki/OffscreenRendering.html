@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/OffscreenRendering by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>OffscreenRendering - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Offscreen-Rendering"></a>
+<h1 >Offscreen Rendering<a href="#Offscreen-Rendering" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#Offscreen-Rendering">Offscreen Rendering</a></li><li><a href="#Concept">Concept</a></li><li><a href="#Usage">Usage</a></li><li><a href="#Event-Routing">Event Routing</a></li><li><a href="#Controlling-Updates">Controlling Updates</a><ul><li><a href="#Prerendering">Prerendering</a></li><li><a href="#Rendering-Modified-Camera-Images">Rendering Modified Camera Images</a></li></ul>
+</li><li><a href="#Image-Quality">Image Quality</a></li></ul>
+
+
+	<p>libavg can render more than one scenegraph at once. One of these <em>canvases</em> is displayed on the screen, and the others are rendered to an offscreen buffer and can be used as the content of image nodes. Each canvas renders a complete tree of libavg nodes.</p>
+
+
+	<p>Internally, canvases are rendered to OpenGL Framebuffer Objects and used as input textures for image nodes.</p>
+
+
+	<a name="Concept"></a>
+<h1 >Concept<a href="#Concept" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>You can do lots of things with offscreen canvases. Some of them are not immediately apparent, so here are a few examples:</p>
+
+
+	<ul>
+	<li>Render once, display several times: If a tree of nodes is displayed at several places on the screen, you can render it once into the canvas and use the canvas in several places. This saves processing power. A canvas is also the only way to display a camera image several times.</li>
+		<li>Render at print resolutions: A canvas can be very large (a typical maximum size is 8192x8192 pixels), so you can render things that are a lot larger than screen size.</li>
+		<li>Prerender complicated subscenes: A canvas can be set up to render on demand, so complicated subscenes can be rendered only when they change and not every frame.</li>
+		<li>Render an animated scene and write it to disk as a video (using the <a href="/reference/dev/misc.html#libavg.avg.VideoWriter" class="external">VideoWriter</a>).</li>
+		<li>Use effects like blur or shadow on a group of nodes.</li>
+		<li>Use a complex scene as a mask for a node (using <a href="/reference/dev/areanodes.html#libavg.avg.RasterNode.setMaskBitmap" class="external">setMaskBitmap</a>).</li>
+	</ul>
+
+
+	<a name="Usage"></a>
+<h1 >Usage<a href="#Usage" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>An offscreen canvas is just a regular libavg tree with a <code>CanvasNode</code> at it's root. It is instantiated by calling <code>Player.createCanvas()</code>. This causes the canvas to be registered with the player. By default, it will be rendered once per frame, directly before the visible avg window is rendered. The resulting texture can then be displayed in one or more <code>ImageNodes</code> by setting an appropriate <code>href</code>:</p>
+
+
+	<p><em>canvas.py</em></p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers"> 1</span><span class="comment">#!/usr/bin/env python</span>
+<span class="line-numbers"> 2</span><span class="comment"># -*- coding: utf-8 -*-</span>
+<span class="line-numbers"> 3</span>
+<span class="line-numbers"> 4</span><span class="keyword">from</span> <span class="include">libavg</span> <span class="keyword">import</span> <span class="include">avg</span>
+<span class="line-numbers"> 5</span>
+<span class="line-numbers"> 6</span>player = avg.Player.get()
+<span class="line-numbers"> 7</span>
+<span class="line-numbers"> 8</span>offscreenCanvas = player.createCanvas(id=<span class="string"><span class="delimiter">&quot;</span><span class="content">londoncalling</span><span class="delimiter">&quot;</span></span>, 
+<span class="line-numbers"> 9</span>        size=(<span class="integer">320</span>,<span class="integer">240</span>))
+<span class="line-numbers"><strong>10</strong></span>avg.WordsNode(pos=(<span class="integer">10</span>,<span class="integer">10</span>), text=<span class="string"><span class="delimiter">&quot;</span><span class="content">London Calling</span><span class="delimiter">&quot;</span></span>, font=<span class="string"><span class="delimiter">&quot;</span><span class="content">Arial</span><span class="delimiter">&quot;</span></span>, 
+<span class="line-numbers">11</span>        parent=offscreenCanvas.getRootNode())
+<span class="line-numbers">12</span>
+<span class="line-numbers">13</span>mainCanvas = player.createMainCanvas(size=(<span class="integer">640</span>,<span class="integer">480</span>))
+<span class="line-numbers">14</span>rootNode = mainCanvas.getRootNode()
+<span class="line-numbers">15</span>avg.ImageNode(href=<span class="string"><span class="delimiter">&quot;</span><span class="content">canvas:londoncalling</span><span class="delimiter">&quot;</span></span>, parent=rootNode)
+<span class="line-numbers">16</span>
+<span class="line-numbers">17</span>player.play()
+</span></code></pre>
+
+	<p>Of course, canvases can also be deleted again:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>player.deleteCanvas(<span class="string"><span class="delimiter">&quot;</span><span class="content">londoncalling</span><span class="delimiter">&quot;</span></span>)
+</span></code></pre>
+
+	<p>So far, you can achieve the same result by just placing the <code>WordsNode</code> in the onscreen avg tree, but offscreen rendering gives you a lot more flexibility. By adding a second image node with the same href, the same texture is displayed again. This doesn't take up additional space on the graphics card, and if the offscreen canvas is complex, it is only rendered once. Of course, the image can also be scaled, thereby scaling the complete canvas. Setting the opacity fades the complete (pre-rendered) texture - which in some situations is a lot smoother than fading each component individually.</p>
+
+
+	<a name="Event-Routing"></a>
+<h1 >Event Routing<a href="#Event-Routing" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>By default, events are only delivered to the nodes in the main avg tree. This means that if a user clicks on an image that has a canvas <code>href</code>, the event goes to that image node. Sometimes, it makes sense to route events through the containing image nodes to the nodes in the offscreen canvas. Setting <code>canvas.handleevents</code> to <code>True</code> has this effect. In that case, events delivered to nodes inside the canvas report positions relative to the canvas.</p>
+
+
+	<a name="Controlling-Updates"></a>
+<h1 >Controlling Updates<a href="#Controlling-Updates" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>There are several update strategies for canvases:</p>
+
+
+	<ul>
+	<li>Once per onscreen frame: The canvas is rendered every time the main screen is rendered. Automatic updates are controlled by the <code>autorender</code> attribute - the default is <code>True</code>.</li>
+		<li>Manual update: The canvas is updated when <code>canvas.render()</code> is called.</li>
+		<li>Once per camera frame: Canvas updates happen every time a camera node gets a new frame. This can be enabled by calling <code>canvas.registerCameraNode()</code>.</li>
+	</ul>
+
+
+	<p>Usually, the default works very well, but there are some cases where other strategies make sense:</p>
+
+
+	<a name="Prerendering"></a>
+<h2 >Prerendering<a href="#Prerendering" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Canvases have a <code>screenshot()</code> method that returns a bitmap. This can be used together with manual updates allow prerendering of screen elements. The standard keyboard does this, for example, to extract a bitmap per key from a bitmap that contains the complete keyboard. This happens on initialization:</p>
+
+
+	<p><em>Keyboard Initialization Pseudocode</em></p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers"> 1</span><span class="keyword">def</span> <span class="function">createImage</span>(<span class="predefined-constant">self</span>, pos, size, ovlHref):
+<span class="line-numbers"> 2</span>    canvas = player.createCanvas(size=size)
+<span class="line-numbers"> 3</span>    avg.ImageNode(href=ovlHref, pos=-<span class="predefined-constant">self</span>.pos, 
+<span class="line-numbers"> 4</span>            parent=canvas.getRootNode())
+<span class="line-numbers"> 5</span>    canvas.render()
+<span class="line-numbers"> 6</span>    <span class="predefined-constant">self</span>.keyBitmap = canvas.screenshot()
+<span class="line-numbers"> 7</span>    player.deleteCanvas(<span class="string"><span class="delimiter">'</span><span class="content">offscreen</span><span class="delimiter">'</span></span>)
+<span class="line-numbers"> 8</span>
+<span class="line-numbers"> 9</span><span class="keyword">for</span> each key:
+<span class="line-numbers"><strong>10</strong></span>    key.createImage(key.pos, key.size, key.ovlHref)
+</span></code></pre>
+
+	<p>For each key, a small temporary canvas as big as one key is created. The keyboard bitmap - this bitmap contains the complete keyboard - is rendered into the canvas, shifted so that only the current key is visible. The result is saved into a new bitmap. After the algorithm runs, there is one bitmap per key.</p>
+
+
+	<a name="Rendering-Modified-Camera-Images"></a>
+<h2 >Rendering Modified Camera Images<a href="#Rendering-Modified-Camera-Images" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Effects or other modifications to camera images only need to be rendered once for every camera image received. This works very well, for instance, to reduce the GPU load caused by the <code>ChromaKeyFXNode</code>.</p>
+
+
+	<a name="Image-Quality"></a>
+<h1 >Image Quality<a href="#Image-Quality" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>Canvases have their own multisampling and mipmapping settings. By default, they are not multisampled (<a class="external" href="http://en.wikipedia.org/wiki/Multisampling">http://en.wikipedia.org/wiki/Multisampling</a>) and no mipmaps (<a class="external" href="http://en.wikipedia.org/wiki/Mipmap">http://en.wikipedia.org/wiki/Mipmap</a>) are generated. The mipmap settings of image nodes that contain the canvas are ignored.</p>
+
+
+	<p><em>Canvas with multisampling and mipmapping turned on</em></p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>player.createCanvas(id=<span class="string"><span class="delimiter">&quot;</span><span class="content">londoncalling</span><span class="delimiter">&quot;</span></span>, size=(<span class="integer">320</span>,<span class="integer">240</span>),
+<span class="line-numbers">2</span>        multisamplesamples=<span class="string"><span class="delimiter">&quot;</span><span class="content">16</span><span class="delimiter">&quot;</span></span>, mipmap=<span class="string"><span class="delimiter">&quot;</span><span class="content">True</span><span class="delimiter">&quot;</span></span>)
+</span></code></pre>
+
+	<p>On current discrete graphics cards (i.e., non-onboard graphics), mipmapping is usually performed in hardware and takes a negligible amount of time.</p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/OffscreenRendering by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:15 GMT -->
+</html>

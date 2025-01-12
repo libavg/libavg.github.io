@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/CameraNode by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:13 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>CameraNode - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Camera-Nodes"></a>
+<h1 >Camera Nodes<a href="#Camera-Nodes" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#Camera-Nodes">Camera Nodes</a></li><li><a href="#General-Setup">General Setup</a></li><li><a href="#Subsystems">Subsystems</a><ul><li><a href="#Firewire-libdc1394">Firewire libdc1394</a></li><li><a href="#Firewire-CMU1394">Firewire CMU1394</a></li><li><a href="#Video4Linux">Video4Linux</a></li><li><a href="#DirectShow">DirectShow</a></li></ul></li></ul>
+
+
+	<p>libavg supports a number of different camera capture subsystems. Each subsystem supports different features, and may need to be setup slightly differently. Currently, the most advanced subsystems are the firewire subsystems (libdc1394 for linux/mac and cmu1394 for windows).</p>
+
+
+	<a name="General-Setup"></a>
+<h1 >General Setup<a href="#General-Setup" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>The tracker module and the CameraNode both use the same camera code, so the settings are similar:</p>
+
+
+	<table>
+		<tr>
+			<td><code>driver</code></td>
+			<td>The camera subsystem to use. Valid values are firewire (uses libdc1394 version 2.x under linux/mac and cmu1394 under windows), v4l and directshow.</td>
+		</tr>
+		<tr>
+			<td><code>device</code></td>
+			<td>The camera device to access. The exact format of this parameter depends on the driver chosen.</td>
+		</tr>
+		<tr>
+			<td><code>unit</code></td>
+			<td>The unit within the device to use. This allows support e.g. for stereo cameras (or channel switching in the case of tv cards). Again, the exact format depends on the driver.</td>
+		</tr>
+		<tr>
+			<td><code>format</code></td>
+			<td>The pixel format the camera should use for the images.</td>
+		</tr>
+		<tr>
+			<td><code>capturewidth</code>,<br />              <code>captureheight</code></td>
+			<td>Camera node only: The width and height of the camera image. Corresponds to the size entry in avgtrackerrc.</td>
+		</tr>
+		<tr>
+			<td><code>framerate</code></td>
+			<td>Frames per second to be delivered by the camera. If this is higher than the rate at which the frames are used, excess camera frames are discarded.</td>
+		</tr>
+		<tr>
+			<td><code>fw800</code></td>
+			<td>Boolean parameter that determines whether to use 800 mbit firewire. Sadly, there is no easy way to autodetect support for this, so it needs to be set to True whenever an 800 mbit data rate is desired.</td>
+		</tr>
+	</table>
+
+
+
+
+	<p>In addition, there are several camera settings parameters (brightness, exposure, sharpness, saturation, gamma, shutter, gain and strobeduration) which may or may not be supported by the camera or the driver. The firewire drivers support all of them. Note that in the case of firewire, the exposure parameter is auto exposure. Setting a parameter to -1 turns on auto mode.</p>
+
+
+	<p>To test the setup, the <code>avg_showcamera.py</code> utility is available. Start it without parameters to access the documentation. <code>avg_showcamera.py --list</code> outputs a list of available cameras and image formats.</p>
+
+
+	<a name="Subsystems"></a>
+<h1 >Subsystems<a href="#Subsystems" class="wiki-anchor">&para;</a></h1>
+
+
+	<a name="Firewire-libdc1394"></a>
+<h2 >Firewire libdc1394<a href="#Firewire-libdc1394" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>This subsystem is active under Linux and Mac OS X if driver is set to firewire. It supports version 2.x of libdc1394. <a href="http://damien.douxchamps.net/ieee1394/libdc1394/" class="external">libdc1394</a> is a library for interacting with firewire cameras that conform to the DCAM specification. It should work with any firewire camera that implements this specification. Driver-specific parameters are:</p>
+
+
+	<table>
+		<tr>
+			<td><code>decive</code></td>
+			<td>Used as the guid (in hex) of the device to open. If this parameter is 0 (the default), the first camera on the bus is opened.</td>
+		</tr>
+		<tr>
+			<td><code>unit</code></td>
+			<td>This corresponds to the DCAM unit in the device that should be opened. Again, 0 is the default and implies that the first unit should be opened.</td>
+		</tr>
+	</table>
+
+
+
+
+	<a name="Firewire-CMU1394"></a>
+<h2 >Firewire CMU1394<a href="#Firewire-CMU1394" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>This subsystem is active under Windows if driver is set to firewire. It uses the <a href="http://www.cs.cmu.edu/~iwan/1394/" class="external">CMU 1394 Camera Driver</a> to support DCAM-compatible firewire cameras. Driver-specific parameters are:</p>
+
+
+	<table>
+		<tr>
+			<td><code>device</code></td>
+			<td>Used as the guid (in decimal) of the device to open. If this parameter is 0 (the default), the first camera on the bus is opened.</td>
+		</tr>
+		<tr>
+			<td><code>unit</code></td>
+			<td>Unsupported</td>
+		</tr>
+	</table>
+
+
+
+
+	<a name="Video4Linux"></a>
+<h2 >Video4Linux<a href="#Video4Linux" class="wiki-anchor">&para;</a></h2>
+
+
+	<p><a href="http://linuxtv.org/wiki/index.php/Main_Page" class="external">Video4Linux</a> is the video capture framework for Linux. It supports a wide variety of capture devices, including USB webcams and TV capture cards. Driver-specific parameters are:</p>
+
+
+	<table>
+		<tr>
+			<td><code>device</code></td>
+			<td>The device file to open. Default is /dev/video0</td>
+		</tr>
+		<tr>
+			<td><code>unit</code></td>
+			<td>The v4l channel to open.</td>
+		</tr>
+	</table>
+
+
+
+
+	<p>The v4l_info utility is very helpful in determining the modes supported by attached devices.</p>
+
+
+	<a name="DirectShow"></a>
+<h2 >DirectShow<a href="#DirectShow" class="wiki-anchor">&para;</a></h2>
+
+
+	<p><a href="http://msdn.microsoft.com/en-us/library/ms783323(VS.85).aspx" class="external">DirectShow</a> is Microsoft's multimedia framework. Most cameras should work with this capture subsystem. Driver-specific parameters are:</p>
+
+
+	<table>
+		<tr>
+			<td><code>device</code></td>
+			<td>The device string format for DirectShow is fairly flexible. If you do not care which camera is used, you may simply leave this parameter blank. If you need to specify a specific camera, set this parameter to be either the 'Display Name', the 'Device Description', or some part of the 'Device Instance Path' for the device. These bits of information can be found within the 'Device Manager' 'Device Properties' entry for the device under the 'Details' tab.</td>
+		</tr>
+		<tr>
+			<td><code>unit</code></td>
+			<td>Unused</td>
+		</tr>
+	</table>
+
+
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/CameraNode by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:13 GMT -->
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/MultiMonitorSetup by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>MultiMonitorSetup - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="MultiMonitorSetup"></a>
+<h1 >MultiMonitorSetup<a href="#MultiMonitorSetup" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>You can use libavg in a multimonitor Setup as long libavg can create <strong>one</strong> OpenGL context over all screens.<br />This works with Intel, ATI and Nvidia.<br />Most graphiccards only allows 2 screen(also named heads) at a time. There are some cards which supports more <br />than these.</p>
+
+
+	<a name="Intel"></a>
+<h2 >Intel<a href="#Intel" class="wiki-anchor">&para;</a></h2>
+
+
+	<p><em>Tested under Linux with Intel HD4500ironlake using opensource drivers</em><br />Use xrandr or gnome-settings to add your screen<br /><pre>
+xrandr --output VGA1 --left-of LVDS1 --auto
+</pre><br />You can also use xorg.conf to manual configure the same settings you changed over xrandr</p>
+
+
+	<p>TODO: check ViewPort/VirtualScreenSize - it's missing + testing this!<br /><pre>
+Section "ServerLayout" 
+        Identifier     "X.org Configured" 
+        Screen      0  "aticonfig-Screen[0]-0" 0 0
+EndSection
+
+Section "Device" 
+        Identifier  "aticonfig-Device[0]-0" 
+        Driver      "fglrx" 
+        BusID       "PCI:4:0:0" 
+    Option      "Monitor-DFP2" "Unten Monitor" 
+    Option      "Monitor-CRT2" "Oben Monitor" 
+EndSection
+
+Section "Monitor" 
+        Identifier      "Unten Monitor" 
+EndSection
+
+Section "Monitor" 
+        Identifier      "Oben Monitor" 
+        Option          "Above" "Unten Monitor" 
+EndSection
+
+Section "Screen" 
+        Identifier "aticonfig-Screen[0]-0" 
+        Device     "aticonfig-Device[0]-0" 
+        DefaultDepth     24
+        SubSection "Display" 
+                Viewport   0 0
+                Depth     24
+        EndSubSection
+EndSection
+</pre></p>
+
+
+	<a name="AMDATI"></a>
+<h2 >AMD/ATI<a href="#AMDATI" class="wiki-anchor">&para;</a></h2>
+
+
+	<p><em>Tested with ATI HD 6950 using proprietary drivers from amd</em><br />Same way like Intel. Use xrandr-cmdline or use system graphic or you can configure it over xorg.conf.</p>
+
+
+	<p><strong>BUG</strong> You have to set <strong><code>Virtual   7128 1200</code></strong>, because otherwise your VirtualScreen is to small for your<br />Resolution!<br /><em>Configuration for 3 Screens, each is rotate by 90 degrees(pivot mode)</em><br /><pre>
+Section "ServerLayout" 
+    Identifier "Default Layout" 
+    Screen      0  "aticonfig-Screen[0]-0" 0 0
+EndSection
+
+Section "Module" 
+    Load    "glx" 
+EndSection
+
+Section "Device" 
+    Identifier "Default Device" 
+    Driver "fglrx" 
+    BusId "PCI:1:0:0" 
+    Option "Monitor-DFP13" "TFT-1" 
+    Option "Monitor-DFP5" "TFT-2" 
+    Option "Monitor-DFP9" "TFT-3" 
+EndSection
+
+Section "Monitor" 
+    Identifier "TFT-1" 
+    Option "LeftOf" "TFT-2" 
+    Option "Rotate"  "left" 
+EndSection
+
+Section "Monitor" 
+    Identifier "TFT-2" 
+    Option "Rotate"  "left" 
+EndSection
+
+Section "Monitor" 
+    Identifier "TFT-3" 
+    Option "RightOf" "TFT-2" 
+    Option "Rotate"  "left" 
+EndSection
+
+Section "Screen" 
+    Identifier "aticonfig-Screen[0]-0" 
+    Device     "aticonfig-Device[0]-0" 
+    DefaultDepth     24
+    SubSection "Display" 
+        Virtual   7128 1200
+        Depth     24
+    EndSubSection
+EndSection
+</pre></p>
+
+
+	<a name="Nvidia"></a>
+<h2 >Nvidia<a href="#Nvidia" class="wiki-anchor">&para;</a></h2>
+
+
+	<p><em>Tested with GTX 660 Ti using proprietary drivers from nvidia</em><br />You have to use TwinView. (even for more than 2 screens)<br />To setup a correct metamodes line I used the <code>/var/log/Xorg.0.log</code> to know<br />which screen is connected to which connector(example: DFP-0).<br /><pre>
+[...]
+Missing Example Log files
+[...]
+</pre><br /><pre>
+Option          "metamodes" "&lt;CONNECTOR&gt;: &lt;Resolution_Frequency&gt; +&lt;x-pos&gt;+&lt;y-pos&gt; [[, DFP-1: 1920x1200_60 +1366+0], ...]
+</pre><br /><pre>
+Section "Device" 
+        Identifier      "Device0" 
+        Driver          "nvidia" 
+        BusId       "PCI:1:0:0" 
+EndSection
+
+Section "Screen" 
+        Identifier      "Screen0" 
+        Device          "Device0" 
+        DefaultDepth    24
+        Option          "TwinView" "1" 
+        Option          "TwinViewXineramaInfoOrder" "DFP-0" 
+#Option          "metamodes" "DFP-0: 1366x768_60 +0+0, DFP-1: 1920x1200_60 +1366+0, DFP-2: 1920x1200_60 +3286+0" 
+        Option          "metamodes" "DFP-0: 1920x1200_60 +0+0, DFP-1: 1920x1200_60 +1366+0, DFP-2: 1366x768_60 +3286+0" 
+        SubSection      "Display" 
+                Depth       24
+        EndSubSection
+EndSection
+
+</pre></p>
+
+
+	<table>
+		<tr>
+			<th>Heads </th>
+			<th>Name</th>
+			<th>OS </th>
+			<td> _.Driver/Version </td>
+		</tr>
+		<tr>
+			<td>   2    </td>
+			<td> Intel HD4500    </td>
+			<td> Archlinux </td>
+			<td> opensrc/kernel 3.5.4/xorg-intel 2.20.8-1 </td>
+		</tr>
+		<tr>
+			<td>   4    </td>
+			<td> AMD/ATI HD-6950 </td>
+			<td> Ubuntu 12.04 </td>
+			<td> prop/?? </td>
+		</tr>
+		<tr>
+			<td>   4    </td>
+			<td> nvidia gtx 660  </td>
+			<td> Ubuntu 12.04 </td>
+			<td> prop/?? </td>
+		</tr>
+		<tr>
+			<td>   2    </td>
+			<td> nvidia gtx 560  </td>
+			<td> Ubuntu 12.04 </td>
+			<td> prop/?? </td>
+		</tr>
+	</table>
+
+
+
+
+	<p>Maybe also interesting for you : <a class="external" href="http://www.x.org/wiki/XInputCoordinateTransformationMatrixUsage">http://www.x.org/wiki/XInputCoordinateTransformationMatrixUsage</a> and <a class="external" href="https://wiki.archlinux.org/index.php/Touchscreen">https://wiki.archlinux.org/index.php/Touchscreen</a></p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/MultiMonitorSetup by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:23 GMT -->
+</html>

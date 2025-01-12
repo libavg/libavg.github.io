@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/SupportedGraphicsDrivers by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:10:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>SupportedGraphicsDrivers - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Supported-Graphics-Drivers"></a>
+<h1 >Supported Graphics Drivers<a href="#Supported-Graphics-Drivers" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#Supported-Graphics-Drivers">Supported Graphics Drivers</a><ul><li><a href="#Mac">Mac</a></li><li><a href="#Windows">Windows</a></li><li><a href="#Linux">Linux</a></li></ul></li></ul>
+
+
+	<p>libavg uses modern OpenGL to render display contents. This means that the GPUs and drivers in use need to be installed correctly and work well. In most cases, they do, and when they don't, we make an effort to work around bugs in drivers. On the other hand, we don't have all hardware and driver combinations at hand, so if things are broken in different ways than described here, please report an issue.</p>
+
+
+	<p>This page lists GPU/driver combinations for the different plattforms and how to deal with them. Note that most virtual machines don't have very good OpenGL support, and things will often break. Unfortunately, the number of possible combinations of VM software, host and client make it hard to test this.</p>
+
+
+	<a name="Mac"></a>
+<h2 >Mac<a href="#Mac" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Macs with NVidia and ATI GPUs should work without issues.</p>
+
+
+	<p>For Macs with Intel GPUs, a number of FXNodes are disabled by default. This is because some older OS X drivers had an issue that caused hard lockups of the machine (See <a class="external" href="https://github.com/libavg/libavg/issues/434">https://github.com/libavg/libavg/issues/434</a>). On newer Macs, this doesn't occur, but since we con't say for sure when the bug was fixed, the FXNodes remain disabled. To reenable them manually, set <code>&lt;shaderusage&gt;full&lt;/shaderusage&gt;</code> in <code>~/.avgrc</code>.</p>
+
+
+	<a name="Windows"></a>
+<h2 >Windows<a href="#Windows" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Windows machines with NVidia and ATI GPUs should run libavg without issues. Half-recent Intel GPUs work well as well. Older Intel GPUs (especially mobile GPUs) have a history of issues.</p>
+
+
+	<a name="Linux"></a>
+<h2 >Linux<a href="#Linux" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>The proprietary drivers for NVidia and ATI GPUs work flawlessly. If you have one of these GPUs, make sure you install them, because the open source drivers are simply not suited for serious graphics work yet. Newer Intel GPUs work as well (although there's a bug in the screen capture functions: <a class="external" href="https://github.com/libavg/libavg/issues/634">https://github.com/libavg/libavg/issues/634</a>), but older ones have serious issues.</p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/SupportedGraphicsDrivers by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:10:42 GMT -->
+</html>

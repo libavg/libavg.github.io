@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/NextGenTracking by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>NextGenTracking - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Next-Generation-Tracking"></a>
+<h1 >Next Generation Tracking<a href="#Next-Generation-Tracking" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#Next-Generation-Tracking">Next Generation Tracking</a></li><li><a href="#Single-camera-filter-graph">Single camera filter graph:</a></li></ul>
+
+
+	<p>The current hard-coded filter graph implementation could be superseded by an xml-based implementation.</p>
+
+
+	<p>Enables:</p>
+
+
+	<ul>
+	<li>Multi-camera support</li>
+		<li>Better camera calibration (OpenCV)</li>
+		<li>Easier configuration</li>
+	</ul>
+
+
+	<p>Interface:</p>
+
+
+	<a name="Single-camera-filter-graph"></a>
+<h1 >Single camera filter graph:<a href="#Single-camera-filter-graph" class="wiki-anchor">&para;</a></h1>
+
+
+<pre><code class="xml syntaxhl"><span class="CodeRay"><span class="line-numbers"> 1</span><span class="tag">&lt;tracker&gt;</span>
+<span class="line-numbers"> 2</span>  <span class="tag">&lt;camera</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">cam1</span><span class="delimiter">&quot;</span></span> <span class="error">[</span><span class="attribute-name">...</span><span class="error">]</span><span class="tag">/&gt;</span>
+<span class="line-numbers"> 3</span>  <span class="tag">&lt;imagine</span> <span class="attribute-name">inputs</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">cam1</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+<span class="line-numbers"> 4</span>    <span class="tag">&lt;histogram</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">hist</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">inputid</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">cam1</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">stride</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">3</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+<span class="line-numbers"> 5</span>    <span class="tag">&lt;mask</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">mask</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">inputid</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">camera</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">camera_mask.png</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+<span class="line-numbers"> 6</span>    <span class="tag">&lt;distort</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">distort</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">inputid</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">mask</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers"> 7</span>        <span class="attribute-name">distortionparams</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">(0.69, 0)</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers"> 8</span>        <span class="attribute-name">trapezoid</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">0.151537</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers"> 9</span>        <span class="attribute-name">angle</span>=<span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers"><strong>10</strong></span>        <span class="error">[</span><span class="attribute-name">...</span><span class="error">]</span><span class="tag">/&gt;</span>
+<span class="line-numbers">11</span>    <span class="tag">&lt;crop</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">crop</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">inputid</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">distort</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers">12</span>        <span class="attribute-name">displaydisplacement</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">(-174.966, -145.974)</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers">13</span>        <span class="attribute-name">displayscale</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">(2.52, 2.55)</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+<span class="line-numbers">14</span>    <span class="tag">&lt;historysubtract</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">nohistory</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">inputid</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">crop</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers">15</span>        <span class="attribute-name">updateinterval</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">25</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers">16</span>        <span class="attribute-name">brighterregions</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">True</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+<span class="line-numbers">17</span>    <span class="tag">&lt;bandpass</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">bandpass</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">inputid</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">nohistory</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers">18</span>        <span class="attribute-name">range</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">(1.6, 2.4)</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers">19</span>        <span class="attribute-name">postmult</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">30.0</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+<span class="line-numbers"><strong>20</strong></span>  <span class="tag">&lt;/imagine&gt;</span>
+<span class="line-numbers">21</span>  <span class="tag">&lt;blobs</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">touchblobs</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">inputid</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">bandpass</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers">22</span>        <span class="attribute-name">threshold</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">148</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers">23</span>        <span class="attribute-name">similarity</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">50</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers">24</span>        <span class="attribute-name">areabounds</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">(16, 200000)</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers">25</span>        <span class="attribute-name">eccentricitybounds</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">(1, 80)</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+<span class="line-numbers">26</span>  <span class="tag">&lt;blobs</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">trackblobs</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">inputid</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">nohistory</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers">27</span>        <span class="attribute-name">threshold</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">16</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers">28</span>        <span class="attribute-name">similarity</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">100</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers">29</span>        <span class="attribute-name">areabounds</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">(700, 200000)</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers"><strong>30</strong></span>        <span class="attribute-name">eccentricitybounds</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">(1, 80)</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+<span class="line-numbers">31</span><span class="tag">&lt;/tracker&gt;</span>
+</span></code></pre>
+
+	<ul>
+	<li>Multi-camera filter graph:
+	<ul>
+	<li>Need to refactor pos/scale logic: Use normalized intermediate coordinates (0,0)-(1,1).</li>
+		<li>Graph stays mostly the same, is executed once per camera. Per-camera data:
+	<ul>
+	<li>camera id</li>
+		<li>distortion, position, crop params </li>
+	</ul>
+	</li>
+	</ul>
+	</li>
+		<li>Idea for graph:</li>
+	</ul>
+
+
+<pre><code class="xml syntaxhl"><span class="CodeRay"><span class="line-numbers"> 1</span><span class="tag">&lt;tracker&gt;</span>
+<span class="line-numbers"> 2</span>  <span class="tag">&lt;camera</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">cam1</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">pos</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">(0,0)</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">size</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">(640, 480)</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers"> 3</span>      <span class="attribute-name">distortionparams</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">(0.69, 0)</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers"> 4</span>      <span class="attribute-name">trapezoid</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">...</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers"> 5</span>      <span class="error">[</span><span class="attribute-name">...</span><span class="error">]</span><span class="tag">/&gt;</span>
+<span class="line-numbers"> 6</span>  <span class="tag">&lt;camera</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">cam2</span><span class="delimiter">&quot;</span></span> <span class="error">[</span><span class="attribute-name">...</span><span class="error">]</span><span class="tag">/&gt;</span>
+<span class="line-numbers"> 7</span>  <span class="tag">&lt;camera</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">cam3</span><span class="delimiter">&quot;</span></span> <span class="error">[</span><span class="attribute-name">...</span><span class="error">]</span><span class="tag">/&gt;</span>
+<span class="line-numbers"> 8</span>  <span class="tag">&lt;imagine&gt;</span>
+<span class="line-numbers"> 9</span>    [... as above, variable params are empty ...]
+<span class="line-numbers"><strong>10</strong></span>  <span class="tag">&lt;/imagine&gt;</span>
+<span class="line-numbers">11</span>  <span class="tag">&lt;blobs</span> 
+<span class="line-numbers">12</span>   <span class="error">[</span><span class="attribute-name">...</span><span class="error">]</span>
+<span class="line-numbers">13</span>    <span class="tag">/&gt;</span>
+<span class="line-numbers">14</span><span class="tag">&lt;/tracker&gt;</span>
+</span></code></pre>
+
+	<p>Implementation:</p>
+
+
+	<ul>
+	<li>Filter graph (xml repr, but no python interface)</li>
+		<li>Seamless cpu/gpu transition or</li>
+		<li>Implementation of distort, crop, historysubtract, histogram as gpu filters.</li>
+		<li>Single camera:
+	<ul>
+	<li>Call filter graph in C++</li>
+		<li>Adapt calibration to new filter graph</li>
+		<li>Refactor <a href="TrackerConfig.html" class="wiki-page new">TrackerConfig</a></li>
+	</ul>
+	</li>
+		<li>Multi-camera support:
+	<ul>
+	<li>Refactor pos/scale logic</li>
+		<li>Multi-Camera calibration</li>
+		<li>Custom synchronous filter graph during calibration</li>
+		<li>Logic for per-camera data.</li>
+		<li>New blob correlation step after blob finding</li>
+	</ul></li>
+	</ul>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/NextGenTracking by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:16 GMT -->
+</html>

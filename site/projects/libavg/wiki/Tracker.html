@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/Tracker by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 17:21:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Tracker - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Camera-Tracking"></a>
+<h1 >Camera Tracking<a href="#Camera-Tracking" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>libavg can use cameras to track objects. It supports <a href="CameraNode.html" class="wiki-page">several driver subsystems</a> as camera interfaces. The tracker was built primarily for our <a href="BuildingAMultitouchTable.html" class="wiki-page">multitouch table MTC</a>, but it works for other camera tracking applications as well.</p>
+
+
+	<p>The tracker uses a configuration file stored either at <code>/etc/avgtrackerrc</code> or <code>./avgtrackerrc</code>. There is an example file in source:trunk/libavg/src/imaging/avgtrackerrc.minimal.</p>
+
+
+<blockquote>
+
+	<p><img src="../../../plugin_assets/redmine_wiki_extensions/images/warning.png" alt="(!)"> <strong>Note:</strong> <img src="../../../plugin_assets/redmine_wiki_extensions/images/warning.png" alt="(!)"></p>
+
+
+	<p>The following is outdated. libavg now supports several multitouch drivers, including TUIO and linux drivers. For information on the new interface, see the <a href="http://www.libavg.de/reference/current/player.html#libavg.avg.Player.enableMultitouch" class="external">reference</a>. If you want to use the internal tracker, the general information here is valid but the details aren't. For the specific syntax, refer to <code>avgtrackerrc.minimal</code>.</p>
+
+
+</blockquote>
+
+	<p><code>avgtrackerrc</code> contains configuration information for several stages of the image processing pipeline. Each stage of the pipeline is described in a different section of the file.</p>
+
+
+	<p>The first stage is the camera. The values in the config file determine device parameters for the camera to be used. <code>&lt;source&gt;</code> determines the type of device to use and must be either 'fw' (for Firewire) or 'v4l' (for Video4Linux2). <code>&lt;device&gt;</code> is the device file name. <code>&lt;size&gt;</code> is the requested size of the grabbing frame. The example gives the default Firewire device file under linux. In the case of Video4Linux, the first camera is usually found under <code>/dev/video0. &lt;fps&gt;</code> is the number of frames per second that the camera should be set to. The other parameters map directly to firewire camera settings (TheImagingSource has a lot of generic <a href="http://www.theimagingsource.com/en_US/publications/whitepapers/" class="external">documentation</a> about firewire cameras that doesn't only apply to their own products.)</p>
+
+
+	<p>The <code>&lt;transform&gt;</code> stage is used to map the camera image coordinates to a rectangle. It takes care of tilted or rotated cameras, barrel distortion due to wide angle lenses and different resolutions of camera and the rectangle desired. There is an automatic configurator for this part of the file in <code>avg_media/mtc/videochooser2/</code>. The example file above contains a setting that simply passes input to output values unchanged for a 640x480 camera. It can be used if you don't want any transformation to take place. Except for the last two parameters (<code>&lt;displaydisplacement&gt;</code> and <code>&lt;displayscale&gt;</code>), these transformations are applied to the actual camera bitmap before any image processing is performed. The last two are used to transform the coordinates to screen coordinates. If applying these might result in coordinates outside of the screen, libavg will abort:</p>
+
+
+<pre>
+[07-12-30 15:53:04.538] ERROR: Impossible tracker configuration: Region 
+of interest is ((0,0)-(1280,720)), camera image size is (640,480). Aborting.
+</pre>
+
+	<p>In this case, for instance, setting <code>&lt;displayscale x="2" y="1.5"/&gt;</code> will solve the issue.</p>
+
+
+	<p>The middle stages of the pipeline are described in the <code>&lt;tracker&gt;</code> section. <code>&lt;historyupdateinterval&gt;</code> describes how long the algorithm for background subtraction takes before it assumes something new in the image is a part of the 'background' and hence not interesting. A value of 1 corresponds to about 256 frames before objects are absorbed completely. Larger values mean proportionately longer times.</p>
+
+
+	<p>The <code>&lt;touch&gt;</code> and <code>&lt;track&gt;</code> sections configure the tracker for generic tracking and DI-specific touch detection. These correspond to two sub-pipelines that work in parallel to detect different types of blobs. If one of the sections is missing, only the other sub-pipeline runs. For this reason, the <code>&lt;touch&gt;</code> section should be left out completely if you're not doing table-based tracking. In these sections, the <code>&lt;threshold&gt;</code> value is the minimum brightness (above the background image) a pixel must have to be considered part of a blob. <code>&lt;similarity&gt;</code> is the maximum distance that a blob may travel in one frame and still be considered the same object. <code>&lt;areabounds&gt;</code> determine the minimum and maximum size in pixels that a blob may have and be considered interesting, and <code>&lt;eccentricitybounds&gt;</code> is how close to a circular form the blob must have to be considered interesting. Non-'interesting' blobs are discarded and not sent to the application as events. The values in the example above are very lenient. With these values, only very small blobs (which are usually just camera noise) are discarded.</p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/Tracker by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 17:21:50 GMT -->
+</html>

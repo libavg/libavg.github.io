@@ -1,0 +1,136 @@
+/*load the default Redmine stylesheet */
+@import url(../../../stylesheets/application.css);
+
+h1, h2, h3, h4 {
+    font-family: Arial, Verdana, 'Bitstream Vera Sans', Helvetica, sans-serif;
+    font-weight: normal;
+    letter-spacing: -0.018em;
+}
+
+.wiki h1 {font-size: 20px;padding: 2px 10px 1px 0px;margin: 0 0 10px 0; border-bottom: none; color: #c77101;}
+.wiki h2 {font-size: 16px;padding: 2px 10px 1px 0px;margin: 0 0 10px 0; border-bottom: none; color: #c77101;}
+.wiki h3 {font-size: 13px;padding: 2px 10px 1px 0px;margin-bottom: 5px; border-bottom: none; color: #c77101;}
+
+body {
+    font-family: Verdana, Arial, 'Bitstream Vera Sans', Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+#main {
+    background-color: #FFFFFF;
+}
+
+#content {
+    width: auto;
+    margin: 1em;
+    margin-left: 17em;
+    border-right: 0px;
+}
+
+#main.nosidebar #content {
+    margin-left: 1em;
+}
+
+#main-menu {
+    left: 1.5em;
+}
+
+a {
+    text-decorration: none; 
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+#header h1 {
+    margin-left: 0.7em;
+}
+
+#header h1 a {
+    font-size: 2.5em;
+    color: #C77101;
+    border-bottom: none;
+}
+
+#top-menu {
+    background: #555;
+}
+
+#header {
+    background: #CCCCCC;
+    height: 8em;
+    padding-top: 1.5em;
+}
+
+#main-menu li a:hover {
+    background: #FFF;
+    color: #444;
+    border-bottom: none;
+}
+
+#sidebar {
+    float: left;
+    margin: 1em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    padding: 1em;
+    width: 14em;
+    background-color: #CCCCCC;
+}
+
+#sidebar p {
+    margin: 0.2em;
+}
+
+#sidebar a {
+    color: #C77101;
+}
+
+#sidebar a:hover {
+    color: #7C5004;
+    border-bottom: 1px dotted #BBB;
+}
+
+#sidebar h1, #sidebar h2, #sidebar h3  {
+    color: #333333;
+    border-bottom: none;
+    font-size: 13px;
+    font-family: Verdana,Arial,'Bitstream Vera Sans',Helvetica,sans-serif;
+    margin: 0.2em;
+}
+
+div.wiki a, div.bgr a, div.contextual a, #wiki_add_attachment a , #wiki_add_attachment a, .other-formats a, #content a {
+    color: #1E7D0A;
+}
+
+div.wiki a:hover, div.bgr a:hover, div.contextual a:hover, #wiki_add_attachment a:hover, .other-formats a:hover, #content a:hover {
+    color: #104705;
+    border-bottom: 1px dotted #BBB;
+}
+
+div.issue {
+   background: #EEE;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    margin: 0;
+    padding-bottom: 5px;
+    padding-left: 20px;
+}
+
+.hiddenTable tbody, .hiddenTable tr, .hiddenTable tr td {
+    border: 2px solid #FFF;
+}
+
+div.wiki-page p {
+    padding-left: 1.5em;
+}
+
+div.wiki-page table {
+    margin-left: 1.5em;
+}
+
+div.wiki-page ul {
+}

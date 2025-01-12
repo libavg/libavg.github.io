@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/ReleaseInstall?version=10 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:15:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>ReleaseInstall - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+    <p>
+    <a href="ReleaseInstall29f9.html?version=9">« Previous</a> - 
+    Version 10/13
+    (<a href="ReleaseInstall/diff/10.html">diff</a>) - 
+    <a href="ReleaseInstall1a8e.html?version=11">Next »</a> - 
+    <a href="ReleaseInstall.html">Current version</a>
+    <br />
+    <em><a href="../../../users/4.html">coder</a>, 04/05/2015 23:17 </em><br />
+    
+    </p>
+    <hr />
+
+
+<div class="wiki wiki-page">
+  <a name="Installing-libavg"></a>
+<h1 >Installing libavg<a href="#Installing-libavg" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#Installing-libavg">Installing libavg</a></li><li><a href="#Mac">Mac</a></li><li><a href="#Linux">Linux</a><ul><li><a href="#Ubuntu">Ubuntu</a></li><li><a href="#Archlinux">Archlinux</a></li><li><a href="#Other">Other</a></li></ul>
+</li><li><a href="#Windows">Windows</a></li></ul>
+
+
+	<p>We have libavg packages available for several system configurations. This page describes how to install them. If you don't find your configuration here, if you want the newest developer version, or if you'd like to compile libavg yourself for some other reason, have a look at one of the following pages:</p>
+
+
+	<ul>
+	<li><a href="MacSourceInstall.html" class="wiki-page">MacSourceInstall</a></li>
+		<li><a href="UbuntuSourceInstall.html" class="wiki-page">UbuntuSourceInstall</a></li>
+		<li><a href="WinSourceInstall.html" class="wiki-page">WinSourceInstall</a></li>
+		<li><a href="RaspberryPISourceInstall.html" class="wiki-page">RaspberryPISourceInstall</a></li>
+	</ul>
+
+
+	<p>It's also a good idea to have a look at the <a href="SupportedGraphicsDrivers.html" class="wiki-page">SupportedGraphicsDrivers</a> page to make sure your graphics driver supports the functions libavg needs.</p>
+
+
+	<a name="Mac"></a>
+<h1 >Mac<a href="#Mac" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>The Mac installer is a standard dmg that works from Lion upwards. It uses 64 bit Python 2.7. If anything goes wrong, have a look at Known <a href="MacInstallIssues.html" class="wiki-page">Mac Installation Issues</a>.</p>
+
+
+	<p>The installation is simple:</p>
+
+
+	<ul>
+	<li>Download the disk image from the Download page</li>
+		<li>Doubleclick it to mount.</li>
+		<li>Doubleclick the pkg file it contains to start the installer.</li>
+		<li>Follow the install steps.</li>
+	</ul>
+
+
+	<p>Optional, but highly recommended:</p>
+
+
+	<ul>
+	<li>Open a command line and type the following to run the tests:</li>
+	</ul>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>$ cd /Library/Python/2.7/site-packages/libavg/avg/test/
+<span class="line-numbers">2</span>$ ./Test.py
+</span></code></pre>
+
+	<p>You should see lots of test images and wild console output, ending in something like:</p>
+
+
+<pre>
+Ran 273 tests in 11.231s
+
+OK
+</pre>
+
+	<p>If this isn't the case, please <a href="BugReport.html" class="wiki-page">tell us</a>.</p>
+
+
+	<a name="Linux"></a>
+<h1 >Linux<a href="#Linux" class="wiki-anchor">&para;</a></h1>
+
+
+	<a name="Ubuntu"></a>
+<h2 >Ubuntu<a href="#Ubuntu" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>There is a package (<code>sudo apt-get install python-libavg</code>) available for Ubuntu. If this package is outdated, then your best bet is to download the tarball from the <a href="DownLoad.html" class="wiki-page">download page</a> and do a source install like described on the <a href="UbuntuSourceInstall.html" class="wiki-page">UbuntuSourceInstall</a> page.</p>
+
+
+	<a name="Archlinux"></a>
+<h2 >Archlinux<a href="#Archlinux" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>If you have <a href="https://wiki.archlinux.org/index.php/Yaourt" class="external">Yaourt</a> installed, just execute the following command:</p>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>yaourt -S libavg
+</span></code></pre>
+
+	<p>Otherwise, download the   Tar-Archiv from the <a href="https://aur.archlinux.org/packages/libavg/" class="external">AUR</a>, extract and 'cd' into the directory and execute</p>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>makepkg
+</span></code></pre>
+
+	<p>followed by</p>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>pacman -U NewPackageInDir
+</span></code></pre>
+
+	<a name="Other"></a>
+<h2 >Other<a href="#Other" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Follow instructions as described on <a href="UbuntuSourceInstall.html" class="wiki-page">UbuntuSourceInstall</a> and adjust them accordingly. If anything goes wrong, have a look at <a href="LinuxInstallIssues.html" class="wiki-page">Known Linux Installation Issues</a>.</p>
+
+
+	<a name="Windows"></a>
+<h1 >Windows<a href="#Windows" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>The windows installer was tested under Windows 7 and Vista. The prebuilt version is compiled for Python 2.7 (32 bit), so that needs to be installed. These are the steps to install it:</p>
+
+
+	<ul>
+	<li>Download the Visual C++ runtimes, the CMU 1394 Digital Camera Driver and the libavg installer from the <a href="DownLoad.html" class="wiki-page">Download page</a> and execute the installers.</li>
+		<li>Add <code>C:\Python27\scripts</code> to the <code>PATH</code> so the avg utilities are accessible.</li>
+	</ul>
+
+
+	<p>Optional, but highly recommended:</p>
+
+
+	<ul>
+	<li>Open a command line and execute the tests</li>
+	</ul>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>C:\&gt; cd \Python27\lib\site-packages\libavg\test
+<span class="line-numbers">2</span>C:\...\&gt; c:\Python27\python Test.py
+</span></code></pre>
+
+	<p>You should lots of test images and wild console output, ending in something like:</p>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>  Ran 273 tests in 11.231s
+<span class="line-numbers">2</span>
+<span class="line-numbers">3</span>  OK
+</span></code></pre>
+
+	<p>If this isn't the case, please <a href="BugReport.html" class="wiki-page">tell us</a>.</p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/ReleaseInstall?version=10 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:15:40 GMT -->
+</html>

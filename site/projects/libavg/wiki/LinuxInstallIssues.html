@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/LinuxInstallIssues by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>LinuxInstallIssues - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Known-Linux-Installation-Issues"></a>
+<h1 >Known Linux Installation Issues<a href="#Known-Linux-Installation-Issues" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#Known-Linux-Installation-Issues">Known Linux Installation Issues</a></li><li><a href="#glibc-invalid-pointer">glibc invalid pointer</a><ul><li><a href="#Workaround">Workaround</a></li><li><a href="#The-Details">The Details</a></li></ul>
+</li><li><a href="#OpenGL-Support">OpenGL Support</a></li><li><a href="#Audio">Audio</a></li><li><a href="#Ubuntu-Version-Specific-Issues">Ubuntu Version-Specific Issues</a><ul><li><a href="#1110-to-1004">11.10 to 10.04</a></li><li><a href="#910-boostpython-Bug">9.10 boost.python Bug</a></li><li><a href="#910-libsdl-Audio-Problem">9.10 libsdl Audio Problem</a></li><li><a href="#904-Firewire-Video">9.04 Firewire Video</a></li></ul></li></ul>
+
+
+	<p>This page details some installation issues involving bugs either in Linux distributions or in libraries that libavg uses. We can't fix these ourselves, because they aren't libavg bugs - we do try to provide workarounds, however.</p>
+
+
+	<a name="glibc-invalid-pointer"></a>
+<h1 >glibc invalid pointer<a href="#glibc-invalid-pointer" class="wiki-anchor">&para;</a></h1>
+
+
+<blockquote>
+
+	<p><img src="../../../plugin_assets/redmine_wiki_extensions/images/warning.png" alt="(!)"> <strong>Note:</strong> <img src="../../../plugin_assets/redmine_wiki_extensions/images/warning.png" alt="(!)"> <br />Libavg contains a workaround for this bug starting with version 1.7.</p>
+
+
+</blockquote>
+
+	<p>There is a bug involving libstdc++ and OpenGL libraries (Mesa and FGLRX) that causes libavg to crash with this (or similar) messages:</p>
+
+
+<pre>
+[*** glibc detected *** free(): invalid pointer: 0xb7dda678 ***
+</pre>
+
+	<p>Or just:</p>
+
+
+<pre>
+[Segmentation fault (core dumped)
+</pre>
+
+	<p>Note the opening "[" at the beginning of the line in both cases. If you don't have this, you're not being bitten by this bug.</p>
+
+
+	<p>This is a bug caused by incorrect packaging of Mesa. It appears, among others, in all versions of Ubuntu up to and including 10.10. It is fixed in 11.04.</p>
+
+
+	<a name="Workaround"></a>
+<h2 >Workaround<a href="#Workaround" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Make sure libstdc++ is loaded before the OpenGL driver:</p>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>export LD_PRELOAD=&lt;path-to-libstdc++&gt;
+</span></code></pre>
+
+	<p>You need to replace <code>&lt;path-to-libstdc++&gt;</code> with the actual path on your machine. Something like <code>/usr/lib/gcc/i686-pc-linux-gnu/4.1.2/libstdc++.so.6</code>.</p>
+
+
+	<a name="The-Details"></a>
+<h2 >The Details<a href="#The-Details" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>This is the corresponding Ubuntu bug report:</p>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>https://bugs.launchpad.net/ubuntu/+source/mesa/+bug/259219
+</span></code></pre>
+
+	<a name="OpenGL-Support"></a>
+<h1 >OpenGL Support<a href="#OpenGL-Support" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>Most libavg development is done using NVidia cards, so these should work. The quality of ATI and Intel OpenGL support has improved in the last years, and these mostly work (with a few issues) as well. With Intel chips, make sure you have the newest kernel - we've seen test failures disappear in the transition from Ubuntu 9.10 to 10.04, for instance.</p>
+
+
+	<p>For NVidia, you need to install the proprietary OpenGL drivers. Under Ubuntu, you can install these by clicking over the green card icon at the top of the screen just after the first logon.</p>
+
+
+	<p>To test if OpenGL is working, check the output of glxinfo. It needs to say</p>
+
+
+<pre>
+Direct Rendering: yes
+</pre>
+
+	<a name="Audio"></a>
+<h1 >Audio<a href="#Audio" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>Crackling or otherwise broken audio on Linux can come from a number of sources. Here are a few pointers for getting things to work:</p>
+
+
+	<ul>
+	<li>Try disabling any soundservers like JACK, aRTs or ESD.</li>
+		<li>Change the audio buffer size in avgrc to a large number like 8192 to see if this fixes things. If it does, you can successively reduce the buffer size in powers of two until the interference happens again. If you need an unreasonably large buffer size, then some component in your system - possibly a driver - is hogging the CPU for extended amounts of time and preventing libavg from updating the sounds quickly enough.</li>
+		<li>Change the sampling rate in avgrc to the native rate of your sound card (44100 or 48000). If you don't know the native sampling rate, just try both. There are libSDL versions that have a bug ( <a class="external" href="http://bugzilla.libsdl.org/show_bug.cgi?id=649">http://bugzilla.libsdl.org/show_bug.cgi?id=649</a>) in the sampling rate conversion, and you may be running into this bug.</li>
+	</ul>
+
+
+	<a name="Ubuntu-Version-Specific-Issues"></a>
+<h1 >Ubuntu Version-Specific Issues<a href="#Ubuntu-Version-Specific-Issues" class="wiki-anchor">&para;</a></h1>
+
+
+	<a name="1110-to-1004"></a>
+<h2 >11.10 to 10.04<a href="#1110-to-1004" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>No version-specific issues.</p>
+
+
+	<a name="910-boostpython-Bug"></a>
+<h2 >9.10 boost.python Bug<a href="#910-boostpython-Bug" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>The version of boost.python in Ubuntu 9.10 is buggy - see <a class="external" href="https://bugs.launchpad.net/ubuntu/+source/boost1.38/+bug/457688">https://bugs.launchpad.net/ubuntu/+source/boost1.38/+bug/457688</a>. The symptom is that all libavg programs crash with an exception:</p>
+
+
+<pre>
+AttributeError: 'Boost.Python.StaticProperty' object attribute '__doc__' is read-only
+</pre>
+
+	<p>A fixed package is available by adding</p>
+
+
+<pre>
+ppa:ajmitch/ppa
+</pre>
+
+	<p>to the software sources. Also, configure needs to be called like this</p>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>$ BOOST_PYTHON_LIBS=-lboost_python-mt ./configure
+</span></code></pre>
+
+	<p>so the boost.python library is found.</p>
+
+
+	<a name="910-libsdl-Audio-Problem"></a>
+<h2 >9.10 libsdl Audio Problem<a href="#910-libsdl-Audio-Problem" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Ubuntu 9.10's version of libsdl uses Alsa by default. This causes libavg to use 100% CPU and hang on end of playback when the player is running on some machines.</p>
+
+
+	<p>If this happens to you, install the <code>libsdl1.2debian-pulseaudio</code> package to switch libsdl to using PulseAudio.</p>
+
+
+	<a name="904-Firewire-Video"></a>
+<h2 >9.04 Firewire Video<a href="#904-Firewire-Video" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>The raw1394 device must be properly configured to let video-group users to access it in rw mode. In addition, there is a bug in the udev 141-1.1 configuration files (see <a class="external" href="https://bugs.launchpad.net/ubuntu/+bug/369817">https://bugs.launchpad.net/ubuntu/+bug/369817</a>).</p>
+
+
+	<p>The following additions to <code>/etc/udev/rules.d</code> are a workaround:</p>
+
+
+	<p><em>50-raw1394.rules:</em></p>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>KERNEL==&quot;raw1394*&quot;, GROUP=&quot;video&quot; 
+</span></code></pre>
+
+	<p><em>50-video1394.rules:</em></p>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>KERNEL==&quot;dv1394-[0-9]*&quot;, GROUP=&quot;video&quot; 
+<span class="line-numbers">2</span>KERNEL==&quot;video1394-[0-9]*&quot;, NAME=&quot;video1394&quot;, GROUP=&quot;video&quot; 
+</span></code></pre>
+
+	<p>Make sure the user that wants to use the camera is in the video group:</p>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>$ sudo adduser &lt;username&gt; video
+</span></code></pre>
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/LinuxInstallIssues by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:01 GMT -->
+</html>

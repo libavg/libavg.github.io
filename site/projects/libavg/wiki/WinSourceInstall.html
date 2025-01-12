@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/WinSourceInstall by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:10:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>WinSourceInstall - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Installing-from-Source-Under-Windows"></a>
+<h1 >Installing from Source Under Windows<a href="#Installing-from-Source-Under-Windows" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#Installing-from-Source-Under-Windows">Installing from Source Under Windows</a><ul><li><a href="#Build-Environment">Build Environment</a></li><li><a href="#Dependency-archive">Dependency archive</a></li><li><a href="#Checkout-libavg">Checkout libavg</a></li><li><a href="#Build-libavg">Build libavg</a></li><li><a href="#Run-the-tests">Run the tests</a></li></ul>
+</li><li><a href="#Non-standard-Builds">Non-standard Builds</a><ul><li><a href="#Finding-the-Python-Libraries">Finding the Python Libraries</a></li><li><a href="#Notes-on-building-the-dependencies">Notes on building the dependencies</a></li><li><a href="#Boost-Libraries">Boost Libraries</a></li></ul></li></ul>
+
+
+	<p>Below is an explanation on building libavg from source under windows. As an alternative, you can download a release installer: <a href="ReleaseInstall.html" class="wiki-page">ReleaseInstall</a>.</p>
+
+
+	<p>We test libavg under 64 bit versions of Win8 and Win10.</p>
+
+
+	<a name="Build-Environment"></a>
+<h2 >Build Environment<a href="#Build-Environment" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>As build environment, you need:</p>
+
+
+	<ul>
+	<li>Visual Studio 2013 or higher (The free edition will work. You can download it from MS). Make sure to install support for Visual C++ and the Windows SDK components. For VS 2015, the Windows SDK components are under "Windows and Web Development -> Windows 8.1 ... -> Tools and Windows SDKs".</li>
+		<li>Python 2.7, 32 bit from <a class="external" href="http://www.python.org/">http://www.python.org</a>. libavg does not work with Python 3.x, and the build doesn't support 64 bit versions of Python currently.</li>
+	</ul>
+
+
+	<p>Make sure <code>python.exe</code> is in the <code>PATH</code>.</p>
+
+
+	<a name="Dependency-archive"></a>
+<h2 >Dependency archive<a href="#Dependency-archive" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Download and extract the dependency archive to libavg/. For current git, you need <a href="../../../attachments/download/windependencies-1.8.0.4.zip" class="attachment">windependencies-1.8.0.4.zip</a>.</p>
+
+
+	<p>The resulting directory structure should be:</p>
+
+
+<pre>
+libavg
+  bin
+  etc
+  include
+  lib
+  share
+</pre>
+
+	<a name="Checkout-libavg"></a>
+<h2 >Checkout libavg<a href="#Checkout-libavg" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Check out libavg:</p>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>&gt; cd libavg
+<span class="line-numbers">2</span>libavg&gt; git clone https://github.com/libavg/libavg.git
+</span></code></pre>
+
+	<p>Your directory structure should now be:</p>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers"> 1</span>libavg
+<span class="line-numbers"> 2</span>  bin
+<span class="line-numbers"> 3</span>  include
+<span class="line-numbers"> 4</span>    boost
+<span class="line-numbers"> 5</span>    ...
+<span class="line-numbers"> 6</span>  lib
+<span class="line-numbers"> 7</span>  libavg
+<span class="line-numbers"> 8</span>    src
+<span class="line-numbers"> 9</span>    win
+<span class="line-numbers"><strong>10</strong></span>    ...
+</span></code></pre>     
+
+	<a name="Build-libavg"></a>
+<h2 >Build libavg<a href="#Build-libavg" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Open <code>libavg\libavg\win\libavg.sln</code> in visual studio.</p>
+
+
+	<p>If you have Visual Studio > 2013, you need to update the project files (Right-click on solution, 'Retarget solution' if it doesn't prompt you to do that).</p>
+
+
+	<p>Start a release build.</p>
+
+
+	<a name="Run-the-tests"></a>
+<h2 >Run the tests<a href="#Run-the-tests" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Add <code>libavg\bin</code> to the <code>PATH</code> environment variable, then:</p>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>&gt; cd libavg\libavg\src\test
+<span class="line-numbers">2</span>libavg\libavg\src\test&gt; Test.py
+</span></code></pre>
+
+	<p><a href="../boards.html" class="external">Tell us</a> if anything breaks while running the tests.</p>
+
+
+	<a name="Non-standard-Builds"></a>
+<h1 >Non-standard Builds<a href="#Non-standard-Builds" class="wiki-anchor">&para;</a></h1>
+
+
+<blockquote>
+
+	<p><img src="../../../plugin_assets/redmine_wiki_extensions/images/warning.png" alt="(!)"> <strong>Note:</strong> <img src="../../../plugin_assets/redmine_wiki_extensions/images/warning.png" alt="(!)"> <br />Unless you need updated versions of the dependent packages or want to compile for a different python version, you can use the prebuilt dependencies available for download instead and ignore this section completely.</p>
+
+
+</blockquote>
+
+	<a name="Finding-the-Python-Libraries"></a>
+<h2 >Finding the Python Libraries<a href="#Finding-the-Python-Libraries" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>By default, the solution expects to find Python in <code>C:\Python27</code>. This will fit the majority of Python 2.7 users.</p>
+
+
+	<p>If you want to use a different version and/or have a custom installation path, the solution settings need to be changed before compiling libavg. When you've opened the solution:</p>
+
+
+	<ul>
+	<li>Open <em>View->Property Manager</em></li>
+		<li>Expand one of the projects, e.g: base and Release</li>
+		<li>Double click on the <em>libavg</em> entry.</li>
+		<li>Under User <em>macros</em>, change the path of the macro PYTHON_ROOT to your installation path.</li>
+	</ul>
+
+
+	<p>If there is no Property Manager menu entry, make sure <em>Tools->Settings->Expert</em> Settings is checked.</p>
+
+
+	<a name="Notes-on-building-the-dependencies"></a>
+<h2 >Notes on building the dependencies<a href="#Notes-on-building-the-dependencies" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li>Download the gtk+ All-in-one bundle from <a class="external" href="http://www.gtk.org/download/win32.php">http://www.gtk.org/download/win32.php</a>. Copy bin, include, lib, etc. subdirs into corresponding subdirs under devel. The include file hierarchy isn't the one libavg needs, so lots of files need to be shuffled around.</li>
+		<li>Download SDL-1.2.15 development libraries from  <a class="external" href="http://www.libsdl.org/">http://www.libsdl.org/</a>, move files to lib, bin and include dirs.</li>
+		<li>Download and install ffmpeg development libraries from <a class="external" href="http://ffmpeg.zeranoe.com/builds/">http://ffmpeg.zeranoe.com/builds/</a>.</li>
+		<li>Boost: 
+	<ul>
+	<li>Download VC-specific 32 bit versions from <a class="external" href="http://sourceforge.net/projects/boost/files/boost-binaries/1.xx/">http://sourceforge.net/projects/boost/files/boost-binaries/1.xx/</a></li>
+		<li>Copy libs from lib32-* to libavg\lib: chrono, date_time, python, regex, system, thread*.lib</li>
+		<li>Copy dlls from lib32-* to libavg\bin: chrono, date_time, python, regex, system, thread.</li>
+		<li>Copy boost to include (so there's a libavg\include\boost dir containing the header files).</li>
+	</ul></li>
+	</ul>
+
+
+	<a name="Boost-Libraries"></a>
+<h2 >Boost Libraries<a href="#Boost-Libraries" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>If you're not using Python 2.7, you need to compile the boost libraries. Note that libavg isn't ready for Python 3.x yet.</p>
+
+
+	<ul>
+	<li>Download from  <a class="external" href="http://www.boost.org/">http://www.boost.org</a>, extract archive to <code>libavg\deps</code>.</li>
+		<li>Make sure python.exe and the Visual C compiler (e.g. <code>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin</code>) are in the path.</li>
+		<li>Compile boost:</li>
+	</ul>
+
+
+	<p>At a command prompt (Use cmd.exe, not (e.g.) cygwin):</p>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>libavg\deps\boost_1_58_0&gt; bootstrap.bat
+<span class="line-numbers">2</span>libavg\deps\boost_1_58_0&gt; bjam -j8 link=shared
+</span></code></pre>
+
+	<ul>
+	<li>j8 determines the number of processor cores that bjam will use.</li>
+		<li>Copy <code>boost_1_58_0\boost</code> to <code>libavg\include</code>.</li>
+		<li>Of the files in <code>boost_1_58_0\stage\lib</code>:
+	<ul>
+	<li>Copy <code>boost_date_time-*.lib</code>, <code>boost_python-*.lib</code> and <code>boost_thread-*.lib</code> to <code>libavg\lib</code></li>
+		<li>Copy <code>boost_date_time-*.dll</code>, <code>boost_python-*.dll</code> and <code>boost_thread-*.dll</code> to <code>libavg\bin</code>.</li>
+	</ul></li>
+	</ul>
+
+
+	<p></p>
+</div>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/WinSourceInstall by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:10:18 GMT -->
+</html>

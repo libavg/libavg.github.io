@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/FeatureList by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 17:19:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>FeatureList - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="libavg-Features"></a>
+<h1 >libavg Features<a href="#libavg-Features" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#libavg-Features">libavg Features</a></li><li><a href="#High-Level-Overview">High-Level Overview</a></li><li><a href="#Screen-Layout-Engine">Screen Layout Engine</a></li><li><a href="#Video">Video</a></li><li><a href="#Text">Text</a></li><li><a href="#Vector-Graphics">Vector Graphics</a></li><li><a href="#GPU-Effects">GPU Effects</a></li><li><a href="#Multitouch">Multitouch</a></li><li><a href="#Sound">Sound</a></li><li><a href="#Camera-Support">Camera Support</a></li><li><a href="#Animation">Animation</a></li><li><a href="#Tracking">Tracking</a></li><li><a href="#Authoring">Authoring</a></li><li><a href="#Plugin-Support">Plugin Support</a></li></ul>
+
+
+	<a name="High-Level-Overview"></a>
+<h1 >High-Level Overview<a href="#High-Level-Overview" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul>
+	<li>Hardware-accelerated display mixer and screen layout engine.</li>
+		<li>High-performance video playback.</li>
+		<li>Text layout.</li>
+		<li>Sophisticated camera support.</li>
+		<li>Python scripting.</li>
+		<li>Skinnable widget library.</li>
+		<li>Input from mouse, keyboard, touch, computer vision.</li>
+		<li>Built-in animation support.</li>
+		<li>Offscreen rendering and compositing.</li>
+		<li>GPU-based shader effects.</li>
+		<li>Plugins written in C++ for maximum performance.</li>
+	</ul>
+
+
+	<a name="Screen-Layout-Engine"></a>
+<h1 >Screen Layout Engine<a href="#Screen-Layout-Engine" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>The screen layout engine is at the heart of avg. It is responsible for dealing with graphical elements (images, videos, text, camera output) in a generic way and can deal with thousands of objects. Among others, it supports:</p>
+
+
+	<ul>
+	<li>Hierarchial layouts</li>
+		<li>Cropping</li>
+		<li>Scaling</li>
+		<li>Rotation</li>
+		<li>Element-level transparency</li>
+		<li>Image alpha channels</li>
+		<li>Separate mask bitmaps</li>
+		<li>Various blend modes</li>
+		<li>Subpixel precision for smooth animations</li>
+		<li>Hardware-accelerated OpenGL rendering</li>
+		<li>Warping and mirroring of elements</li>
+	</ul>
+
+
+	<a name="Video"></a>
+<h1 >Video<a href="#Video" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul>
+	<li>Playback pause and restart, playback at user-determined framerates</li>
+		<li>Complete display engine integration, including cropping, scaling, rotation and transparency.</li>
+		<li>Videos with an alpha channel are supported.</li>
+		<li>Very high performance. Video decoding is accelerated using shaders if available or sse2 assembly if not. Can display several full HD or hundreds of very small videos without frame losses.</li>
+		<li>Seeks at interactive rates: Essentially, libavg allows random access to the frames of full HD videos without delays using mjpg files.</li>
+	</ul>
+
+
+	<a name="Text"></a>
+<h1 >Text<a href="#Text" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul>
+	<li>Paragraph-level layout using html <code>< div >-like</code> syntax</li>
+		<li>Bold/italic etc.</li>
+		<li>Colored text</li>
+		<li>Left-/Right-justified as well as centered paragraphs</li>
+		<li>Kerning and antialiasing</li>
+		<li>Full internationalization using utf8: Arabic, Chinese and Hebrew are all rendered correctly and can be mixed. Right-to-left text is supported.</li>
+		<li>Custom letter and line spacing</li>
+		<li>Layout - including font face and size - changes in mid-paragraph</li>
+	</ul>
+
+
+	<a name="Vector-Graphics"></a>
+<h1 >Vector Graphics<a href="#Vector-Graphics" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>libavg supports vector nodes rendered on the GPU. Available vector node types are Line, PolyLine, Curve, Circle, Polygon and Rectangle. Vector nodes can be textured, with the closed vectors taking two textures: one for the outline, one for the fill.</p>
+
+
+	<a name="GPU-Effects"></a>
+<h1 >GPU Effects<a href="#GPU-Effects" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>GPU Effects can be used to manipulate what is being displayed. Effects available are:</p>
+
+
+	<ul>
+	<li>Blur</li>
+		<li>ChromaKey</li>
+		<li>Hue/Saturation manipulation</li>
+		<li>Color Inversion</li>
+		<li>Shadows</li>
+	</ul>
+
+
+	<p>In addition, it's easy to build new effects as plugins.</p>
+
+
+	<a name="Multitouch"></a>
+<h1 >Multitouch<a href="#Multitouch" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul>
+	<li>Support for all common multitouch driver models:
+	<ul>
+	<li>Linux XInput 2.1</li>
+		<li>Linux libmtdev</li>
+		<li>TUIO</li>
+		<li>Win 7 Touch </li>
+	</ul>
+	</li>
+		<li>Built-in FTIR and DI tracking.</li>
+		<li>Powerful event handling for multitouch events.</li>
+		<li>Direct manipulation support.</li>
+	</ul>
+
+
+	<a name="Sound"></a>
+<h1 >Sound<a href="#Sound" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>libavg supports mixing of an unlimited amount of stereo sounds with a high-quality limiter to avoid artifacts on volume spikes. It supports alsa on linux and core audio on Mac OS X for low-latency sound output.</p>
+
+
+	<a name="Camera-Support"></a>
+<h1 >Camera Support<a href="#Camera-Support" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>libavg supports a wide variety of firewire and USB cameras. Setting camera parameters such as brightness, exposure, saturation and gamma is also possible.</p>
+
+
+	<a name="Animation"></a>
+<h1 >Animation<a href="#Animation" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>libavg has built-in support for smooth time-based animations. Any numeric attribute of a node - x, y, angle, etc. - can be animated with a single line of code to create linear and spline-based movements.</p>
+
+
+	<a name="Tracking"></a>
+<h1 >Tracking<a href="#Tracking" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>libavg supports camera tracking and multitouch surfaces (FTIR and DI) using all supported cameras.</p>
+
+
+	<a name="Authoring"></a>
+<h1 >Authoring<a href="#Authoring" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>All of python is available for scripting. libavg directly provides:</p>
+
+
+	<ul>
+	<li>Properties of display elements as python variables</li>
+		<li>Full-featured event handling system</li>
+		<li>Timers (setTimeout, setInterval)</li>
+		<li>Support for logging</li>
+		<li>High-level profiling to find performance bottlenecks</li>
+		<li>High-precision frame timing and synchronization to vertical blanking for smooth animations</li>
+	</ul>
+
+
+	<a name="Plugin-Support"></a>
+<h1 >Plugin Support<a href="#Plugin-Support" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>Plugins written in C++ have access to all libavg internals and can define complete new node types, including xml and python interface.</p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/FeatureList by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 17:19:41 GMT -->
+</html>

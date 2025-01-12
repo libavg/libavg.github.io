@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/IdeasForExpansion by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>IdeasForExpansion - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Ideas-for-Expansion"></a>
+<h1 >Ideas for Expansion<a href="#Ideas-for-Expansion" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#Ideas-for-Expansion">Ideas for Expansion</a></li><li><a href="#High-Priority">High Priority</a><ul><li><a href="#Mobile-Device-Support">Mobile Device Support</a></li><li><a href="#Vector-Graphics">Vector Graphics</a></li><li><a href="#hrefs">hrefs</a></li><li><a href="#Hardware-Video-Acceleration-Support">Hardware Video Acceleration Support</a></li><li><a href="#Debugging">Debugging</a></li><li><a href="#Layout-Engine">Layout Engine</a></li></ul>
+</li><li><a href="#Not-High-Priority">Not High Priority</a><ul><li><a href="#Node-Positioning">Node Positioning</a></li><li><a href="#Imaging-Effects">Imaging Effects</a></li><li><a href="#Text-Layout">Text Layout</a></li><li><a href="#Clean-Up-Namespaces">Clean Up Namespaces</a></li><li><a href="#Media-Domains">Media Domains</a></li><li><a href="#Build-System">Build System</a></li><li><a href="#Embedded-Web-Browser-Plugin">Embedded Web Browser Plugin</a></li></ul></li></ul>
+
+
+	<p>This page is an list of modules and features that are still missing from libavg. It is mainly meant as a repository of ideas and an invitation to help coding.</p>
+
+
+	<a name="High-Priority"></a>
+<h1 >High Priority<a href="#High-Priority" class="wiki-anchor">&para;</a></h1>
+
+
+	<a name="Mobile-Device-Support"></a>
+<h2 >Mobile Device Support<a href="#Mobile-Device-Support" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>libavg on Android or other mobile devices would be cool. We would have to see which libraries used by libavg work on the target platform and adjust things accordingly.</p>
+
+
+	<p>libavg already runs with OpenGL ES as rendering library, so no change is needed there. libSDL needs to be updated to version 2.0 (with a non-compatible API) to support Android.</p>
+
+
+	<a name="Vector-Graphics"></a>
+<h2 >Vector Graphics<a href="#Vector-Graphics" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>The vector graphics support in libavg is implemented using OpenGL vertex buffer objects, so all rasterizaion is done on the graphics card and the individual vector node classes only have to supply the appropriate vertex positions. Vector graphics can be textured and the textures can be animated, so we have a good initial implementation. Still, we could use some additions:</p>
+
+
+	<ul>
+	<li>pos, angle and pivot currently mean different things for vector nodes and for all other nodes. Some vector nodes have a pos attribute, some don't... this is confusing and should be changed.</li>
+		<li>Ellipses are missing.</li>
+		<li>Per-Vertex colors would be nice.</li>
+		<li>mipmapping is not supported yet for vector nodes.</li>
+		<li>The border of VectorNodes is currently centered on the positions. We'd like to be able to position it inside or outside the positions (similar to what stroke-location does in svg).</li>
+		<li>Vertexes for Circles and CurveNodes are generated on the CPU, which results in a high CPU load and large vertex buffers that need to be copied to the GPU. Use GPU algorithms instead. See e.g., Loop/Blinn: Rendering Vector Art on the GPU and <a class="external" href="http://www.mdk.org.pl/2007/10/27/curvy-blues">http://www.mdk.org.pl/2007/10/27/curvy-blues</a>.</li>
+		<li>The polygon triangulation algorithm could be faster (probably a lot faster :-)). Possible basis: <a class="external" href="https://code.google.com/p/poly2tri/">https://code.google.com/p/poly2tri/</a></li>
+		<li>(while we're at it) CircleNode.r should be CircleNode.radius.</li>
+		<li>Vector node strokes don't respond to hit tests.</li>
+	</ul>
+
+
+	<a name="hrefs"></a>
+<h2 >hrefs<a href="#hrefs" class="wiki-anchor">&para;</a></h2>
+
+
+	<p><code>ImageNode.href</code> is a misnomer - it should be ImageNode.src. We can get rid of <code>ImageNode.setBitmap</code> and <code>href="canvas:id"</code> by making the src attribute polymorphic:</p>
+
+
+<pre>
+image.src = "file.png" 
+image.src = bitmap
+image.src = canvas
+</pre>
+
+	<p>Then <code>Canvas.id</code> becomes superfluous and <code>svg.createImageNode()</code> can be replaced with <code>ImageNode(src=svg.renderElement(...))</code>.</p>
+
+
+	<a name="Hardware-Video-Acceleration-Support"></a>
+<h2 >Hardware Video Acceleration Support<a href="#Hardware-Video-Acceleration-Support" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>We already support VDPAU (nVidias hardware video decoding framework), but we're missing VA-API (Intel's counterpart) and OpenMax (Android/Raspberry PI) support.</p>
+
+
+	<p>As a bonus, it should be possible to use the video frames (which are already on the graphics card) as textures directly, avoiding the transfer over the bus. Somebody posted some code to do this here <a class="external" href="http://www.nvnews.net/vbulletin/showthread.php?t=126994">http://www.nvnews.net/vbulletin/showthread.php?t=126994</a>.</p>
+
+
+	<a name="Debugging"></a>
+<h2 >Debugging<a href="#Debugging" class="wiki-anchor">&para;</a></h2>
+
+
+	<ol>
+	<li>Scenegraph/Event Processing Visualizer: To help in debugging scenegraph structure and track down causes of event processing bugs, we'd like to support a treeview of the current scenegraph as overlay. The user can expand and collapse subtrees by clicking. The treeview should also show events and the nodes they are routed to.</li>
+		<li>Profiling: Make the frame time view configurable. It should be able to show different profiling zones depending on application need.</li>
+	</ol>
+
+
+	<a name="Layout-Engine"></a>
+<h2 >Layout Engine<a href="#Layout-Engine" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>We'd like Layout Managers that position their child nodes according to different rules: GridLayout etc.</p>
+
+
+	<a name="Not-High-Priority"></a>
+<h1 >Not High Priority<a href="#Not-High-Priority" class="wiki-anchor">&para;</a></h1>
+
+
+	<a name="Node-Positioning"></a>
+<h2 >Node Positioning<a href="#Node-Positioning" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Node positioning/rotation/scaling works well in simple cases, but there are several shortcomings:</p>
+
+
+	<ul>
+	<li><code>div</code> nodes can't be scaled,</li>
+		<li>positioning a rotated element is a pain and</li>
+		<li>it doesn't map well to OpenGL matrix transforms internally.</li>
+	</ul>
+
+
+	<p>What libavg needs is a consistent transform hierarchy like those generally used in 3D engines. That means:</p>
+
+
+	<ul>
+	<li>Add a scale (Point2D) attribute, make size read-only.</li>
+		<li>Change Node positioning to use pos/rotate/scale consistently.</li>
+		<li>Default pivot is (0,0), pivot is used for all transforms (including translation and scale).</li>
+		<li>Create a generic Transform class to replace libavg.ui.transform.</li>
+		<li>Vector nodes have the same pos/rotate/scale attributes.</li>
+		<li><code>div</code> nodes get the scale attribute as well.</li>
+		<li>Possibly add a <code>setAlignment()</code> function so the node is left/center/right-aligned and/or top/center/bottom-aligned. Internally, this would just set the pivot appropriately.</li>
+	</ul>
+
+
+	<a name="Imaging-Effects"></a>
+<h2 >Imaging Effects<a href="#Imaging-Effects" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>We need more FXNodes, and we want a list of effects per node.</p>
+
+
+	<a name="Text-Layout"></a>
+<h2 >Text Layout<a href="#Text-Layout" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Missing Words node features:</p>
+
+
+	<ul>
+	<li>Tabstops</li>
+		<li>Color changes in mid-paragraph</li>
+		<li>Irregular layouts (left and right paragraph borders changing from line to line)</li>
+		<li>Real soft hyphen support</li>
+		<li>Hyphenation using a dictionary</li>
+	</ul>
+
+
+	<p>The ability to layout text on a path is missing as well.</p>
+
+
+	<p>To implement these features, we would need to move from using the Pango Freetype backend to the Pango Cairo backend for text rendering.</p>
+
+
+	<a name="Clean-Up-Namespaces"></a>
+<h2 >Clean Up Namespaces<a href="#Clean-Up-Namespaces" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li>libavg.avg should disappear.</li>
+	</ul>
+
+
+	<a name="Media-Domains"></a>
+<h2 >Media Domains<a href="#Media-Domains" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>The <code>mediadir</code> attribute has some shortcomings.</p>
+
+
+	<p>Instead, we'd like to introduce resource domains: <code>Player</code> manages a table of resource domains that have a name and a path. There is a default domain that is used to find files when no domain is given. <code>src</code> attributes can then use several different protocols:</p>
+
+
+<pre>
+file:///full/path/to/filename
+rsrc:///domain//filename
+http://path/to/filename/
+filename (default domain)
+filename.svg#id_in_svg_file
+</pre>
+
+	<p>There should be two new player functions:</p>
+
+
+<pre>
+player.setResourceDomain(domain, path)       # Sets the path used for a resource domain.
+path = player.findFile(domain, resourceName) # Returns the full path of a resource.
+</pre>
+
+	<a name="Build-System"></a>
+<h2 >Build System<a href="#Build-System" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>We'd love to switch from an autotools-based build system to cmake. Of course, everything that works needs to continue working - that includes the build, but also the automated tests, the continuous build server and things like make distcheck. cmake could also cover the windows build.</p>
+
+
+	<a name="Embedded-Web-Browser-Plugin"></a>
+<h2 >Embedded Web Browser Plugin<a href="#Embedded-Web-Browser-Plugin" class="wiki-anchor">&para;</a></h2>
+
+
+	<p><em>Update: The BrowserNode plugin is being developed here: <a class="external" href="https://launchpad.net/browsernode">https://launchpad.net/browsernode</a>.</em></p>
+
+
+	<p>There is an existing BrowserNode plugin for libavg (<a class="external" href="http://code.google.com/p/browsernode">http://code.google.com/p/browsernode</a>) which is based on Awesomium 1.08 (under an LGPL license). Awesomium recently changed to a closed source license and so 1.08 will be the last build that is freely available. Unfortunately it now builds against an aging version of Chromium which is increasingly problematic.</p>
+
+
+	<p>The project would then be to look at the existing BrowserNode code, and extend/adapt it to use a different browser embedding framework and enable it to run on Linux/Mac/Windows operating systems.</p>
+
+
+	<p>One potential option is the Berkelium project (<a class="external" href="http://berkelium.org/">http://berkelium.org</a>). Their API is similar to that of libavg and as far as I can tell has similar functionality. Some research is needed here. There may also be some requirements to patch the Berkelium source. This should be in cooperation with their team so that patches go back upstream.</p>
+
+
+	<p>Integration with the Flash plugin is important. This is broadly handled by Berkelium but ensuring that a Flash plugin crash doesn't crash the whole libavg application is important. Consideration should be given to performance. It should be possible to view browser-based video/flash animations at acceptable framerates on average hardware.</p>
+
+
+	<p>It would then be good to extend beyond the existing BrowserNode code base to include things like key-press handling, further JavaScript integration, plugin compatibility etc.</p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/IdeasForExpansion by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:16 GMT -->
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/App by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>App - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="app"></a>
+<h1 >app<a href="#app" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>The libavg app module provides a basis for writing applications. It handles window setup and global keyboard handling, handles global application settings, and provides a number of debugging aids. The two main classes in the app module are <code>App</code> itself and <code>MainDiv</code>. The reference to the module is at <a class="external" href="/reference/svn/app.html">/reference/svn/app.html</a>.</p>
+
+
+	<a name="A-Minimal-Example"></a>
+<h2 >A Minimal Example<a href="#A-Minimal-Example" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>A minimal libavg program using app looks like this:</p>
+
+
+	<p><em>app_minimal.py:</em></p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers"> 1</span><span class="comment">#!/usr/bin/env python</span>
+<span class="line-numbers"> 2</span><span class="comment"># -*- coding: utf-8 -*-</span>
+<span class="line-numbers"> 3</span>
+<span class="line-numbers"> 4</span><span class="keyword">from</span> <span class="include">libavg</span> <span class="keyword">import</span> <span class="include">app</span>
+<span class="line-numbers"> 5</span>
+<span class="line-numbers"> 6</span><span class="keyword">class</span> <span class="class">MyMainDiv</span>(app.MainDiv):
+<span class="line-numbers"> 7</span>    <span class="keyword">def</span> <span class="function">onInit</span>(<span class="predefined-constant">self</span>):
+<span class="line-numbers"> 8</span>        <span class="keyword">pass</span>
+<span class="line-numbers"> 9</span>
+<span class="line-numbers"><strong>10</strong></span>    <span class="keyword">def</span> <span class="function">onExit</span>(<span class="predefined-constant">self</span>):
+<span class="line-numbers">11</span>        <span class="keyword">pass</span>
+<span class="line-numbers">12</span>
+<span class="line-numbers">13</span>    <span class="keyword">def</span> <span class="function">onFrame</span>(<span class="predefined-constant">self</span>):
+<span class="line-numbers">14</span>        <span class="keyword">pass</span>
+<span class="line-numbers">15</span>
+<span class="line-numbers">16</span>app.App().run(MyMainDiv())
+</span></code></pre>
+
+	<p>This program already supports configuration of global parameters (start using <code>./app.py -h</code> for a list of command line parameters) and a number of debugging keys (press '?' during program execution to get a list of supported keys). Note that we're overriding <code>app.MainDiv</code> here. You usually don't need to override <code>avg.App</code>. The example also shows you the three main method overrides <code>onInit</code>, <code>onExit</code> and <code>onFrame</code>.</p>
+
+
+	<a name="Setting-Global-Parameters"></a>
+<h2 >Setting Global Parameters<a href="#Setting-Global-Parameters" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>The App class has two ways of setting global parameters such as the size of the application window. First, parameters can be set when calling <code>App.run()</code>:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>app.App().run(MyMainDiv(), app_resolution=<span class="string"><span class="delimiter">'</span><span class="content">1024x500</span><span class="delimiter">'</span></span>)
+</span></code></pre>
+
+	<p>Second, they can be passed to the program on the command line:</p>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>$ python app_minimal.py --app-resolution=1024x500
+</span></code></pre>
+
+	<p>As you can see, spelling of the parameters is adapted according to the method of setting them: In run parameters, words are separated using underlines, and in command line parameters, they are separated using dashes. If parameters are defined in more than one fashion, environment variables take precedence over App.run() parameters, and command line parameters take precedence over both other forms.</p>
+
+
+	<p>Additional global parameters can be set using the <a href="Avgrc.html" class="wiki-page">avgrc</a> file or using <a href="EnvironmentVariables.html" class="wiki-page">Environment variables</a>.</p>
+
+
+	<a name="A-More-Complete-Example"></a>
+<h2 >A More Complete Example<a href="#A-More-Complete-Example" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Here is a more complete example of using the app module. The following program shows a moving rectangle. It also handles additional command-line parameters and installs a key handler that allows you to turn the animation on and off:</p>
+
+
+	<p><em>app_complete.py:</em></p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers"> 1</span><span class="comment">#!/usr/bin/env python</span>
+<span class="line-numbers"> 2</span><span class="comment"># -*- coding: utf-8 -*-</span>
+<span class="line-numbers"> 3</span>
+<span class="line-numbers"> 4</span><span class="keyword">import</span> <span class="include">libavg</span>
+<span class="line-numbers"> 5</span><span class="keyword">from</span> <span class="include">libavg</span> <span class="keyword">import</span> <span class="include">app</span>, <span class="include">player</span>
+<span class="line-numbers"> 6</span>
+<span class="line-numbers"> 7</span><span class="keyword">class</span> <span class="class">MyMainDiv</span>(app.MainDiv):
+<span class="line-numbers"> 8</span>    <span class="comment"># An OptionParser instance is passed to this function, allowing the MainDiv to</span>
+<span class="line-numbers"> 9</span>    <span class="comment"># add command line arguments</span>
+<span class="line-numbers"><strong>10</strong></span>    <span class="keyword">def</span> <span class="function">onArgvParserCreated</span>(<span class="predefined-constant">self</span>, parser):
+<span class="line-numbers">11</span>        parser.add_option(<span class="string"><span class="delimiter">'</span><span class="content">--speed</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">-s</span><span class="delimiter">'</span></span>, default=<span class="string"><span class="delimiter">'</span><span class="content">0.3</span><span class="delimiter">'</span></span>, dest=<span class="string"><span class="delimiter">'</span><span class="content">speed</span><span class="delimiter">'</span></span>,
+<span class="line-numbers">12</span>                help=<span class="string"><span class="delimiter">'</span><span class="content">Pixels per second</span><span class="delimiter">'</span></span>)
+<span class="line-numbers">13</span>        parser.add_option(<span class="string"><span class="delimiter">'</span><span class="content">--color</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">-c</span><span class="delimiter">'</span></span>, default=<span class="string"><span class="delimiter">'</span><span class="content">ff0000</span><span class="delimiter">'</span></span>, dest=<span class="string"><span class="delimiter">'</span><span class="content">color</span><span class="delimiter">'</span></span>,
+<span class="line-numbers">14</span>                help=<span class="string"><span class="delimiter">'</span><span class="content">Fill color of the running block</span><span class="delimiter">'</span></span>)
+<span class="line-numbers">15</span>
+<span class="line-numbers">16</span>    <span class="comment"># This method is called when the command line options are being parsed.</span>
+<span class="line-numbers">17</span>    <span class="comment"># options, args are the result of OptionParser.parse_args().</span>
+<span class="line-numbers">18</span>    <span class="keyword">def</span> <span class="function">onArgvParsed</span>(<span class="predefined-constant">self</span>, options, args, parser):
+<span class="line-numbers">19</span>        <span class="predefined-constant">self</span>.argvoptions = options
+<span class="line-numbers"><strong>20</strong></span>
+<span class="line-numbers">21</span>    <span class="comment"># This is called as soon as the player is started by the App object.</span>
+<span class="line-numbers">22</span>    <span class="comment"># Initialize everything here.</span>
+<span class="line-numbers">23</span>    <span class="keyword">def</span> <span class="function">onInit</span>(<span class="predefined-constant">self</span>):
+<span class="line-numbers">24</span>        libavg.WordsNode(text=<span class="string"><span class="delimiter">'</span><span class="content">block_speed=%s app_resolution=%s</span><span class="delimiter">'</span></span> %
+<span class="line-numbers">25</span>                (<span class="predefined-constant">self</span>.argvoptions.speed,
+<span class="line-numbers">26</span>                <span class="predefined-constant">self</span>.settings.getPoint2D(<span class="string"><span class="delimiter">'</span><span class="content">app_resolution</span><span class="delimiter">'</span></span>)),
+<span class="line-numbers">27</span>                pos=(<span class="integer">10</span>, <span class="predefined-constant">self</span>.height - <span class="integer">25</span>), parent=<span class="predefined-constant">self</span>)
+<span class="line-numbers">28</span>
+<span class="line-numbers">29</span>        <span class="comment"># Create a graphic element that will be animated</span>
+<span class="line-numbers"><strong>30</strong></span>        <span class="predefined-constant">self</span>.__runningBlock = libavg.RectNode(pos=(<span class="integer">0</span>, <span class="integer">100</span>), size=(<span class="integer">20</span>, <span class="integer">20</span>),
+<span class="line-numbers">31</span>                fillopacity=<span class="integer">1</span>, fillcolor=<span class="predefined-constant">self</span>.argvoptions.color,
+<span class="line-numbers">32</span>                parent=<span class="predefined-constant">self</span>)
+<span class="line-numbers">33</span>        <span class="predefined-constant">self</span>.__shouldMove = <span class="predefined-constant">True</span>
+<span class="line-numbers">34</span>
+<span class="line-numbers">35</span>        app.keyboardmanager.bindKeyDown(text=<span class="string"><span class="delimiter">'</span><span class="content">m</span><span class="delimiter">'</span></span>, handler=<span class="predefined-constant">self</span>.__toggleMotion,
+<span class="line-numbers">36</span>                help=<span class="string"><span class="delimiter">'</span><span class="content">Toggle motion</span><span class="delimiter">'</span></span>)
+<span class="line-numbers">37</span>
+<span class="line-numbers">38</span>    <span class="keyword">def</span> <span class="function">onExit</span>(<span class="predefined-constant">self</span>):
+<span class="line-numbers">39</span>        <span class="keyword">print</span> <span class="string"><span class="delimiter">'</span><span class="content">Exiting..</span><span class="delimiter">'</span></span>
+<span class="line-numbers"><strong>40</strong></span>
+<span class="line-numbers">41</span>    <span class="keyword">def</span> <span class="function">onFrame</span>(<span class="predefined-constant">self</span>):
+<span class="line-numbers">42</span>        <span class="keyword">if</span> <span class="predefined-constant">self</span>.__shouldMove:
+<span class="line-numbers">43</span>            speed = <span class="predefined">float</span>(<span class="predefined-constant">self</span>.argvoptions.speed)
+<span class="line-numbers">44</span>            <span class="predefined-constant">self</span>.__runningBlock.pos += (speed * player.getFrameDuration(), <span class="integer">0</span>)
+<span class="line-numbers">45</span>            <span class="keyword">if</span> <span class="predefined-constant">self</span>.__runningBlock.pos.x &gt; <span class="predefined-constant">self</span>.size.x:
+<span class="line-numbers">46</span>                <span class="predefined-constant">self</span>.__runningBlock.pos = (<span class="integer">0</span>, <span class="integer">100</span>)
+<span class="line-numbers">47</span>
+<span class="line-numbers">48</span>    <span class="keyword">def</span> <span class="function">__toggleMotion</span>(<span class="predefined-constant">self</span>):
+<span class="line-numbers">49</span>        <span class="predefined-constant">self</span>.__shouldMove = <span class="keyword">not</span> <span class="predefined-constant">self</span>.__shouldMove
+<span class="line-numbers"><strong>50</strong></span>        <span class="comment"># Flash messages are debug notifications that are shown temporarily on top of all</span>
+<span class="line-numbers">51</span>        <span class="comment"># the visible elements.</span>
+<span class="line-numbers">52</span>        app.flashmessage.FlashMessage(<span class="string"><span class="delimiter">'</span><span class="content">Should move: %s</span><span class="delimiter">'</span></span> % <span class="predefined-constant">self</span>.__shouldMove)
+<span class="line-numbers">53</span>
+<span class="line-numbers">54</span><span class="keyword">if</span> __name__ == <span class="string"><span class="delimiter">'</span><span class="content">__main__</span><span class="delimiter">'</span></span>:
+<span class="line-numbers">55</span>    <span class="comment"># App options (such as app_resolution) can be changed as parameters of App().run()</span>
+<span class="line-numbers">56</span>    app.App().run(MyMainDiv(), app_resolution=<span class="string"><span class="delimiter">'</span><span class="content">1024x500</span><span class="delimiter">'</span></span>)
+</span></code></pre>
+
+	<p>Again, available command line parameters are displayed with <code>./app_complete.py -h</code>.</p>
+
+
+	<a name="App-Debugging-Aids"></a>
+<h2 >App Debugging Aids<a href="#App-Debugging-Aids" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>The debugging aids provided through <code>app</code> help you in tracking memory leaks, finding frame time glitches and testing multitouch functionality using a mouse.</p>
+
+
+	<a name="Frame-Time-Graph"></a>
+<h3 >Frame Time Graph<a href="#Frame-Time-Graph" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Pressing 'ctrl-f' shows a graph that displays the time per frame for the last few seconds of execution. Here is an example:</p>
+
+
+	<p><img src="../../../attachments/download/FrameTimeGraph.png" alt="" /></p>
+
+
+	<p>Note the bar graph at the right. The bars show how the frame times were distributed while the graph was active: The leftmost bin shows all frames that took less than 20ms, the second bin is limited to 40ms, etc. A non-jittery application should show a nearly flat line at the 17ms mark and a bar graph that is empty in all but the leftmost bin.</p>
+
+
+	<a name="Memory-Usage-Graphs"></a>
+<h3 >Memory Usage Graphs<a href="#Memory-Usage-Graphs" class="wiki-anchor">&para;</a></h3>
+
+
+	<p><code>app</code> shows the memory used if the user presses 'ctrl-m':</p>
+
+
+	<p><img src="../../../attachments/download/MemoryGraph.png" alt="" /></p>
+
+
+	<p>In contrast to the Frame Time Graph, this graph is rescaled continuously so it displays all memory usage changes that happen while the graph is displayed. The top of the graph is also scaled so it corresponds to the maximum memory usage. So, to find memory leaks, press 'ctrl-m' and leave the graph on while interacting with the applications. You will immediately see at which points in time the memory usage goes up (or fails to go down). Some caution is advised, however, since Python heap management and garbage collection tend to reclaim memory at non-deterministic points in time.</p>
+
+
+	<p>An additional graph, the GPU Memory Graph, can be activated by pressing 'ctrl-g' on Linux and Windows systems with NVidia graphics. It shows the amount of graphics card memory being used - e.g. by textures.</p>
+
+
+	<a name="Object-Count-Table"></a>
+<h3 >Object Count Table<a href="#Object-Count-Table" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>To help narrow down memory leaks, it is possible to show a table of allocated objects of various types by pressing 'ctrl-o'. The table contains a row of data per libavg class and shows the number of currently allocated objects of each class in the rightmost column. Pressing 'ctrl-i' causes a snapshot of the data to be taken and displayed to the left of the current data, so you can compare object counts at different points in time easily.</p>
+
+
+	<p></p>
+</div>
+
+
+
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/App by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:10 GMT -->
+</html>

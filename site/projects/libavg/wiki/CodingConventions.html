@@ -1,0 +1,451 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/CodingConventions by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>CodingConventions - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Coding-Conventions"></a>
+<h1 >Coding Conventions<a href="#Coding-Conventions" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#Coding-Conventions">Coding Conventions</a></li><li><a href="#General-Guidelines">General Guidelines</a></li><li><a href="#C-Code">C++ Code</a><ul><li><a href="#Files">Files</a></li><li><a href="#Includes">Includes</a></li><li><a href="#Naming">Naming</a></li><li><a href="#Indentation-Braces-etc">Indentation, Braces, etc.</a></li><li><a href="#Class-Declaration-Order">Class Declaration Order</a></li><li><a href="#Error-Reporting">Error Reporting</a></li></ul>
+</li><li><a href="#Python-Code">Python Code</a><ul><li><a href="#Files-2">Files</a></li><li><a href="#Naming-2">Naming</a></li><li><a href="#Blank-Lines-and-Whitespace">Blank Lines and Whitespace</a></li><li><a href="#Compound-Statements">Compound Statements</a></li><li><a href="#Imports">Imports</a></li></ul>
+</li><li><a href="#Shaders">Shaders</a></li></ul>
+
+
+	<p>These are style guidelines for code in libavg. They're not there to railroad anyone - the main reason for their existence is that uniform code is a lot easier to read and understand. If in doubt, look at existing code and use common sense.</p>
+
+
+	<p>(There are some places in the source code where the coding conventions aren't followed. Patches to fix this are welcome.)</p>
+
+
+	<a name="General-Guidelines"></a>
+<h1 >General Guidelines<a href="#General-Guidelines" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul>
+	<li>The language for all identifiers and comments is English.</li>
+		<li>Every file must start with the GNU LGPL license and copyright statement.</li>
+		<li>If significant contributions to the code were added by someone other than the copyright holder, a contributor line should mention this below the copyright statement.</li>
+		<li>Tab characters (except in makefiles) are not allowed.</li>
+		<li>Indent is by 4 characters.</li>
+		<li>Maximum line length is 90 characters. Lines broken by this rule are indented by 8 characters.</li>
+		<li>Reference documentation is in <a href="http://sphinx.pocoo.org/" class="external">Sphinx</a> format under <code>libavg/sphinxdoc</code>. Code without documentation is not accepted.</li>
+	</ul>
+
+
+	<a name="C-Code"></a>
+<h1 >C++ Code<a href="#C-Code" class="wiki-anchor">&para;</a></h1>
+
+
+	<a name="Files"></a>
+<h2 >Files<a href="#Files" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li>Each c++ class should have its own interface (.h) and implementation file.</li>
+		<li>The filenames used are the exactly the classnames. Filenames for tests are all lowercase.</li>
+		<li>Exception 1: Small structs (&lt;10 lines or so) can be in the same file as a full class if that makes sense semantically.</li>
+		<li>Exception 2: Classes that are only used by one other class can be defined entirely in the cpp file of that class. (This is the case for tests.)</li>
+	</ul>
+
+
+	<a name="Includes"></a>
+<h2 >Includes<a href="#Includes" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Includes are ordered. Those files 'closest' to the including file come first, those furthest away last. This means that the first file included by an implementation file will be the corresponding header file. Then come headers in the same directory, other libavg headers and headers from outside of libavg - in that order.</p>
+
+
+	<p>Every header file has an include guard of the form:</p>
+
+
+<pre><code class="cpp syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span><span class="preprocessor">#ifndef</span> _Classname_H_
+<span class="line-numbers">2</span><span class="preprocessor">#define</span> _Classname_H_
+<span class="line-numbers">3</span>...
+<span class="line-numbers">4</span><span class="preprocessor">#endif</span>
+</span></code></pre>
+
+	<a name="Naming"></a>
+<h2 >Naming<a href="#Naming" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li>Class names are <code>CamelCase</code>.</li>
+		<li>Variable names are <code>mixedCase</code> and always start with a lower-case letter: <code>pos</code>, <code>imagePos</code>.</li>
+		<li>Member variables are prefixed by an m_: <code>m_Pos</code>, <code>m_pBmp</code>.</li>
+		<li>Statics are prefixed by an s_: <code>s_BlobCount</code>.</li>
+		<li>Some types have prefixes: p for pointers, b for bools, s for stl strings, h for handles: <code>pBmp</code>.</li>
+		<li>Everything is declared in the avg namespace.</li>
+		<li>Constants are all <code>UPPERCASE</code>.</li>
+		<li>Function names are verbs and capitalized like this: <code>getImage()</code>, <code>open()</code>, <code>createNode()</code>. (never <code>distance()</code> or <code>size()</code> - those are nouns)</li>
+		<li>Template parameters are all <code>UPPERCASE</code>.</li>
+	</ul>
+
+
+	<a name="Indentation-Braces-etc"></a>
+<h2 >Indentation, Braces, etc.<a href="#Indentation-Braces-etc" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li>Each code line only contains one statement.</li>
+		<li>Each variable declaration is on a separate line.</li>
+		<li>Braces are used like this for code blocks (<code>if</code>, <code>for</code>, <code>while</code>...):</li>
+	</ul>
+
+
+<pre><code class="cpp syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span><span class="keyword">if</span> (bFoo) {
+<span class="line-numbers">2</span>...
+<span class="line-numbers">3</span>} <span class="keyword">else</span> {
+<span class="line-numbers">4</span>...
+<span class="line-numbers">5</span>}
+</span></code></pre>
+
+	<p>If the part before the opening brace is wrapped, the brace is moved to a separate line. <code>if</code> (and <code>for</code>, <code>while</code> etc.) statements always have at least 3 lines and always include opening and closing braces.</p>
+
+
+	<ul>
+	<li>Braces for functions and class definitions look like this:</li>
+	</ul>
+
+
+<pre><code class="cpp syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>Telephone::Telephone(<span class="predefined-type">string</span> sPhoneNumber)
+<span class="line-numbers">2</span>{
+<span class="line-numbers">3</span>...
+<span class="line-numbers">4</span>}
+</span></code></pre>
+
+	<ul>
+	<li>Nothing that actually does something is placed inside an <code>if</code> statement. In particular, checking for errors is done in a separate statement:</li>
+	</ul>
+
+
+<pre><code class="cpp syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span><span class="predefined-type">int</span> err = m_pCamera-&gt;ReadQuadlet(advOffset+<span class="hex">0x48</span>, &#38;imageDataFormat);
+<span class="line-numbers">2</span><span class="keyword">if</span> (err != CAM_SUCCESS) {
+<span class="line-numbers">3</span>...
+<span class="line-numbers">4</span>}
+</span></code></pre>
+
+	<p>or better:</p>
+
+
+<pre><code class="cpp syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span><span class="predefined-type">int</span> err = m_pCamera-&gt;ReadQuadlet(advOffset+<span class="hex">0x48</span>, &#38;imageDataFormat);
+<span class="line-numbers">2</span>checkCMUError(err, 
+<span class="line-numbers">3</span>        <span class="string"><span class="delimiter">&quot;</span><span class="content">Unable to read firewire camera IMAGE_DATA_FORMAT register.</span><span class="delimiter">&quot;</span></span>);
+</span></code></pre>
+
+	<p>Indentation generally shows the flow of control at runtime, not compile time. Thus, <code>#ifdefs</code> have no impact on indentation:</p>
+
+
+<pre><code class="cpp syntaxhl"><span class="CodeRay"><span class="line-numbers"> 1</span>    <span class="predefined-type">bool</span> bOk;
+<span class="line-numbers"> 2</span>
+<span class="line-numbers"> 3</span><span class="preprocessor">#ifdef</span> AVG_ENABLE_RPI
+<span class="line-numbers"> 4</span>    m_xDisplay = (EGLNativeDisplayType)getBCMDisplay(pSDLWMInfo);
+<span class="line-numbers"> 5</span>    m_Display = eglGetDisplay(EGL_DEFAULT_DISPLAY);
+<span class="line-numbers"> 6</span><span class="preprocessor">#else</span>
+<span class="line-numbers"> 7</span>    m_xDisplay = (EGLNativeDisplayType)getX11Display(pSDLWMInfo);
+<span class="line-numbers"> 8</span>    m_Display = eglGetDisplay(m_xDisplay);
+<span class="line-numbers"> 9</span><span class="preprocessor">#endif</span>
+<span class="line-numbers"><strong>10</strong></span>    checkEGLError(m_Display == EGL_NO_DISPLAY, <span class="string"><span class="delimiter">&quot;</span><span class="content">No EGL display available</span><span class="delimiter">&quot;</span></span>);
+</span></code></pre>
+
+	<p>Nested preprocessor directives, however, have their own indentation hierarchy:</p>
+
+
+<pre><code class="cpp syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span><span class="preprocessor">#ifdef</span> AVG_ENABLE_RPI
+<span class="line-numbers">2</span>    <span class="preprocessor">#include</span> <span class="include">&quot;BCMDisplay.h&quot;</span> 
+<span class="line-numbers">3</span><span class="preprocessor">#else</span>
+<span class="line-numbers">4</span>    <span class="preprocessor">#include</span> <span class="include">&quot;X11Display.h&quot;</span> 
+<span class="line-numbers">5</span><span class="preprocessor">#endif</span>
+</span></code></pre>
+
+	<p>Indentation is ignored if the scope of the indentation would be the complete file. This is the case for include guards and <code>namespace avg {}</code> declarations.</p>
+
+
+	<a name="Class-Declaration-Order"></a>
+<h2 >Class Declaration Order<a href="#Class-Declaration-Order" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li>Class members are declared in the order public, protected, private.</li>
+		<li>All member variables are private.</li>
+		<li>Constructors and destructors are declared first, then other methods, then member variables.</li>
+	</ul>
+
+
+	<a name="Error-Reporting"></a>
+<h2 >Error Reporting<a href="#Error-Reporting" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Errors are reported using asserts, exceptions and (seldom) error return codes:</p>
+
+
+	<ul>
+	<li>asserts are used when an inconsistent state is detected that has its cause in a bug in libavg itself.</li>
+		<li>Exceptions are used for all other errors, including errors that are caused by the user of the library (i.e. python code).</li>
+		<li>Error return codes are only used in speed-critical situations.</li>
+	</ul>
+
+
+	<a name="Python-Code"></a>
+<h1 >Python Code<a href="#Python-Code" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>(Guidelines based loosely on  <a class="external" href="http://www.python.org/dev/peps/pep-0008/">http://www.python.org/dev/peps/pep-0008/</a>)</p>
+
+
+	<a name="Files-2"></a>
+<h2 >Files<a href="#Files-2" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li>File (and thus module) names are all lowercase without underscores.</li>
+		<li>File encoding is UTF-8.</li>
+		<li>The first two lines of every file look like this:</li>
+	</ul>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span><span class="comment">#!/usr/bin/env python</span>
+<span class="line-numbers">2</span><span class="comment"># -*- coding: utf-8 -*-</span>
+</span></code></pre>
+
+	<a name="Naming-2"></a>
+<h2 >Naming<a href="#Naming-2" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li>protected methods are prefixed by an underscore:</li>
+	</ul>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span><span class="keyword">def</span> <span class="function">_callFromSubClass</span>(<span class="predefined-constant">self</span>):
+</span></code></pre>
+
+	<ul>
+	<li>private methods are prefixed by two underscores:</li>
+	</ul>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span><span class="keyword">def</span> <span class="function">__internalUseOnly</span>(<span class="predefined-constant">self</span>):
+</span></code></pre>
+
+	<ul>
+	<li>Class names are CamelCase.</li>
+		<li>Variable names are mixedCase.</li>
+		<li>Global variables are prefixed with g_: g_GameState.</li>
+		<li>Function names are mixedCase as well. Use verbs for function names: getIllumination().</li>
+	</ul>
+
+
+	<a name="Blank-Lines-and-Whitespace"></a>
+<h2 >Blank Lines and Whitespace<a href="#Blank-Lines-and-Whitespace" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li>Top-level functions and class definitions are separated with two blank lines.</li>
+		<li>Method definitions inside a class are separated by a single blank line.</li>
+	</ul>
+
+
+	<ul>
+	<li>Examples for correct whitespace formatting:</li>
+	</ul>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>bar[<span class="integer">1</span>]
+<span class="line-numbers">2</span>foo(<span class="integer">2</span>)
+<span class="line-numbers">3</span><span class="predefined">dict</span>[<span class="string"><span class="delimiter">'</span><span class="content">key</span><span class="delimiter">'</span></span>] = <span class="string"><span class="delimiter">'</span><span class="content">flup</span><span class="delimiter">'</span></span>
+<span class="line-numbers">4</span>foo(bar[<span class="integer">1</span>], {baz: <span class="integer">4</span>})
+<span class="line-numbers">5</span>
+<span class="line-numbers">6</span><span class="keyword">if</span> x == <span class="integer">4</span>:
+<span class="line-numbers">7</span>    <span class="keyword">print</span> x, y
+</span></code></pre>
+
+	<a name="Compound-Statements"></a>
+<h2 >Compound Statements<a href="#Compound-Statements" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li>No more than one statement per line.</li>
+		<li>Always separate an if statement from its body by a line break:</li>
+	</ul>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span><span class="keyword">if</span> bork:
+<span class="line-numbers">2</span>    fizz()
+</span></code></pre>
+
+	<a name="Imports"></a>
+<h2 >Imports<a href="#Imports" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li>Imports are at the top of a file, directly after copyright and (possibly) docstrings.</li>
+		<li>Imports are grouped in the following order:
+	<ol>
+	<li>Standard library imports</li>
+		<li>Third party imports</li>
+		<li>Local application/library imports</li>
+	</ul></li>
+	</ol>
+
+
+	<a name="Shaders"></a>
+<h1 >Shaders<a href="#Shaders" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>Apply the C++ guidelines. In addition, there are prefixes for the different types of shader variables:</p>
+
+
+	<ul>
+	<li>u_: Uniform variable, Passed from CPU code to a shader.</li>
+		<li>a_: Per-vertex attribute - Part of a vertex array and input to a vertex shader.</li>
+		<li>v_: Varying variable: Output from a vertex shader, input to a fragment shader.</li>
+	</ul>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/CodingConventions by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:15 GMT -->
+</html>

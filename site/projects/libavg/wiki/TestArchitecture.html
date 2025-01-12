@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/TestArchitecture by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>TestArchitecture - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="TestArchitecture"></a>
+<h1 >TestArchitecture<a href="#TestArchitecture" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#TestArchitecture">TestArchitecture</a><ul><li><a href="#High-Level-Functional-Tests">High-Level Functional Tests</a><ul><li><a href="#Result-Images">Result Images</a></li><li><a href="#Writing-Tests">Writing Tests</a></li></ul>
+</li><li><a href="#Low-Level-Unit-Tests">Low-Level Unit Tests</a></li></ul></li></ul>
+
+
+	<p>libavg contains extensive unit tests that cover a very large part of the functionality. They are run on every call of make check and part of the continuous build. The tests are very fast - they run in about 10 seconds on a typical laptop. Considerable effort goes into the maintenance of the test suite, but as a result, we have several main benefits:</p>
+
+
+	<ul>
+	<li>Stability: Even subtle bugs are often detected by the tests before they land in production code.</li>
+		<li>Development speed: The development cycle (code change -> compile -> test) is extremely fast. Bugs are quickly pinpointed by the tests.</li>
+		<li>Cleaner architecture: The tests allow us to incrementally make changes to the libavg architecture without undue fear of introducing new bugs.</li>
+	</ul>
+
+
+	<p>libavg tests come in two main flavors: High-level functional tests and internal unit tests. make check runs all available tests. In addition, individual tests can be invoked at varying levels of granularity to pinpoint errors.</p>
+
+
+	<a name="High-Level-Functional-Tests"></a>
+<h2 >High-Level Functional Tests<a href="#High-Level-Functional-Tests" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>The functional tests are written in python and use the libavg API like any other python client would. The over 250 tests are divided into a number of test suites. There should be a test for every public API in libavg; feel free to report a bug if an API has no test. Ideally, all code paths in libavg should be exercised with a test - including error conditions.</p>
+
+
+	<p>The functional tests reside in their own directory, <code>src/test</code>. Just invoking</p>
+
+
+<pre>
+$ ./Test.py
+</pre>  
+
+	<p>runs all functional tests. Command-line parameters can be used to select a test suite or an individual test to run. This is extremely useful for pinpointing errors:</p>
+
+
+<pre>
+$ ./Test.py image
+$ ./Test.py image testImageMipmap
+</pre>
+
+	<p>A list of available test suites is output if the command line contains an unknown suite. <code>Test.py</code> has a number of additional command line parameters that can be used to set the graphics configuration to use. Run it with <code>--help</code> to get a listing of the parameters.</p>
+
+
+	<a name="Result-Images"></a>
+<h3 >Result Images<a href="#Result-Images" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Many of the tests rely on image comparisons to verify correct execution. The test compares a screenshot of the rendered scene with a baseline image checked into source control. If the images are 'similar enough' (determined by calculating average and standard deviation of the difference image), the test passes. Otherwise, it fails. Mismatches - even minor mismatches that don't cause a test failure - are saved in <code>src/test/resultimages</code>. Per mismatch, the test saves three images:</p>
+
+
+	<ul>
+	<li>a baseline image that shows what was expected,</li>
+		<li>the actual image generated and</li>
+		<li>a difference image.</li>
+	</ul>
+
+
+	<p><div style="float:right"><img src="../../../attachments/download/resultimages_screenshot.png" alt="" /></div></p>
+
+
+	<p>The resultimages directory is easily inspected in a file browser set to preview with three or six images per line - see the image at the right for an example.</p>
+
+
+	<p>The system ignores minor differences in images because there are several benign causes for these, mostly related to the libraries and systems that libavg builds upon. For instance, a lot of minor mismatches are caused by varying interpretations of the OpenGL standard on different platforms. Text rendering is an exception: The differences between platforms are too large. For this reason, image mismatches in text rendering don't cause test failures; the result images are simply saved for human inspection.</p>
+
+
+	<a name="Writing-Tests"></a>
+<h3 >Writing Tests<a href="#Writing-Tests" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>In code, tests manifest themselves as methods in one of the test suites. These methods are registered at the bottom of each test source file. Here is a very simple test method:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers"> 1</span>    <span class="keyword">def</span> <span class="function">testSample</span>(<span class="predefined-constant">self</span>):
+<span class="line-numbers"> 2</span>        <span class="keyword">def</span> <span class="function">getFramerate</span>():
+<span class="line-numbers"> 3</span>            framerate = player.getEffectiveFramerate()
+<span class="line-numbers"> 4</span>            <span class="predefined-constant">self</span>.assert_(framerate &gt; <span class="integer">0</span>)
+<span class="line-numbers"> 5</span>
+<span class="line-numbers"> 6</span>        root = <span class="predefined-constant">self</span>.loadEmptyScene()
+<span class="line-numbers"> 7</span>        avg.ImageNode(href=<span class="string"><span class="delimiter">&quot;</span><span class="content">rgb24-65x65.png</span><span class="delimiter">&quot;</span></span>, parent=root)
+<span class="line-numbers"> 8</span>        <span class="predefined-constant">self</span>.start(<span class="predefined-constant">False</span>,
+<span class="line-numbers"> 9</span>                (getFramerate,
+<span class="line-numbers"><strong>10</strong></span>                 <span class="keyword">lambda</span>: <span class="predefined-constant">self</span>.compareImage(<span class="string"><span class="delimiter">&quot;</span><span class="content">testsample</span><span class="delimiter">&quot;</span></span>), 
+<span class="line-numbers">11</span>                ))
+</span></code></pre>
+
+	<p>Typical test code consists of three parts:</p>
+
+
+	<ul>
+	<li>Scene setup: In the sample, we simply create a scene containing one image node.</li>
+		<li>A series of commands to execute in successive rendered frames: The start method initializes libavg playback and takes a list of python callables that are invoked using an <code>ON_FRAME</code> handler. In the sample, the test executes <code>getFramerate()</code> in the first frame and compares the rendered image to a baseline image in the second frame. Then it terminates.</li>
+		<li>Local functions: Functions to be used during execution of this test.</li>
+	</ul>
+
+
+	<p>The call to <code>compareImage()</code> checks to see if the current screen contents are similar to an image found in <code>src/test</code>/baseline. Note that if the image doesn't exist in baseline, the results are placed in <code>resultimages/</code>. A new baseline image can simply be copied from there to <code>baseline</code>/ (obviously, the contents need to be inspected first!).</p>
+
+
+	<p>All test suites are derived from <code>testcase.AVGTestCase</code>, which in turn is derived from standard python <code>unittest.TestCase</code>. <code>AVGTestCase</code> exposes a number of  additional entry points.</p>
+
+
+	<p>To test input and user interface functionality, test methods can use several <code>_sendXxxEvent</code> functions to simulate mouse and touch events. There is also a generic <code>MessageTester</code> class that can be used to check if publishers send out the messages they are expected to. A <code>MessageTester</code> is initialized with a publisher and a collection of <code>MessageIDs</code>. It subscribes itself to the <code>MessageIDs</code> and remembers which messages were sent. <code>MessageTester.isState()</code> compares the messages sent to a baseline list of messages expected.</p>
+
+
+	<a name="Low-Level-Unit-Tests"></a>
+<h2 >Low-Level Unit Tests<a href="#Low-Level-Unit-Tests" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>The low-level unit tests are C++ programs in the individual source directories. They are named with a test prefix and can be run by executing the program on a command line (no parameters). Running low-level tests can significantly speed up the compile->build->run cycle. This is done by compiling up to the directory in question and running the test. For instance, the basic OpenGL functionality is tested in <code>testgpu</code>; after changes in <code>src/graphics</code>, it is enough to run</p>
+
+
+<pre>
+$ cd src/graphics
+$ make
+$ ./testgpu
+</pre>
+
+	<p>to verify that the basic functionality is in place.</p>
+
+
+	<p>The mechanisms are similar to the ones used for the high-level tests. Each unit test is written as a single C++ class, derived either from <code>Test</code> or from <code>GraphicsTest</code>. The macros <code>TEST</code>, <code>TEST_FAILED</code> and <code>QUIET_TEST</code> are available to register test failures and successes. <code>GraphicsTest</code> provides an additional <code>testEqual()</code> function to compare images - similar to the python <code>compareImage()</code> function explained above. Using the two overloads of this function, generated bitmaps can be compared either to a file or to another in-memory bitmap.</p>
+
+
+	<p></p>
+</div>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/TestArchitecture by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:15 GMT -->
+</html>

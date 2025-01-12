@@ -1,0 +1,422 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/RaspberryPISourceInstall by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:10:30 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>RaspberryPISourceInstall - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="RaspberryPiSourceInstall"></a>
+<h1 >RaspberryPiSourceInstall<a href="#RaspberryPiSourceInstall" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>This page explains how to install the libavg developer version from github on a Raspberry Pi by either native or cross compiling. The latter involves compiling libavg on a separate Linux machine. The benefit of this is that native compiling on the Pi 2/3 takes around an hour, while cross compiling takes a few minutes (The original Pi would finish in 4-6 hours or fail with an out of memory condition). The downside is that it's a bit harder to set up.</p>
+
+
+	<p>Tested on Pi 2/3 with 2017-04-10-raspbian-jessie, cross compiling on ubuntu-16.04.2-desktop-amd64.</p>
+
+
+	<p>To enable architecture specific optimizations, compiler flags can be provided. Just add them to the <code>cmake</code> calls below. (However, they don't seem to make much of a difference.)</p>
+
+
+	<p>For Raspbian on the Pi 3:</p>
+
+
+<pre><code>-DAVG_RPI_ARCHFLAGS="-mcpu=cortex-a53 -mfpu=neon-vfpv4"</code></pre>
+
+	<p>on the Pi 2:</p>
+
+
+<pre><code>-DAVG_RPI_ARCHFLAGS="-mcpu=cortex-a7 -mfpu=neon-vfpv4"</code></pre>
+
+	<p>and for the older Pi:</p>
+
+
+<pre><code>-DAVG_RPI_ARCHFLAGS="-march=armv6 -mfloat-abi=hard -mfpu=vfp"</code></pre>
+
+	<p>For other distros, run <code>gcc -mcpu=native -march=native -Q --help=target</code> on the Pi to find out what to set AVG_RPI_ARCHFLAGS to.</p>
+
+
+	<p><em>Note that Raspberry Pi support is still beta - we're working on fixing all remaining issues.</em></p>
+
+
+	<a name="Install-libSDL"></a>
+<h2 >Install libSDL<a href="#Install-libSDL" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>To build and run libavg on a Pi, libSDL2>=2.0.4 is needed. As current raspbian ships version 2.0.2, manual installation on the Pi is required.</p>
+
+
+<pre>
+<code>$ sudo apt-get install automake autoconf libtool libfreeimage-dev libopenal-dev \
+libsndfile-dev libudev-dev libasound2-dev libtiff5-dev libwebp-dev
+</code></pre>
+
+	<p>On Wheezy, libevdev-dev isn't available, so add the following line to <code>/etc/apt/sources.list</code>:</p>
+
+
+<pre>
+<code>deb http://http.debian.net/debian wheezy-backports main
+</code></pre>
+
+	<p>Then:</p>
+
+
+<pre>
+<code>$ sudo apt-get -t wheezy-backports install libevdev-dev
+</code></pre>
+
+	<p>Say 'Y' to the 'Install without verification' prompt.</p>
+
+
+	<p>On Jessie, just install libevdev-dev:</p>
+
+
+<pre>
+<code>$ sudo apt-get install libevdev-dev
+</code></pre>
+
+	<p>Download libSDL 2.0.5 from libsdl.org, unpack the tarball. Then build and install libSDL:</p>
+
+
+<pre>
+<code>$ wget https://www.libsdl.org/release/SDL2-2.0.5.tar.gz
+$ tar -xzf SDL2-2.0.5.tar.gz 
+$ cd SDL2-2.0.5
+$ ./configure --host=armv7l-raspberry-linux-gnueabihf --disable-pulseaudio --disable-esd --disable-video-mir --disable-video-wayland --disable-video-x11 --disable-video-opengl
+$ make -j5
+$ sudo make install
+</code></pre>
+
+	<a name="Install-dependencies-on-the-Pi-for-native-and-cross-compiling"></a>
+<h2 >Install dependencies on the Pi (for native and cross compiling)<a href="#Install-dependencies-on-the-Pi-for-native-and-cross-compiling" class="wiki-anchor">&para;</a></h2>
+
+
+	<p><strong><em>On the Pi</em></strong>, install the needed packages:</p>
+
+
+<pre>
+<code>$ sudo apt-get install libjpeg62-turbo-dev libjpeg-dev libxml2-dev \
+libpango1.0-dev librsvg2-dev libgdk-pixbuf2.0-dev libavcodec-dev \
+libavformat-dev libswscale-dev libavresample-dev python-dev libboost-python-dev \
+libboost-thread-dev libxxf86vm-dev libdc1394-22-dev linux-libc-dev libxi-dev
+</code></pre>
+
+	<a name="Native-compiling-on-the-Pi"></a>
+<h2 >Native compiling on the Pi<a href="#Native-compiling-on-the-Pi" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Install some build tools:</p>
+
+
+<pre>
+<code>$ sudo apt-get install git cmake g++
+</code></pre>
+
+	<p>Check out libavg and build:</p>
+
+
+<pre>
+<code>$ git clone https://github.com/libavg/libavg.git
+$ cd libavg
+$ git checkout feature/raspi_jessie
+$ mkdir build
+$ cd build
+$ cmake -DAVG_ENABLE_EGL=TRUE -DAVG_ENABLE_RPI=TRUE ..
+$ make
+$ make check
+$ sudo make install
+</code></pre>
+
+	<p>Note that the available RAM is the bottleneck here and things are getting very slow when the kernel starts swapping. Parallel builds with <code>make -jx</code> will fail with an out of memory error. It is suggested to free as much RAM as possible for the build process (e.g. by setting the GPU memory to 16 MB and booting only into the console, not X).</p>
+
+
+	<a name="Cross-compiling-on-a-Linux-host"></a>
+<h2 >Cross compiling on a Linux host<a href="#Cross-compiling-on-a-Linux-host" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>This work is done <strong><em>on the Linux machine</em></strong>.</p>
+
+
+	<p>This is the directory structure we'll end up with:</p>
+
+
+<pre>
+rpi
+    libavg        - the libavg source tree
+    rootfs        - (partial) copy of the Pi root filesystem
+    tools         - the toolchain (compiler, linker, etc.) used to cross compile
+    staging       - the compiled version of libavg that will be copied to the Pi
+</pre>
+
+	<p>Install some build tools:</p>
+
+
+<pre>
+<code>$ sudo apt-get install git cmake
+</code></pre>
+
+	<p>Tell the build system where the directory hierarchy is:</p>
+
+
+<pre>
+<code>$ mkdir rpi
+$ cd rpi
+$ export AVG_RPI_PATH=$PWD
+</code></pre>
+
+	<a name="Set-up-the-cross-compile-toolchain"></a>
+<h3 >Set up the cross compile toolchain<a href="#Set-up-the-cross-compile-toolchain" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Download the cross compile tools to <code>rpi/tools</code>:</p>
+
+
+<pre>
+<code>$ cd rpi
+$ git clone git://github.com/raspberrypi/tools.git
+</code></pre>
+
+	<p>Copy <code>/usr</code>, <code>/lib</code>, and <code>/opt/vc</code> directory trees from the Pi to <code>rpi/rootfs</code> (replace <code>$PI</code> with the IP address of the Pi):</p>
+
+
+<pre>
+<code>$ cd rpi
+$ mkdir rootfs
+$ cd rootfs
+$ rsync -rl --delete-after --safe-links pi@$PI:/{lib,usr} .
+$ rsync -rl --delete-after --safe-links pi@$PI:/opt/vc opt
+</code></pre>
+
+	<p>Then, fix some system libraries so they don't contain references to absolute paths. Open the files in a text editor and change them. They are:</p>
+
+
+	<p><em>rootfs/usr/lib/arm-linux-gnueabihf/libpthread.so</em>:</p>
+
+
+<pre>
+<code>OUTPUT_FORMAT(elf32-littlearm)
+GROUP ( libpthread.so.0 libpthread_nonshared.a )
+</code></pre>
+
+	<p><em>rootfs/usr/lib/arm-linux-gnueabihf/libc.so</em>:</p>
+
+
+<pre>
+<code>OUTPUT_FORMAT(elf32-littlearm)
+GROUP ( libc.so.6 libc_nonshared.a  AS_NEEDED ( ld-linux-armhf.so.3 ) )
+</code></pre>
+
+	<p>Adjust the pkg-config file <em>rootfs/usr/lib/arm-linux-gnueabihf/pkgconfig/glib-2.0.pc</em> to have <code>-lpcre</code> in <code>Libs</code>, not in <code>Libs.private</code>:</p>
+
+
+<pre>
+<code>[...]
+Libs: -L${libdir} -lglib-2.0 -lpcre
+Libs.private: -pthread     
+[...]
+</code></pre>
+
+	<p>Fix some symlinks:</p>
+
+
+<pre>
+<code>$ cd rootfs/usr/lib/arm-linux-gnueabihf/
+$ ln -s ../../../lib/arm-linux-gnueabihf/libm.so.6 libm.so
+$ ln -s ../../../lib/arm-linux-gnueabihf/libdl.so.2 libdl.so
+</code></pre>
+
+	<a name="Check-out-and-build-libavg"></a>
+<h3 >Check out and build libavg<a href="#Check-out-and-build-libavg" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Note: On a 32 bit host system select the 32 bit cross compilers in <em>libavg/rpi-toolchain.cmake</em> (see comments in that file).</p>
+
+
+<pre>
+<code>$ cd rpi
+$ git clone https://github.com/libavg/libavg.git
+$ cd libavg
+$ git checkout feature/raspi_jessie 
+$ mkdir build
+$ cd build
+$ cmake -DCMAKE_TOOLCHAIN_FILE=../rpi-toolchain.cmake -DAVG_ENABLE_EGL=TRUE -DAVG_ENABLE_RPI=TRUE ..
+$ make -j5
+$ make install
+</code></pre>
+
+	<a name="Install-on-the-Pi"></a>
+<h3 >Install on the Pi<a href="#Install-on-the-Pi" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Copy the compiled libavg to the Pi:</p>
+
+
+<pre>
+<code>$ cd rpi/staging
+$ mv usr/local/lib/python2.7/site-packages usr/local/lib/python2.7/dist-packages
+$ rsync -au usr pi@$PI:/home/pi/Desktop
+</code></pre>
+
+	<p>Back <strong><em>on the Pi</em></strong>, copy libavg from the desktop to its final destination:</p>
+
+
+<pre>
+<code>$ sudo cp -R ~/Desktop/usr/* /usr
+</code></pre>
+
+	<a name="Run-the-tests"></a>
+<h3 >Run the tests<a href="#Run-the-tests" class="wiki-anchor">&para;</a></h3>
+
+
+<pre>
+<code>$ cd /usr/local/lib/python2.7/dist-packages/libavg/test/
+$ python Test.py
+</code></pre>
+
+	<p>That's it! libavg should now be running on your Pi.</p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/RaspberryPISourceInstall by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:10:30 GMT -->
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/Multitouch by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 17:19:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Multitouch - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Multitouch"></a>
+<h1 >Multitouch<a href="#Multitouch" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#Multitouch">Multitouch</a></li><li><a href="#Additional-Information">Additional Information</a></li><li><a href="#Driver-Support">Driver Support</a></li><li><a href="#Event-Handling">Event Handling</a></li><li><a href="#Hardware">Hardware</a></li></ul>
+
+
+	<p>Multitouch support is an integrated part of libavg. The framework is made for fast device-independent multitouch development, supports all major multitouch driver models and has multitouch-oriented event handling features. The extensive support for gesture recognition and the unique contact-based touch API are described under <a href="MouseAndTouchInput.html" class="wiki-page">Touch Input</a>.</p>
+
+
+	<p>If you are running Ubuntu 11.04 or later, libavg and some <a href="NattyMultitouchDemos.html" class="wiki-page">multitouch games</a> are available as packages.</p>
+
+
+	<a name="Additional-Information"></a>
+<h1 >Additional Information<a href="#Additional-Information" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>There is lots of additional information in our scientific publications:</p>
+
+
+	<ul>
+	<li>For a more in-depth look at building multitouch devices, have a look at our journal article on building multitouch hardware: <a href="../../../files/Multitouch/Multitouchguide_draft.pdf">Building Interactive Multi-touch Surfaces</a>. Johannes Schöning et.al.. In: Journal of Graphics Tools, Vol. 10, Pages 1-23, A K Peters, Ltd. 2009. </li>
+		<li>We also have an article in a very good book,  <a href="http://www.springer.com/computer/hci/book/978-1-84996-112-7" class="external">Tabletops and Horizontal Interactive Touch Displays</a>.</li>
+		<li>And here are the slides of the tutorial on <a href="../../../files/Multitouch/ITS_2010_Tutorial_MT_SW_Development.pdf">Software Development for Tabletops</a> that the libavg maintainer gave at the  <a href="http://www.its2010.org/" class="external">Interactive Tabletops and Surfaces Conference 2010</a>.</li>
+	</ul>
+
+
+	<a name="Driver-Support"></a>
+<h1 >Driver Support<a href="#Driver-Support" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>libavg handles multitouch events delivered by all major driver subsystems and comes with its own multitouch tracker as well. The supported driver architectures are:</p>
+
+
+	<ul>
+	<li><strong>TUIO</strong>: <a href="http://www.tuio.org/" class="external">TUIO</a> is a de-facto standard protocol for multitouch events. It is supported by almost all open-source tracking libraries. </li>
+		<li><strong>Linux</strong>: Linux tracking is supported using libmtdev and XInput 2.1 or later, so all multitouch devices supported by the linux kernel work. XInput (available under Ubuntu 11.04 and later) needs no additional setup. For libmtdev, refer to the <a href="LibMTDev.html" class="wiki-page">LibMTDev setup notes</a>. </li>
+		<li><strong>Windows 7</strong>: libavg supports Windows 7 touch events for multitouch input. </li>
+		<li><strong>Internal Tracker</strong>: libavg has a built-in tracker that works with FTIR and DI setups. Setup notes are on the <a href="Tracker.html" class="wiki-page">Camera Tracking page</a>. <strong>Note</strong>: The internal tracker is deprecated and has been removed from the development version, since there are better libraries available (e.g. <a href="http://ccv.nuigroup.com/" class="external">CCV</a>).</li>
+	</ul>
+
+
+	<p>Refer to the <a href="/reference/svn/player.html?highlight=enablemultitouch#libavg.avg.Player.enableMultitouch" class="external">reference</a> for details on how to set up multitouch handling.</p>
+
+
+	<a name="Event-Handling"></a>
+<h1 >Event Handling<a href="#Event-Handling" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>Since multitouch is an integrated part of the framework, all libavg <a href="BubblingAndCapture.html" class="wiki-page">Event handling</a> features work with multitouch events as well. Multitouch events are automatically routed to the correct nodes and event capture works as well. In addition, there is a manipulation API that helps you build direct-manipulation NUI-style interfaces (see <a href="MouseAndTouchInput.html" class="wiki-page">Touch Input</a>).</p>
+
+
+	<a name="Hardware"></a>
+<h1 >Hardware<a href="#Hardware" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>libavg multitouch support was originally developed for the  <a href="http://www.macrone.de/multitouch/" class="external">c-base MTC</a> in 2006. If you'd like to build your own hardware, the <a href="../../../files/Multitouch/Multitouchguide_draft.pdf">article</a> helps. We also have an older <a href="BuildingAMultitouchTable.html" class="wiki-page">construction howto</a>.</p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/Multitouch by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 17:19:48 GMT -->
+</html>

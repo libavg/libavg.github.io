@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/MacPortsInstall by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>MacPortsInstall - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <ul class="toc right"><li><a href="#Installing-the-required-dependencies">Installing the required dependencies</a></li><li><a href="#Fetching-and-compiling-libavg">Fetching and compiling libavg</a><ul><li><a href="#Test">Test</a></li></ul>
+</li><li><a href="#Installation">Installation</a></li></ul>
+
+
+	<p>This page describe how to fulfill libavg dependencies using MacPorts. An alternative method (which uses self-contained dependencies) is described here: <a href="MacSourceInstall.html" class="wiki-page">MacSourceInstall</a>.</p>
+
+
+	<a name="Installing-the-required-dependencies"></a>
+<h1 >Installing the required dependencies<a href="#Installing-the-required-dependencies" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul>
+	<li>Install XCode (<a class="external" href="http://developer.apple.com/technology/xcode.html">http://developer.apple.com/technology/xcode.html</a>). We tested XCode 5.0.1.</li>
+		<li>Install MacPorts (<a class="external" href="http://www.macports.org/install.php">http://www.macports.org/install.php</a>)</li>
+		<li>Install the following packages:</li>
+	</ul>
+
+
+<pre>
+$ sudo port install boost +python27
+$ sudo port install gdk-pixbuf2 autoconf automake ffmpeg libsdl pango subversion \
+  libtool libdc1394 librsvg python_select
+</pre>
+
+	<ul>
+	<li>Make sure MacPort has correctly added /opt/local/bin to the PATH (usually on .profile)</li>
+		<li>Switch to MacPort's python 2.7</li>
+	</ul>
+
+
+<pre>
+$ port select --set python python27
+</pre>
+
+	<a name="Fetching-and-compiling-libavg"></a>
+<h1 >Fetching and compiling libavg<a href="#Fetching-and-compiling-libavg" class="wiki-anchor">&para;</a></h1>
+
+
+<pre>
+$ git clone https://github.com/libavg/libavg.git
+$ cd libavg
+$ ./bootstrap
+$ BOOST_PYTHON_LIBS=-lboost_python-mt ./configure --with-boost-thread=-mt
+</pre>
+
+	<p>Compile with (adjust the concurrency parameter to the number of CPU cores you have + 1):</p>
+
+
+<pre>
+$ make -j3
+</pre>
+
+	<a name="Test"></a>
+<h2 >Test<a href="#Test" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>If everything runs fine, you may run the unit tests. Be aware that at first time startup, fontconfig requires several seconds to initialize its fonts cache:</p>
+
+
+<pre>
+$ make check
+</pre>
+
+	<a name="Installation"></a>
+<h1 >Installation<a href="#Installation" class="wiki-anchor">&para;</a></h1>
+
+
+<pre>
+$ make install
+</pre>
+
+	<p>Anyway, there is a present issue with the install location, which defaults to <em>/usr/local/lib/python2.7/site-packages/libavg</em> instead of <em>/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages</em>.</p>
+
+
+	<p>In order to circumvent this problem, add the directory to PYTHONPATH:</p>
+
+
+<pre>
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+</pre>
+
+	<p>Add this line to <em>.profile</em> to make it permanent.</p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/MacPortsInstall by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:23 GMT -->
+</html>

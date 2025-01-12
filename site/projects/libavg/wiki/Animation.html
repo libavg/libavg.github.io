@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/Animation by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Animation - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Animation"></a>
+<h1 >Animation<a href="#Animation" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#Animation">Animation</a></li><li><a href="#Linear-Animations">Linear Animations</a></li><li><a href="#Easeinout">Easein/out</a></li><li><a href="#ParallelAnim">ParallelAnim</a></li><li><a href="#StateAnim">StateAnim</a></li><li><a href="#Other-Animations">Other Animations</a></li></ul>
+
+
+	<p>libavg contains a powerful animation framework that allows you to quickly author time and event-based changes in nodes. Animations can change the values of all numeric node attributes. They can be combined to execute in parallel or in series, they can switch states when some external event occurs, and callbacks can be registered that are called when animations start or stop.</p>
+
+
+	<a name="Linear-Animations"></a>
+<h1 >Linear Animations<a href="#Linear-Animations" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>It is very simple to animate node attributes:</p>
+
+
+	<p><em>anim1.py</em></p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers"> 1</span><span class="comment">#!/usr/bin/env python</span>
+<span class="line-numbers"> 2</span><span class="comment"># -*- coding: utf-8 -*-</span>
+<span class="line-numbers"> 3</span>
+<span class="line-numbers"> 4</span><span class="keyword">from</span> <span class="include">libavg</span> <span class="keyword">import</span> <span class="include">*</span>
+<span class="line-numbers"> 5</span>
+<span class="line-numbers"> 6</span><span class="keyword">def</span> <span class="function">startAnim</span>():
+<span class="line-numbers"> 7</span>    animObj.start()
+<span class="line-numbers"> 8</span>
+<span class="line-numbers"> 9</span>player = avg.Player.get()
+<span class="line-numbers"><strong>10</strong></span>canvas = player.createMainCanvas(size=(<span class="integer">640</span>,<span class="integer">480</span>))
+<span class="line-numbers">11</span>rootNode = canvas.getRootNode()
+<span class="line-numbers">12</span>node = avg.WordsNode(pos=(<span class="integer">10</span>,<span class="integer">10</span>), font=<span class="string"><span class="delimiter">&quot;</span><span class="content">arial</span><span class="delimiter">&quot;</span></span>,
+<span class="line-numbers">13</span>        text=<span class="string"><span class="delimiter">&quot;</span><span class="content">Hello World</span><span class="delimiter">&quot;</span></span>, parent=rootNode)
+<span class="line-numbers">14</span>
+<span class="line-numbers">15</span>animObj = LinearAnim(node, <span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>, <span class="integer">2000</span>, <span class="integer">0</span>, <span class="integer">200</span>)
+<span class="line-numbers">16</span>player.setTimeout(<span class="integer">0</span>, startAnim)
+<span class="line-numbers">17</span>
+<span class="line-numbers">18</span>player.play()
+</span></code></pre>
+
+	<p>This creates an animation that moves the node from <code>x=0</code> to <code>x=200</code> over a course of 2000 milliseconds. The framework takes care of updating the position each frame. Point and color attributes (such as <code>pos</code>, <code>size</code> and <code>fillcolor</code>) can be animated in the same way. <code>LinearAnim</code> has a few additional optional parameters, which are described in detail in the <a href="Reference.html" class="wiki-page">reference</a>. Using this class, you are independent of the framerate: if you change the framerate (maybe because you're running the code on a different computer with a different refresh rate), the animation will still take the same amount of time to complete. It'll just display more or less frames. There is another advantage: If something happens while the animation is running (the user presses a cancel button, for instance), you can just call <code>animObj.abort()</code> and it'll stop dead in it's tracks. The animation framework also makes sure that only one animation per attribute is running at one time. If a second one is started, the first one is aborted.</p>
+
+
+	<p>There are convenience functions that handle fading the opacity of nodes called <code>fadeIn()</code> and <code>fadeOut()</code>.</p>
+
+
+	<p>Interpolation of color values is done in the CIE L'ch color space for best results - see <a class="external" href="../../../../blog/colors/index.html">/blog/colors/</a> for an explanation of why this is a good thing.</p>
+
+
+	<a name="Easeinout"></a>
+<h1 >Easein/out<a href="#Easeinout" class="wiki-anchor">&para;</a></h1>
+
+
+	<p><code>LinearAnim</code> moves the attribute at a constant speed with no acceleration or deceleration. The <code>EaseInOutAnim</code> class encapsulates an animation that proceeds in three phases: ease-in, linear and ease-out. Constructor parameters determine the length of each phase. Start and end speed are zero. Ease-in and ease-out phases have the shape of one quadrant of the sine curve. Less mathematically put: The animation will accelerate and decelerate at the beginning and end and look a lot smoother because of this.</p>
+
+
+	<a name="ParallelAnim"></a>
+<h1 >ParallelAnim<a href="#ParallelAnim" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>In many cases, you will want to start several animations at once. This can be accomplished using the <code>ParallelAnim</code> class:</p>
+
+
+<blockquote>
+
+	<p><img src="../../../plugin_assets/redmine_wiki_extensions/images/warning.png" alt="(!)"> <strong>Note:</strong> <img src="../../../plugin_assets/redmine_wiki_extensions/images/warning.png" alt="(!)"> <br />The example animates a color, which is a post-1.8 feature. You need to use the current git master to run it.</p>
+
+
+</blockquote>
+
+	<p><em>anim2.py</em></p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers"> 1</span><span class="comment">#!/usr/bin/env python</span>
+<span class="line-numbers"> 2</span><span class="comment"># -*- coding: utf-8 -*-</span>
+<span class="line-numbers"> 3</span>
+<span class="line-numbers"> 4</span><span class="keyword">from</span> <span class="include">libavg</span> <span class="keyword">import</span> <span class="include">*</span>
+<span class="line-numbers"> 5</span>
+<span class="line-numbers"> 6</span><span class="keyword">def</span> <span class="function">startAnim</span>():
+<span class="line-numbers"> 7</span>    animObj.start()
+<span class="line-numbers"> 8</span>
+<span class="line-numbers"> 9</span>canvas = player.createMainCanvas(size=(<span class="integer">640</span>,<span class="integer">480</span>))
+<span class="line-numbers"><strong>10</strong></span>rootNode = canvas.getRootNode()
+<span class="line-numbers">11</span>node = avg.RectNode(pos=(<span class="integer">10</span>,<span class="integer">10</span>), size=(<span class="integer">100</span>,<span class="integer">100</span>), fillcolor=<span class="string"><span class="delimiter">&quot;</span><span class="content">FF0000</span><span class="delimiter">&quot;</span></span>, fillopacity=<span class="float">1.0</span>,
+<span class="line-numbers">12</span>        parent=rootNode)
+<span class="line-numbers">13</span>
+<span class="line-numbers">14</span>animObj = ParallelAnim(
+<span class="line-numbers">15</span>    [LinearAnim(node, <span class="string"><span class="delimiter">&quot;</span><span class="content">pos</span><span class="delimiter">&quot;</span></span>, <span class="integer">2000</span>, (<span class="integer">0</span>,<span class="integer">0</span>), (<span class="integer">200</span>,<span class="integer">10</span>)),
+<span class="line-numbers">16</span>     LinearAnim(node, <span class="string"><span class="delimiter">&quot;</span><span class="content">fillcolor</span><span class="delimiter">&quot;</span></span>, <span class="integer">2000</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">00FFFF</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">FF0000</span><span class="delimiter">&quot;</span></span>)])
+<span class="line-numbers">17</span>player.setTimeout(<span class="integer">0</span>, startAnim)
+<span class="line-numbers">18</span>
+<span class="line-numbers">19</span>player.play()
+</span></code></pre>
+
+	<p>The example code moves the node down and to the right over a course of 2 seconds while changing its color at the same time. Calling <code>abort()</code> on a <code>ParallelAnim</code> will stop all child animations. <code>ParallelAnim</code> is sometimes useful on its own, but it's really powerful in combination with <code>StateAnim</code>.</p>
+
+
+	<a name="StateAnim"></a>
+<h1 >StateAnim<a href="#StateAnim" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>More complex animations can be scripted using <code>StateAnim</code>. Objects of this class contain a number of animations (so-called "states") that can be executed in an arbitrary sequence. At most one of these animations is active at once. The end of one animation can trigger the start of another one, and states can be set from a python script. A simple use for a <code>StateAnim</code> is as a predetermined sequence of animations, but animations that take different routes depending on user input events are also possible. There is support for debugging animation states by calling <code>StateAnim.setDebug(True)</code>. This causes all state changes to be dumped to the console.</p>
+
+
+	<p>To make sure there are no discontinuities between two states, <code>Anim.start()</code> has an optional parameter <code>keepAttr</code>. If this is set to True, the attribute is not changed at the beginning of the animation and the animation runs only for an appropriate part of the time that the duration parameter specifies. So, suppose that in <code>anim2.py</code> above, <code>start(True)</code> is called and <code>x=50</code> before the animation starts. Since this is one-quarter into the range 0-200, the animation will run for 1500 ms (=2000*0.75) and the node will move from 50 to 200 in this time.</p>
+
+
+	<p>Note that changing the state of a <code>StateAnim</code> during an animation callback is not supported. An attempt to do so is silently ignored.</p>
+
+
+	<a name="Other-Animations"></a>
+<h1 >Other Animations<a href="#Other-Animations" class="wiki-anchor">&para;</a></h1>
+
+
+	<p><code>WaitAnim</code> does nothing for a predetermined amount of time. <code>ContinuonsAnim</code> continually changes one attribute and doesn't stop by itself.</p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/Animation by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:15 GMT -->
+</html>

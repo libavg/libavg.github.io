@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/MacSourceInstall by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 17:22:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>MacSourceInstall - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Installing-from-Source-on-a-Mac"></a>
+<h1 >Installing from Source on a Mac<a href="#Installing-from-Source-on-a-Mac" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#Installing-from-Source-on-a-Mac">Installing from Source on a Mac</a><ul><li><a href="#Directory-Tree-Setup">Directory Tree Setup</a></li><li><a href="#libavg-Itself">libavg Itself</a></li><li><a href="#Running-libavg-Programs">Running libavg Programs</a></li></ul>
+</li><li><a href="#Possible-Issues">Possible Issues</a><ul><li><a href="#Python-64-Bit-Issue">Python 64 Bit Issue</a></li><li><a href="#Older-Macdependencies">Older Macdependencies</a></li></ul></li></ul>
+
+
+	<p>This page covers installing the latest development version of libavg under Mac OS X using a standard Unix <code>./configure &#38;&#38; make &#38;&#38; make install</code> routine. Alternatively, you can install libavg using <a href="MacPortsInstall.html" class="wiki-page">MacPorts</a> or <a href="MacHomebrewInstall.html" class="wiki-page">Homebrew</a>.</p>
+
+
+	<p>You will need the <a href="https://developer.apple.com/downloads/index.action" class="external">XCode command line tools</a>, <a href="http://git-scm.com/downloads" class="external">git</a> and <a href="https://cmake.org/download/" class="external">cmake</a> installed. Current libavg should work on all OS X versions from 10.7 to 10.11. At the moment, libavg works with Python 2.x and is not compatible with Python 3.x.</p>
+
+
+<blockquote>
+
+	<p><img src="../../../plugin_assets/redmine_wiki_extensions/images/warning.png" alt="(!)"> <strong>Note:</strong> <img src="../../../plugin_assets/redmine_wiki_extensions/images/warning.png" alt="(!)"> <br />Fink, Homebrew and MacPorts can interfere with this setup. Unless you know exactly what you're doing, make sure no components installed by package managers are found when you're compiling libavg or the dependencies. If you want to install libavg using MacPorts or Homebrew, have a look at the instructions mentioned above.</p>
+
+
+</blockquote>
+
+	<a name="Directory-Tree-Setup"></a>
+<h2 >Directory Tree Setup<a href="#Directory-Tree-Setup" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>This is the libavg directory tree before the build:</p>
+
+
+<pre>
+libavg/
+|-deps
+ -libavg
+</pre>
+
+	<p><code>libavg/libavg</code> contains the libavg source tree checked out from git:</p>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>$ export AVG_PATH=/Users/$USER/libavg
+<span class="line-numbers">2</span>$ cd $AVG_PATH
+<span class="line-numbers">3</span>$ git clone https://github.com/libavg/libavg.git
+</span></code></pre>
+
+	<p><code>libavg/deps</code> needs to contain the libavg dependencies in <a href="../../../attachments/download/macdependencies.1.8.0.4.tar.bz2" class="attachment">macdependencies.1.8.0.4.tar.bz2</a> (For older libavg versions, older dependencies versions are at <a href="#Older-Macdependencies" class="wiki-page">the bottom of this page</a>). Download them. Then, to compile the libavg dependencies, execute the following:</p>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>$ mkdir deps
+<span class="line-numbers">2</span>$ mv [macdependencies] deps
+<span class="line-numbers">3</span>$ source ${AVG_PATH}/libavg/mac/avg_env.sh
+<span class="line-numbers">4</span>$ cd ${AVG_PATH}/libavg
+<span class="line-numbers">5</span>$ ./BuildMacDeps.sh
+</span></code></pre>
+
+	<p>Set <code>$AVG_PATH</code> to the actual location of your libavg tree and replace <code>[macdependencies]</code> with the location of the <code>.tar.bz2</code> file you just downloaded. I export <code>$AVG_PATH</code> in my <code>~/.bash_profile</code> and source <code>avg_env.sh</code> whenever I need the libavg build environment. That way, the binaries in the libavg tree don't interfere with normal system operation.</p>
+
+
+	<p><code>BuildMacDeps.sh</code> should be a more-or-less automatic process that just takes a while (13 mins on a 2013 MBP). It does ask for a root password, however, and under some circumstances, an inconsequential error pop-up ('depcomp'...) will appear.</p>
+
+
+	<p>When the build is finished, the directory tree should look like this:</p>
+
+
+<pre>
+libavg/
+|-bin
+|-deps
+|-etc
+|-include
+|-info
+|-lib
+|-libavg
+|-man
+ -share
+</pre>
+
+	<p>This tree contains all files created by the build.</p>
+
+
+	<a name="libavg-Itself"></a>
+<h2 >libavg Itself<a href="#libavg-Itself" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>To build libavg itself, do the following:</p>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>$ cd libavg/libavg
+<span class="line-numbers">2</span>$ mkdir build
+<span class="line-numbers">3</span>$ cd build
+<span class="line-numbers">4</span>$ cmake ..
+<span class="line-numbers">5</span>$ make -j3
+<span class="line-numbers">6</span>$ sudo make install
+</span></code></pre>
+
+	<p><code>-j3</code> is the number of parallel compile processes you'd like to run. A good heuristic is to set this to the number of cores you have + 1.</p>
+
+
+	<p>To install libavg into a virtualenv, make sure it is active during the cmake step.</p>
+
+
+	<p>See if everything works:</p>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>$ make check
+</span></code></pre>
+
+	<p>The first time libavg starts (in other words, when you run make check), it builds a cache of fonts. Depending on the machine and the number of fonts, that can take up to 30 seconds.</p>
+
+
+	<a name="Running-libavg-Programs"></a>
+<h2 >Running libavg Programs<a href="#Running-libavg-Programs" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>You need to have <code>/usr/local/lib/python2.x/site-packages</code> in your <code>PYTHONPATH</code>:</p>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>$ export PYTHONPATH=/usr/local/lib/python2.7/site-packages
+</span></code></pre>
+
+	<p>Edit <code>~/.profile</code> so it's always there.</p>
+
+
+	<a name="Possible-Issues"></a>
+<h1 >Possible Issues<a href="#Possible-Issues" class="wiki-anchor">&para;</a></h1>
+
+
+	<a name="Python-64-Bit-Issue"></a>
+<h2 >Python 64 Bit Issue<a href="#Python-64-Bit-Issue" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Python needs to be running in 64 bit mode. This is the default. If you've changed it for some reason (<code>BuildMacDeps.sh</code> will issue an appropriate error message), the Python man page provides instructions on how to switch the preinstalled python:</p>
+
+
+	<p><a class="external" href="http://developer.apple.com/mac/library/documentation/Darwin/Reference/ManPages/man1/python.1.html">http://developer.apple.com/mac/library/documentation/Darwin/Reference/ManPages/man1/python.1.html</a></p>
+
+
+	<a name="Older-Macdependencies"></a>
+<h2 >Older Macdependencies<a href="#Older-Macdependencies" class="wiki-anchor">&para;</a></h2>
+
+
+	<table>
+		<tr>
+			<th>svn revision</th>
+			<th>Archive</th>
+		</tr>
+		<tr>
+			<td>< 9377</td>
+			<td><a href="../../../attachments/download/macdependencies.1.8.0.1.tar.bz2" class="attachment">macdependencies.1.8.0.1.tar.bz2</a></td>
+		</tr>
+		<tr>
+			<td>< 9346</td>
+			<td><a href="../../../attachments/download/macdependencies.1.8.0.tar.bz2">macdependencies.1.8.0.tar.bz2</a></td>
+		</tr>
+		<tr>
+			<td>< 6991</td>
+			<td><a href="../../../attachments/download/macdependencies.1.7.0.tar.bz2">macdependencies.1.7.0.tar.bz2</a></td>
+		</tr>
+		<tr>
+			<td>< 6478</td>
+			<td><a href="../../../attachments/download/macdependencies.1.6.0.tar.bz2">macdependencies.1.6.0.tar.bz2</a></td>
+		</tr>
+	</table>
+
+
+
+
+	<p></p>
+</div>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/MacSourceInstall by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:09:54 GMT -->
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/BubblingAndCapture by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 17:21:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>BubblingAndCapture - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="CursorEvent-Bubbling-and-Capture"></a>
+<h1 >CursorEvent Bubbling and Capture<a href="#CursorEvent-Bubbling-and-Capture" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#CursorEvent-Bubbling-and-Capture">CursorEvent Bubbling and Capture</a></li><li><a href="#Event-Bubbling">Event Bubbling</a></li><li><a href="#DivNodes-and-Event-Handling">DivNodes and Event Handling</a></li><li><a href="#Event-Capture">Event Capture</a></li></ul>
+
+
+	<p>This page describes how cursor events are routed to individual nodes.</p>
+
+
+	<a name="Event-Bubbling"></a>
+<h1 >Event Bubbling<a href="#Event-Bubbling" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>Determining which node an event is sent to follows a process called bubbling. Initially, libavg looks for the target node by recursively going down the node tree, always choosing the first child node that contains the cursor, until it reaches the lowest node that contains the cursor. Then, libavg examines the nodes from leaf to root (starting from the last node found) and delivers the event to the nodes that have appropriate event handlers in that order. The first step goes down the hierarchy in a geometrical fashion, and the second one goes up the node hierarchy by following the chain of parent nodes.</p>
+
+
+	<p>Note that <code>DivNodes</code> react to events directly as well as by bubbling - if the cursor of an event is inside a <code>DivNode</code>, that node will get the event.</p>
+
+
+	<p>Sound complicated? It really isn't and corresponds to the javascript event bubbling model. Usually, the effect is just what you would expect: Put an event handler in a leaf node and a surrounding div, and both will get called. The leaf node handler gets called first. But: if a node is covered by another node - even if it's something transparent or a <code>DivNode</code> -, it will never get events. Here is an example:</p>
+
+
+	<p><em>event.py</em><br /><pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers"> 1</span><span class="comment">#!/usr/bin/env python</span>
+<span class="line-numbers"> 2</span><span class="comment"># -*- coding: utf-8 -*-</span>
+<span class="line-numbers"> 3</span>
+<span class="line-numbers"> 4</span><span class="keyword">from</span> <span class="include">libavg</span> <span class="keyword">import</span> <span class="include">app</span>, <span class="include">avg</span>
+<span class="line-numbers"> 5</span>
+<span class="line-numbers"> 6</span><span class="keyword">class</span> <span class="class">MainDiv</span>(app.MainDiv):
+<span class="line-numbers"> 7</span>    <span class="keyword">def</span> <span class="function">onInit</span>(<span class="predefined-constant">self</span>):
+<span class="line-numbers"> 8</span>        <span class="predefined-constant">self</span>.node = avg.WordsNode(pos=(<span class="integer">10</span>,<span class="integer">10</span>), 
+<span class="line-numbers"> 9</span>                text=<span class="string"><span class="delimiter">&quot;</span><span class="content">Should I stay or should I go?</span><span class="delimiter">&quot;</span></span>, parent=<span class="predefined-constant">self</span>)
+<span class="line-numbers"><strong>10</strong></span>        div = avg.DivNode(pos=(<span class="integer">100</span>,<span class="integer">0</span>), size=(<span class="integer">80</span>,<span class="integer">200</span>), parent=<span class="predefined-constant">self</span>)
+<span class="line-numbers">11</span>        <span class="predefined-constant">self</span>.node.subscribe(avg.Node.CURSOR_MOTION, <span class="predefined-constant">self</span>.onWords)
+<span class="line-numbers">12</span>        div.subscribe(div.CURSOR_MOTION, <span class="predefined-constant">self</span>.onDiv)
+<span class="line-numbers">13</span>
+<span class="line-numbers">14</span>    <span class="keyword">def</span> <span class="function">onDiv</span>(<span class="predefined-constant">self</span>, event):
+<span class="line-numbers">15</span>        <span class="keyword">print</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">div</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers">16</span>        <span class="predefined-constant">self</span>.node.color = <span class="string"><span class="delimiter">&quot;</span><span class="content">FF8000</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers">17</span>
+<span class="line-numbers">18</span>    <span class="keyword">def</span> <span class="function">onWords</span>(<span class="predefined-constant">self</span>, event):
+<span class="line-numbers">19</span>        <span class="keyword">print</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">words</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers"><strong>20</strong></span>        <span class="predefined-constant">self</span>.node.color = <span class="string"><span class="delimiter">&quot;</span><span class="content">00FF00</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers">21</span>
+<span class="line-numbers">22</span>app.App().run(MainDiv())
+</span></code></pre></p>
+
+
+	<p><div style="float:right"><img src="../../../files/EventHandlingDetails/Eventhandler.png" alt="" /></div></p>
+
+
+	<p>Now, whenever the cursor is above the left part of the text, the text will turn green. When the cursor is over the right part - which is covered by the div - the text will turn orange. If you switch the order of the div and words nodes in the avg file, this won't happen anymore: The text will always turn green whenever the cursor is over it (since there's no cursorout handler, it will never turn white again, though).</p>
+
+
+	<p>Any node can be completely cut off from event handling by setting it's <code>sensitive</code> attribute. If this attribute is <code>False</code>, the node is ignored by the event handling code. Try this with the <code>DivNode</code> in the example and see what happens. The <code>sensitive</code> attribute extends to the children of a node: if you set it to <code>False</code> in a <code>DivNode</code>, all it's children will stop receiving events as well.</p>
+
+
+	<a name="DivNodes-and-Event-Handling"></a>
+<h1 >DivNodes and Event Handling<a href="#DivNodes-and-Event-Handling" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>A <code>DivNode</code> with an explicit size attribute reacts to events as described above: Any events inside of its area are routed to the div node. A <code>DivNode</code> <em>without</em> an explicit <code>size</code> attribute, however, does not react to events directly. Bubbling still works: if a child of the DivNode is underneath a click, the event handlers of the parent will be called as well as described above.</p>
+
+
+	<a name="Event-Capture"></a>
+<h1 >Event Capture<a href="#Event-Capture" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>When implementing things like dragging, scrollbars or even simple buttons, it helps a lot to be able to route all events from a pointer to one specific node. One way to do this is by using the <em>event capture</em> mechanisms of libavg (alternative that is often easier is to use Contacts, as described under <a href="MouseAndTouchInput.html" class="wiki-page">TouchInput</a>). Event capture allows you to route all events from a specific cursor to a single node temporarily. (As an aside, this is something completely different than what javascript calls event capture. It's the same thing that MFC calls event capture, though.)</p>
+
+
+	<p>Capture is set up by calling <code>Node.setEventCapture()</code> and released using <code>Node.releaseEventCapture()</code>. Here's an example drag-and-drop:</p>
+
+
+	<p><em>drag.py</em></p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers"> 1</span><span class="comment">#!/usr/bin/env python</span>
+<span class="line-numbers"> 2</span><span class="comment"># -*- coding: utf-8 -*-</span>
+<span class="line-numbers"> 3</span>
+<span class="line-numbers"> 4</span><span class="keyword">from</span> <span class="include">libavg</span> <span class="keyword">import</span> <span class="include">avg</span>
+<span class="line-numbers"> 5</span>
+<span class="line-numbers"> 6</span>offset = <span class="predefined-constant">None</span>
+<span class="line-numbers"> 7</span>
+<span class="line-numbers"> 8</span><span class="keyword">def</span> <span class="function">onMouseDown</span>(event):
+<span class="line-numbers"> 9</span>    <span class="keyword">global</span> offset
+<span class="line-numbers"><strong>10</strong></span>    node = event.node
+<span class="line-numbers">11</span>    offset = node.getRelPos((event.x, event.y))
+<span class="line-numbers">12</span>    node.setEventCapture()
+<span class="line-numbers">13</span>
+<span class="line-numbers">14</span><span class="keyword">def</span> <span class="function">onMouseMove</span>(event):
+<span class="line-numbers">15</span>    <span class="keyword">global</span> offset
+<span class="line-numbers">16</span>    node = event.node
+<span class="line-numbers">17</span>    <span class="keyword">if</span> offset != <span class="predefined-constant">None</span>:
+<span class="line-numbers">18</span>        node.x = event.x-offset[<span class="integer">0</span>]
+<span class="line-numbers">19</span>        node.y = event.y-offset[<span class="integer">1</span>]
+<span class="line-numbers"><strong>20</strong></span>
+<span class="line-numbers">21</span><span class="keyword">def</span> <span class="function">onMouseUp</span>(event):
+<span class="line-numbers">22</span>    <span class="keyword">global</span> offset
+<span class="line-numbers">23</span>    node = event.node
+<span class="line-numbers">24</span>    <span class="keyword">if</span> offset != <span class="predefined-constant">None</span>:
+<span class="line-numbers">25</span>        node.releaseEventCapture()
+<span class="line-numbers">26</span>        offset = <span class="predefined-constant">None</span>;
+<span class="line-numbers">27</span>
+<span class="line-numbers">28</span>player = avg.Player.get()
+<span class="line-numbers">29</span>
+<span class="line-numbers"><strong>30</strong></span>canvas = player.createMainCanvas(size=(<span class="integer">640</span>,<span class="integer">480</span>))
+<span class="line-numbers">31</span>rootNode = canvas.getRootNode()
+<span class="line-numbers">32</span>node = avg.WordsNode(pos=(<span class="integer">10</span>,<span class="integer">10</span>), font=<span class="string"><span class="delimiter">&quot;</span><span class="content">arial</span><span class="delimiter">&quot;</span></span>, 
+<span class="line-numbers">33</span>        text=<span class="string"><span class="delimiter">&quot;</span><span class="content">Hello World</span><span class="delimiter">&quot;</span></span>, parent=rootNode)
+<span class="line-numbers">34</span>node.subscribe(node.CURSOR_DOWN, onMouseDown)
+<span class="line-numbers">35</span>node.subscribe(node.CURSOR_MOTION, onMouseMove)
+<span class="line-numbers">36</span>node.subscribe(node.CURSOR_UP, onMouseUp)
+<span class="line-numbers">37</span>player.play()
+</span></code></pre>
+
+	<p>If you remove the <code>set/releaseEventCapture()</code> calls, dragging will only work as long as you move slowly and don't leave the area of the node with the cursor. The code to duplicate this functionality without event capture is messy, especially if you need to support multitouch and several elements can be dragged at once. For multitouch devices, <code>set/releaseEventCapture()</code> take a cursor id as parameter so you can specify which finger corresponds to which user interface element.</p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/BubblingAndCapture by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 17:21:55 GMT -->
+</html>

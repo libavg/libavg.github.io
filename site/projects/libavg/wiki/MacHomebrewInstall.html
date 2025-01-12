@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/MacHomebrewInstall by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>MacHomebrewInstall - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="MacHomebrewInstall"></a>
+<h1 >MacHomebrewInstall<a href="#MacHomebrewInstall" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#MacHomebrewInstall">MacHomebrewInstall</a></li><li><a href="#Basic-Homebrew-stuff">Basic Homebrew stuff</a></li><li><a href="#Prereqs">Prereqs</a></li><li><a href="#Build-and-Install">Build and Install</a></li><li><a href="#Optional">Optional</a></li><li><a href="#Mac-OS-X-105">Mac OS X 10.5</a></li><li><a href="#Wave-Version">Wave Version</a></li></ul>
+
+
+	<p>How to manually compile libavg git master on Mac OS X using the homebrew package manager.</p>
+
+
+	<p>Homebrew is probably the most nerd friendly package manager for os x but out of the box not suited for building libavg, therefore I proudly present the following ...</p>
+
+
+	<p>detailed build instructions (mostly for 10.6, for 10.5 see below) partially written from memory</p>
+
+
+	<p>YMMV ...</p>
+
+
+	<a name="Basic-Homebrew-stuff"></a>
+<h1 >Basic Homebrew stuff<a href="#Basic-Homebrew-stuff" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul>
+	<li>Install XCode >= 3.2.2</li>
+		<li>Symlink /usr/lib/libiconv* to /usr/local/lib (This solves many headaches...)</li>
+		<li>Install homebrew</li>
+		<li>I suggest to have at least: brew install git berkeley-db binutils coreutils readline gettext getopt pkg-config</li>
+	</ul>
+
+
+	<a name="Prereqs"></a>
+<h1 >Prereqs<a href="#Prereqs" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul>
+	<li>brew install all dependencies as detailed on avg wiki (I added a few transitive dependencies below)</li>
+		<li>brew install libogg libvorbis pango libpng libtiff icu4c libxml2 jasper jam ffmpeg sdl sdl_image sdl_mixer sdl_net sdl_sound sdl_ttf fontconfig expat freetype</li>
+		<li>brew link fontconfig</li>
+		<li>You need this for AVG but watch out it might interact with os x' fontconfig</li>
+		<li>Three packages require some more work
+	<ul>
+	<li>brew edit boost s.t. the bootstrap.sh is called with --python-version=2.6</li>
+		<li>brew install boost</li>
+		<li>brew edit graphicsmagick s.t. graphicsmagick++ does not get disabled in the build</li>
+		<li>brew install graphicsmagick </li>
+	</ul>
+	</li>
+		<li>for camera support, install dc1394 2.0 manually
+	<ul>
+	<li>./configure --prefix=/usr/local/Cellar/dc1394/Version</li>
+		<li>make &#38;&#38; make install &#38;&#38; brew link dc1394</li>
+	</ul></li>
+	</ul>
+
+
+	<a name="Build-and-Install"></a>
+<h1 >Build and Install<a href="#Build-and-Install" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul>
+	<li>Clone HEAD of avg git master and export AVG_PATH = toplevel checkout dir</li>
+		<li>Set up build environment</li>
+		<li>export BOOST_PYTHON_LIB="-L/usr/local/lib -lboost_python-mt" </li>
+		<li>export MAGICK_CFLAGS=$(pkg-config --cflags GraphicsMagick?++)</li>
+		<li>export MAGICK_LIBS=$(pkg-config --libs GraphicsMagick?++)</li>
+		<li>export LDFLAGS=-L/usr/local/lib</li>
+		<li>export CFLAGS=-I/usr/local/include</li>
+		<li>export LIBS=-L/usr/local/lib</li>
+		<li>Configure step is as described in the wiki except for requiring
+	<ul>
+	<li>aclocal -I m4 -I /usr/local/share/m4 (due to SDL from /usr/local)</li>
+		<li>./configure --prefix=/usr/local/Cellar/libavg/libavg</li>
+	</ul>
+	</li>
+		<li>make &#38;&#38; make install</li>
+		<li>brew link libavg</li>
+		<li>export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.6/site-packages/libavg
+	<ul>
+	<li>I find this setting weird, but works </li>
+	</ul>
+	</li>
+		<li>make check</li>
+		<li>Multimedia, YAY!</li>
+		<li>If you hit libJPEG library dyld fuckup, try
+	<ul>
+	<li>export DYLD_INSERT_LIBRARIES=/System/Library/Frameworks/ApplicationServices?.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libJPEG.dylib:/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libTIFF.dylib:/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libGIF.dylib:/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources/libPng.dylib</li>
+		<li>This is how it's like to be on a mac</li>
+	</ul></li>
+	</ul>
+
+
+	<a name="Optional"></a>
+<h1 >Optional<a href="#Optional" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul>
+	<li>export VIDEOCHOOSER_VIDEO_DIR=$AVG_PATH/avg_media/scanner/medien/movies/</li>
+		<li>export AVG_DEPLOY=1 for full screen mode</li>
+	</ul>
+
+
+	<a name="Mac-OS-X-105"></a>
+<h1 >Mac OS X 10.5<a href="#Mac-OS-X-105" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul>
+	<li>Use latest XCode 3.1.X</li>
+		<li>Get Python 2.6 from <a class="external" href="http://www.python.org/">www.python.org</a>, otherwise you won't get a working version of boost</li>
+		<li>There was an issue with ffmpeg headers:
+	<ul>
+	<li>Add #include &lt;stdint.h&gt; to /usr/local/inclue/libavutil/common.h</li>
+		<li>You need additional compile flags which I forgot. Will add later.</li>
+	</ul></li>
+	</ul>
+
+
+	<a name="Wave-Version"></a>
+<h1 >Wave Version<a href="#Wave-Version" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>I keep this around as a <a href="https://wave.google.com/wave/?anon_access=true#hidden:nav,hidden:contact,hidden:search,restored:leftinfo,restored:wave:googlewave.com/w+B6igSZiZE" class="external">public google wave</a></p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/MacHomebrewInstall by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:23 GMT -->
+</html>

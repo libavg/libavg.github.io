@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/WordsNode by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>WordsNode - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Words-Nodes"></a>
+<h1 >Words Nodes<a href="#Words-Nodes" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#Words-Nodes">Words Nodes</a></li><li><a href="#Uniform-Strings">Uniform Strings</a></li><li><a href="#Finding-and-Installing-Fonts">Finding and Installing Fonts</a></li><li><a href="#Formatted-Text">Formatted Text</a></li><li><a href="#Antialiasing">Antialiasing</a></li></ul>
+
+
+	<p>The libavg <code>WordsNode</code> places formatted text on the screen. It supports UTF-8 encoded text, paragraph layout and internationalized text (including arabic and other right-to-left languages).</p>
+
+
+	<a name="Uniform-Strings"></a>
+<h1 >Uniform Strings<a href="#Uniform-Strings" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>Single-line strings can be placed using nodes like this:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>node = avg.WordsNode(pos=(<span class="integer">10</span>,<span class="integer">10</span>), text=<span class="string"><span class="delimiter">&quot;</span><span class="content">Apples and Oranges</span><span class="delimiter">&quot;</span></span>,
+<span class="line-numbers">2</span>        font=<span class="string"><span class="delimiter">&quot;</span><span class="content">Arial</span><span class="delimiter">&quot;</span></span>, variant=<span class="string"><span class="delimiter">&quot;</span><span class="content">Bold</span><span class="delimiter">&quot;</span></span>, fontsize=<span class="integer">18</span>,
+<span class="line-numbers">3</span>        color=<span class="string"><span class="delimiter">&quot;</span><span class="content">CF8000</span><span class="delimiter">&quot;</span></span>)
+</span></code></pre>
+
+	<p>This does pretty much what you would expect: The text is rendered in Arial Bold, 18 pixels size, using an orange color. Multi-line texts look like this:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>node = avg.WordsNode(pos=(<span class="integer">10</span>,<span class="integer">10</span>),
+<span class="line-numbers">2</span>        text=<span class="string"><span class="delimiter">&quot;</span><span class="content">The quick brown fox jumped over the lazy dog.</span><span class="delimiter">&quot;</span></span>,
+<span class="line-numbers">3</span>        font=<span class="string"><span class="delimiter">&quot;</span><span class="content">Arial</span><span class="delimiter">&quot;</span></span>, variant=<span class="string"><span class="delimiter">&quot;</span><span class="content">Bold</span><span class="delimiter">&quot;</span></span>, fontsize=<span class="integer">18</span>,
+<span class="line-numbers">4</span>        color=<span class="string"><span class="delimiter">&quot;</span><span class="content">CF8000</span><span class="delimiter">&quot;</span></span>, width=<span class="integer">170</span>, linespacing=<span class="integer">10</span>,
+<span class="line-numbers">5</span>        alignment=<span class="string"><span class="delimiter">&quot;</span><span class="content">left</span><span class="delimiter">&quot;</span></span>, indent=<span class="integer">10</span>)
+</span></code></pre>
+
+	<p>In this case, the text is rendered in a 170 pixel wide paragraph, with 10 pixels of space between the lines, left-aligned (you can also center or right-align text), and with an indentation of 10 pixels for the first line.</p>
+
+
+	<p>You can easily create several WordsNodes with identical or similar formatting by using the <a href="/reference/svn/misc.html#libavg.avg.FontStyle" class="external"><code>FontStyle</code></a> class.</p>
+
+
+	<a name="Finding-and-Installing-Fonts"></a>
+<h1 >Finding and Installing Fonts<a href="#Finding-and-Installing-Fonts" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>libavg looks for fonts in the standard directories that the operating system uses. In addition, it looks for fonts in a <code>fonts/</code> subdirectory of the current directory and in any directories specified using <code>WordsNode.addFontDir()</code>. To check which fonts are installed and how they are rendered, you can use the <code>avg_showfont.py</code> utility. Called without parameters, it outputs the complete list of fonts available. Called with a font name as parameter, it displays all available variants of the font in an avg window. <code>avg_showfont.py</code> is installed during libavg installation.</p>
+
+
+	<a name="Formatted-Text"></a>
+<h1 >Formatted Text<a href="#Formatted-Text" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>Paragraphs can change formatting in mid-sentence using an assortment of html-like tags:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>node = avg.WordsNode(pos=(<span class="integer">10</span>,<span class="integer">10</span>), font=<span class="string"><span class="delimiter">&quot;</span><span class="content">Arial</span><span class="delimiter">&quot;</span></span> size=<span class="integer">18</span>,
+<span class="line-numbers">2</span>         parawidth=<span class="integer">300</span>,
+<span class="line-numbers">3</span>         text=<span class="string"><span class="delimiter">&quot;</span><span class="content">The quick brown fox &lt;i&gt;jumped&lt;/i&gt; over the lazy dog</span><span class="delimiter">&quot;</span></span> 
+</span></code></pre>
+
+	<p>It is not possible to use the text formatting tags when the text attribute is defined using an xml attribute because that would violate xml syntax.</p>
+
+
+	<p>The paragraph formatting tags include a full-featured <code>&lt;span/&gt;</code> tag that is described here:</p>
+
+
+	<p><a class="external" href="http://developer.gnome.org/pango/stable/PangoMarkupFormat.html">http://developer.gnome.org/pango/stable/PangoMarkupFormat.html</a></p>
+
+
+	<p>Using this tag, you can change almost any text attribute (font, size, style, vertical displacement, underline,...) in mid-paragraph. Rudimentary multi-paragraph text is possible using &lt;br/&gt; tags. More complex multi-paragraph formatting should be done using more than one words node.</p>
+
+
+	<a name="Antialiasing"></a>
+<h1 >Antialiasing<a href="#Antialiasing" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>Like any modern text rendering system, libavg uses antialiasing to make sure the text is smooth. The quality of antialiasing depends heavily on the gamma curve used to translate pixel coverage values into sRGB <code>colors</code>. Sadly, the optimal gamma value depends not only on monitor settings, but also on the combination of fore- and background colors used. For this reason, you can fine-tune the gamma setting yourself:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>node.aagamma = <span class="float">1.5</span>
+</span></code></pre>
+
+	<p><div style="float:right"><img src="../../../files/WordsNode/aagamma.png" alt="" /></div></p>
+
+
+	<p>Good values for <code>aagamma</code> are usually between 1.0 and 2.0. The image on the right shows the same text rendered with different gamma settings, and with black and white backgrounds.</p>
+
+
+	<p>The underlying cause for this effect is complex. The details are described in <a class="external" href="http://lists.w3.org/Archives/Public/public-html/2011Apr/0170.html">http://lists.w3.org/Archives/Public/public-html/2011Apr/0170.html</a> and <a class="external" href="http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html">http://http.developer.nvidia.com/GPUGems3/gpugems3_ch24.html</a>, among others.</p>
+
+
+	<p>Note that the default text rendering of libavg is more than sufficient for normal monitor resolutions. The <code>aagamma</code> attribute is only important if you're running low-DPI displays that users will be close to - like projector based multitouch tables.</p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/WordsNode by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:13 GMT -->
+</html>

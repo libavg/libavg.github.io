@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/Patches by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Patches - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <p><img src="../../../plugin_assets/redmine_wiki_extensions/images/warning.png" alt="(!)"> <strong>Note:</strong> <img src="../../../plugin_assets/redmine_wiki_extensions/images/warning.png" alt="(!)"> <br />This is outdated. <a href="Contribute.html" class="wiki-page"> Look here instead</a></p>
+
+
+	<a name="Submitting-Enhancements"></a>
+<h1 >Submitting Enhancements<a href="#Submitting-Enhancements" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#Submitting-Enhancements">Submitting Enhancements</a></li><li><a href="#Coding-Conventions">Coding Conventions</a></li><li><a href="#Running-the-Tests">Running the Tests</a></li><li><a href="#Adding-Documentation">Adding Documentation</a></li><li><a href="#Checkin-Granularity">Checkin Granularity</a></li></ul>
+
+
+	<p>If you've got a code change that fixes something or adds a feature, we'd love to see it. Please use the forums for this and work off current svn. Small changes are probably best sent as patch files; for larger ones, we can pull from your git/Mercurial repository - or you can use patches as well.</p>
+
+
+	<a name="Coding-Conventions"></a>
+<h1 >Coding Conventions<a href="#Coding-Conventions" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>Please follow the <a href="CodingConventions.html" class="wiki-page">Coding Conventions</a>.</p>
+
+
+	<a name="Running-the-Tests"></a>
+<h1 >Running the Tests<a href="#Running-the-Tests" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>libavg contains a number of tests that run automatically and alert the user if anything doesn't work as expected. The tests are actually pretty comprehensive and find a lot of issues that would otherwise slip through the cracks. To run the tests, do a <code>make check</code>. The tests that have to do with images will save images for the failing tests in a <code>resultimages/</code> subdirectory. For each failed test, there will be three images: the current result, the expected result, and a diference image - giving you a good clue about what's happening.</p>
+
+
+	<p>If you add a feature, please add a test (or several) that make sure the feature works. If you fix a bug, then there should often have been a test that finds the bug ;-), and it's appreciated if you add an appropriate test as well. (That also makes the bug reproducible, thus making your fix more likely to be applied).</p>
+
+
+	<a name="Adding-Documentation"></a>
+<h1 >Adding Documentation<a href="#Adding-Documentation" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>If the patch changes the interface of libavg, we need an update to the reference documentation in libavg/sphinxdoc. To build the documentation, you need <a href="http://sphinx.pocoo.org/" class="external">Sphinx</a> installed:</p>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>$ sudo easy_install -U Sphinx
+</span></code></pre>
+
+	<p>The docs can be rebuilt by calling</p>
+
+
+<pre><code class="shell syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>$ cd libavg
+<span class="line-numbers">2</span>$ ./makedocs.sh
+</span></code></pre>
+
+	<p>Note that documentation is ordered alphabetically. This is not enforced by sphinx, so new entries must be inserted in order.</p>
+
+
+	<a name="Checkin-Granularity"></a>
+<h1 >Checkin Granularity<a href="#Checkin-Granularity" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>We want a clear record of checkins, with each checkin taking care of one issue. Changing several things at once makes things difficult when we're looking for the code change that caused a bug, for instance.</p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/Patches by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:23 GMT -->
+</html>

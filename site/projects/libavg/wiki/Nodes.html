@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/Nodes by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:05 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Nodes - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Nodes"></a>
+<h1 >Nodes<a href="#Nodes" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#Nodes">Nodes</a></li><li><a href="#The-Node-Tree">The Node Tree</a></li><li><a href="#Creating-nodes">Creating nodes</a></li></ul>
+
+
+	<a name="The-Node-Tree"></a>
+<h1 >The Node Tree<a href="#The-Node-Tree" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>libavg layout is based on nodes that represent things to display on the screen. These nodes are organized in a hierarchial structure - a tree. At the root of the tree is an <code>avg node</code>. This is very similar to html layout. In html, nodes like <code>div</code> structure the page and nodes like <code>p</code> or <code>img</code> display content. libavg also has div nodes, but the content nodes are centered around graphics and include image, video, text and camera nodes as well as nodes that draw vector graphics. The non-div nodes are named leaves.</p>
+
+
+	<p>This tree (also called the <em>scene graph</em>) describes the logical and spatial layout of the nodes. It can be initialized either by using an xml screen layout file or by creating nodes in python. Parents of nodes influence the rendering of the child nodes. Again, this is very similar to html layout: div nodes structure the rendering area and determine where the children are rendered. This concept is similar to what is called the <em>DOM</em> (Document Object Model) in xml and the <em>scene graph</em> in 3D engines.</p>
+
+
+	<p>One very positive consequence of this design is that the system always knows what to display. The scene graph tells the libavg engine what media elements should be displayed and what their properties are. The user of the library does not need to specify what should to be displayed unless it changes. Besides making development easier, this design allows major speed optimizations in the rendering engine, because the engine has a global view of what needs to be done. The technical term for this behaviour is <em>retained-mode graphics</em>: The system retains the state of the display.</p>
+
+
+	<a name="Creating-nodes"></a>
+<h1 >Creating nodes<a href="#Creating-nodes" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>Besides specifying the libavg nodes to use in an xml file like in the Hello World example, nodes can be created in python. There are several ways to do this. The simplest one uses standard python constructors:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>newNode = avg.WordsNode(text=<span class="string"><span class="delimiter">'</span><span class="content">Hello libavg</span><span class="delimiter">'</span></span>, pos=(<span class="integer">10</span>,<span class="integer">30</span>),
+<span class="line-numbers">2</span>        parent=player.getRootNode())
+</span></code></pre>
+
+	<p>If you add this code to the minimal.py example, you should see the new text after you run the script. parent can be any div node. In this case, it's the root of the scenegraph.</p>
+
+
+	<p>You can also create nodes using xml:</p>
+
+
+	<p><em>Alternative createNode:</em></p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>newNode = player.createNode(<span class="string"><span class="delimiter">&quot;&quot;&quot;</span><span class="content">&lt;words text=&quot;Hello libavg&quot; pos=&quot;(10,30)&quot; </span><span class="content"></span></span>
+<span class="line-numbers">2</span><span class="string"><span class="content"></span><span class="content">        /&gt;</span><span class="delimiter">&quot;&quot;&quot;</span></span>)
+</span></code></pre>
+
+	<p>Using the second syntax, whole node trees can be constructed with one call to <code>createNode</code>.</p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/Nodes by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:05 GMT -->
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/MemoryManagement by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>MemoryManagement - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Memory-Management"></a>
+<h1 >Memory Management<a href="#Memory-Management" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#Memory-Management">Memory Management</a><ul><li><a href="#Allocating-and-Deleting-Nodes">Allocating and Deleting Nodes</a></li><li><a href="#Types-of-Memory">Types of Memory</a></li><li><a href="#The-Image-Cache">The Image Cache</a></li><li><a href="#Loading-of-Assets-from-Disk">Loading of Assets from Disk</a></li><li><a href="#Memory-Usage-per-Bitmap">Memory Usage per Bitmap</a></li><li><a href="#Internals">Internals</a><ul><li><a href="#Image-Nodes">Image Nodes</a></li><li><a href="#Video-Nodes">Video Nodes</a></li></ul></li></ul></li></ul>
+
+
+	<p>Memory management is one of the things that aren't fun to deal with. Accordingly, libavg attempts to shield it's users from the intricacies of memory management and usually does a good job. Still, in advanced cases, it can be useful to know how the different node types use CPU and GPU memory.</p>
+
+
+	<a name="Allocating-and-Deleting-Nodes"></a>
+<h2 >Allocating and Deleting Nodes<a href="#Allocating-and-Deleting-Nodes" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Nodes are allocated when <code>createNode()</code>, <code>loadFromFile()</code> or <code>loadFromString()</code> is called. A node is deleted when neither the python program nor libavg hold any references to it anymore. Thus, to delete a node, you must</p>
+
+
+	<ol>
+	<li>not have any python variables referencing it anymore</li>
+		<li>remove it from the avg tree, e.g. using <code>unlink()</code> and</li>
+		<li>make sure all event callbacks for this node are deleted.</li>
+	</ol>
+
+
+	<p>Calling <code>node.unlink(True)</code> takes care of point 3 automatically.</p>
+
+
+	<a name="Types-of-Memory"></a>
+<h2 >Types of Memory<a href="#Types-of-Memory" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>There are three different types of memory used by libavg programs. These are:</p>
+
+
+	<ul>
+	<li>GPU memory: This is memory on the graphics card. All visuals that should appear on the screen must have a copy in GPU memory. In most configurations, this is very fast memory. Using more GPU memory than is available will usually cause a disproportionate slowdown in the application. You can profile GPU memory usage with programs such as Apple's OpenGL Driver Monitor.</li>
+		<li>CPU memory: Memory on the motherboard. This is the memory used for all calculations by the processor. Media loaded from disk are initially copied into CPU memory. There is usually more CPU than GPU memory available.</li>
+		<li>External storage: Hard disks, networked devices or other storage.</li>
+	</ul>
+
+
+	<p><code>AVGApp</code> supports a graph of CPU memory usage over time that is activated if you press 'm'. If you have an NVidia card, you can additionally activate a GPU memory graph with 'v'.</p>
+
+
+	<a name="The-Image-Cache"></a>
+<h2 >The Image Cache<a href="#The-Image-Cache" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>libavg has an internal two-level image cache that holds images in CPU and GPU memory. Images loaded as node attributes (<code>hrefs</code>, <code>texhrefs</code> or <code>maskhref</code>) are not immediately deleted when the node is deleted and cached instead so they can be reused if needed. This applies to both system memory and textures on the graphics card. Whenever the cache becomes full on either the CPU or GPU, unused images are deleted according to a least-recently-used algorithm. The cache has a configuration interface that can be accessed using <code>player.imageCache</code>. The cache sizes can be set using either this interface or <code>avgrc</code>.</p>
+
+
+	<p>One very positive consequence of having the image cache is that different nodes that have the same <code>href</code> share a single copy of the in-memory bitmap and the texture, saving memory and speeding things up significantly as well.</p>
+
+
+	<a name="Loading-of-Assets-from-Disk"></a>
+<h2 >Loading of Assets from Disk<a href="#Loading-of-Assets-from-Disk" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>In the case of image nodes, bitmaps are loaded from disk (or taken from the cache) as soon as the node is created. Video nodes open the video file when <code>play()</code> or <code>pause()</code> is called and close it when <code>stop()</code> is called.</p>
+
+
+	<p>By default, media files are loaded from the directory the main python script is in. If the <code>href</code> contains a relative directory, it is relative to this directory. The base directory can be changed by setting the <code>mediadir</code> attribute of a <code>div</code> or <code>avg</code> node. The effective base directory of a node is determined by concatenating the <code>mediadir</code> attributes of all nodes above it in the tree. A node that is not in the tree has the <code>mediadir</code> of the root <code>avg</code> as it's base directory.</p>
+
+
+	<p>When the base directory of a node changes, it's media files get reloaded automatically. This can happen if a <code>mediadir</code> attribute above it in the tree changes or if it is added/removed from the tree. (<code>image</code> nodes don't display error messages on the console if they can't find a file while they are not in the tree. The assumption is that the node's base directory might change as soon as it's added to the tree.)</p>
+
+
+	<a name="Memory-Usage-per-Bitmap"></a>
+<h2 >Memory Usage per Bitmap<a href="#Memory-Usage-per-Bitmap" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Most bitmaps use an amount of memory equal to the number of pixels multiplied by four, since each pixel is stored as an RGBA (red, green, blue, alpha) quad. Video images in YUV 4:2:0 color format take only 1.5 bytes per pixel. Most common video codecs use this color format. So, for instance, a 2592x1944 image needs about 20 megabytes, while an image of a 1080p film (1920x1080x1.5) needs about 3,1 megabytes of storage. Adding a mask adds one byte per pixel. Images with mipmaps need 1/3 more memory on the GPU.</p>
+
+
+	<p>In all cases, the relevant size is the size of the image as it is loaded from disk - not the display size.</p>
+
+
+	<a name="Internals"></a>
+<h2 >Internals<a href="#Internals" class="wiki-anchor">&para;</a></h2>
+
+
+<blockquote>
+
+	<p><img src="../../../plugin_assets/redmine_wiki_extensions/images/warning.png" alt="(!)"> <strong>Note:</strong> <img src="../../../plugin_assets/redmine_wiki_extensions/images/warning.png" alt="(!)"></p>
+
+
+	<p>The following description assumes a separate (PCI Express or similar, non-motherboard) graphics card. Motherboard graphics chips usually share memory with the CPU, so semantics are a little different.</p>
+
+
+	<p>Also, some drivers keep additional copies of bitmaps in CPU memory.</p>
+
+
+</blockquote>
+
+	<a name="Image-Nodes"></a>
+<h3 >Image Nodes<a href="#Image-Nodes" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>When a file is loaded into an image node, the bitmap is initially loaded into CPU memory (assuming it hasn't been cached). If the node is part of the avg scene (and playback has started), it is then transfered to GPU memory so it can be displayed. When a node is taken out of the tree, the GPU copy is unreferenced but will probably remain cached; when the node is destroyed, the CPU copy is treated similarly.</p>
+
+
+	<a name="Video-Nodes"></a>
+<h3 >Video Nodes<a href="#Video-Nodes" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Video nodes use different strategies depending on the setting of the threaded attribute. If <code>threaded=False</code>, the video images are loaded when they are needed. There is no queue. CPU and GPU memory for exactly one bitmap is allocated. If <code>threaded=True</code>, video images are loaded into a queue of several bitmaps. The number of bitmaps preloaded can be configured by setting the <code>queuelength</code> attribute, with the default being 8. On the GPU, memory for one bitmap is used. In any case, videos are only decoded and memory allocated for the bitmaps as long as the video state is paused or playing. When <code>stop()</code> is called, all CPU and GPU memory used is freed.</p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/MemoryManagement by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:15 GMT -->
+</html>

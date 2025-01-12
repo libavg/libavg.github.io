@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/NodeSubclassing by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>NodeSubclassing - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Deriving-a-New-Node-Class-in-C"></a>
+<h1 >Deriving a New Node Class in C++<a href="#Deriving-a-New-Node-Class-in-C" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#Deriving-a-New-Node-Class-in-C">Deriving a New Node Class in C++</a><ul><li><a href="#Lifecycle">Lifecycle</a></li><li><a href="#Rendering">Rendering</a></li><li><a href="#Python-Interface">Python Interface</a></li></ul></li></ul>
+
+
+	<p>This page explains how to create your own node class. The number of libavg internals you need to know to do this isn't large. There are several base-class methods which need to be overridden in a derived class. They manage setup and destruction of the node as well as performing the actual rendering. In addition, you probably need to define a python API that your node exposes.</p>
+
+
+	<p>Any node that shows the contents of a bitmap should be derived from <code>RasterNode</code> - this is probably the most common case. Alternatively, nodes that display geometric forms can be derived from <code>VectorNode</code> or <code>FilledVectorNode</code>.</p>
+
+
+	<p>If you derive from <code>RasterNode</code>, rendering proceeds using an <code>OGLSurface</code>. The main task of the derived class is to associate one or more textures with the surface and fill the textures with data. Setting vertex positions, rendering the surface and applying FXNodes is mostly handled by the base class. <code>CameraNode</code> provides a simple sample that you can build upon.</p>
+
+
+	<p>Deriving from <code>VectorNode</code> or <code>FilledVectorNode</code> is different. The derived class is responsible for setting vertex positions, while the base class manages basic vector attributes like stroke width and color/texture of the node. As sample, use e.g. <code>LineNode</code>.</p>
+
+
+	<a name="Lifecycle"></a>
+<h2 >Lifecycle<a href="#Lifecycle" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Node construction proceeds in several phases. In the constructor, neither a connection to the root of the node tree nor an OpenGL context are available. At this point, Python arguments are transferred to C++ member variables and everything that doesn't need an OpenGL context or a connection to the tree root is setup.</p>
+
+
+	<p>Second, <code>connect()</code> is called. This signifies a connection to the root of the node tree and might cause the <code>mediadir</code> to change (making a media reload necessary). Also, at this point, the on-canvas coordinates of the node are known. Finally, <code>connectDisplay()</code> is called when the window has been opened and the node can access OpenGL functionality. This allows, e.g., upload of texture data to the GPU.</p>
+
+
+	<p>Conversely, when the node is removed from the tree (or when playback ends), <code>disconnect()</code> is called. Any data on the GPU (e.g. textures) should be discarded in <code>disconnect()</code>. <code>RasterNode::disconnect()</code> deletes the OpenGL objects managed by the base class, including the <code>OGLSurface</code> and any FX objects. If lbKill == true@, the node will never be reconnected. All data can be discarded.</p>
+
+
+	<p>In the destructor, delete anything left - as usual :).</p>
+
+
+	<a name="Rendering"></a>
+<h2 >Rendering<a href="#Rendering" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>libavg renders in two passes. Each pass does a depth-first traversal through the node tree. In the first pass, <code>preRender()</code> is called for each node. During this pass, no OpenGL functions should be called. In <code>RasterNode</code>-derived classes, <code>preRender()</code> needs to make sure all textures are updated by calling <code>scheduleTexUpload()</code> with correct bitmap data if necessary. It should also call <code>scheduleFXRender()</code> if the texture has changed - this causes a possible FXNode to be applied. In addition, it always needs to call <code>calcVertexArray()</code> to generate the vertexes that will be rendered.</p>
+
+
+	<p>The second pass is responsible for sending all data to the GPU, and if there are multiple windows open, it will actually traverse the node tree multiple times, each time with a different current OpenGL context. In this pass, <code>render()</code> is called for each visible node. Usually, the derived class only needs to call <code>RasterNode::blt32()</code> (or <code>blta8()</code>) appropriately.</p>
+
+
+	<p>One other function that some nodes need to override is <code>getMediaSize()</code>. This returns the native size of the node, e.g. the bitmap size for an <code>ImageNode</code>.</p>
+
+
+	<p><code>VectorNodes</code> simply need to override calcVertexes and submit appropriate vertexes in that function. A number of auxilliary functions are available in the base classes and in <code>VertexData</code>.</p>
+
+
+	<a name="Python-Interface"></a>
+<h2 >Python Interface<a href="#Python-Interface" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>The python interface exported by a node is defined using boost::python. The <code>ColorNode</code> plugin contains some boost::python code. For node classes in the core library, the python interface is defined in the <code>src/wrapper</code> directory.</p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/NodeSubclassing by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:16 GMT -->
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/ProgrammersGuide?version=10 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:22:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>ProgrammersGuide - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+    <p>
+    <a href="ProgrammersGuide29f9.html?version=9">« Previous</a> - 
+    Version 10/21
+    (<a href="ProgrammersGuide/diff/10.html">diff</a>) - 
+    <a href="ProgrammersGuide1a8e.html?version=11">Next »</a> - 
+    <a href="ProgrammersGuide.html">Current version</a>
+    <br />
+    <em><a href="../../../users/15.html">scotty</a>, 15/01/2013 12:25 </em><br />
+    
+    </p>
+    <hr />
+
+
+<div class="wiki wiki-page">
+  <a name="Programmers-Guide"></a>
+<h1 >Programmer's Guide<a href="#Programmers-Guide" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#Programmers-Guide">Programmer's Guide</a></li><li><a href="#More-Information">More Information</a></li><li><a href="#Basics">Basics</a></li><li><a href="#Individual-Node-Classes">Individual Node Classes</a></li><li><a href="#Rendering-Specifics">Rendering Specifics</a></li><li><a href="#Dynamics-Input-and-Animation">Dynamics: Input and Animation</a></li><li><a href="#Advanced-Topics">Advanced Topics</a></li><li><a href="#Setup">Setup</a></li></ul>
+
+
+	<p>The libvg Programmer's Guide is a collection of tutorials and explanatory articles that explain how to create applications using libavg. It starts with a basic Hello World tutorial and progresses to successively more complex topics.</p>
+
+
+	<a name="More-Information"></a>
+<h1 >More Information<a href="#More-Information" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>In addition to the Programmer's Guide, we provide a complete <a href="Reference.html" class="wiki-page">Reference</a> to libavg. The Reference is concise, possibly a bit terse, but much more exhaustive. All the examples in the guide are checked into svn under libavg/src/samples, including the necessary media files. You can run them directly in that directory.</p>
+
+
+	<p>Instructions for <a href="ReleaseInstall.html" class="wiki-page">installing libavg</a> are also available.</p>
+
+
+	<p>If anything is unclear, we have a forum for questions and discussions.</p>
+
+
+	<a name="Basics"></a>
+<h1 >Basics<a href="#Basics" class="wiki-anchor">&para;</a></h1>
+
+
+	<p><a href="HelloWorld.html" class="wiki-page">Hello World</a>: The basics of programming with libavg.</p>
+
+
+	<p><a href="Nodes.html" class="wiki-page">Nodes</a>: How libavg content is structured.</p>
+
+
+	<p><a href="NodeAttributes.html" class="wiki-page">Node Attributes</a>: More on libavg content.</p>
+
+
+	<p><a href="Events.html" class="wiki-page">Events</a>: Dynamics - handling user input and timing.</p>
+
+
+	<p><a href="AVGApp.html" class="wiki-page">The AVGApp Class</a>: Structuring applications.</p>
+
+
+	<p><a href="Debugging.html" class="wiki-page new">Debugging</a>: Debugging keys and logging available.</p>
+
+
+	<a name="Individual-Node-Classes"></a>
+<h1 >Individual Node Classes<a href="#Individual-Node-Classes" class="wiki-anchor">&para;</a></h1>
+
+
+	<p><a href="ImageNode.html" class="wiki-page">ImageNode</a>: Bitmaps displayed on screen.</p>
+
+
+	<p><a href="WordsNode.html" class="wiki-page">WordsNode</a>: Displaying text, formatting, and font handling.</p>
+
+
+	<p><a href="VideoNode.html" class="wiki-page">VideoNode</a>: Playing back videos.</p>
+
+
+	<p><a href="CameraNode.html" class="wiki-page">CameraNode</a>: Interfacing to digital cameras.</p>
+
+
+	<p><a href="MeshNode.html" class="wiki-page">MeshNode</a>: Displaying content using a generic triangle mesh.</p>
+
+
+	<a name="Rendering-Specifics"></a>
+<h1 >Rendering Specifics<a href="#Rendering-Specifics" class="wiki-anchor">&para;</a></h1>
+
+
+	<p><a href="CoordinateSystem.html" class="wiki-page">Coordinate Systems</a>: How libavg determines where to display nodes.</p>
+
+
+	<p><a href="RenderingAttributes.html" class="wiki-page">Rendering Attributes</a>: Masks, compositing and color adjustments.</p>
+
+
+	<p><a href="OffscreenRendering.html" class="wiki-page">Offscreen Rendering</a>: Rendering to an offscreen buffer.</p>
+
+
+	<p><a href="FXNodes.html" class="wiki-page">FX Nodes</a>: Rendering with GPU-based filters.</p>
+
+
+	<a name="Dynamics-Input-and-Animation"></a>
+<h1 >Dynamics: Input and Animation<a href="#Dynamics-Input-and-Animation" class="wiki-anchor">&para;</a></h1>
+
+
+	<p><a href="BubblingAndCapture.html" class="wiki-page">Event Handling Details</a>: An in-depth description of libavg event handling.</p>
+
+
+	<p><a href="MouseAndTouchInput.html" class="wiki-page">Touch Input</a>: Higher-level events for NUI and touch-based user interfaces.</p>
+
+
+	<p><a href="Tracker.html" class="wiki-page">Camera Tracking</a>: Using the computer vision system in libavg as an input device.</p>
+
+
+	<p><a href="Timing.html" class="wiki-page">Timing</a>: Details on frame timing and time-based callbacks.</p>
+
+
+	<p><a href="Animation.html" class="wiki-page">Animation</a>: Using the built-in animation framework.</p>
+
+
+	<a name="Advanced-Topics"></a>
+<h1 >Advanced Topics<a href="#Advanced-Topics" class="wiki-anchor">&para;</a></h1>
+
+
+	<p><a href="Subclassing.html" class="wiki-page">Subclassing</a>: Creating your own node classes and inserting them into a libavg scene.</p>
+
+
+	<p><a href="MemoryManagement.html" class="wiki-page">Memory Management</a>: Memory usage in libavg applications.</p>
+
+
+	<p><a href="Multithreading.html" class="wiki-page">Multithreading</a>: Things you need to know if you have more than one Python thread.</p>
+
+
+	<p><a href="Plugins.html" class="wiki-page">Plugins</a>: Extending libavg with plugins written in C++.</p>
+
+
+	<p><a href="Backwards_Compatibility.html" class="wiki-page">Backwards Compatibility</a>: Incompatible changes.</p>
+
+
+	<a name="Setup"></a>
+<h1 >Setup<a href="#Setup" class="wiki-anchor">&para;</a></h1>
+
+
+	<p><a href="EnvironmentVariables.html" class="wiki-page">Environment Variables</a></p>
+
+
+	<p><a href="Avgrc.html" class="wiki-page">The avgrc file</a></p>
+
+
+	<p><a href="EclipseIDE.html" class="wiki-page">Eclipse IDE Notes</a></p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/ProgrammersGuide?version=10 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:22:35 GMT -->
+</html>

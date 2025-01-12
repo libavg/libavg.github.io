@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/RPI by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>RPI - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="RaspberryPi-Notes"></a>
+<h1 >RaspberryPi Notes<a href="#RaspberryPi-Notes" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#RaspberryPi-Notes">RaspberryPi Notes</a><ul><li><a href="#Installing-the-precompiled-package">Installing the precompiled package</a></li><li><a href="#Compiling-libavg-from-source">Compiling libavg from source</a><ul><li><a href="#Install-QEMU-from-universe-repository">Install QEMU (from universe repository)</a></li><li><a href="#Download-raspbian-wheezy-image">Download raspbian wheezy image</a></li><li><a href="#Create-larger-root-file-system-image-copy-data-to-image">Create larger root file system image, copy data to image</a></li><li><a href="#Download-linux-kernel">Download linux kernel</a></li><li><a href="#Start-emulation-prepare-libavg-build">Start emulation, prepare libavg build:</a></li><li><a href="#Chroot-x-compile-libavg">Chroot, x-compile libavg</a></li><li><a href="#Move-the-compiled-libavg-to-the-Raspberry">Move the compiled libavg to the Raspberry</a></li><li><a href="#Further-development-testing-notes">Further development / testing notes</a></li></ul></li></ul></li></ul>
+
+
+<blockquote>
+
+	<p><img src="../../../plugin_assets/redmine_wiki_extensions/images/warning.png" alt="(!)"> <strong>Note:</strong> <img src="../../../plugin_assets/redmine_wiki_extensions/images/warning.png" alt="(!)"> <br />This is outdated. There are current cross-compile instructions at <a href="RaspberryPISourceInstall.html" class="wiki-page">RaspberryPISourceInstall</a></p>
+
+
+</blockquote>
+
+	<p>These are temporary notes on how to get libavg running on a <a href="http://raspberrypi.org/" class="external">Raspberry Pi</a>. The easy way is to simply install the precompiled package, but this might not always be up-to-date. Alternatively, you can also compile libavg yourself.</p>
+
+
+	<a name="Installing-the-precompiled-package"></a>
+<h2 >Installing the precompiled package<a href="#Installing-the-precompiled-package" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>We have a tarball that you can copy to /usr/local to install libavg for now. The tarball is just a build of an svn snapshot and thus beta, but passes all but a few minor tests. To get this running, install the dependencies first:</p>
+
+
+<pre>
+$ sudo apt-get install libxml2 libpango1.0-0 librsvg2-2 libgdk-pixbuf2.0-0 \
+  libavcodec53 libavformat53 libswscale2 libboost-python1.49.0 \
+  libboost-thread1.49.0 libsdl1.2debian libxxf86vm1
+</pre>
+
+	<p>Then, download <a href="../../../attachments/download/libavg-raspberry.tar.bz2" class="attachment">libavg-raspberry.tar.bz2</a> and unpack it to /usr/local:</p>
+
+
+<pre>
+$ tar -C /usr/local -xjf libavg-raspberry.tar.bz2
+</pre>
+
+	<a name="Compiling-libavg-from-source"></a>
+<h2 >Compiling libavg from source<a href="#Compiling-libavg-from-source" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>libavg needs to be compiled on a separate machine because the Raspberry would a) take hours to do it and b) gives up with an out of memory error before it's done. So we take a stock Raspberry disk image, mount it on the host computer, install libavg prerequisites there and compile in a chroot environment. This is not nearly as complicated as it sounds and gives you compile times of about 20 mins for a complete compile on a modern computer.</p>
+
+
+	<p>The procedure described below has been tested under Ubuntu 12.04 LTS, but should work with other releases/distros, too. QEMU version >= 1.0 is required.</p>
+
+
+	<p>Command lines starting with a "<code>$</code>" are executed on the x-build host system, lines starting with "<code>#</code>" inside QEMU or the chroot environment.</p>
+
+
+	<a name="Install-QEMU-from-universe-repository"></a>
+<h3 >Install QEMU (from universe repository)<a href="#Install-QEMU-from-universe-repository" class="wiki-anchor">&para;</a></h3>
+
+
+<pre>
+$ sudo apt-get install qemu qemu-user-static qemu-system
+</pre>
+
+	<a name="Download-raspbian-wheezy-image"></a>
+<h3 >Download raspbian wheezy image<a href="#Download-raspbian-wheezy-image" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Download the image from <a class="external" href="http://www.raspberrypi.org/downloads/">http://www.raspberrypi.org/downloads/</a>. The hard float one is the image we want.</p>
+
+
+<pre>
+$ unzip 2013-09-10-wheezy-raspbian.zip
+</pre>
+
+	<a name="Create-larger-root-file-system-image-copy-data-to-image"></a>
+<h3 >Create larger root file system image, copy data to image<a href="#Create-larger-root-file-system-image-copy-data-to-image" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>As-is, the file system image downloaded doesn't have enough free space, so we copy the data to a new, larger image.</p>
+
+
+<pre>
+$ qemu-img create  wheezy-raspbian-devel.ext3 4G
+$ mkfs.ext3 wheezy-raspbian-devel.ext3
+$ mkdir rootfs tmp
+$ sudo mount wheezy-raspbian-devel.ext3 rootfs/ -t ext3 -o loop
+$ sudo mount 2013-09-10-wheezy-raspbian.img tmp/ -o loop,offset=$[122880*512]
+$ sudo cp -a tmp/* rootfs/
+$ sudo cp /usr/bin/qemu-arm-static rootfs/usr/bin/
+$ sudo umount tmp
+$ rmdir tmp
+</pre>
+
+	<p><strong>Note:</strong> All raspbian images newer than <code>2012-12-16-wheezy-raspbian</code> don't work with QEMU without a minor tweak: Before unmounting <code>rootfs</code> open <code>rootfs/etc/ld.so.preload</code> and comment out the single line it contains. Older images can be found at <a class="external" href="http://mirrors.arizona.edu/raspberrypi/images/raspbian/">http://mirrors.arizona.edu/raspberrypi/images/raspbian/</a>.</p>
+
+
+	<a name="Download-linux-kernel"></a>
+<h3 >Download linux kernel<a href="#Download-linux-kernel" class="wiki-anchor">&para;</a></h3>
+
+
+<pre>
+$ wget http://xecdesign.com/downloads/linux-qemu/kernel-qemu
+</pre>
+
+	<a name="Start-emulation-prepare-libavg-build"></a>
+<h3 >Start emulation, prepare libavg build:<a href="#Start-emulation-prepare-libavg-build" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Always unmount image before starting QEMU! If you forget this, you will very likely have a trashed image and need to start over again.</p>
+
+
+<pre>
+$ sudo umount rootfs
+$ qemu-system-arm -kernel kernel-qemu -cpu arm1176 -m 256 -M versatilepb -serial stdio -append "root=/dev/sda panic=1" -hda wheezy-raspbian-devel.ext3 -clock dynticks
+</pre>
+
+	<p>Emulation starts, drops to maintenance shell because of wrong file system mount time (on 1st boot only). Do a file system check:</p>
+
+
+<pre>
+# fsck.ext3 /dev/sda
+# reboot
+</pre>
+
+	<p>In qemu emulation<br /><pre>
+# sudo apt-get update
+# sudo apt-get install subversion automake autoconf libtool libxml2-dev \
+  libpango1.0-dev librsvg2-dev libgdk-pixbuf2.0-dev libavcodec-dev libavformat-dev \
+  libswscale-dev python-dev libboost-python-dev libboost-thread-dev g++ libSDL-dev \
+  libxxf86vm-dev linux-libc-dev
+</pre></p>
+
+
+	<p>Checkout libavg (still in qemu)</p>
+
+
+<pre>
+# cd /home/pi/
+# mkdir -p devel/libavg
+# cd devel/libavg/
+# git clone https://github.com/libavg/libavg.git
+</pre>
+
+	<p>Stop the emulation.</p>
+
+
+	<a name="Chroot-x-compile-libavg"></a>
+<h3 >Chroot, x-compile libavg<a href="#Chroot-x-compile-libavg" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Make sure the emulation is stopped, then:</p>
+
+
+<pre>
+$ sudo mount wheezy-raspbian-devel.ext3 rootfs/ -t ext3 -o loop
+$ sudo chroot rootfs/
+# export LANG=en_GB.utf8
+# cd /home/pi/devel/libavg/libavg
+# ./bootstrap
+# ./configure --enable-rpi --prefix=/home/pi/devel/libavg/install
+# make -j9
+# make install
+</pre>
+
+	<p>For some QEMU configurations <code>chroot</code> fails to start <code>bash</code> with a xmalloc error ("cannot allocate x bytes"). To remedy this, run:<br /><pre>
+$ sudo chroot rootfs/ /bin/sh
+# QEMU_RESERVED_VA=0 bash
+</pre></p>
+
+
+	<a name="Move-the-compiled-libavg-to-the-Raspberry"></a>
+<h3 >Move the compiled libavg to the Raspberry<a href="#Move-the-compiled-libavg-to-the-Raspberry" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>After the <code>make install</code>, there is a tree of files in <code>devel/libavg/install</code> that can be copied to <code>/usr/local/</code> on the Raspberry. Rename <code>/usr/local/lib/python2.7/site-packages</code> to <code>dist-packages</code>. For the uninstalled version (e.g. to run <code>src/test/Test.py</code>), copy devel/libavg/libavg to the raspberry.</p>
+
+
+	<p>I use this simple script for the task:<br /><pre>
+#!/bin/bash
+cd devel/libavg/install/lib/python2.7
+sudo rm -rf dist-packages
+sudo mv -T site-packages/ dist-packages
+cd ../..
+scp -r * pi@192.168.2.104:/usr/local
+</pre></p>
+
+
+	<a name="Further-development-testing-notes"></a>
+<h3 >Further development / testing notes<a href="#Further-development-testing-notes" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>To get rid of ALSA sound buffer underruns, change avgrc:</p>
+
+
+<pre>
+&lt;outputbuffersamples&gt;4096&lt;/outputbuffersamples&gt;
+</pre>
+
+	<p></p>
+</div>
+
+
+
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/RPI by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:23 GMT -->
+</html>

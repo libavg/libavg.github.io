@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/Backwards_Compatibility by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Backwards Compatibility - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Backwards-Compatibility"></a>
+<h1 >Backwards Compatibility<a href="#Backwards-Compatibility" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>This is a log of non-backwards compatible changes and deprecated functionality in libavg from version to version.</p>
+
+
+	<a name="Post-Version-18"></a>
+<h2 >Post-Version 1.8<a href="#Post-Version-18" class="wiki-anchor">&para;</a></h2>
+
+
+	<a name="Incompatible-Changes"></a>
+<h3 >Incompatible Changes<a href="#Incompatible-Changes" class="wiki-anchor">&para;</a></h3>
+
+
+	<ul>
+	<li>Removed the internal tracker. Use an external touch library like ccv instead.</li>
+		<li>Removed Linux LibMTDev support. Use XInput 2.2 multitouch support instead.</li>
+	</ul>
+
+
+	<a name="Version-18"></a>
+<h2 >Version 1.8<a href="#Version-18" class="wiki-anchor">&para;</a></h2>
+
+
+	<a name="Incompatible-Changes-2"></a>
+<h3 >Incompatible Changes<a href="#Incompatible-Changes-2" class="wiki-anchor">&para;</a></h3>
+
+
+	<ul>
+	<li>The syntax and semantics of node subclassing has changed - see <a href="Subclassing.html" class="wiki-page">Subclassing</a> for details.</li>
+		<li>RESIZE and QUIT event types have been removed. They weren't functioning anyway.</li>
+		<li>The deprecated python anim framework has been removed. Use the new C++ anim framework instead.</li>
+		<li>The deprecated conradrelais support has been removed. The hardware isn't available anymore.</li>
+		<li>The Grabbable class has been removed. Use gesture.TransformRecognizer instead.</li>
+		<li>Removed deprecated ParPort support. Use pyParallel package instead.</li>
+		<li>Removed deprecated Player.addTracker(). Use enableMultitouch() instead.</li>
+		<li>Removed deprecated and broken PanoImageNode.</li>
+		<li>Removed Player.getTimeSinceLastFrame(). Use Player.getFrameDuration() instead.</li>
+	</ul>
+
+
+	<a name="Deprecated-Functionality"></a>
+<h3 >Deprecated Functionality<a href="#Deprecated-Functionality" class="wiki-anchor">&para;</a></h3>
+
+
+	<ul>
+	<li>Player.get() is deprecated. Use avg.player instead.</li>
+		<li>Node.getParent() is deprecated. Use node.parent instead.</li>
+		<li>Node.setEventHandler(), Node.connectEventHandler(), Node.disconnectEventHandler(). Use publisher interface instead.</li>
+		<li>DivNode.mediadir is deprecated.</li>
+	</ul>
+
+
+	<a name="Version-17-and-Previous"></a>
+<h2 >Version 1.7 and Previous<a href="#Version-17-and-Previous" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>See source:trunk/libavg/NEWS.</p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/Backwards_Compatibility by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:15 GMT -->
+</html>

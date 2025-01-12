@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/Plugins by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Plugins - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Plugins"></a>
+<h1 >Plugins<a href="#Plugins" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#Plugins">Plugins</a></li><li><a href="#Using-Plugins">Using Plugins</a><ul><li><a href="#The-pluginPath-property">The pluginPath property</a></li><li><a href="#The-loadPlugin-method">The loadPlugin() method</a><ul><li><a href="#Logging">Logging</a></li><li><a href="#What-happens-to-the-XML-DTD">What happens to the XML DTD?</a></li></ul>
+</li></ul>
+</li><li><a href="#Creating-Plugins">Creating Plugins</a><ul><li><a href="#Building-a-plugin">Building a plugin</a></li></ul>
+</li><li><a href="#Troubleshooting-Windows-Linker-Problems">Troubleshooting Windows Linker Problems</a></li><li><a href="#How-is-core-libavg-code-affected">How is core libavg code affected?</a></li></ul>
+
+
+	<p>libavg supports loading of plugins at runtime that extend the player's functionality. Plugins are practically unrestricted: They can access all low-level functionality of libavg and extend the API exposed to python in arbitrary ways. For instance, they can add new node types by supplying the code necessary to render the Node, expose node functions to python and extend the XML DTD. Plugins have also been used to expose new input devices to libavg.</p>
+
+
+	<p>If your plugin defines a new node class, also have a look at <a href="NodeSubclassing.html" class="wiki-page">NodeSubclassing</a>.</p>
+
+
+	<a name="Using-Plugins"></a>
+<h1 >Using Plugins<a href="#Using-Plugins" class="wiki-anchor">&para;</a></h1>
+
+
+	<a name="The-pluginPath-property"></a>
+<h2 >The pluginPath property<a href="#The-pluginPath-property" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>The player has a property called <code>pluginPath</code> which is a list of directories separated by semicolons under windows and colons on other systems. When <code>loadPlugin()</code> (see below) is called the player searches in each of these directories until it finds a file matching the name <code>&lt;modulename&gt;.so</code> (or <code>.dll</code>, if you're running windows). You may specify relative or absolute paths. Relative paths will be resolved when <code>loadPlugin</code> is called, not when the <code>pluginPath</code> property is set. This makes a difference when the working directory changes before the plugin is actually loaded. When the player starts up, it's <code>pluginPath</code> property defaults to:</p>
+
+
+<pre>
+./plugin:$(AVG_PATH)/plugin
+</pre>
+
+	<a name="The-loadPlugin-method"></a>
+<h2 >The <code>loadPlugin()</code> method<a href="#The-loadPlugin-method" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Calling <code>loadPlugin("module")</code> will cause the player to look for a file called <code>module.so</code> (<code>.dll</code> under windows) in each of the directories specified by <code>pluginPath</code> (see above for details). Once the file is found, the player tries to load it as a shared object, extend the DTD and register the new Node type. If this succeeds - an exception is raised otherwise - the new node type can be used from now on as if it was a built-in type. For example you can use both forms of <code>createNode()</code> (XML or key-value) to create such a node or you can load an XML file or string containing a node of the new type.</p>
+
+
+	<p><em>plugin.py</em></p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>player.pluginPath = <span class="string"><span class="delimiter">&quot;</span><span class="content">../test/plugin/.libs</span><span class="delimiter">&quot;</span></span> 
+<span class="line-numbers">2</span>player.loadPlugin(<span class="string"><span class="delimiter">&quot;</span><span class="content">colorplugin</span><span class="delimiter">&quot;</span></span>)
+<span class="line-numbers">3</span>
+<span class="line-numbers">4</span>rootNode = canvas.getRootNode()
+<span class="line-numbers">5</span>node = colorplugin.ColorNode(fillcolor=<span class="string"><span class="delimiter">&quot;</span><span class="content">7f7f00</span><span class="delimiter">&quot;</span></span>, parent=rootNode)
+<span class="line-numbers">6</span>node.fillcolor = <span class="string"><span class="delimiter">&quot;</span><span class="content">7f007f</span><span class="delimiter">&quot;</span></span> 
+</span></code></pre>
+
+	<p>Note that to actually run this code, you need to change the plugin path to point to <code>$(AVG_PATH)src/test/plugin/.libs</code> on your computer. Once it does run, it should display a pink window.</p>
+
+
+	<a name="Logging"></a>
+<h3 >Logging<a href="#Logging" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>You can use the log category <code>PLUGIN</code> to get diagnostic messages from the plugin loader. This is especially useful when a plugin fails to load.</p>
+
+
+	<a name="What-happens-to-the-XML-DTD"></a>
+<h3 >What happens to the XML DTD?<a href="#What-happens-to-the-XML-DTD" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Once a plugin is loaded, it is queried for a) it's supported attributes and b) valid parent node types which shall be allowed to contain nodes of this new type. Consequently, the DTD declarations for the parent nodes changes and a new XML node declaration is added to the DTD.</p>
+
+
+	<p>You may want to have a look at <code>src/test/Plugintest.py</code> for a complete example of how to use a plugin.</p>
+
+
+	<a name="Creating-Plugins"></a>
+<h1 >Creating Plugins<a href="#Creating-Plugins" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>Plugins are shared objects (DLLs on windows). Currently, the shared object must export one symbol that forms the interface between the PluginManager and the plugin itself:</p>
+
+
+<pre>
+AVG_PLUGIN_API void registerPlugin();
+</pre>
+
+	<p><code>AVG_PLUGIN_API</code> is a macro defined in <code>src/api.h</code> It has the effect of removing C++ name mangling from the symbol name and making sure the function is exported. To make this and the importing of symbols from libavg work properly, <code>AVG_PLUGIN</code> needs to be defined in the complete plugin. This is done in the VS project file (for windows) or in the Makefile (for Linux/Mac).</p>
+
+
+	<p>In registerPlugin, a plugin will typically register one or more node types by calling <code>registerNodeType()</code>:</p>
+
+
+<pre><code class="python syntaxhl"><span class="CodeRay"><span class="line-numbers">1</span>void Player::registerNodeType(NodeDefinition Def, 
+<span class="line-numbers">2</span>        const char* pParentNames[] = <span class="integer">0</span>);
+</span></code></pre>
+
+	<p>The plugin also needs to create python bindings for any classes or functions that should be visible from python - see <code>src/test/plugin/ColorNode.cpp</code> for a minimal but complete implementation of a Node plugin.</p>
+
+
+	<a name="Building-a-plugin"></a>
+<h2 >Building a plugin<a href="#Building-a-plugin" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Node plugins need to be build as a shared object (DLL on windows) and linked against avg.so. Use <code>src/test/plugin/Makefile.am</code> as a starting point on Unix-like systems. On windows, clone the colornode project to get started. (You may copy the vcproj file and use search/replace to rename all occurrences of ColorNode and colornode)</p>
+
+
+	<a name="Troubleshooting-Windows-Linker-Problems"></a>
+<h1 >Troubleshooting Windows Linker Problems<a href="#Troubleshooting-Windows-Linker-Problems" class="wiki-anchor">&para;</a></h1>
+
+
+	<p>Unresolved externals in libavg are a typical issue when programming plugins or getting them to work under windows. Here are several tips that might help:</p>
+
+
+	<ul>
+	<li>If the linker can't find any libavg symbols, you're not linking to the correct libraries.</li>
+		<li>Single missing symbols can be caused by missing <code>AVG_API</code> or <code>AVG_TEMPLATE_API</code> macros for those symbols in libavg.</li>
+		<li>Make sure that <code>AVG_PLUGIN</code> is defined when compiling the plugin, either in the Makefile (for Linux and Mac) or in the Visual Studio project file (for Windows). It makes sure that the <code>AVG_API</code> macros are defined correctly in the libavg header files when they get included.</li>
+		<li>If symbols aren't used in libavg itself, the linker will optimize those symbols away. This seems to be a bug in the Visual C++ linker (opt:NOREF doesn't solve it). A workaround is to <code>#include</code> the appropriate header files somewhere within libavg. Currently, these includes are at <code>src/graphics/OGLImagingContext.cpp</code>.</li>
+	</ul>
+
+
+	<a name="How-is-core-libavg-code-affected"></a>
+<h1 >How is core libavg code affected?<a href="#How-is-core-libavg-code-affected" class="wiki-anchor">&para;</a></h1>
+
+
+	<p><strong>AVG_API, AVG_TEMPLATE_API and api.h</strong></p>
+
+
+	<p>In order to make avg's functions and class methods available to a plugin, those functions need to be exported from <code>avg.so</code>. While all symbols of a shared object are exported by default on Unix-like systems (at least those using ELF as their executable format and gcc as their build toolchain) the situation on Windows is different. Not only is exporting symbols not the default for the MS linker, it also lacks a switch to enable this behavior. In order to export symbols, each class definition needs to be decorated with <code>__declspec(dllexport)</code> when exported and <code>__declspec(dllimport)</code> in the plugin itself. In libavg code, the macros <code>AVG_API</code> (for classes) and <code>AVG_TEMPLATE_API</code> (for class templates) fulfill this task. They are defined in <code>src/api.h</code>, which therefore must be included by each and every header file defining a class.</p>
+
+
+	<p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/Plugins by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:15 GMT -->
+</html>

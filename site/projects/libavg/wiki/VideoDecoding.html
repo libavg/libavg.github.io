@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/VideoDecoding by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:16 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>VideoDecoding - libavg</title>
+<meta name="description" content="Redmine" />
+<meta name="keywords" content="issue,bug,tracker" />
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="QVLF6cREvlOFkeaPHt4RhwQPDtrjsY3s5ITeOtTQ66Y="/>
+<link rel='shortcut icon' href='../../../favicon89c0.ico?1332147363' />
+<link href="../../../themes/libavg/stylesheets/applicationb1b8.css?1342212749" media="all" rel="stylesheet" type="text/css" />
+
+<script src="../../../javascripts/prototype89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/effects89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/dragdrop89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/controls89c0.js?1332147363" type="text/javascript"></script>
+<script src="../../../javascripts/application89c0.js?1332147363" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Event.observe(window, 'load', function(){ new WarnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.'); });
+//]]>
+</script>
+
+
+
+  
+  
+
+  <link href="../../../plugin_assets/redmine_wiki_extensions/stylesheets/wiki_extensions.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/wiki_extensions.js" type="text/javascript"></script>
+  
+    <script src="../../../plugin_assets/redmine_wiki_extensions/javascripts/tablesort.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      //TableSort.arrowNone = " ";
+      TableSort.arrowUp   = ' <img alt="Sort_asc" src="../../../images/sort_asc89c0.png?1332147363" />';
+      TableSort.arrowDown = ' <img alt="Sort_desc" src="../../../images/sort_desc89c0.png?1332147363" />';
+    </script>
+  
+
+
+<!-- page specific tags -->
+
+  <link href="../../../stylesheets/scm89c0.css?1332147363" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body class="theme-Libavg controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+
+<div id="header">
+    
+
+    
+
+    <h1> <a href="../wiki.html"> <img src="../../../files/libavg_logo.png"/> </a> </h1>
+
+    
+
+    
+</div>
+
+<div class="" id="main">
+    <div id="sidebar">
+        
+    <p><a href="WikiStart.html" class="wiki-page">Home</a><br /><a href="../../../../blog/" class="external">Blog</a><br /><a href="DownLoad.html" class="wiki-page">Download</a><br /><a href="FeatureList.html" class="wiki-page">Features</a><br /><a href="Multitouch.html" class="wiki-page">Multitouch</a><br /><a href="Showcase.html" class="wiki-page">Showcase</a></p>
+
+
+	<a name="Documentation"></a>
+<h2 >Documentation<a href="#Documentation" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="ReleaseInstall.html" class="wiki-page">Installation Guide</a></li>
+		<li><a href="ProgrammersGuide.html" class="wiki-page">Programmer's Guide</a></li>
+		<li><a href="Firebirds.html" class="wiki-page">Tutorial</a></li>
+		<li><a href="Reference.html" class="wiki-page">Reference</a></li>
+	</ul>
+
+
+	<a name="Community"></a>
+<h2 >Community<a href="#Community" class="wiki-anchor">&para;</a></h2>
+
+
+	<ul>
+	<li><a href="BugReport.html" class="wiki-page">Reporting Bugs</a></li>
+		<li><a href="Contributors.html" class="wiki-page">Contributors</a></li>
+	</ul>
+
+
+	<p><a href="Development.html" class="wiki-page">libavg Development</a></p>
+
+
+	<p><a href="Imprint_and_Privacy_Policy.html" class="wiki-page">Imprint and Privacy Policy</a></p>
+<p>
+<br />
+<a href="https://github.com/libavg/libavg/">Repository</a> <br />
+<a href="https://github.com/libavg/libavg/issues?state=open">Issues</a> <br />
+<a href="https://github.com/libavg/libavg/issues/new">New Issue</a><br />
+</p>
+
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        
+
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="Video-Decoder-Internals"></a>
+<h1 >Video Decoder Internals<a href="#Video-Decoder-Internals" class="wiki-anchor">&para;</a></h1>
+
+
+	<ul class="toc right"><li><a href="#Video-Decoder-Internals">Video Decoder Internals</a><ul><li><a href="#Node-Interface">Node Interface</a></li><li><a href="#Media-File-Layout-Basics">Media File Layout Basics</a></li><li><a href="#Synchronous-Decoding">Synchronous Decoding</a></li><li><a href="#Asynchronous-Decoding">Asynchronous Decoding</a><ul><li><a href="#Base-classes-Worker-Threads-Queues-and-Commands">Base classes: Worker Threads, Queues and Commands</a></li><li><a href="#Demuxer-and-Decoders">Demuxer and Decoders</a></li><li><a href="#Seeks-and-End-of-File-Handling">Seeks and End of File Handling</a></li><li><a href="#Accelerated-Video-Decoding">Accelerated Video Decoding</a></li></ul>
+</li><li><a href="#Pixel-Format-Conversion">Pixel Format Conversion</a></li></ul></li></ul>
+
+
+	<p>This is an in-depth look at the design of the libavg video decoding subsystem. This module is responsible for all video and audio playback that takes place in a libavg application. It uses libav/ffmpeg for the low-level work of decoding different media formats.</p>
+
+
+Besides the obvious goal of being able to play back as many media formats as possible, there are several secondary goals which affect the design. These are:
+	<ul>
+	<li>Efficiency: decoding should take as little processing power as possible, and so should other operations on the video such as open, close and seek.</li>
+		<li>Low latency: There should be a minimum of delay between the initiation of an operation and its completion. </li>
+		<li>Ease of use: We want a clear internal interface to the decoding subsystem. In particular, error messages should be generated without a delay if possible. This means that operations that are error-prone should happen synchronously.</li>
+	</ul>
+
+
+	<p>Unfortunately, there is a conflict between being efficient and having low-latency seeks: Multi-threaded decoding is a lot more efficient, but seeks take much longer as well. For this reason, libavg includes two high-level decoders: <code>AsyncVideoDecoder</code> operates in a traditional threaded fashion and <code>SyncVideoDecoder</code> works completely synchronously. These are useful in different settings. When you want to play back videos and possibly seek once in a while, use the <code>AsyncVideoDecoder</code>. Conversely, the <code>SyncVideoDecoder</code> supports seeking at interactive frame rates and makes it possible to do video 'scratching' or otherwise seek continuously.</p>
+
+
+	<p>While the <code>VideoNode</code> itself lives in <code>src/player</code>, most of the rest of the code is in <code>src/video</code>.</p>
+
+
+	<p>In the rest of the document, we'll go through the module in a roughly top-down fashion. First, we'll look at the interface that it exposes and general usage from the outside. A short aside describes how media files are organized in general. This sets the stage for the description of the actual decoding module. The <code>SyncVideoDecoder</code> is described first, because it is the simpler one. The remainder of the page goes through the internals of the <code>AsyncVideoDecoder</code>. This includes the general threading design as well as audio and video decoding threads.</p>
+
+
+	<a name="Node-Interface"></a>
+<h2 >Node Interface<a href="#Node-Interface" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Only a thin high-level interface to the video decoder is presented to the <code>VideoNode</code>. All of the details are handled by the decoder classes in <code>src/video</code>. The principal sequence of calls in <code>VideoNode</code> looks like this:</p>
+
+
+<pre><code class="cpp syntaxhl"><span class="CodeRay"><span class="line-numbers"> 1</span><span class="comment">// In constructor</span>
+<span class="line-numbers"> 2</span>pDecoder = <span class="keyword">new</span> VideoDecoder()
+<span class="line-numbers"> 3</span><span class="comment">// In VideoNode::open()</span>
+<span class="line-numbers"> 4</span>pDecoder-&gt;open(sFilename)
+<span class="line-numbers"> 5</span><span class="comment">// When the display becomes available</span>
+<span class="line-numbers"> 6</span>pDecoder-&gt;startDecoding()
+<span class="line-numbers"> 7</span><span class="keyword">for</span> (each frame) {
+<span class="line-numbers"> 8</span>    <span class="comment">// In VideoNode::preRender()</span>
+<span class="line-numbers"> 9</span>    pDecoder-&gt;renderToBmp(pBmp, time)
+<span class="line-numbers"><strong>10</strong></span>    upload pBmp to texture
+<span class="line-numbers">11</span>}
+<span class="line-numbers">12</span><span class="comment">// In VideoNode::close()</span>
+<span class="line-numbers">13</span>pDecoder-&gt;close()
+</span></code></pre>
+
+	<p>These functions are invoked in different frames, so the calls are spread throughout <code>VideoNode.cpp</code>. The decoder constructed is either a <code>SyncVideoDecoder</code> (if <code>threaded=False</code>) or an <code>AsyncVideoDecoder</code> (if <code>threaded=True</code>). The constructors don't actually do much - the first actual logic happens in <code>open()</code>. In this function, the video file is opened and parsed to find video and audio streams. If any of this fails (i.e. because of a missing file), an exception is raised synchronously. After open, information like the frame size, fps and video format is available. When <code>startDecoding()</code> is called, the asynchronous decoder starts additional threads and fills a queue of frames with data (see below). The synchronous decoder basically ignores <code>startDecoding()</code>.</p>
+
+
+	<p>The functions <code>renderToBmp()</code> and <code>renderToBmps()</code> fill bitmaps with the video data for a specific time. This may involve discarding video frames if the application thread is slower than the video frame rate (e.g. a 30 Hz video and a laggy application with 10 frames per second). In the opposite case, the video is slower and <code>renderToBmp()</code> just leaves the old data in the bitmap if there is no new video frame. One typical example of this is a 60 Hz application showing a 30 Hz video.</p>
+
+
+	<a name="Media-File-Layout-Basics"></a>
+<h2 >Media File Layout Basics<a href="#Media-File-Layout-Basics" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>To understand how a decoder works, we need to know how a video file is organized. Conceptually, a media file consists of one or more streams of data - for example, a typical file will contain a video, an audio and perhaps a subtitle stream. These streams are subdivided into chunks of data called packets. As shown in the figure below, streams are interleaved in the file so packets that should be decoded at a similar time are close to each other.</p>
+
+
+	<p style="text-align:center;"><img src="../../../attachments/download/Streams.png" alt="" /></p>
+
+
+	<p>Sadly, however, packets in a file are not always strictly in order of ascending timestamps, even if the packets in the streams are ordered in time. The following image shows a typical file that has this issue. The audio stream has a delay:</p>
+
+
+	<p style="text-align:center;"><img src="../../../attachments/download/PacketOrdering.png" alt="" /></p>
+
+
+	<p>In general, media files are organized around a container format (e.g. mov, mkv, wav) and one or more codec formats (e.g. h264, mpeg2, mjpeg, mp3). The container format specifies how packets, streams and meta-information are arranged in a file. A codec format specifies the storage and compression of one stream type. Typically, the container format doesn't know anything about the actual encoding of the individual streams, but it will support one or more codec formats that take care of this.</p>
+
+
+	<p>Most video file formats only store deltas of previous (or following) frames for the great majority of frames. By only storing the changing pixels, the space needed is greatly reduced. Once in a while, a complete frame - a <em>keyframe</em> - is inserted to provide a baseline.</p>
+
+
+	<a name="Synchronous-Decoding"></a>
+<h2 >Synchronous Decoding<a href="#Synchronous-Decoding" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>As mentioned above, libavg supports completely synchronous decoding. In this case, three objects collaborate to decode videos: a <code>SyncVideoDecoder</code>, an <code>FFMpegDemuxer</code> and an <code>FFMpegFrameDecoder</code>. The <code>SyncVideoDecoder</code> opens and closes the video stream and generally acts as a façade for the module. The <code>FFMpegDemuxer</code> extracts the individual packets from a file and separates them into streams. So, when <code>SyncVideoDecoder</code> is asked for a frame, it gets packets from the demuxer and feeds them to <code>FFMpegFrameDecoder</code> until the frame is complete (in <code>SyncVideoDecoder::readFrame()</code>). Because of decoder internals, libav/ffmpeg might deliver frames even after the end of the file has been reached - this is taken care of separately.</p>
+
+
+	<p>Seeking involves a call to the appropriate libav/ffmpeg function - <code>av_seek_frame</code> - in the demuxer. After this call, the stream will be at the nearest keyframe before the intended position. Decoding commences from there, but all frames before the intended frame are discarded and not displayed. Seeking to a keyframe is the only option, since it's impossible to decode a delta frame without knowledge of the preceding frames.</p>
+
+
+	<a name="Asynchronous-Decoding"></a>
+<h2 >Asynchronous Decoding<a href="#Asynchronous-Decoding" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Asynchronous decoding involves five threads: A demuxer, a video decoder, an audio decoder, the main application thread and the audio output thread. The threads communicate exclusively using thread-safe queues - there are no additional locks or shared variables. The secondary threads responsible for demuxing and decoding are created in <code>startDecoding()</code>. Everything that happens before that is single-threaded, so the file is opened and the header parsed in the main thread, making sure that any errors opening the file are easy to handle. The following image gives an overview of the different threads and queues - data moves to the left, while commands are sent to the right.</p>
+
+
+	<p style="text-align:center;"><img src="../../../attachments/download/VideoDecoderThreads.png" alt="" /></p>
+
+
+	<a name="Base-classes-Worker-Threads-Queues-and-Commands"></a>
+<h3 >Base classes: Worker Threads, Queues and Commands<a href="#Base-classes-Worker-Threads-Queues-and-Commands" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>All secondary threads are based on the <code>WorkerThread</code> class (in <code>src/base</code>). A class derived from <code>WorkerThread</code> gets its <code>work()</code> method called in a loop until that function returns <code>false</code> or stop() is called. The libavg <code>Queue</code> class is a standard thread-safe queue that takes the class of its entries as a template parameter. Each <code>WorkerThread</code> has a <code>Queue&lt;Command&gt;</code> that can be filled with Commands for the thread. A <code>Command</code> works like a python <code>lambda</code>. It is put into the queue in a controlling thread and executed after the next <code>work()</code> iteration in the <code>WorkerThread</code>. In the case of video decoding, a typical command is <code>seek()</code>. Basically, you can put any function calls into the queue and the <code>WorkerThread</code> will take care of execution. All commands shown in the figure above are sent this way.</p>
+
+
+	<p>The video threads have additional queues that transport data (packets, frames and audio samples) to the application. Flow control is realized by limiting the number of entries in a queue - when the queue is full, the thread waits for space to become available.</p>
+
+
+	<a name="Demuxer-and-Decoders"></a>
+<h3 >Demuxer and Decoders<a href="#Demuxer-and-Decoders" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>The <code>VideoDemuxerThread</code> is responsible for reading the video file, separating the streams (using libav/ffmpeg) and putting video and audio packets into queues for the decoders. Data in unused streams is discarded. The basic functions necessary to implement this are in the <code>FFMpegDemuxer</code> class that is also used when decoding synchronously.</p>
+
+
+	<p>The <code>VideoDecoderThread</code> receives a series of video packets via a packet queue and decodes them into bitmaps (mainly in <code>VideoDecoderThread::sendFrame()</code>). These bitmaps are put into the <code>msgQ</code> and retrieved by the AsyncVideoDecoder for use by the <code>VideoNode</code>. Again, the basic functionality to realize this is in a class shared with the synchronous decoder: <code>FFMpegFrameDecoder</code>. This class wraps the actual libav/ffmpeg decoding calls. It also takes care of calculating frame times and converting libav/ffmpeg frames to libavg <code>Bitmaps</code>.</p>
+
+
+	<p>The <code>AudioDecoderThread</code>, then, takes audio packets, decodes them and puts them into a queue for the <code>AudioSource</code>. Along the way, it handles resampling if needed. Resampling comes into play if the sample rate, sample format or number of channels required by the output device is different from that delivered by the stream.</p>
+
+
+	<a name="Seeks-and-End-of-File-Handling"></a>
+<h3 >Seeks and End of File Handling<a href="#Seeks-and-End-of-File-Handling" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>As can be seen in the figure above, a seek is initiated when the appropriate command is sent to the demuxer. The demuxer does the seek in the stream and sends <code>SEEK_DONE</code> messages that cascade through the threads. A thread that sends a <code>SEEK_DONE</code> always precedes this by clearing its outgoing message queue(s) - packets, video frames and audio data in these queues are now obsolete and can be discarded.</p>
+
+
+	<p>As with synchronous decoding, asynchronous seeks initially position the stream at a keyframe before the destination. On the video side, this is again handled by discarding frames (in <code>AsyncVideoDecoder</code>) until the correct one arrives. On the audio side, packets are discarded by <code>AudioDecoderThread</code> if this is needed. In the (improbable, but possible) case that the audio seek actually jumped too far in the file, we insert an appropriate amount of silence into the stream instead.</p>
+
+
+	<p>An additional complication occurs if two seeks are initiated in quick succession. In this case, the first seek may still be in progress when the second arrives. Thus, clearing the message queue might also discard the <code>SEEK_DONE</code> of the first seek and the application thread can't rely on receiving a <code>SEEK_DONE</code> for each <code>seek()</code>. For this reason, seeks have sequence numbers embedded. <code>AsyncVideoDecoder</code> knows that the last seek has completed when it gets a <code>SEEK_DONE</code> with the appropriate sequence number.</p>
+
+
+	<p>When end of file (EOF) is reached in the demuxer, it triggers a similar cascade of <code>END_OF_FILE</code> messages through the threads.</p>
+
+
+	<a name="Accelerated-Video-Decoding"></a>
+<h3 >Accelerated Video Decoding<a href="#Accelerated-Video-Decoding" class="wiki-anchor">&para;</a></h3>
+
+
+	<p>Currently, accelerated video decoding is supported using NVidia's VDPAU interface. In this case, the <code>VideoDecoderThread</code> doesn't actually decode the packets at all. Instead, ffmpeg is configured to use a VDPAU-based codec. The <code>msgQ</code> to the application thread only contains a reference to the VDPAU data, and the <code>AsyncVideoDecoder</code> requests the bitmaps from VDPAU. There is currently no support for using VDPAU to decode directly into a texture.</p>
+
+
+	<a name="Pixel-Format-Conversion"></a>
+<h2 >Pixel Format Conversion<a href="#Pixel-Format-Conversion" class="wiki-anchor">&para;</a></h2>
+
+
+	<p>Pixel format conversion consists of converting the pixels that are generated by the decoder to RGB or RGBA pixels that can be displayed. If not optimized in some form, pixel format conversion can take the majority of time spent decoding. There are two code paths in libavg for this:</p>
+
+
+	<ul>
+	<li>In the case of yuv420p, yuvj420p and yuva420p-encoded videos, a GPU shader handles the conversion. This is set up in <code>VideoNode</code>.</li>
+		<li>In all other cases, conversion is handled in the decoder thread.</li>
+	</ul>
+
+
+	<p></p>
+</div>
+
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+wiki_extension_create_table_header();
+//]]>
+</script>
+</body>
+
+<!-- Mirrored from www.libavg.de/site/projects/libavg/wiki/VideoDecoding by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 11 Jan 2025 18:11:21 GMT -->
+</html>
